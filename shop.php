@@ -1,5 +1,13 @@
-﻿<?php include "components/phpComponents/phpcomponents.php"; ?>
-<?php include "components/phpComponents/treecalculation.php"; ?>
+﻿<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+ob_start();
+session_start();
+
+include './config/config.php';
+include "./config/function.php";
+?>
 
 <!DOCTYPE html>
 <html dir="ltr">
@@ -48,7 +56,7 @@
           <?php include "components/sidebar.php"; ?>
         </div>
 
-        <?php include "components/sideProfile.php"; ?>
+        <!-- <?php include "components/sideProfile.php"; ?> -->
       </div>
     </div>
 
@@ -116,132 +124,40 @@
 
             <!-- Product Cards -->
             <div class="row gy-32">
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card hp-card-1">
-                  <img src="app-assets/img/product/3d-glasses-1.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Product 1</h5>
-                    <p class="card-text">
-                      <span class="text-decoration-line-through">$24.99</span>
-                      <span>$19.99</span>
-                    </p>
-                    <div class="star-rating">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                    </div>
-                    <button class="btn btn-primary mt-2">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card hp-card-1">
-                  <img src="app-assets/img/product/ecommerce-product-img-1.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Product 2</h5>
-                    <p class="card-text">
-                      <span class="text-decoration-line-through">$34.99</span>
-                      <span>$29.99</span>
-                    </p>
-                    <div class="star-rating">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                    </div>
-                    <button class="btn btn-primary mt-2">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card hp-card-1">
-                  <img src="app-assets/img/product/ecommerce-product-img-2.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">
-                    <h5 class="card-title">Product 3</h5>
-                    <p class="card-text">
-                      <span class="text-decoration-line-through">$44.99</span>
-                      <span>$39.99</span>
-                    </p>
-                    <div class="star-rating">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                    </div>
-                    <button class="btn btn-primary mt-2">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card hp-card-1">
-                  <img src="app-assets/img/product/ecommerce-product-img-3.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Product 4</h5>
-                    <p class="card-text">
-                      <span class="text-decoration-line-through">$54.99</span>
-                      <span>$49.99</span>
-                    </p>
-                    <div class="star-rating">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                    </div>
-                    <button class="btn btn-primary mt-2">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card hp-card-1">
-                  <img src="app-assets/img/product/ecommerce-product-img-4.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Product 5</h5>
-                    <p class="card-text">
-                      <span class="text-decoration-line-through">$64.99</span>
-                      <span>$59.99</span>
-                    </p>
-                    <div class="star-rating">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                    </div>
-                    <button class="btn btn-primary mt-2">Buy Now</button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card hp-card-1">
-                  <img src="app-assets/img/product/ecommerce-product-img-5.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Product 6</h5>
-                    <p class="card-text">
-                      <span class="text-decoration-line-through">$74.99</span>
-                      <span>$69.99</span>
-                    </p>
-                    <div class="star-rating">
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star checked"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                      <span class="fa fa-star"></span>
-                    </div>
-                    <button class="btn btn-primary mt-2">Buy Now</button>
-                  </div>
-                </div>
-              </div>
+              <?php
+              $name = "Product 1";
+              $price = "$64.99";
+              $salePrice = "$59.99";
+              $img="app-assets/img/product/3d-glasses-1.png";
+              include "components/productCard.php";
+              ?>
+              <?php
+        $name = "product 2";
+        $price = "$64.99";
+        $salePrice = "$59.99";
+        $img="app-assets/img/product/ecommerce-product-img-1.png";
+        include "components/productCard.php";
+        ?>
+        <?php
+        $name = "product 3 ";
+        $price = "$64.99";
+        $salePrice = "$59.99";
+        $img="app-assets/img/product/ecommerce-product-img-2.png";
+        include "components/productCard.php";
+        ?>
+        <?php
+        $name = "Name";
+        $price = "$64.99";
+        $salePrice = "$59.99";
+        $img="app-assets/img/product/ecommerce-product-img-1.png";
+        include "components/productCard.php";
+        ?><?php
+        $name = "Name";
+        $price = "$64.99";
+        $salePrice = "$59.99";
+        $img="app-assets/img/product/ecommerce-product-img-4.png";
+        include "components/productCard.php";
+        ?>
             </div>
           </div>
         </div>
@@ -251,7 +167,7 @@
     </div>
   </main>
 
-  
+
 
 
   <?php
