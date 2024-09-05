@@ -20336,13 +20336,15 @@ li.with-megamenu:hover .rts-megamenu {
 .rts-copyright-area-two {
   background: #1A1A1A;
   border-top: 1px solid #353535;
+  
 }
 
 .rts-copyright-area-two .copyright-arae-two-wrapper {
   display: flex;
   padding: 28px 0;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  
 }
 
 @media only screen and (max-width: 575px) {
