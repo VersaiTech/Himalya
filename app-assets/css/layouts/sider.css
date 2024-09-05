@@ -1,6 +1,7 @@
 /* Sider */
 .hp-logo {
-  height: 45px;
+  height: 10vh;
+  width: 8vw;
 }
 
 body.collapsed-active .hp-main-layout {
