@@ -2,11 +2,11 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-ob_start();
-session_start();
+// ob_start();
+// session_start();
 
-include './config/config.php';
-include "./config/function.php";
+// include './config/config.php';
+// include "./config/function.php";
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ include "./config/function.php";
           <?php include "components/sidebar.php"; ?>
         </div>
 
-        <!-- <?php include "components/sideProfile.php"; ?> -->
+        
       </div>
     </div>
 
@@ -94,7 +94,7 @@ include "./config/function.php";
             </div>
 
             <!-- Filter and Sort Section -->
-            <div class="row align-items-center justify-content-between g-16 mt-20">
+            <div class="row align-items-center justify-content-between g-16 mt-50">
               <div class="col-6">
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -123,41 +123,51 @@ include "./config/function.php";
             </div>
 
             <!-- Product Cards -->
-            <div class="row gy-32">
+            <div class="row gy-32" style="
+    margin: 5vh;
+">
               <?php
               $name = "Product 1";
               $price = "$64.99";
               $salePrice = "$59.99";
-              $img="app-assets/img/product/3d-glasses-1.png";
+              $img = "app-assets/img/product/3d-glasses-1.png";
               include "components/productCard.php";
               ?>
               <?php
-        $name = "product 2";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-1.png";
-        include "components/productCard.php";
-        ?>
-        <?php
-        $name = "product 3 ";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-2.png";
-        include "components/productCard.php";
-        ?>
-        <?php
-        $name = "Name";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-1.png";
-        include "components/productCard.php";
-        ?><?php
-        $name = "Name";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-4.png";
-        include "components/productCard.php";
-        ?>
+              $name = "product 2";
+              $price = "$64.99";
+              $salePrice = "$59.99";
+              $img = "app-assets/img/product/ecommerce-product-img-1.png";
+              include "components/productCard.php";
+              ?>
+              <?php
+              $name = "product 3 ";
+              $price = "$64.99";
+              $salePrice = "$59.99";
+              $img = "app-assets/img/product/ecommerce-product-img-2.png";
+              include "components/productCard.php";
+              ?>
+              <?php
+              $name = "Name";
+              $price = "$64.99";
+              $salePrice = "$59.99";
+              $img = "app-assets/img/product/ecommerce-product-img-1.png";
+              include "components/productCard.php";
+              ?>
+              <?php
+              $name = "Product 1";
+              $price = "$64.99";
+              $salePrice = "$59.99";
+              $img = "app-assets/img/product/3d-glasses-1.png";
+              include "components/productCard.php";
+              ?>
+              <?php
+              $name = "product 3 ";
+              $price = "$64.99";
+              $salePrice = "$59.99";
+              $img = "app-assets/img/product/ecommerce-product-img-2.png";
+              include "components/productCard.php";
+              ?>
             </div>
           </div>
         </div>
