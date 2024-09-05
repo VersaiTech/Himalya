@@ -3,6 +3,13 @@
   height: 10vh;
   width: 8vw;
 }
+.hp-logo-side {
+  height: 11vh;
+  width: 14vw;
+}
+
+
+
 
 body.collapsed-active .hp-main-layout {
   max-width: calc(100% - 80px);
