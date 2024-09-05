@@ -23,6 +23,7 @@ include "./config/function.php";
   <?php include "components/cssComponents/overview-css.php"; ?>
 
   <title>Dashboard- Orion Trade Ai</title>
+
 </head>
 
 <body>
@@ -93,72 +94,54 @@ include "./config/function.php";
               </button>
             </div>
 
-            <!-- Filter and Sort Section -->
-            <div class="row align-items-center justify-content-between g-16 mt-20">
-              <div class="col-6">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Filter
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-                    <li><a class="dropdown-item" href="#">Category 1</a></li>
-                    <li><a class="dropdown-item" href="#">Category 2</a></li>
-                    <li><a class="dropdown-item" href="#">Category 3</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    Sort
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="sortDropdown">
-                    <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
-                    <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
-                    <li><a class="dropdown-item" href="#">Newest</a></li>
-                    <li><a class="dropdown-item" href="#">Oldest</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <!-- Filter and Sort Section -->
+<div class="row align-items-center justify-content-between g-3 mt-4 mb-4 px-3">
+  <div class="col-12 col-sm-6">
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        Filter
+      </button>
+      <ul class="dropdown-menu w-100" aria-labelledby="filterDropdown">
+        <li><a class="dropdown-item" href="#">Category 1</a></li>
+        <li><a class="dropdown-item" href="#">Category 2</a></li>
+        <li><a class="dropdown-item" href="#">Category 3</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        Sort
+      </button>
+      <ul class="dropdown-menu w-100" aria-labelledby="sortDropdown">
+        <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+        <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+        <li><a class="dropdown-item" href="#">Newest</a></li>
+        <li><a class="dropdown-item" href="#">Oldest</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
 
             <!-- Product Cards -->
-            <div class="row gy-32">
-              <?php
-              $name = "Product 1";
-              $price = "$64.99";
-              $salePrice = "$59.99";
-              $img="app-assets/img/product/3d-glasses-1.png";
-              include "components/productCard.php";
-              ?>
-              <?php
-        $name = "product 2";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-1.png";
-        include "components/productCard.php";
-        ?>
-        <?php
-        $name = "product 3 ";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-2.png";
-        include "components/productCard.php";
-        ?>
-        <?php
-        $name = "Name";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-1.png";
-        include "components/productCard.php";
-        ?><?php
-        $name = "Name";
-        $price = "$64.99";
-        $salePrice = "$59.99";
-        $img="app-assets/img/product/ecommerce-product-img-4.png";
-        include "components/productCard.php";
-        ?>
-            </div>
+            <!-- Product Cards -->
+<div class="row gy-32 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+  <?php
+  $products = [
+    ["name" => "Product 1", "price" => 64.99, "salePrice" => 59.99, "img" => "app-assets/img/product/3d-glasses-1.png"],
+    ["name" => "Product 2", "price" => 64.99, "salePrice" => 59.99, "img" => "app-assets/img/product/ecommerce-product-img-1.png"],
+    ["name" => "Product 3", "price" => 64.99, "salePrice" => 59.99, "img" => "app-assets/img/product/ecommerce-product-img-2.png"],
+    ["name" => "Product 4", "price" => 64.99, "salePrice" => 59.99, "img" => "app-assets/img/product/ecommerce-product-img-1.png"],
+    ["name" => "Product 5", "price" => 64.99, "salePrice" => 59.99, "img" => "app-assets/img/product/ecommerce-product-img-4.png"],
+  ];
+
+  foreach ($products as $product) {
+    include "components/productCard.php";
+  }
+  ?>
+</div>
           </div>
         </div>
       </div>
