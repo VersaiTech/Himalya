@@ -84,10 +84,10 @@
                     <div class="hp-header-logo d-flex align-items-center">
                         <a href="overview" class="position-relative">
 
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo1">
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo2">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="shop/assets/images/logo/HIMLOGO1.png" alt="logo3">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo4">
+                                            <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMALLYALOGO2.png" alt="logo1">
+                                            <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMALLYALOGO2.png" alt="logo2">
+                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMALLYALOGO2.png" alt="logo3">
+                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMALLYALOGO2.png" alt="logo4">
                                             <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo5">
                                             <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo6">
                 </a>
@@ -98,8 +98,8 @@
                 <div class="col-12 px-0">
                     <div class="row h-100 w-100 mx-0 align-items-center justify-content-center">
                         <div class="hp-bg-item text-center mb-32 mb-md-0 px-0 col-12">
-                            <img class="hp-dark-none m-auto w-100" src="app-assets/img/pages/authentication/authentication-bg.svg" alt="Background Image">
-                            <img class="hp-dark-block m-auto w-100" src="app-assets/img/pages/authentication/authentication-bg-dark.svg" alt="Background Image">
+                            <img class="hp-dark-none m-auto w-100" src="app-assets/img/loginsignup.png" alt="Background Image">
+                            <img class="hp-dark-block m-auto w-100" src="app-assets/img/loginsignup.png" alt="Background Image">
                         </div>
 
                         <div class="hp-text-item text-center col-xl-9 col-12">
@@ -268,7 +268,7 @@
                                 timerProgressBar: true,
                                 showConfirmButton: false
                             }).then(() => {
-                                window.location.href = 'shop';
+                                window.location.href = 'shop/index.html';
                             });
                         } else {
                             Swal.fire({
