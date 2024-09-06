@@ -874,13 +874,13 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Installation of RO Systems
+                                  </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs12000</span>
+                                <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -929,13 +929,13 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Wall Mounted Livpure Glitz RO
+                                    </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs10000</span>
+                                <div class="previous">Rs15000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -960,7 +960,7 @@ session_start();
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="shop-details.html" class="thumbnail-preview">
-                                <img src="assets/images/grocery/17.jpg" alt="grocery">
+                                <img src="assets/images/grocery/17.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -984,13 +984,13 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Aqua Natural RO Water Purifier 
+                                    </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs17000</span>
+                                <div class="previous">Rs21000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1015,7 +1015,7 @@ session_start();
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="shop-details.html" class="thumbnail-preview">
-                                <img src="assets/images/grocery/18.jpg" alt="grocery">
+                                <img src="assets/images/grocery/18.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1039,13 +1039,13 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Wall Mounted Livpure Glitz RO
+                                   </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs9000</span>
+                                <div class="previous">Rs13000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1070,7 +1070,7 @@ session_start();
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="shop-details.html" class="thumbnail-preview">
-                                <img src="assets/images/grocery/19.jpg" alt="grocery">
+                                <img src="assets/images/grocery/19.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1094,13 +1094,13 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Kent Smart Alkalizer Water purifier
+                                  </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs31000</span>
+                                <div class="previous">Rs40000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1175,7 +1175,7 @@ session_start();
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/16.jpg" alt="grocery">
+                                            <img src="assets/images/grocery/29.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1911,11 +1911,11 @@ session_start();
                             </form>
                             <div class="social-style-dash">
                                 <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61555304507834&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://x.com/i/flow/login?redirect_after_login=%2FHimallyaRO"><i class="fa-brands fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/@HimallyaROServices"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="https://www.instagram.com/himallyaroservices/?next=%2Fhimallyaroservices%2F"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
