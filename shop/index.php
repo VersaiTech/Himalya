@@ -45,7 +45,7 @@ session_start();
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="logo-search-category-wrapper">
-                            <a href="index.html" class="logo-area">
+                            <a href="index" class="logo-area">
                                 <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
@@ -121,7 +121,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <li class="parent has-dropdown">
                                             <a class="nav-link" href="#">Home</a>
                                             <!-- <ul class="submenu">
-                    <li><a class="sub-b" href="index.html">Home One</a></li>
+                    <li><a class="sub-b" href="index">Home One</a></li>
                     <li><a class="sub-b" href="index-two.html">Home Two</a></li>
                     <li><a class="sub-b" href="index-three.html">Home Three</a></li>
                     <li><a class="sub-b" href="index-four.html">Home Four</a></li>
@@ -166,12 +166,12 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <!-- button-area -->
                             <div class="right-location-area">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p>Address:<a href="#">Bareilly, U.P. Inida</a></p>
+                                <p>Address:<a href="#">Bareilly, U.P, India</a></p>
                             </div>
                             <!-- button-area end -->
                         </div>
                         <div class="logo-search-category-wrapper">
-                            <a href="index.html" class="logo-area">
+                            <a href="index" class="logo-area">
                                 <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
@@ -562,7 +562,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/01.png" alt="category">
                                                                 <p>Mixer – Grinder</p>
                                                             </a>
@@ -570,7 +570,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹7000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹5000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -578,7 +578,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/02.png" alt="category">
                                                                 <p>Cooler Fan</p>
                                                             </a>
@@ -586,7 +586,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹13000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -594,7 +594,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/03.png" alt="category">
                                                                 <p>Water Purifier </p>
                                                             </a>
@@ -602,7 +602,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹19000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹15000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -610,7 +610,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/04.png" alt="category">
                                                                 <p>Special Purifier</p>
                                                             </a>
@@ -618,7 +618,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹1800</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹13000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -626,7 +626,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/05.png" alt="category">
                                                                 <p>Pure Water RO</p>
                                                             </a>
@@ -634,7 +634,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹15000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -642,7 +642,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/06.png" alt="category">
                                                                 <p>Water Cooler</p>
                                                             </a>
@@ -650,7 +650,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹24000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹19500</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -658,7 +658,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/07.png" alt="category">
                                                                 <p>Geyser</p>
                                                             </a>
@@ -666,7 +666,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹17000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -871,13 +871,13 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Installation of RO Systems Ro
+                                  </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs12000</span>
+                                <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -901,7 +901,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            index
                                 <img src="assets/images/grocery/16.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -926,13 +926,13 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Wall Mounted Livpure Glitz
+                                    </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs10000</span>
+                                <div class="previous">Rs15000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -957,7 +957,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="shop-details.html" class="thumbnail-preview">
-                                <img src="assets/images/grocery/17.jpg" alt="grocery">
+                                <img src="assets/images/grocery/17.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -981,13 +981,13 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Aqua Natural RO Water Purifier 
+                                    </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs17000</span>
+                                <div class="previous">Rs21000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1012,7 +1012,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="shop-details.html" class="thumbnail-preview">
-                                <img src="assets/images/grocery/18.jpg" alt="grocery">
+                                <img src="assets/images/grocery/18.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1036,13 +1036,13 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Wall Mounted Livpure Glitz RO
+                                   </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs9000</span>
+                                <div class="previous">Rs13000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1067,7 +1067,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="shop-details.html" class="thumbnail-preview">
-                                <img src="assets/images/grocery/19.jpg" alt="grocery">
+                                <img src="assets/images/grocery/19.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1091,13 +1091,13 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                    Wheat with Milk</h4>
+                                <h4 class="title">Kent Smart Alkalizer Water purifier
+                                  </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
-                                <span class="current">$36.00</span>
-                                <div class="previous">$36.00</div>
+                                <span class="current">Rs31000</span>
+                                <div class="previous">Rs40000</div>
                             </div>
                             <div class="cart-counter-action">
                                 <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1136,7 +1136,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <img src="/shop/assets/images/whychooseus/service.png" alt="offer-area" class="img-fluid" style="max-width: 20px; z-index: -1; opacity: .2;">
                         </div>
                         <div class="book-service-btn">
-                            <a href="index.html" class="rts-btn btn-primary radious-sm with-icon">
+                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                 <div class="btn-text">
                                     Book Service
                                 </div>
@@ -1171,8 +1171,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/16.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/29.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1195,12 +1195,12 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                         </div>
                                         <a href="shop-details.html">
-                                            <h4 class="title">Gerber Superfood Hearts Puffed Multigrain Snack </h4>
+                                            <h4 class="title">Copper Enriched RO Water Purifier </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs10000</span>
+                                            <div class="previous">Rs15000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1224,8 +1224,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/17.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/18.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1248,12 +1248,12 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                         </div>
                                         <a href="shop-details.html">
-                                            <h4 class="title">John Soules Foods, Fully Cooked, Steak Fajitas...</h4>
+                                            <h4 class="title">Wall Mounted Livpure Glitz RO</h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs10500</span>
+                                            <div class="previous">Rs13000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1293,8 +1293,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/18.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/19.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1316,14 +1316,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
-                                            <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                                Wheat with Milk</h4>
+                                        <a href="index">
+                                            <h4 class="title">Kent Smart RO Water Purifier
+                                                </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs9500</span>
+                                            <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1347,8 +1347,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/19.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/32.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1370,14 +1370,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
-                                            <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                                Wheat with Milk</h4>
+                                        <a href="index">
+                                            <h4 class="title">Mayur aquatech king+ water purified
+                                                </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs8500</span>
+                                            <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1417,8 +1417,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/20.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/31.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1440,14 +1440,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
-                                            <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                                Wheat with Milk</h4>
+                                        <a href="index">
+                                            <h4 class="title">Havells UV Plus Water Purifier
+                                               </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs14000</span>
+                                            <div class="previous">Rs19000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1471,8 +1471,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/21.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/33.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1494,14 +1494,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
-                                            <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                                Wheat with Milk</h4>
+                                        <a href="index">
+                                            <h4 class="title">Self-Healing Shunt Capacitor 
+                                                </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs9500</span>
+                                            <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1541,8 +1541,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/22.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/36.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1564,14 +1564,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
-                                            <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                                Wheat with Milk</h4>
+                                        <a href="index">
+                                            <h4 class="title">Ro Water Purifier Machine
+                                                </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs12000</span>
+                                            <div class="previous">Rs15000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1595,8 +1595,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <span>On sale</span>
                                     </div>
                                     <div class="image-and-action-area-wrapper">
-                                        <a href="shop-details.html" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/23.jpg" alt="grocery">
+                                        <a href="index" class="thumbnail-preview">
+                                            <img src="assets/images/grocery/35.png" alt="grocery">
                                         </a>
                                         <div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1618,14 +1618,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
-                                            <h4 class="title">Nestle Cerelac Mixed Fruits &amp;
-                                                Wheat with Milk</h4>
+                                        <a href="index">
+                                            <h4 class="title">LG Water Purifier WW151NP
+                                              </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
-                                            <span class="current">$36.00</span>
-                                            <div class="previous">$36.00</div>
+                                            <span class="current">Rs9500</span>
+                                            <div class="previous">Rs12000</div>
                                         </div>
                                         <div class="cart-counter-action">
                                             <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
@@ -1908,11 +1908,11 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             </form>
                             <div class="social-style-dash">
                                 <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=61555304507834&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://x.com/i/flow/login?redirect_after_login=%2FHimallyaRO"><i class="fa-brands fa-twitter"></i></a></li>
                                     <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/@HimallyaROServices"><i class="fa-brands fa-youtube"></i></a></li>
+                                    <li><a href="https://www.instagram.com/himallyaroservices/?next=%2Fhimallyaroservices%2F"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                         </div>
