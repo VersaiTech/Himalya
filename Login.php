@@ -268,7 +268,7 @@
                                 timerProgressBar: true,
                                 showConfirmButton: false
                             }).then(() => {
-                                window.location.href = 'shop/index.php';
+                                window.location.href = 'shop/index';
                             });
                         } else {
                             Swal.fire({

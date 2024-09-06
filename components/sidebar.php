@@ -24,7 +24,7 @@
         </ul>
         <ul>
             <li>
-                <a href="http://localhost/Himallya-MLM/shop/index.html">
+                <a href="http://localhost/Himallya-MLM/shop/index">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="Analytics" aria-label="Analytics"></div>
 
                     <span>
