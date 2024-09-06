@@ -15456,7 +15456,7 @@ body.sal-disabled [data-sal|=flip] {
 .logo-search-category-wrapper {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 135px;
   justify-content: space-between;
 }
 
@@ -17940,10 +17940,10 @@ li.with-megamenu:hover .rts-megamenu {
 }
 
 .single-category-one {
-  padding: 25px 20px;
+  padding: 25px 0px;
   border-radius: 6px;
   border: 1px solid #E2E2E2;
-  height: 161px;
+  height: 230px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -19153,7 +19153,7 @@ li.with-megamenu:hover .rts-megamenu {
 
 .weekly-best-seller-item-single .inner a .title {
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 8px;
   font-weight: 500;
 }
 

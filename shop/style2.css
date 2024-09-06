@@ -1,0 +1,97 @@
+.single-category-one {
+    text-align: center;
+    padding: 10px;
+}
+
+.single-category-one img {
+    max-width: 100%;
+    height: auto;
+}
+
+.single-category-one p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Pricing styles */
+.product-pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Adds space between discount price and original price */
+}
+
+.product-pricing .discount-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4c4c;
+}
+
+.product-pricing .original-price {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #888;
+}
+
+/* Buy Now Button */
+.buy-now-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buy-now-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 480px) {
+    .buy-now-btn {
+        width: 100%;  /* Full width for mobile */
+        font-size: 12px;
+        padding: 12px 0;
+    }
+}
+
+
+.affiliate-icon {
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Media query for mobile responsiveness */
+@media only screen and (max-width: 767px) {
+    .feature-product-area-single {
+        padding: 10px;
+    }
+    
+    .affiliate-icon {
+        width: 50px; /* Smaller icon size on mobile */
+    }
+
+    .title {
+        font-size: 18px; /* Adjust title size for mobile */
+    }
+
+    .inner-content p {
+        font-size: 12px; /* Adjust text size for better readability on mobile */
+    }
+
+    .affiliate-login-btn, .join-affiliate-btn {
+        font-size: 12px; /* Smaller button text on mobile */
+        padding: 8px 15px; /* Adjust button padding */
+    }
+
+    /* Make columns stack vertically on mobile */
+    .col-lg-6 {
+        width: 100%;
+    }
+}
+
+
