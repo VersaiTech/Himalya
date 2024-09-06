@@ -564,15 +564,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/01.png" alt="category">
-                                                                <p>Organic Vegetable</p>
+                                                                <p>Mixer – Grinder</p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹200</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹150</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹7000</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹5000</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -580,15 +580,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/02.png" alt="category">
-                                                                <p>Organic Fruit</p>
+                                                                <p>Cooler Fan</p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹300</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹250</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹13000</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -596,15 +596,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/03.png" alt="category">
-                                                                <p>Organic Dairy</p>
+                                                                <p>Water Purifier </p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹250</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹200</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹19000</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹15000</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -612,15 +612,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/04.png" alt="category">
-                                                                <p>Organic Grains</p>
+                                                                <p>Special Purifier</p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹180</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹130</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹1800</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹13000</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -628,15 +628,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/05.png" alt="category">
-                                                                <p>Organic Spices</p>
+                                                                <p>Pure Water RO</p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹150</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹100</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹15000</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -644,15 +644,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/06.png" alt="category">
-                                                                <p>Organic Oils</p>
+                                                                <p>Water Cooler</p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹400</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹350</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹24000</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹19500</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -660,15 +660,15 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="shop-grid-sidebar.html">
+                                                            <a href="index.html">
                                                                 <img src="assets/images/category/07.png" alt="category">
-                                                                <p>Organic Snacks</p>
+                                                                <p>Geyser</p>
                                                             </a>
                                                             <div class="price-section">
-                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹120</span>
-                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹90</span>
+                                                                <span class="original-price" style="text-decoration: line-through; color: #999;">₹17000</span>
+                                                                <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="shop-grid-sidebar.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -757,9 +757,9 @@ session_start();
                             </svg>
                         </div>
                         <div class="information">
-                            <h4 class="title">20k + Orders</h4>
+                            <h4 class="title">15k + Orders</h4>
                             <p class="disc">
-                                We process over 20,000 orders every month.
+                                We process over 15,000 orders every month.
                             </p>
                         </div>
                     </div>
