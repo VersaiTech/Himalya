@@ -42,96 +42,6 @@
                             <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                         </a>
                         <div class="category-search-wrapper">
-                            <!-- <div class="category-btn category-hover-header">
-                                <img class="parent" src="assets/images/icons/bar-1.svg" alt="icons">
-                                <span>Categories</span>
-                                <ul class="category-sub-menu" id="category-active-four">
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/01.svg" alt="icons">
-                                            <span>Breakfast &amp; Dairy</span>
-                                            <i class="fa-regular fa-plus"></i>
-                                        </a>
-                                        <ul class="submenu mm-collapse">
-                                            <li><a class="mobile-menu-link" href="#">Breakfast</a></li>
-                                            <li><a class="mobile-menu-link" href="#">Dinner</a></li>
-                                            <li><a class="mobile-menu-link" href="#"> Pumking</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/02.svg" alt="icons">
-                                            <span>Meats &amp; Seafood</span>
-                                            <i class="fa-regular fa-plus"></i>
-                                        </a>
-                                        <ul class="submenu mm-collapse">
-                                            <li><a class="mobile-menu-link" href="#">Breakfast</a></li>
-                                            <li><a class="mobile-menu-link" href="#">Dinner</a></li>
-                                            <li><a class="mobile-menu-link" href="#"> Pumking</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/03.svg" alt="icons">
-                                            <span>Breads &amp; Bakery</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/04.svg" alt="icons">
-                                            <span>Chips &amp; Snacks</span>
-                                            <i class="fa-regular fa-plus"></i>
-                                        </a>
-                                        <ul class="submenu mm-collapse">
-                                            <li><a class="mobile-menu-link" href="#">Breakfast</a></li>
-                                            <li><a class="mobile-menu-link" href="#">Dinner</a></li>
-                                            <li><a class="mobile-menu-link" href="#"> Pumking</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/05.svg" alt="icons">
-                                            <span>Medical Healthcare</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/06.svg" alt="icons">
-                                            <span>Breads &amp; Bakery</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/07.svg" alt="icons">
-                                            <span>Biscuits &amp; Snacks</span>
-                                            <i class="fa-regular fa-plus"></i>
-                                        </a>
-                                        <ul class="submenu mm-collapse">
-                                            <li><a class="mobile-menu-link" href="#">Breakfast</a></li>
-                                            <li><a class="mobile-menu-link" href="#">Dinner</a></li>
-                                            <li><a class="mobile-menu-link" href="#"> Pumking</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/08.svg" alt="icons">
-                                            <span>Frozen Foods</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/09.svg" alt="icons">
-                                            <span>Grocery &amp; Staples</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="menu-item">
-                                            <img src="assets/images/icons/10.svg" alt="icons">
-                                            <span>Other Items</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div> -->
                             <form action="#" class="search-header">
                                 <input type="text" placeholder="Search for products, categories" required="">
                                 <a href="javascript: void(0);" class="rts-btn btn-primary radious-sm with-icon">
@@ -148,7 +58,7 @@
                             </form>
                         </div>
                         <div class="accont-wishlist-cart-area-header">
-                            <a href="account.html" class="btn-border-only account">
+                            <a href="http://localhost/Himallya-MLM/overview" class="btn-border-only account">
                                 <i class="fa-light fa-user"></i>
                                 Account
                             </a>
@@ -157,7 +67,7 @@
                                 <span class="text">Affiliate Login</span>
                                 <div class="category-sub-menu card-number-show d-flex align-items-center">
                                     <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
-                                    <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary border-only">Login</a>
+                                    <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
                                 </div>
                             </div>
                             <div class="btn-border-only cart category-hover-header">
@@ -175,7 +85,7 @@
                                         </div>
                                         <div class="button-wrapper d-flex align-items-center justify-content-center">
                                             <!-- <a href="cart.html" class="rts-btn btn-primary ">View Cart</a> -->
-                                            <a href="checkout.html" class="rts-btn btn-primary border-only">Join Now Free</a>
+                                            <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -350,84 +260,6 @@
                                 <div class="btn-border-only cart category-hover-header">
                                     <i class="fa-sharp fa-light fa-user"></i>
                                     <span class="text">My Cart</span>
-                                    <!-- <div class="category-sub-menu card-number-show">
-                                        <h5 class="shopping-cart-number">Shopping Cart (03)</h5>
-                                        <div class="cart-item-1 border-top">
-                                            <div class="img-name">
-                                                <div class="thumbanil">
-                                                    <img src="assets/images/shop/cart-1.png" alt="">
-                                                </div>
-                                                <div class="details">
-                                                    <a href="shop-details.html">
-                                                        <h5 class="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
-                                                    </a>
-                                                    <div class="number">
-                                                        1 <i class="fa-regular fa-x"></i>
-                                                        <span>$36.00</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="close-c1">
-                                                <i class="fa-regular fa-x"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cart-item-1">
-                                            <div class="img-name">
-                                                <div class="thumbanil">
-                                                    <img src="assets/images/shop/05.png" alt="">
-                                                </div>
-                                                <div class="details">
-                                                    <a href="shop-details.html">
-                                                        <h5 class="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
-                                                    </a>
-                                                    <div class="number">
-                                                        1 <i class="fa-regular fa-x"></i>
-                                                        <span>$36.00</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="close-c1">
-                                                <i class="fa-regular fa-x"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cart-item-1">
-                                            <div class="img-name">
-                                                <div class="thumbanil">
-                                                    <img src="assets/images/shop/04.png" alt="">
-                                                </div>
-                                                <div class="details">
-                                                    <a href="shop-details.html">
-                                                        <h5 class="title">Foster Farms Breast Nuggets Shaped Chicken</h5>
-                                                    </a>
-                                                    <div class="number">
-                                                        1 <i class="fa-regular fa-x"></i>
-                                                        <span>$36.00</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="close-c1">
-                                                <i class="fa-regular fa-x"></i>
-                                            </div>
-                                        </div>
-                                        <div class="sub-total-cart-balance">
-                                            <div class="bottom-content-deals mt--10">
-                                                <div class="top">
-                                                    <span>Sub Total:</span>
-                                                    <span class="number-c">$108.00</span>
-                                                </div>
-                                                <div class="single-progress-area-incard">
-                                                    <div class="progress">
-                                                        <div class="progress-bar wow fadeInLeft" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                                <p>Spend More <span>$125.00</span> to reach <span>Free Shipping</span></p>
-                                            </div>
-                                            <div class="button-wrapper d-flex align-items-center justify-content-between">
-                                                <a href="cart.html" class="rts-btn btn-primary ">View Cart</a>
-                                                <a href="checkout.html" class="rts-btn btn-primary border-only">CheckOut</a>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                     <a href="cart.html" class="over_link"></a>
                                 </div>
                             </div>
@@ -492,69 +324,11 @@
                             <li>
                                 <a href="about.html" class="main">About</a>
                             </li>
-                            <!-- <li class="has-droupdown">
-                                <a href="#" class="main">Pages</a>
-                                <ul class="submenu mm-collapse">
-                                    <li><a class="mobile-menu-link" href="about.html">About</a></li>
-                                    <li><a class="mobile-menu-link" href="faq.html">Faq's</a></li>
-                                    <li><a class="mobile-menu-link" href="invoice.html">Invoice</a></li>
-                                    <li><a class="mobile-menu-link" href="contact.html">Contact</a></li>
-                                    <li><a class="mobile-menu-link" href="register.html">Register</a></li>
-                                    <li><a class="mobile-menu-link" href="login.html">Login</a></li>
-                                    <li><a class="mobile-menu-link" href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a class="mobile-menu-link" href="cookies-policy.html">Cookies Policy</a></li>
-                                    <li><a class="mobile-menu-link" href="terms-condition.html">Terms Condition</a></li>
-                                    <li><a class="mobile-menu-link" href="404.html">Error Page</a></li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="has-droupdown"> -->
+                           
                                 <a href="#" class="main">Services</a>
-                                <!-- <ul class="submenu mm-collapse">
-                                    <li class="has-droupdown third-lvl">
-                                        <a class="main" href="#">Shop Layout</a>
-                                        <ul class="submenu-third-lvl mm-collapse">
-                                            <li><a href="shop-grid-sidebar.html"></a>Shop Grid Sidebar</li>
-                                            <li><a href="shop-list-sidebar.html"></a>Shop List Sidebar</li>
-                                            <li><a href="shop-grid-top-filter.html"></a>Shop Grid Top Filter</li>
-                                            <li><a href="shop-list-top-filter.html"></a>Shop List Top Filter</li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-droupdown third-lvl">
-                                        <a class="main" href="#">Shop Details</a>
-                                        <ul class="submenu-third-lvl mm-collapse">
-                                            <li><a href="shop-details.html"></a>Shop Details</li>
-                                            <li><a href="shop-details-2.html"></a>Shop Details 2</li>
-                                            <li><a href="shop-grid-top-filter.html"></a>Shop Grid Top Filter</li>
-                                            <li><a href="shop-list-top-filter.html"></a>Shop List Top Filter</li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-droupdown third-lvl">
-                                        <a class="main" href="#">Product Feature</a>
-                                        <ul class="submenu-third-lvl mm-collapse">
-                                            <li><a href="shop-details-variable.html"></a>Shop Details Variable</li>
-                                            <li><a href="shop-details-affiliats.html"></a>Shop Details Affiliats</li>
-                                            <li><a href="shop-details-group.html"></a>Shop Details Group</li>
-                                            <li><a href="shop-compare.html"></a>Shop Compare</li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-droupdown third-lvl">
-                                        <a class="main" href="#">Shop Others</a>
-                                        <ul class="submenu-third-lvl mm-collapse">
-                                            <li><a href="cart.html"></a>Cart</li>
-                                            <li><a href="checkout.html"></a>Checkout</li>
-                                            <li><a href="trackorder.html"></a>Trackorder</li>
-                                        </ul>
-                                    </li>
-                                </ul> -->
+                               
                             </li>
-                            <!-- <li class="has-droupdown">
-                                <a href="#" class="main">Blog</a>
-                                <ul class="submenu mm-collapse">
-                                    <li><a class="mobile-menu-link" href="blog.html">Blog</a></li>
-                                    <li><a class="mobile-menu-link" href="blog-list-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a class="mobile-menu-link" href="blog-list-right-sidebar.html">Blog List Right Sidebar</a></li>
-                                </ul>
-                            </li> -->
+                            
                             <li>
                                 <a href="contact.html" class="main">Contact Us</a>
                             </li>
