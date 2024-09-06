@@ -69,43 +69,41 @@ session_start();
                                     <i class="fa-light fa-user"></i>
                                     Account
                                 </a>
-                                <div class="btn-border-only wishlist category-hover-header">
-                                    <!-- <i class="fa-sharp fa-regular fa-user-plus"></i> -->
-                                    <span class="text">Affiliate Login</span>
-                                    <div class="category-sub-menu card-number-show d-flex align-items-center">
-                                        <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
-                                        <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
-                                    </div>
-                                </div>
-                                <div class="btn-border-only cart category-hover-header">
-                                    <i class="fa-sharp fa-regular fa-user-plus"></i>
-                                    <span class="text">Join Now</span>
-                                    <!-- <span class="number">2</span> -->
-                                    <div class="category-sub-menu card-number-show">
-                                        <h5 class="shopping-cart-number">Become an Affiliate</h5>
+                                <?php
+// Check if the session is active and user is logged in
+if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
+    // User is logged in, show the box with the user's email
+    echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
+    echo 'Hello, ' . $_SESSION['email_id'];
+    echo '</div>';
+} else {
+    // User is not logged in, show the buttons
+    ?>
+    <div class="btn-border-only wishlist category-hover-header">
+        <span class="text">Affiliate Login</span>
+        <div class="category-sub-menu card-number-show d-flex align-items-center">
+            <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
+            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
+        </div>
+    </div>
+    <div class="btn-border-only cart category-hover-header">
+        <span class="text">Join Now</span>
+        <div class="category-sub-menu card-number-show">
+            <h5 class="shopping-cart-number">Become an Affiliate</h5>
+            <div class="sub-total-cart-balance">
+                <div class="bottom-content-deals mt--10">
+                    <p>Earn Unlimited by Referring our Product. Share your Experience</p>
+                </div>
+                <div class="button-wrapper d-flex align-items-center justify-content-center">
+                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+?>
 
-
-                                        <div class="sub-total-cart-balance">
-                                            <div class="bottom-content-deals mt--10">
-                                                <p>Earn Unlimited by Referring our Product. Share your Experience</p>
-                                            </div>
-                                            <div class="button-wrapper d-flex align-items-center justify-content-center">
-                                                <?php
-                                                // Check if the session is active and user is logged in
-                                                if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
-                                                    // User is logged in, disable the button
-                                                    echo '<a href="#" class="rts-btn btn-primary border-only disabled" onclick="return false;">Join Now (Disabled)</a>';
-                                                } else {
-                                                    // User is not logged in, enable the button
-                                                    echo '<a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>';
-                                                }
-                                                ?>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <a href="cart.html" class="over_link"></a>
-                                </div>
                             </div>
                         </div>
                     </div>
