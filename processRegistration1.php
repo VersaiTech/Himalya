@@ -8,13 +8,13 @@ include 'config/function.php';
 $sponcer_id = RemoveSpecialChar(trim($_REQUEST['sponsor_id']));
 $email_id = RemoveSpecialChar(trim($_REQUEST['email_id']));
 $password = RemoveSpecialChar(trim($_REQUEST['password']));
-$position = RemoveSpecialChar(trim($_REQUEST['position']));
+// $position = RemoveSpecialChar(trim($_REQUEST['position']));
 
 
-if ($position == "") {
-    echo "Position cannot be empty.";
-    exit();
-}
+// if ($position == "") {
+//     echo "Position cannot be empty.";
+//     exit();
+// }
 
 // Hash the password
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
@@ -46,9 +46,9 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
     $zero_point_zero = 0.00;
     
     $qry = "INSERT INTO tbl_memberreg (member_user_id, sponcer_id, sponcer_name, registration_date, topup_amount, status, current_investment, email_id, password, position)
-    VALUES (?,?,?,?,?,?,?,?,?,?)";
+    VALUES (?,?,?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($connection, $qry);
-    mysqli_stmt_bind_param($stmt, "ssssssssss", $member_user_id, $sponcer_id, $sponcer_id, $reg_date, $plan_amt, $zero, $zero_point_zero, $email_id, $hashed_password, $position);
+    mysqli_stmt_bind_param($stmt, "sssssssss", $member_user_id, $sponcer_id, $sponcer_id, $reg_date, $plan_amt, $zero, $zero_point_zero, $email_id, $hashed_password,);
 
     if (!mysqli_stmt_execute($stmt)) {
         echo "Error: ". mysqli_stmt_error($stmt);
@@ -56,7 +56,6 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
         // Registration successful
         $_SESSION['view_type'] = "MAIN";
         $_SESSION['member_user_id'] = $member_user_id;
-        $_SESSION['position'] = $position;
         $_SESSION['email_id'] = $email_id;
         $_SESSION['password'] = $password;
 

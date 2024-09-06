@@ -127,8 +127,7 @@ if ($result->num_rows > 0) {
                         </div>
 
                         <div class="hp-text-item text-center col-xl-9 col-12">
-                            <h2 class="hp-text-color-black-100 hp-text-color-dark-0 mx-16 mx-lg-0 mb-16"> Secure Access
-                                to Your Orion AI-Powered Trading Hub</h2>
+                            <h2 class="hp-text-color-black-100 hp-text-color-dark-0 mx-16 mx-lg-0 mb-16"> Secure Access to Your Himallya Affiliate Account</h2>
                             <!-- <p class="h4 mb-0 fw-normal hp-text-color-black-80 hp-text-color-dark-30"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. </p> -->
                         </div>
                     </div>
@@ -140,7 +139,7 @@ if ($result->num_rows > 0) {
             <div class="row align-items-center justify-content-center h-100 mx-4 mx-sm-n32">
                 <div class="col-12 col-md-9 col-xl-7 col-xxxl-5 px-8 px-sm-0 pt-24 pb-48">
                     <span class="d-block hp-p1-body hp-text-color-dark-0 hp-text-color-black-100 fw-medium mb-6"> SIGN UP FOR FREE </span>
-                    <h1 class="mb-0 mb-sm-24">Create Account &nbsp;<i class="bi bi-suit-heart-fill hp-text-color-dark-0 hp-text-color-black-100 fs-5"></i></h1>
+                    <h1 class="mb-0 mb-sm-24">Create Affiliate Account &nbsp;<i class="bi bi-suit-heart-fill hp-text-color-dark-0 hp-text-color-black-100 fs-5"></i></h1>
                     <!-- <p class="mt-sm-8 mt-sm-0 text-black-60">Please sign up to your personal account if you want to use all our premium products.</p> -->
 
                     <form class="mt-16 mt-sm-32 mb-8" id="registrationForm">
@@ -166,7 +165,7 @@ if ($result->num_rows > 0) {
 
                         </div>
 
-                        <div class="mb-16">
+                        <!-- <div class="mb-16">
                             <label for="position" class="form-label">Position</label>
                             <select class="form-select" id="position" required>
                                 <option selected>Select Position</option>
@@ -178,7 +177,7 @@ if ($result->num_rows > 0) {
                         <div class="mb-16">
                             <label for="walletAddress" class="form-label">Wallet Address</label>
                             <input type="text" class="form-control" id="walletAddress">
-                        </div>
+                        </div> -->
 
                         <button onclick="Registration()" id="registrationButton" type="button" class="btn btn-primary w-100">
                             Sign Up
@@ -191,7 +190,7 @@ if ($result->num_rows > 0) {
                     </div>
 
                     <div class="mt-48 mt-sm-96 col-12">
-                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Orion Trade AI </p>
+                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Himallya RO Services </p>
 
                         <div class="row align-items-center justify-content-center mx-n8">
                             <div class="w-auto hp-flex-none px-8 col">
@@ -266,41 +265,11 @@ if ($result->num_rows > 0) {
                     try {
                         var sponcer_id = '<?php echo $sponcer_id; ?>';
                         // var cpackage = $("#spackage").val();
-                        var position = $("#position").val();
+                        // var position = $("#position").val();
                         var email_id = $("#email_id").val();
                         var password = $("#password").val();
                         var tokenbalance = $.trim($("#tokenbalance").val());
-                        // var wallet_address = window.userAddress;
-                        // var auraAmt = $.trim($("#orion_package").val());
-
-                        // if (auraAmt == "") auraAmt = 0;
-
-                        // auraAmt = toFixed(auraAmt * 1e18);
-                        // console.log("cpackage=", Number(cpackage));
-                        // console.log("position=", position);
-                        // var a = cpackage % 5;
-
-                        // if (Number(cpackage) < 25 || isNaN(cpackage)) {
-                        //     Swal.fire({
-                        //         title: 'Error!',
-                        //         text: 'Minimum Package is 25',
-                        //         icon: 'error',
-                        //         timer: 2000,
-                        //         timerProgressBar: true,
-                        //         showConfirmButton: false
-                        //     });
-                        //     return;
-                        // } else if (parseInt(tokenbalance) < parseInt(auraAmt)) {
-                        //     Swal.fire({
-                        //         title: 'Error!',
-                        //         text: "Token Balance Is Low",
-                        //         icon: 'error',
-                        //         timer: 2000,
-                        //         timerProgressBar: true,
-                        //         showConfirmButton: false
-                        //     });
-                        //     return;
-                        // }
+                        
                         if (sponcer_id == '') {
                             Swal.fire({
                                 title: 'Error!',

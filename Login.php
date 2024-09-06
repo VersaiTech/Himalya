@@ -103,7 +103,7 @@
                         </div>
 
                         <div class="hp-text-item text-center col-xl-9 col-12">
-                            <h2 class="hp-text-color-black-100 hp-text-color-dark-0 mx-16 mx-lg-0 mb-16"> Secure Access to Your Orion AI-Powered Trading Hub</h2>
+                            <h2 class="hp-text-color-black-100 hp-text-color-dark-0 mx-16 mx-lg-0 mb-16"> Secure Access to Your Himallya Affiliate Account</h2>
                         </div>
                     </div>
                 </div>
@@ -113,8 +113,8 @@
         <div class="col-12 col-lg-6 py-sm-64 py-lg-0">
             <div class="row align-items-center justify-content-center h-100 mx-4 mx-sm-n32">
                 <div class="col-12 col-md-9 col-xl-7 col-xxxl-5 px-8 px-sm-0 pt-24 pb-48">
-                    <h1 class="text-center mb-0 mb-sm-24 ">Login</h1>
-                    <p class="mt-sm-8 mt-sm-0 text-black-60">Welcome back! Please log in to your Orion AI account</p>
+                    <h1 class="text-center mb-0 mb-sm-24 ">Affiliate Login</h1>
+                    <p class="mt-sm-8 mt-sm-0 text-black-60">Welcome back! Please log in to your Himallya account</p>
 
                     <form class="mt-16 mt-sm-32 mb-8">
                         <div class="mb-16">
@@ -157,9 +157,9 @@
                     </div>
 
                     <div class="mt-48 mt-sm-96 col-12">
-                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Orion Trade AI </p>
+                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Himallya RO Services </p>
 
-                        <div class="row align-items-center justify-content-center mx-n8">
+                        <!-- <div class="row align-items-center justify-content-center mx-n8">
                             <div class="w-auto hp-flex-none px-8 col">
                                 <a href="javascript:;" class="hp-text-color-black-80 hp-text-color-dark-40"> Privacy Policy </a>
                             </div>
@@ -167,7 +167,7 @@
                             <div class="w-auto hp-flex-none px-8 col">
                                 <a href="javascript:;" class="hp-text-color-black-80 hp-text-color-dark-40"> Term of use </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -268,7 +268,7 @@
                                 timerProgressBar: true,
                                 showConfirmButton: false
                             }).then(() => {
-                                window.location.href = 'overview';
+                                window.location.href = 'shop';
                             });
                         } else {
                             Swal.fire({
