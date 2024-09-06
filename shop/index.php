@@ -488,12 +488,12 @@ session_start();
                                             <i class="fa-light fa-arrow-right"></i>
                                         </div>
                                     </a>
-                                    <div class="price-area">
+                                    <!--<div class="price-area">
                                         <span>
                                             from
                                         </span>
                                         <h3 class="title">$80.99</h3>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -1162,7 +1162,7 @@ session_start();
                             <div class="col-lg-12">
                                 <div class="new-offer-wized-title-between">
                                     <h4 class="title">Recently Added</h4>
-                                    <a href="shop-grid-sidebar.html" class="rts-btn btn-primary">
+                                    <a href="index" class="rts-btn btn-primary">
                                         See More
                                     </a>
                                 </div>
@@ -1250,7 +1250,7 @@ session_start();
                                             <i class="fa-solid fa-star"></i>
                                         </div>
                                         <a href="shop-details.html">
-                                            <h4 class="title">Wall Mounted Livpure Glitz RO</h4>
+                                            <h4 class="title">Wall Mounted Livpure Glitz<br>RO</h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1284,7 +1284,7 @@ session_start();
                             <div class="col-lg-12">
                                 <div class="new-offer-wized-title-between">
                                     <h4 class="title">Top Selling</h4>
-                                    <a href="shop-grid-sidebar.html" class="rts-btn btn-primary">
+                                    <a href="index" class="rts-btn btn-primary">
                                         See More
                                     </a>
                                 </div>
@@ -1319,7 +1319,7 @@ session_start();
                                             <i class="fa-solid fa-star"></i>
                                         </div>
                                         <a href="index">
-                                            <h4 class="title">Kent Smart RO Water Purifier
+                                            <h4 class="title">Kent Smart RO Water Purifier RO
                                                 </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
@@ -1408,7 +1408,7 @@ session_start();
                             <div class="col-lg-12">
                                 <div class="new-offer-wized-title-between">
                                     <h4 class="title">Top Rated</h4>
-                                    <a href="shop-grid-sidebar.html" class="rts-btn btn-primary">
+                                    <a href="index" class="rts-btn btn-primary">
                                         See More
                                     </a>
                                 </div>
@@ -1532,7 +1532,7 @@ session_start();
                             <div class="col-lg-12">
                                 <div class="new-offer-wized-title-between">
                                     <h4 class="title">Deals of the day</h4>
-                                    <a href="shop-grid-sidebar.html" class="rts-btn btn-primary">
+                                    <a href="index" class="rts-btn btn-primary">
                                         See More
                                     </a>
                                 </div>
@@ -1776,8 +1776,8 @@ session_start();
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <!-- single blog area start -->
                                 <div class="single-blog-area-start">
-                                    <a href="blog-details.html" class="thumbnail">
-                                        <img src="assets/images/blog/01.jpg" alt="blog-area">
+                                    <a href="index" class="thumbnail">
+                                        <img src="assets/images/blog/blog-11.png" alt="blog-area">
                                     </a>
                                     <div class="blog-body">
                                         <div class="top-area">
@@ -1786,17 +1786,16 @@ session_start();
                                                 <span>15 Sep, 2023</span>
                                             </div>
                                             <div class="single-meta">
-                                                <i class="fa-regular fa-folder"></i>
-                                                <span>Modern Fashion</span>
+                                                <!--<i class="fa-regular fa-folder"></i>-->
+                                                <!--<span>Modern Fashion</span>-->
                                             </div>
                                         </div>
-                                        <a href="blog-details.html">
+                                        <a href="index">
                                             <h4 class="title">
-                                                Fashion Fixation: Fueling Your Passion
-                                                for All Things Stylish
+                                            Preethi Trio Mixer Grinder, For Wet & Dry Grinding, 500 W
                                             </h4>
                                         </a>
-                                        <a href="blog-details.html" class="shop-now-goshop-btn">
+                                        <a href="index" class="shop-now-goshop-btn">
                                             <span class="text">Read Details</span>
                                             <div class="plus-icon">
                                                 <i class="fa-sharp fa-regular fa-plus"></i>
@@ -1812,8 +1811,8 @@ session_start();
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <!-- single blog area start -->
                                 <div class="single-blog-area-start">
-                                    <a href="blog-details.html" class="thumbnail">
-                                        <img src="assets/images/blog/02.jpg" alt="blog-area">
+                                    <a href="index" class="thumbnail">
+                                        <img src="assets/images/blog/blog-22.png" alt="blog-area">
                                     </a>
                                     <div class="blog-body">
                                         <div class="top-area">
@@ -1822,17 +1821,16 @@ session_start();
                                                 <span>15 Sep, 2023</span>
                                             </div>
                                             <div class="single-meta">
-                                                <i class="fa-regular fa-folder"></i>
-                                                <span>Modern Fashion</span>
+                                                <!--<i class="fa-regular fa-folder"></i>
+                                              <span>Modern Fashion</span>-->
                                             </div>
                                         </div>
-                                        <a href="blog-details.html">
+                                        <a href="index">
                                             <h4 class="title">
-                                                Fashion Fixation: Fueling Your Passion
-                                                for All Things Stylish
+                                            Crompton Arno Neo ASWH-2615 15LTR(2KW) 4 Star-Rated Storage Water Heater (White)
                                             </h4>
                                         </a>
-                                        <a href="blog-details.html" class="shop-now-goshop-btn">
+                                        <a href="index" class="shop-now-goshop-btn">
                                             <span class="text">Read Details</span>
                                             <div class="plus-icon">
                                                 <i class="fa-sharp fa-regular fa-plus"></i>
@@ -1848,8 +1846,8 @@ session_start();
                             <div class="col-lg-4 col-md-6 col-sm-12">
                                 <!-- single blog area start -->
                                 <div class="single-blog-area-start">
-                                    <a href="blog-details.html" class="thumbnail">
-                                        <img src="assets/images/blog/03.jpg" alt="blog-area">
+                                    <a href="index" class="thumbnail">
+                                        <img src="assets/images/blog/blog-33.png" alt="blog-area">
                                     </a>
                                     <div class="blog-body">
                                         <div class="top-area">
@@ -1858,17 +1856,16 @@ session_start();
                                                 <span>15 Sep, 2023</span>
                                             </div>
                                             <div class="single-meta">
-                                                <i class="fa-regular fa-folder"></i>
-                                                <span>Modern Fashion</span>
+                                                <!--<i class="fa-regular fa-folder"></i>
+                                                <span>Modern Fashion</span>-->
                                             </div>
                                         </div>
                                         <a href="blog-details.html">
                                             <h4 class="title">
-                                                Fashion Fixation: Fueling Your Passion
-                                                for All Things Stylish
+                                           RO Water Purifier With TDS Adjuster And Goodness Of Copper
                                             </h4>
                                         </a>
-                                        <a href="blog-details.html" class="shop-now-goshop-btn">
+                                        <a href="index" class="shop-now-goshop-btn">
                                             <span class="text">Read Details</span>
                                             <div class="plus-icon">
                                                 <i class="fa-sharp fa-regular fa-plus"></i>
