@@ -45,7 +45,7 @@ session_start();
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="logo-search-category-wrapper">
-                            <a href="index.html" class="logo-area">
+                            <a href="index" class="logo-area">
                                 <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
@@ -123,7 +123,7 @@ session_start();
                                         <li class="parent has-dropdown">
                                             <a class="nav-link" href="#">Home</a>
                                             <!-- <ul class="submenu">
-                    <li><a class="sub-b" href="index.html">Home One</a></li>
+                    <li><a class="sub-b" href="index">Home One</a></li>
                     <li><a class="sub-b" href="index-two.html">Home Two</a></li>
                     <li><a class="sub-b" href="index-three.html">Home Three</a></li>
                     <li><a class="sub-b" href="index-four.html">Home Four</a></li>
@@ -168,12 +168,12 @@ session_start();
                             <!-- button-area -->
                             <div class="right-location-area">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p>Address:<a href="#">Bareilly, U.P. Inida</a></p>
+                                <p>Address:<a href="#">Bareilly, U.P, India</a></p>
                             </div>
                             <!-- button-area end -->
                         </div>
                         <div class="logo-search-category-wrapper">
-                            <a href="index.html" class="logo-area">
+                            <a href="index" class="logo-area">
                                 <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
@@ -564,7 +564,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/01.png" alt="category">
                                                                 <p>Mixer – Grinder</p>
                                                             </a>
@@ -572,7 +572,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹7000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹5000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -580,7 +580,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/02.png" alt="category">
                                                                 <p>Cooler Fan</p>
                                                             </a>
@@ -588,7 +588,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹13000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -596,7 +596,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/03.png" alt="category">
                                                                 <p>Water Purifier </p>
                                                             </a>
@@ -604,7 +604,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹19000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹15000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -612,7 +612,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/04.png" alt="category">
                                                                 <p>Special Purifier</p>
                                                             </a>
@@ -620,7 +620,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹1800</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹13000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -628,7 +628,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/05.png" alt="category">
                                                                 <p>Pure Water RO</p>
                                                             </a>
@@ -636,7 +636,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹15000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -644,7 +644,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/06.png" alt="category">
                                                                 <p>Water Cooler</p>
                                                             </a>
@@ -652,7 +652,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹24000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹19500</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -660,7 +660,7 @@ session_start();
                                                     <!-- single swiper slide start -->
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
-                                                            <a href="index.html">
+                                                            <a href="index">
                                                                 <img src="assets/images/category/07.png" alt="category">
                                                                 <p>Geyser</p>
                                                             </a>
@@ -668,7 +668,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹17000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index.html" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -1138,7 +1138,7 @@ session_start();
                             <img src="/shop/assets/images/whychooseus/service.png" alt="offer-area" class="img-fluid" style="max-width: 20px; z-index: -1; opacity: .2;">
                         </div>
                         <div class="book-service-btn">
-                            <a href="index.html" class="rts-btn btn-primary radious-sm with-icon">
+                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                 <div class="btn-text">
                                     Book Service
                                 </div>
