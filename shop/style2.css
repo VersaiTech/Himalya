@@ -57,3 +57,41 @@
         padding: 12px 0;
     }
 }
+
+
+.affiliate-icon {
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Media query for mobile responsiveness */
+@media only screen and (max-width: 767px) {
+    .feature-product-area-single {
+        padding: 10px;
+    }
+    
+    .affiliate-icon {
+        width: 50px; /* Smaller icon size on mobile */
+    }
+
+    .title {
+        font-size: 18px; /* Adjust title size for mobile */
+    }
+
+    .inner-content p {
+        font-size: 12px; /* Adjust text size for better readability on mobile */
+    }
+
+    .affiliate-login-btn, .join-affiliate-btn {
+        font-size: 12px; /* Smaller button text on mobile */
+        padding: 8px 15px; /* Adjust button padding */
+    }
+
+    /* Make columns stack vertically on mobile */
+    .col-lg-6 {
+        width: 100%;
+    }
+}
+
+

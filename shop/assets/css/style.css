@@ -15456,7 +15456,7 @@ body.sal-disabled [data-sal|=flip] {
 .logo-search-category-wrapper {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 135px;
   justify-content: space-between;
 }
 
