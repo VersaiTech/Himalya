@@ -708,7 +708,7 @@ session_start();
                                 Already part of our affiliate program? Access your dashboard and track your earnings now.
                             </p>
                             <!-- Button for affiliate login -->
-                            <a href="login-affiliate.html" class="affiliate-login-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #007bff; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
+                            <a href="http://localhost/Himallya-MLM/login" class="affiliate-login-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #007bff; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
                                 Login
                             </a>
                         </div>
@@ -727,12 +727,11 @@ session_start();
                                 Want to start earning with us? Sign up for free and begin promoting our products today.
                             </p>
                             <!-- Button for joining affiliate program -->
-                            <a href="join-affiliate.html" class="join-affiliate-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
+                            <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="join-affiliate-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
                                 Join Now
                             </a>
                         </div>
                     </div>
-                    <!-- single feature product area end -->
                 </div>
             </div>
         </div>
