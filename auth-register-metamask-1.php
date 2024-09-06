@@ -122,8 +122,8 @@ if ($result->num_rows > 0) {
                 <div class="col-12 px-0">
                     <div class="row h-100 w-100 mx-0 align-items-center justify-content-center">
                         <div class="hp-bg-item text-center mb-32 mb-md-0 px-0 col-12">
-                        <img class="hp-dark-none m-auto w-100" src="app-assets/img/loginsignup.png" alt="Background Image">
-                        <img class="hp-dark-block m-auto w-100" src="app-assets/img/loginsignup.png" alt="Background Image">
+                        <img class="hp-dark-none m-auto w-100" src="app-assets/img/loginsignup1.png" alt="Background Image">
+                        <img class="hp-dark-block m-auto w-100" src="app-assets/img/loginsignup1.png" alt="Background Image">
                         </div>
 
                         <div class="hp-text-item text-center col-xl-9 col-12">
