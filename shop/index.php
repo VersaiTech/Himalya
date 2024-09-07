@@ -448,15 +448,16 @@ session_start();
             } else {
             ?>
                 <div class="button-area-bottom">
-                    <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
-                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10" class="rts-btn btn-secondary mobile-btn mt-10">Join</a>
+                   
                 </div>
-            <?php
+                <?php
             }
             ?>
-
+ <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+ 
 
             <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn">My Account</a>
+            <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
         </div>
     </div>
 
