@@ -240,8 +240,8 @@
                                             </div>
                                         </div>
 
-                                        <h3 class="mt-24 mb-4"></h3>
-                                        <a href="/cdn-cgi/l/email-protection#f5919a999a879086b58c9a9194db969a98" class="hp-p1-body"><span class="__cf_email__" data-cfemail="aecac1c2c1dccbddeed7c1cacf80cdc1c3">[email&#160;enter here]</span></a>
+                                        <h3 class="mt-24 mb-4">Your Name</h3>
+                                       
                                     </div>
                                 </div>
 
@@ -265,14 +265,7 @@
                                             </a>
                                         </li>
 
-                                        <li class="mt-4 mb-16">
-                                            <a href="profile-activity" class="position-relative text-black-80 hp-text-color-dark-30 hp-hover-text-color-primary-1 hp-hover-text-color-dark-0 py-12 px-24 d-flex align-items-center">
-                                                <i class="iconly-Curved-Activity me-16"></i>
-                                                <span>Update Address</span>
-
-                                                <span class="hp-menu-item-line position-absolute opacity-0 h-100 top-0 end-0 bg-primary hp-bg-dark-0" style="width: 2px;"></span>
-                                            </a>
-                                        </li>
+                                       
 
                                         <li class="mt-4 mb-16">
                                             <a href="profile-password" class="position-relative text-black-80 hp-text-color-dark-30 hp-hover-text-color-primary-1 hp-hover-text-color-dark-0 py-12 px-24 d-flex align-items-center">
@@ -292,20 +285,7 @@
 
                             <div class="hp-profile-mobile-menu offcanvas offcanvas-start" tabindex="-1" id="profileMobileMenu" aria-labelledby="profileMobileMenuLabel">
                                 <div class="offcanvas-header">
-                                    <div class="hp-menu-header-btn text-end">
-                                        <div class="d-inline-block" id="profile-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <button type="button" class="btn btn-text btn-icon-only">
-                                                <i class="ri-more-2-line text-black-100 hp-text-color-dark-30 lh-1" style="font-size: 24px;"></i>
-                                            </button>
-                                        </div>
-
-                                        <ul class="dropdown-menu" aria-labelledby="profile-menu-dropdown">
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:;">Change Avatar</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
+                                    
                                     <div class="d-inline-block" id="profile-menu-dropdown" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <button type="button" class="btn btn-text btn-icon-only">
                                             <i class="ri-close-fill text-black-80 lh-1" style="font-size: 24px;"></i>
@@ -348,14 +328,12 @@
                                                             <img src="app-assets/img/memoji/memoji-1.png">
                                                         </div>
 
-                                                        <span class="position-absolute translate-middle badge rounded-pill bg-primary text-white border-none">
-                                                            12
-                                                        </span>
+                                                      
                                                     </div>
                                                 </div>
 
                                                 <h3 class="mt-24 mb-4"><?php echo $member_user_id;?></h3>
-                                                <a href="/cdn-cgi/l/email-protection#01656e6d6e73647241786e65602f626e6c" class="hp-p1-body"><span class="__cf_email__" data-cfemail="25414a494a574056655c4a41440b464a48">[email&#160;protected]</span></a>
+                                              
                                             </div>
                                         </div>
 
@@ -433,30 +411,26 @@
                                             <div class="col-12 hp-profile-content-list mt-8 pb-0 pb-sm-20">
                                                 <ul>
                                                     <li class="mt-18">
-                                                        <span class="hp-p1-body">UserId</span>
+                                                        <span class="hp-p1-body">First Name</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $member_user_id;?></span>
                                                     </li>
                                                     <li class="mt-18">
-                                                        <span class="hp-p1-body">Wallet Address</span>
+                                                        <span class="hp-p1-body">Last Name</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $wallet_address; ?></span>
                                                     </li>
                                                     <li class="mt-18">
-                                                        <span class="hp-p1-body">Wallet Amount</span>
+                                                        <span class="hp-p1-body">Email Address</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo number_format($wallet_amount, 2);?></span>
                                                     </li>
                                                     <li class="mt-18">
-                                                        <span class="hp-p1-body">Current Investment</span>
+                                                        <span class="hp-p1-body">Country</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $current_investment; ?></span>
                                                     </li>
                                                     <li class="mt-18">
-                                                        <span class="hp-p1-body">Registration Date</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $formatted_date; ?></span>
+                                                        <span class="hp-p1-body">Address</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $current_investment; ?></span>
                                                     </li>
                                                    
-                                                    <li class="mt-18">
-                                                        <span class="hp-p1-body">Total Earning</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $total_earning; ?></span>
-                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -464,31 +438,7 @@
 
                                     <div class="divider border-black-40 hp-border-color-dark-80"></div>
 
-                                    <div class="col-12">
-                                        <div class="row align-items-center justify-content-between">
-                                            <div class="col-12 col-md-6">
-                                                <h3>Mt4 Account Details</h3>
-                                            </div>
-
-                                            <div class="col-12 col-md-6 hp-profile-action-btn text-end">
-                                                <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profilePreferanceEditModal">More..</button>
-                                            </div>
-
-                                            <div class="col-12 hp-profile-content-list mt-8">
-                                                <ul>
-                                                    <li class="mt-18">
-                                                        <span class="hp-p1-body">Live Account Limit</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0">0</span>
-                                                    </li>
-                                                    <li class="mt-18">
-                                                        <span class="hp-p1-body">Demo Account Limit</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0">0</span>
-                                                    </li>
-                                                   
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -519,24 +469,14 @@
                                             <input type="text" class="form-control" id="fullName">
                                         </div>
 
-                                        <div class="col-12">
-                                            <label for="displayName" class="form-label">Username</label>
-                                            <input type="text" class="form-control" id="displayName">
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="displayName" class="form-label">Document Aprrove</label>
-                                            <input type="text" class="form-control" id="displayName">
-                                        </div>
+                                       
 
                                         <div class="col-12">
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="email">
                                         </div>
 
-                                        <div class="col-12">
-                                            <label for="phone" class="form-label">Phone</label>
-                                            <input type="text" class="form-control" id="phone">
-                                        </div>
+                                       
 
                                         <div class="col-12">
                                             <label for="address" class="form-label">Country</label>

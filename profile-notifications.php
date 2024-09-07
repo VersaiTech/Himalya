@@ -222,17 +222,7 @@
                                 <div class="w-100">
                                     <div class="hp-profile-menu-header mt-16 mt-lg-0 text-center">
                                         <div class="hp-menu-header-btn mb-12 text-end">
-                                            <div class="d-inline-block" id="profile-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <button type="button" class="btn btn-text btn-icon-only">
-                                                    <i class="ri-more-2-line text-black-100 hp-text-color-dark-30 lh-1" style="font-size: 24px;"></i>
-                                                </button>
-                                            </div>
-
-                                            <ul class="dropdown-menu" aria-labelledby="profile-menu-dropdown">
-                                                <li>
-                                                    <a class="dropdown-item" href="javascript:;">Change Avatar</a>
-                                                </li>
-                                            </ul>
+                                            
                                         </div>
 
                                         <div class="d-flex justify-content-center">
@@ -241,14 +231,11 @@
                                                     <img src="app-assets/img/memoji/memoji-1.png">
                                                 </div>
 
-                                                <span class="position-absolute translate-middle badge rounded-pill bg-primary text-white border-none">
-                                                    12
-                                                </span>
+                                               
                                             </div>
                                         </div>
 
-                                        <h3 class="mt-24 mb-4">Dolores Bianca</h3>
-                                        <a href="/cdn-cgi/l/email-protection#3652595a59445345764f5952571855595b" class="hp-p1-body"><span class="__cf_email__" data-cfemail="b2d6dddeddc0d7c1f2cbddd6d39cd1dddf">[email&#160;protected]</span></a>
+                                        <h3 class="mt-24 mb-4">Your Name</h3>
                                     </div>
                                 </div>
 
@@ -272,13 +259,7 @@
                                             </a>
                                         </li>
 
-                                        <li class="mt-4 mb-16">
-                                            <a href="profile-activity" class="position-relative text-black-80 hp-text-color-dark-30 hp-hover-text-color-primary-1 hp-hover-text-color-dark-0 py-12 px-24 d-flex align-items-center">
-                                                <i class="iconly-Curved-Activity me-16"></i>
-                                                <span>Update Address</span>
-                                                <span class="hp-menu-item-line position-absolute opacity-0 h-100 top-0 end-0 bg-primary hp-bg-dark-0" style="width: 2px;"></span>
-                                            </a>
-                                        </li>
+                                       
 
 
                                         <li class="mt-4 mb-16">
@@ -300,19 +281,7 @@
 
                             <div class="hp-profile-mobile-menu offcanvas offcanvas-start" tabindex="-1" id="profileMobileMenu" aria-labelledby="profileMobileMenuLabel">
                                 <div class="offcanvas-header">
-                                    <div class="hp-menu-header-btn text-end">
-                                        <div class="d-inline-block" id="profile-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <button type="button" class="btn btn-text btn-icon-only">
-                                                <i class="ri-more-2-line text-black-100 hp-text-color-dark-30 lh-1" style="font-size: 24px;"></i>
-                                            </button>
-                                        </div>
-
-                                        <ul class="dropdown-menu" aria-labelledby="profile-menu-dropdown">
-                                            <li>
-                                                <a class="dropdown-item" href="javascript:;">Change Avatar</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
 
                                     <div class="d-inline-block" id="profile-menu-dropdown" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <button type="button" class="btn btn-text btn-icon-only">
@@ -337,17 +306,7 @@
                                         <div class="w-100">
                                             <div class="hp-profile-menu-header mt-16 mt-lg-0 text-center">
                                                 <div class="hp-menu-header-btn mb-12 text-end">
-                                                    <div class="d-inline-block" id="profile-menu-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        <button type="button" class="btn btn-text btn-icon-only">
-                                                            <i class="ri-more-2-line text-black-100 hp-text-color-dark-30 lh-1" style="font-size: 24px;"></i>
-                                                        </button>
-                                                    </div>
-
-                                                    <ul class="dropdown-menu" aria-labelledby="profile-menu-dropdown">
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:;">Change Avatar</a>
-                                                        </li>
-                                                    </ul>
+                                                   
                                                 </div>
 
                                                 <div class="d-flex justify-content-center">
@@ -356,14 +315,12 @@
                                                             <img src="app-assets/img/memoji/memoji-1.png">
                                                         </div>
 
-                                                        <span class="position-absolute translate-middle badge rounded-pill bg-primary text-white border-none">
-                                                            12
-                                                        </span>
+                                                       
                                                     </div>
-                                                </div>
 
-                                                <h3 class="mt-24 mb-4">Dolores Bianca</h3>
-                                                <a href="/cdn-cgi/l/email-protection#34505b585b465147744d5b50551a575b59" class="hp-p1-body"><span class="__cf_email__" data-cfemail="15717a797a677066556c7a71743b767a78">[email&#160;protected]</span></a>
+                                                </div>
+                                                
+                                                <h3 class="mt-24 mb-4">Your Name</h3>
                                             </div>
                                         </div>
 

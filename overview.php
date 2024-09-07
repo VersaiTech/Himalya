@@ -57,12 +57,12 @@
                 <a href="overview" class="position-relative">
 
 
-                <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                  <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                  <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                 </a>
               </div>
             </div>
@@ -110,15 +110,15 @@
                   </svg>
                 </div>
 
-                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
-                </a>
+                <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+              </a>
 
-              
+
             </div>
           </div>
 
@@ -151,13 +151,13 @@
                         </svg>
                       </div>
 
-                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
-                </a>
+                      <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                      <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                      <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                      <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                      <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                      <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                    </a>
 
 
                   </div>
@@ -192,17 +192,15 @@
             <div class="row align-items-center justify-content-between g-24">
               <div class="col-12 col-md-6">
                 <h3>Welcome back, User 👋</h3>
-                <div class="dropdown-containerr" style="
-    margin-bottom: 3vh;
-">
+                <div class="dropdown-containerr" style="margin-bottom: 3vh;">
                   <select class="styled-dropdownn">
-                    <option value="status1" disabled selected>Account Number</option>
+                    <!-- <option value="status1" disabled selected>Account Number</option> -->
                     <option value="status2"><?php echo $member_user_id; ?></option>
                   </select>
                 </div>
                 <div class="row g-32 mt-20">
-                  <div class="col-12">
-
+                  <div class="col-12 " style="font-size: 12px;">
+                  Affiliate Join Date: 23-09-2022 12:40 AM , India
                   </div>
                 </div>
               </div>
@@ -221,7 +219,7 @@
                     <div class="row align-items-center g-16">
                       <div class="col-6">
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
-                          <b style="font-size: 16px;"> Currently Investment</b>
+                          <b style="font-size: 16px;"> Currently Earnings</b>
                           <i class="ri-arrow-right-up-line text-success" style="font-size: 16px;"></i>
                         </p>
 
@@ -262,7 +260,7 @@
                       <div class="col pe-0">
                         <h3 class="mb-0 fw-semibold"><?php echo isset($ref_amount) ? number_format($ref_amount, 2) : '0.00'; ?></h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
-                          <b style="font-size: 18px;">Referral Income</b>
+                          <b style="font-size: 18px;">Total Referrals</b>
                         </p>
                       </div>
                     </div>
@@ -284,7 +282,7 @@
                       <div class="col pe-0">
                         <h3 class="mb-0 fw-semibold"><?php echo $matching_income; ?></h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
-                          <b style="font-size: 18px; font-weight:600">Maching Income</b>
+                          <b style="font-size: 18px; font-weight:600">Paid Referrals</b>
                         </p>
                       </div>
                     </div>
@@ -307,7 +305,7 @@
                       <div class="col pe-0">
                         <h3 class="mb-0 fw-semibold"><?php echo $capping_limit ? $capping_limit : '0.00'; ?></h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
-                          <b style="font-size: 18px;">Capping Limit</b>
+                          <b style="font-size: 18px;">Unpaid Referrals</b>
                         </p>
                       </div>
                     </div>
@@ -320,7 +318,7 @@
 
             <!-- WALLET EQUITY AND MARGIN -->
             <div class="row g-32 mb-32 mt-10">
-              <div class="col-12 col-md-6 col-xl-3">
+              <div class="col-12 col-md-6 col-xl-6">
                 <div class="card" style="height: 200px;">
                   <div class="card-body d-flex flex-column justify-content-center">
                     <div class="row g-16">
@@ -332,16 +330,16 @@
                       <div class="col d-flex flex-column justify-content-center">
                         <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                           <?php echo number_format($wallet_amount, 2); ?>
-                          <span class="hp-badge-text ms-8 text-primary hp-text-color-dark-primary-2">USDT</span>
+                          <span class="hp-badge-text ms-8 text-primary hp-text-color-dark-primary-2">INR</span>
                         </h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;"><b>Wallet</b></p>
+                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;"><b>Cureent Account Balance</b></p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-12 col-md-6 col-xl-3">
+              <div class="col-12 col-md-6 col-xl-6">
                 <div class="card" style="height: 200px;">
                   <div class="card-body d-flex flex-column justify-content-center">
                     <div class="row g-16">
@@ -353,221 +351,58 @@
                       <div class="col d-flex flex-column justify-content-center">
                         <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                           <?php echo $total_ref; ?></h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Total Referrals</b></p>
+                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Withdraw Amount</b></p>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
+              <div class="col-12 col-md-12 col-xl-12">
+                    <select class="styled-dropdownn">
+                    <!-- <option value="status1" disabled selected>Account Number</option> -->
+                    <a href="">  <option value="status2">You can learn more  about affiliate program and start to earings referrals here </option> </a>
+                  </select>
               </div>
 
-              <div class="col-12 col-md-6 col-xl-3">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-warning-4 hp-bg-color-dark-warning rounded-circle">
-                          <i class="iconly-Light-Ticket text-warning" style="font-size: 24px;"></i>
-                        </div>
-                      </div>
-                      <div class="col d-flex flex-column justify-content-center">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                          <!-- <?php echo number_format($current_investment, 2); ?> -->
-                          0.00
-                          <span class="hp-badge-text ms-8 text-warning"></span>
-                        </h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Widthdraw</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 col-xl-3">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-danger-4 hp-bg-color-dark-danger rounded-circle">
-                          <i class="ri-coins-line text-danger" style="font-size: 24px;"></i>
-                        </div>
-                      </div>
-                      <div class="col d-flex flex-column justify-content-center">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php echo isset($total_earning) ? number_format($total_earning, 2) : '0.00'; ?></h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Total Income</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="row g-32 mb-32 mt-10">
-              <div class="col-12 col-md-6 col-xl-3">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-danger-4 hp-bg-color-dark-danger rounded-circle">
-                          <i class="ri-money-dollar-circle-line text-danger" style="font-size: 24px;"></i>
-                        </div>
-                      </div>
-                      <div class="col d-flex flex-column justify-content-center">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><?php echo $topup_amount; ?></h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Topup Amount</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-1" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-1" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="app-assets/img/users/user-2.svg">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block"><?php echo !empty($lower_id_left) ? $lower_id_left : 'No member'; ?></span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Left Member</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
+            <div class="col-12 col-md-12 col-xl-12">
+    <div class="card" style="height: auto;">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4">Summary for This Month</h4>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Total Referrals</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Earnings</th>
+                        <td>0.00 INR</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Unverified Referrals</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Clicks</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Conversion</th>
+                        <td>0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+             
               <div class="col-12 col-md-3">
                 <div class="hp-select-box-item">
                   <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
                   <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="app-assets/img/users/user-4.svg">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block"><?php echo !empty($lower_id_right) ? $lower_id_right : 'No member'; ?></span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Right Member</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/sponsor-investment.png">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block"><?php echo !empty($sponcer_id) ? $sponcer_id : 'No member'; ?></span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Sponsor ID</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="row g-32 mb-32 mt-10">
-              <div class="col-12 col-md-6 col-xl-3">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-danger-4 hp-bg-color-dark-danger rounded-circle">
-                          <img src="assets/tree.png" style="width: 24px; height: 24px;">
-                        </div>
-                      </div>
-                      <div class="col d-flex flex-column justify-content-center">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                         
-                          <?php echo $investmentResult['totalTreeMembers']; ?>
-                        </h3>
-                        
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Total Tree Members</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-1" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-1" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/left-arrow.png">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block"><?php echo $investmentResult['leftTreeMembers'] ?> </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Left Tree Members</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/right-arrow.png">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                          <span class="h4 d-block"><?php echo $investmentResult['rightTreeMembers'] ?> </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Right Tree Members</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer" onclick="window.location.href='binary-tree'">
                     <div class="card">
                       <div class="card-body">
                         <div class="row text-center mb-8">
@@ -577,10 +412,10 @@
                             </span>
                           </div>
                           <div class="col-12">
-                            <span class="h4 d-block">See Binary tree</span>
+                            <span class="h4 d-block">Binary Tree</span>
                           </div>
                           <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block"></span>
+                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Referrals</span>
                           </div>
                         </div>
                       </div>
@@ -588,57 +423,6 @@
                   </label>
                 </div>
               </div>
-             
-            </div>
-
-            <div class="row g-32 mb-32 mt-10">
-              <div class="col-12 col-md-6 col-xl-3">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-danger-4 hp-bg-color-dark-danger rounded-circle">
-                          <img src="assets/tree.png" style="width: 24px; height: 24px;">
-                        </div>
-                      </div>
-                      <div class="col d-flex flex-column justify-content-center">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                         
-                          <?php echo $investmentResult['totalInvestment']; ?>
-                          <span class="hp-badge-text ms-8 text-primary hp-text-color-dark-primary-2">USDT</span>
-                        </h3>
-                        
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Total Tree Business</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-1" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-1" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/left-arrow.png">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block"><?php echo $investmentResult['leftTreeInvestment'] ?> USDT</span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Left Business</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </label>
-                </div>
-              </div>
-
               <div class="col-12 col-md-3">
                 <div class="hp-select-box-item">
                   <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
@@ -648,14 +432,14 @@
                         <div class="row text-center mb-8">
                           <div class="col-12 my-12">
                             <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/right-arrow.png">
+                              <img src="assets/usdt.png">
                             </span>
                           </div>
                           <div class="col-12">
-                          <span class="h4 d-block"><?php echo $investmentResult['rightTreeInvestment'] ?> USDT</span>
+                            <span class="h4 d-block">Payments</span>
                           </div>
                           <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Right Business</span>
+                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Transactions</span>
                           </div>
                         </div>
                       </div>
@@ -663,16 +447,18 @@
                   </label>
                 </div>
               </div>
-             
             </div>
+           
+
+         
 
 
-    
-
-            
 
 
-            
+
+
+
+
 
 
 
