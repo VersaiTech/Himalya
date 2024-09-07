@@ -70,39 +70,39 @@ session_start();
                                     Account
                                 </a>
                                 <?php
-// Check if the session is active and user is logged in
-if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
-    // User is logged in, show the box with the user's email
-    echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
-    echo 'Hello, ' . $_SESSION['email_id'];
-    echo '</div>';
-} else {
-    // User is not logged in, show the buttons
-    ?>
-    <div class="btn-border-only wishlist category-hover-header">
-        <span class="text">Affiliate Login</span>
-        <div class="category-sub-menu card-number-show d-flex align-items-center">
-            <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
-            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
-        </div>
-    </div>
-    <div class="btn-border-only cart category-hover-header">
-        <span class="text">Join Now</span>
-        <div class="category-sub-menu card-number-show">
-            <h5 class="shopping-cart-number">Become an Affiliate</h5>
-            <div class="sub-total-cart-balance">
-                <div class="bottom-content-deals mt--10">
-                    <p>Earn Unlimited by Referring our Product. Share your Experience</p>
-                </div>
-                <div class="button-wrapper d-flex align-items-center justify-content-center">
-                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php
-}
-?>
+                                // Check if the session is active and user is logged in
+                                if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
+                                    // User is logged in, show the box with the user's email
+                                    echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
+                                    echo 'Hello, ' . $_SESSION['email_id'];
+                                    echo '</div>';
+                                } else {
+                                    // User is not logged in, show the buttons
+                                ?>
+                                    <div class="btn-border-only wishlist category-hover-header">
+                                        <span class="text">Affiliate Login</span>
+                                        <div class="category-sub-menu card-number-show d-flex align-items-center">
+                                            <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
+                                            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
+                                        </div>
+                                    </div>
+                                    <div class="btn-border-only cart category-hover-header">
+                                        <span class="text">Join Now</span>
+                                        <div class="category-sub-menu card-number-show">
+                                            <h5 class="shopping-cart-number">Become an Affiliate</h5>
+                                            <div class="sub-total-cart-balance">
+                                                <div class="bottom-content-deals mt--10">
+                                                    <p>Earn Unlimited by Referring our Product. Share your Experience</p>
+                                                </div>
+                                                <div class="button-wrapper d-flex align-items-center justify-content-center">
+                                                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
+                                ?>
 
                             </div>
                         </div>
@@ -262,7 +262,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             </div>
                             <div class="main-wrapper-action-2 d-flex">
                                 <div class="accont-wishlist-cart-area-header">
-                                    <a href="account.html" class="btn-border-only account">
+                                    <a href="http://localhost/Himallya-MLM/shop/index" class="btn-border-only account">
                                         <i class="fa-light fa-user"></i>
                                         Account
                                     </a>
@@ -270,11 +270,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         <i class="fa-regular fa-heart"></i>
                                         Wishlist
                                     </a>
-                                    <div class="btn-border-only cart category-hover-header">
-                                        <i class="fa-sharp fa-light fa-user"></i>
-                                        <span class="text">My Cart</span>
-                                        <a href="cart.html" class="over_link"></a>
-                                    </div>
+
                                 </div>
                                 <div class="actions-area">
                                     <div class="search-btn" id="search">
@@ -317,12 +313,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
 
         <div class="mobile-menu-nav-area tab-nav-btn mt--20">
 
-            <!-- <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Menu</button>
-              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Category</button>
-            </div>
-          </nav> -->
+
 
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
@@ -331,17 +322,14 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                         <nav class="nav-main mainmenu-nav mt--30">
                             <ul class="mainmenu metismenu" id="mobile-menu-active">
                                 <!-- <li class="has-droupdown"> -->
-                                <a href="#" class="main">Home</a>
-
+                                <li>
+                                    <a href="#" class="main">Home</a>
                                 </li>
+
+
                                 <li>
                                     <a href="about.html" class="main">About</a>
                                 </li>
-
-                                <a href="#" class="main">Services</a>
-
-                                </li>
-
                                 <li>
                                     <a href="contact.html" class="main">Contact Us</a>
                                 </li>
@@ -447,12 +435,30 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
 
         <div class="button-area-main-wrapper-menuy-sidebar mt--50">
 
-            <div class="button-area-bottom">
-                <a href="login-affiliate.html" class="rts-btn btn-primary mobile-btn">Affiliate Login</a>
-                <a href="join-affiliate.html" class="rts-btn btn-secondary mobile-btn">Join Free</a>
-                <a href="my-account.html" class="rts-btn btn-primary mobile-btn">My Account</a>
-            </div>
+
+
+
+            <?php
+            // Check if the session is active and user is logged in
+            if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
+                // User is logged in, show the box with the user's email
+                echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
+                echo 'Hello, ' . $_SESSION['email_id'];
+                echo '</div>';
+            } else {
+            ?>
+                <div class="button-area-bottom">
+                    <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10" class="rts-btn btn-secondary mobile-btn mt-10">Join</a>
+                </div>
+            <?php
+            }
+            ?>
+
+
+            <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn">My Account</a>
         </div>
+    </div>
 
     </div>
     <!-- header style two End -->
@@ -872,7 +878,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             </div>
                             <a href="shop-details.html">
                                 <h4 class="title">Installation of RO Systems Ro
-                                  </h4>
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -902,7 +908,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                         </div>
                         <div class="image-and-action-area-wrapper">
                             index
-                                <img src="assets/images/grocery/16.png" alt="grocery">
+                            <img src="assets/images/grocery/16.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -927,7 +933,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             </div>
                             <a href="shop-details.html">
                                 <h4 class="title">Wall Mounted Livpure Glitz
-                                    </h4>
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -981,8 +987,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Aqua Natural RO Water Purifier 
-                                    </h4>
+                                <h4 class="title">Aqua Natural RO Water Purifier
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -1037,7 +1043,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             </div>
                             <a href="shop-details.html">
                                 <h4 class="title">Wall Mounted Livpure Glitz RO
-                                   </h4>
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -1092,7 +1098,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             </div>
                             <a href="shop-details.html">
                                 <h4 class="title">Kent Smart Alkalizer Water purifier
-                                  </h4>
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -1318,7 +1324,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">Kent Smart RO Water Purifier RO
-                                                </h4>
+                                            </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1372,7 +1378,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">Mayur aquatech king+ water purified
-                                                </h4>
+                                            </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1442,7 +1448,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">Havells UV Plus Water Purifier
-                                               </h4>
+                                            </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1495,8 +1501,8 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                         </div>
                                         <a href="index">
-                                            <h4 class="title">Self-Healing Shunt Capacitor 
-                                                </h4>
+                                            <h4 class="title">Self-Healing Shunt Capacitor
+                                            </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1566,7 +1572,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">Ro Water Purifier Machine
-                                                </h4>
+                                            </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1620,7 +1626,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">LG Water Purifier WW151NP
-                                              </h4>
+                                            </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
                                         <div class="price-area">
@@ -1790,7 +1796,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">
-                                            Preethi Trio Mixer Grinder, For Wet & Dry Grinding, 500 W
+                                                Preethi Trio Mixer Grinder, For Wet & Dry Grinding, 500 W
                                             </h4>
                                         </a>
                                         <a href="index" class="shop-now-goshop-btn">
@@ -1825,7 +1831,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="index">
                                             <h4 class="title">
-                                            Crompton Arno Neo ASWH-2615 15LTR(2KW) 4 Star-Rated Storage Water Heater (White)
+                                                Crompton Arno Neo ASWH-2615 15LTR(2KW) 4 Star-Rated Storage Water Heater (White)
                                             </h4>
                                         </a>
                                         <a href="index" class="shop-now-goshop-btn">
@@ -1860,7 +1866,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                         </div>
                                         <a href="blog-details.html">
                                             <h4 class="title">
-                                           RO Water Purifier With TDS Adjuster And Goodness Of Copper
+                                                RO Water Purifier With TDS Adjuster And Goodness Of Copper
                                             </h4>
                                         </a>
                                         <a href="index" class="shop-now-goshop-btn">
