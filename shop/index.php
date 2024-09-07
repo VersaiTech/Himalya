@@ -120,13 +120,6 @@ session_start();
                                     <ul class="parent-nav">
                                         <li class="parent has-dropdown">
                                             <a class="nav-link" href="#">Home</a>
-                                            <!-- <ul class="submenu">
-                    <li><a class="sub-b" href="index">Home One</a></li>
-                    <li><a class="sub-b" href="index-two.html">Home Two</a></li>
-                    <li><a class="sub-b" href="index-three.html">Home Three</a></li>
-                    <li><a class="sub-b" href="index-four.html">Home Four</a></li>
-                    <li><a class="sub-b" href="index-five.html">Home Five</a></li>
-                </ul> -->
                                         </li>
                                         <li class="parent"><a href="about.html">About</a></li>
 
@@ -134,31 +127,7 @@ session_start();
                                             <a class="nav-link" href="blog-details.html">Service</a>
 
                                         </li>
-                                        <!-- <li class="parent has-dropdown">
-                <a class="nav-link" href="#">Pages</a>
-                <ul class="submenu">
-                    <li><a class="sub-b" href="about.html">About</a></li>
-                    <li><a class="sub-b" href="store.html">Store</a></li>
-                    <li><a class="sub-b" href="faq.html">Faq's</a></li>
-                    <li><a class="sub-b" href="invoice.html">Invoice</a></li>
-                    <li><a class="sub-b" href="contact.html">Contact</a></li>
-                    <li><a class="sub-b" href="register.html">Register</a></li>
-                    <li><a class="sub-b" href="login.html">Login</a></li>
-                    <li><a class="sub-b" href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a class="sub-b" href="cookies-policy.html">Cookies Policy</a></li>
-                    <li><a class="sub-b" href="terms-condition.html">Terms & Condition</a></li>
-                    <li><a class="sub-b" href="404.html">Error</a></li>
-                </ul>
-            </li>
-            <li class="parent has-dropdown">
-                <a class="nav-link" href="#">Blog</a>
-                <ul class="submenu">
-                    <li><a class="sub-b" href="blog.html">Blog</a></li>
-                    <li><a class="sub-b" href="blog-list-left-sidebar.html">Blog List Right Sidebar</a></li>
-                    <li><a class="sub-b" href="blog-list-right-sidebar.html">Blog List Left Sidebar</a></li>
-                    <li><a class="sub-b" href="blog-details.html">Blog Details</a></li>
-                </ul>
-            </li> -->
+                                     
                                         <li class="parent"><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
