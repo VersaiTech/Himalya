@@ -126,7 +126,7 @@ session_start();
                                         <!--<li class="parent has-dropdown">
                                             <a class="nav-link" href="blog-details.html">Service</a>
 
-                                        </li>
+                                        </li>-->
                                      
                                         <li class="parent"><a href="contact.html">Contact</a></li>
                                     </ul>
