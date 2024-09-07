@@ -49,7 +49,7 @@
 
         <ul>
             <li>
-                <a href="kyc-verification">
+                <a href="profile-information">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="E-Commerce" aria-label="E-Commerce"></div>
 
                     <span>
@@ -65,7 +65,7 @@
                 </a>
             </li>
             <li>
-                <a href="profile-information">
+                <a href="profile-password">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="E-Commerce" aria-label="E-Commerce"></div>
 
                     <span>
@@ -88,7 +88,7 @@
 
         <ul>
             <li>
-                <a href="mt5" class="submenu-item">
+                <a href="profile-notifications" class="submenu-item">
                     <span>
                         <span class="submenu-item-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none">

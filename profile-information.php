@@ -328,14 +328,12 @@
                                                             <img src="app-assets/img/memoji/memoji-1.png">
                                                         </div>
 
-                                                        <span class="position-absolute translate-middle badge rounded-pill bg-primary text-white border-none">
-                                                            12
-                                                        </span>
+                                                      
                                                     </div>
                                                 </div>
 
                                                 <h3 class="mt-24 mb-4"><?php echo $member_user_id;?></h3>
-                                                <a href="/cdn-cgi/l/email-protection#01656e6d6e73647241786e65602f626e6c" class="hp-p1-body"><span class="__cf_email__" data-cfemail="25414a494a574056655c4a41440b464a48">[email&#160;protected]</span></a>
+                                              
                                             </div>
                                         </div>
 
