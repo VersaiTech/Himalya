@@ -846,7 +846,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/15.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -870,7 +870,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Installation of RO Systems Ro
                                   </h4>
                             </a>
@@ -880,7 +880,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -925,7 +925,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Wall Mounted Livpure Glitz
                                     </h4>
                             </a>
@@ -935,7 +935,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <div class="previous">Rs15000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -956,7 +956,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/17.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -980,7 +980,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Aqua Natural RO Water Purifier 
                                     </h4>
                             </a>
@@ -990,7 +990,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <div class="previous">Rs21000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -1011,7 +1011,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/18.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -1035,7 +1035,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Wall Mounted Livpure Glitz RO
                                    </h4>
                             </a>
@@ -1045,7 +1045,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <div class="previous">Rs13000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -1066,7 +1066,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/19.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -1090,7 +1090,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Kent Smart Alkalizer Water purifier
                                   </h4>
                             </a>
@@ -1100,7 +1100,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                 <div class="previous">Rs40000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -1194,7 +1194,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
+                                        <a href="index">
                                             <h4 class="title">Copper Enriched RO Water Purifier </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
@@ -1247,7 +1247,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
+                                        <a href="index">
                                             <h4 class="title">Wall Mounted Livpure Glitz<br>RO</h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
@@ -1326,7 +1326,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1450,7 +1450,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <div class="previous">Rs19000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1504,7 +1504,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="indexl" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1574,7 +1574,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <div class="previous">Rs15000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1628,7 +1628,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                             <div class="previous">Rs12000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1669,7 +1669,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                     <div class="weekly-best-seller-item-single">
                         <img src="assets/images/whychooseus/free-shipping.png" alt="">
                         <div class="inner">
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h2 class="title">Free Shipping</h2>
                             </a>
                         </div>
@@ -1681,7 +1681,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                     <div class="weekly-best-seller-item-single">
                         <img src="assets/images/whychooseus/discount-label.png" alt="">
                         <div class="inner">
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h2 class="title">Big Discount</h2>
                             </a>
                         </div>
@@ -1693,7 +1693,7 @@ if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                     <div class="weekly-best-seller-item-single">
                         <img src="assets/images/whychooseus/secure-payment.png" alt="">
                         <div class="inner">
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h2 class="title">Secure Payment</h2>
                             </a>
                         </div>
