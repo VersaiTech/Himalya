@@ -1069,9 +1069,107 @@ let optionsStatisticsTraffic = {
         },
     ],
 };
+let optionsStatisticsTraffic1 = {
+    series: [
+        {
+            data: [32, 10, 109, 60, 140, 40, 150],
+        },
+    ],
+    chart: {
+        fontFamily: "Manrope, sans-serif",
+        type: "line",
+        height: "70%",
+        stacked: true,
+        toolbar: {
+            show: false,
+        },
+        zoom: {
+            enabled: false,
+        },
+    },
+    colors: ["#0063F7"],
+    labels: {
+        style: {
+            fontSize: "14px",
+        },
+    },
+    stroke: {
+        curve: "smooth",
+        lineCap: "round",
+    },
+
+    tooltip: {
+        enabled: false,
+    },
+
+    dataLabels: {
+        enabled: false,
+    },
+
+    grid: {
+        show: false,
+        padding: {
+            left: 0,
+            right: 0,
+        },
+    },
+
+    markers: {
+        strokeWidth: 0,
+        size: 0,
+        colors: ["#0063F7", "#1BE7FF"],
+        hover: {
+            sizeOffset: 1,
+        },
+    },
+    xaxis: {
+        lines: {
+            show: false,
+        },
+        axisBorder: {
+            show: false,
+        },
+        axisTicks: {
+            show: false,
+        },
+
+        labels: {
+            show: false,
+        },
+    },
+    responsive: [
+        {
+            breakpoint: 426,
+            options: {
+                legend: {
+                    itemMargin: {
+                        horizontal: 16,
+                        vertical: 8,
+                    },
+                },
+            },
+        },
+    ],
+
+    yaxis: [
+        {
+            show: false,
+            offsetX: 0,
+            offsetY: 0,
+            padding: {
+                left: 0,
+                right: 0,
+            },
+        },
+    ],
+};
 
 if (document.querySelector("#statistics-traffic")) {
     let chart = new ApexCharts(document.querySelector("#statistics-traffic"), optionsStatisticsTraffic);
+    chart.render();
+}
+if (document.querySelector("#statistics-traffic1")) {
+    let chart = new ApexCharts(document.querySelector("#statistics-traffic1"), optionsStatisticsTraffic1);
     chart.render();
 }
 
