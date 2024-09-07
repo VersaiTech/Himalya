@@ -25327,6 +25327,13 @@ body.modal-open {
 }
 
 
+.button-area-bottom {
+    display: flex;
+    gap: 10px; /* Adjust the spacing between buttons */
+}
+
+
+
 .content {
  
     align-items: center;

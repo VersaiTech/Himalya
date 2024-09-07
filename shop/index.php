@@ -1914,7 +1914,7 @@ session_start();
                                 <ul>
                                     <li><a href="https://www.facebook.com/profile.php?id=61555304507834&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
                                     <li><a href="https://x.com/i/flow/login?redirect_after_login=%2FHimallyaRO"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <!--<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>-->
                                     <li><a href="https://www.youtube.com/@HimallyaROServices"><i class="fa-brands fa-youtube"></i></a></li>
                                     <li><a href="https://www.instagram.com/himallyaroservices/?next=%2Fhimallyaroservices%2F"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
