@@ -166,7 +166,7 @@ session_start();
                             <!-- button-area -->
                             <div class="right-location-area">
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p>Address:<a href="#">Bareilly, U.P, India</a></p>
+                                <p>Address : <a href="#">BAREILLY, U.P, INDIA</a></p>
                             </div>
                             <!-- button-area end -->
                         </div>
