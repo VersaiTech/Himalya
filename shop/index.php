@@ -130,10 +130,10 @@ session_start();
                                         </li>
                                         <li class="parent"><a href="about.html">About</a></li>
 
-                                        <li class="parent has-dropdown">
+                                        <!--<li class="parent has-dropdown">
                                             <a class="nav-link" href="blog-details.html">Service</a>
 
-                                        </li>
+                                        </li>-->
                                         <!-- <li class="parent has-dropdown">
                 <a class="nav-link" href="#">Pages</a>
                 <ul class="submenu">
