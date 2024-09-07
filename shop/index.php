@@ -123,7 +123,7 @@ session_start();
                                         </li>
                                         <li class="parent"><a href="about.html">About</a></li>
 
-                                        <li class="parent has-dropdown">
+                                        <!--<li class="parent has-dropdown">
                                             <a class="nav-link" href="blog-details.html">Service</a>
 
                                         </li>
@@ -417,15 +417,16 @@ session_start();
             } else {
             ?>
                 <div class="button-area-bottom">
-                    <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
-                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10" class="rts-btn btn-secondary mobile-btn mt-10">Join</a>
+                   
                 </div>
-            <?php
+                <?php
             }
             ?>
-
+ <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+ 
 
             <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn">My Account</a>
+            <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
         </div>
     </div>
 
@@ -821,7 +822,7 @@ session_start();
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/15.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -845,7 +846,7 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Installation of RO Systems Ro
                                 </h4>
                             </a>
@@ -855,7 +856,7 @@ session_start();
                                 <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -900,7 +901,7 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Wall Mounted Livpure Glitz
                                 </h4>
                             </a>
@@ -910,7 +911,7 @@ session_start();
                                 <div class="previous">Rs15000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -931,7 +932,7 @@ session_start();
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/17.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -956,8 +957,8 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Aqua Natural RO Water Purifier
-                                </h4>
+                                <h4 class="title">Aqua Natural RO Water Purifier 
+                                    </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -965,7 +966,7 @@ session_start();
                                 <div class="previous">Rs21000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -986,7 +987,7 @@ session_start();
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/18.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -1010,7 +1011,7 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Wall Mounted Livpure Glitz RO
                                 </h4>
                             </a>
@@ -1020,7 +1021,7 @@ session_start();
                                 <div class="previous">Rs13000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -1041,7 +1042,7 @@ session_start();
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            <a href="shop-details.html" class="thumbnail-preview">
+                            <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/19.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -1065,7 +1066,7 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h4 class="title">Kent Smart Alkalizer Water purifier
                                 </h4>
                             </a>
@@ -1075,7 +1076,7 @@ session_start();
                                 <div class="previous">Rs40000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -1169,7 +1170,7 @@ session_start();
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
+                                        <a href="index">
                                             <h4 class="title">Copper Enriched RO Water Purifier </h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
@@ -1222,7 +1223,7 @@ session_start();
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <a href="shop-details.html">
+                                        <a href="index">
                                             <h4 class="title">Wall Mounted Livpure Glitz<br>RO</h4>
                                         </a>
                                         <span class="availability">500g Pack</span>
@@ -1301,7 +1302,7 @@ session_start();
                                             <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1425,7 +1426,7 @@ session_start();
                                             <div class="previous">Rs19000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1479,7 +1480,7 @@ session_start();
                                             <div class="previous">Rs11000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="indexl" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1549,7 +1550,7 @@ session_start();
                                             <div class="previous">Rs15000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1603,7 +1604,7 @@ session_start();
                                             <div class="previous">Rs12000</div>
                                         </div>
                                         <div class="cart-counter-action">
-                                            <a href="cart.html" class="rts-btn btn-primary radious-sm with-icon">
+                                            <a href="index" class="rts-btn btn-primary radious-sm with-icon">
                                                 <div class="btn-text">
                                                     Buy Now
                                                 </div>
@@ -1644,7 +1645,7 @@ session_start();
                     <div class="weekly-best-seller-item-single">
                         <img src="assets/images/whychooseus/free-shipping.png" alt="">
                         <div class="inner">
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h2 class="title">Free Shipping</h2>
                             </a>
                         </div>
@@ -1656,7 +1657,7 @@ session_start();
                     <div class="weekly-best-seller-item-single">
                         <img src="assets/images/whychooseus/discount-label.png" alt="">
                         <div class="inner">
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h2 class="title">Big Discount</h2>
                             </a>
                         </div>
@@ -1668,7 +1669,7 @@ session_start();
                     <div class="weekly-best-seller-item-single">
                         <img src="assets/images/whychooseus/secure-payment.png" alt="">
                         <div class="inner">
-                            <a href="shop-details.html">
+                            <a href="index">
                                 <h2 class="title">Secure Payment</h2>
                             </a>
                         </div>
