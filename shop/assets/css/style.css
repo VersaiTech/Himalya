@@ -15061,9 +15061,19 @@ body.sal-disabled [data-sal|=flip] {
   transform: none;
 }
 
+
+
+
+
+
+
+
+
+
+
 /* elements */
 .about-banner-area-bg {
-  background-image: url(../images/about/01.jpg);
+  background-image: url(../images/about/3_banner.png);
   height: 582px;
   display: flex;
   align-items: center;
@@ -18313,6 +18323,36 @@ li.with-megamenu:hover .rts-megamenu {
   opacity: 0;
   transition-delay: 0s;
 }
+/*meet your expert team*/
+.container {
+  display: flex;            
+  gap: 20px;                 
+  justify-content: center;   
+  padding: 20px;
+}
+
+.box {
+  width: 300px;              
+  background-color: #f0f0f0; 
+  border: 2px solid #333;    
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+  border-radius: 10px;      
+  padding: 20px;             
+  text-align: center;       
+}
+
+h2 {
+  font-size: 20px;           
+  margin-bottom: 10px;      
+  color: #333;
+}
+
+p {
+  font-size: 16px;           
+  color: #333;               
+  font-family: Arial, sans-serif; 
+}
+
 
 .btn-border-only {
   border-radius: 6px;
