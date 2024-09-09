@@ -20,16 +20,24 @@ session_start();
     <script>
         function buy_now_fun(amount) {
 
-    
-    let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
-    if (is_login) {
-        console.log(amount)
-        console.log('<?php echo $_SESSION['member_user_id']; ?>');
-        
-    } else {
-        alert('Please login first.');
-    }
-}
+
+            let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+            if (is_login) {
+                console.log(amount)
+                console.log('<?php echo $_SESSION['member_user_id']; ?>');
+                console.log('<?php echo $_SESSION['email_id']; ?>');
+                let data = {
+                    amount: amount,
+                    user_id: '<?php echo $_SESSION['member_user_id']; ?>',
+                    email_id: '<?php echo $_SESSION['email_id']; ?>'
+                };
+                $.post('process', data, function (response) {
+                    console.log(response);
+                });
+            } else {
+                alert('Please login first.');
+            }
+        }
     </script>
 
 </head>
@@ -142,7 +150,7 @@ session_start();
                                             <a class="nav-link" href="blog-details.html">Service</a>
 
                                         </li>-->
-                                     
+
                                         <li class="parent"><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -432,13 +440,13 @@ session_start();
             } else {
             ?>
                 <div class="button-area-bottom">
-                   
+
                 </div>
-                <?php
+            <?php
             }
             ?>
- <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
- 
+            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+
 
             <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn">My Account</a>
             <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
@@ -561,7 +569,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹7000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹5000</span>
                                                             </div>
-                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="javascript:void(0);" onclick="buy_now_fun(5000);" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -577,7 +585,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹13000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="javascript:void(0);" onclick="buy_now_fun(5000);" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -658,7 +666,7 @@ session_start();
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
                                                             <a href="javascript:void(0);" onclick="buy_now_fun(12000);"
-                                                            class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;" >
+                                                                class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -973,8 +981,8 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Aqua Natural RO Water Purifier 
-                                    </h4>
+                                <h4 class="title">Aqua Natural RO Water Purifier
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -2393,10 +2401,10 @@ session_start();
     <script defer src="assets/js/main.js"></script>
 
 
-    
+
     <!-- header style two End -->
 
-   
+
 </body>
 
 </html>
