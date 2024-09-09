@@ -78,13 +78,11 @@ session_start();
                                     echo '</div>';
                                 } else {
                                     // User is not logged in, show the buttons
-                                ?>
+                                ?>a
                                     <div class="btn-border-only wishlist category-hover-header">
-                                        <span class="text">Affiliate Login</span>
-                                        <div class="category-sub-menu card-number-show d-flex align-items-center">
-                                            <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
-                                            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
-                                        </div>
+                                        <span class="text"><a href="http://localhost/Himallya-MLM/login" class="">Login</a>
+                                        </span>
+                                       
                                     </div>
                                     <div class="btn-border-only cart category-hover-header">
                                         <span class="text">Join Now</span>

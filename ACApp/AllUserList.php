@@ -195,11 +195,11 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
-							<h5 class="page-title">Active User List</h5>
+							<h5 class="page-title">Active Affiliates List</h5>
 						</div>
 						<div class="col-auto">
 							<button class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">
-								Add User
+								Add Affiliate
 							</button>
 						</div>
 					</div>

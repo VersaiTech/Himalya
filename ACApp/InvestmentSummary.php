@@ -151,7 +151,7 @@ input[type=button]
                                             <td></td>
                                             <td><b>Total</b></td>
                                             <td><b><//?php echo $busdStaking; ?></b></td>
-                                             <td><b><?//php echo $auraStaking; ?></b></td>
+                                             <td><b><?//php echo $auraStaking; ?></b></td> 9054502910 glass patil
                                         </tr>
 
 											</tbody>

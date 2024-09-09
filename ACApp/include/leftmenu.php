@@ -11,17 +11,26 @@
 							<a href="Home"><i class="fas fa-columns"></i> <span>Dashboard</span></a>
 						</li>
 						<li class="submenu">
-								<a href="#"><i class="fas fa-user"></i> <span> User Information </span> <span class="menu-arrow"></span></a>
+								<a href="#"><i class="fas fa-user"></i> <span> Affiliates </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="AllUserList"> All UserList </a></li>
-									<li><a href="ActiveUserList"> Active User List </a></li>
+									<li><a href="AllUserList"> All AffiliatesList </a></li>
+									<!-- <li><a href="ActiveUserList"> Active User List </a></li>
 									<li><a href="BlockedUserList"> Blocked User List </a></li>
-									<li><a href="SearchUser"> Search User </a></li>
+									<li><a href="SearchUser"> Search User </a></li> -->
 								
 								</ul>
 						</li>
+						<li class="submenu">
+								<a href="#"><i class="fas fa-wallet"></i> <span> Payments </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="InvestmentSummary"> All Transactions</a></li>
+									<li><a href="InvestmentSummary"> All Paid Referrals </a></li>
+									<li><a href="InvestmentSummary"> All UnPaid Referrals </a></li>
+									<li><a href="InvestmentSummary"> Payments For Affiliates</a></li>
+								</ul>
+						</li>
 						
-					    <li class="submenu">
+					    <!-- <li class="submenu">
 								<a href="#"><i class="fas fa-wallet"></i> <span> Deposit Request</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="Pending-Deposit"> Pending </a></li>
@@ -34,9 +43,9 @@
 								<ul style="display: none;">
 									<li><a href="InvestmentSummary"> Investment Summary </a></li>
 								</ul>
-						</li>
+						</li> -->
 						
-						 <li class="submenu">
+						 <!-- <li class="submenu">
 								<a href="#"><i class="fas fa-vector-square"></i> <span> Pool/Royality </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 							    <li><a href="OpenLevel"> Open Level </a></li>
@@ -57,23 +66,23 @@
                                      <li><a href="fiftypending">50% Pending Request</a></li>
                                       <li><a href="fiftyconfirm">50% Confirmed Request</a></li>
 								</ul>
-						</li>
-						<li class="submenu">
+						</li> -->
+						<!-- <li class="submenu">
 								<a href="#"><i class="fas fa-cog"></i> <span> Setting </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 							    <li><a href="Setting"> Setting </a></li>
 							    <li><a href="Sell_Set_Price">Orion Sell Price </a></li>
 							    </ul>
-						</li>
+						</li> -->
 					
-					 <li class="submenu">
+					 <!-- <li class="submenu">
     								<a href="#"><i class="fas fa-trophy"></i> <span> Bonanza/Reward  </span> <span class="menu-arrow"></span></a>
     								<ul style="display: none;">
     							    
     							    <li><a href="BonanzaList">Bonanza List</a></li>
     							    <li><a href="RewardList">Reward List</a></li>
    								</ul>
-    						</li>
+    						</li> -->
 					 <!--<li class="submenu">-->
     		<!--						<a href="#"><i class="fas fa-gift"></i> <span> Reward  </span> <span class="menu-arrow"></span></a>-->
     		<!--						<ul style="display: none;">-->
@@ -82,7 +91,7 @@
     		<!--						</ul>-->
     		<!--				</li>-->
     						
-    					 <li class="submenu">
+    					 <!-- <li class="submenu">
     								<a href="#"><i class="fas fa-exchange-alt"></i> <span> Swap  </span> <span class="menu-arrow"></span></a>
     								<ul style="display: none;">
     							    <li><a href="PendngSwapSummary">Pending Swap Summary </a></li>
@@ -106,7 +115,7 @@
     						              <li><a href="PendingThirdUnstaking">Pending Third Unstaking(100%) </a></li>
     						               <li><a href="CompletedThirdUnstaking">Completed Third Unstaking(100%) </a></li>
     								</ul>
-    						</li>
+    						</li> -->
 						
 						<li>
 							<a href="Logout"><i class="fas fa-sign-out-alt"></i> <span> Logout</span></a>
