@@ -17,6 +17,19 @@
   ?>
 
   <title>Profile- Orion Trade Ai</title>
+  <script>
+
+function buy_now_fun() {
+    console.log('buy_now_fun');
+    let is_login = '<?php echo isset($_SESSION['user_id']) ? 1 : 0; ?>';
+    if (is_login) {
+        document.getElementById("buy_now_fun").submit();
+    } else {
+        alert('Please login first.');
+    }
+}
+
+</script>
 
   <script>
     !(function(t, h, e, j, s, n) {

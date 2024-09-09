@@ -17,6 +17,21 @@ session_start();
     <link rel="stylesheet preload" href="assets/css/plugins.css" as="style">
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
 
+    <script>
+        function buy_now_fun(amount) {
+
+    
+    let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    if (is_login) {
+        console.log(amount)
+        console.log('<?php echo $_SESSION['member_user_id']; ?>');
+        
+    } else {
+        alert('Please login first.');
+    }
+}
+    </script>
+
 </head>
 
 <body>
@@ -642,7 +657,8 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹17000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹12000</span>
                                                             </div>
-                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="javascript:void(0);" onclick="buy_now_fun(12000);"
+                                                            class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;" >
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -2375,9 +2391,12 @@ session_start();
 
     <!-- custom js -->
     <script defer src="assets/js/main.js"></script>
+
+
+    
     <!-- header style two End -->
 
-
+   
 </body>
 
 </html>
