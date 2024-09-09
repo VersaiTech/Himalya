@@ -15072,12 +15072,32 @@ body.sal-disabled [data-sal|=flip] {
 
 
 /* elements */
+
+
 .about-banner-area-bg {
   background-image: url(../images/about/3_banner.png);
-  height: 582px;
-  display: flex;
-  align-items: center;
+  height: 582px; /* Default height for larger screens */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image from repeating */
 }
+
+@media only screen and (max-width: 767px) {
+  .about-banner-area-bg {
+    background-size: contain; /* Contain the image for smaller screens */
+    background-position: top; /* Adjust the position for mobile view */
+    height: auto; /* Remove fixed height for smaller screens */
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .about-banner-area-bg {
+    background-size: contain; /* Contain the image for smaller screens */
+    background-position: top; /* Adjust the position for mobile view */
+  }
+}
+
 
 .inner-content-about-area {
   max-width: 60%;
