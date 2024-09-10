@@ -4,23 +4,23 @@ include './config/function.php';
 // include './process/ProcessRegistration.php';
 
 $sponcer_id = $_REQUEST['UplineId'];
-$RandomId = trim($_REQUEST['RandomId']);
+// $RandomId = trim($_REQUEST['RandomId']);
 
-if (strlen($RandomId) < 10) {
-    echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
-    echo "<script>
-        Swal.fire({
-            title: 'Error!',
-            text: 'Cannot Register Without Referral ID',
-            icon: 'error',
-            timer: 2000,
-            showConfirmButton: false
-        }).then(() => {
-            window.location.href = 'Login';
-        });
-    </script>";
-    exit();
-}
+// if (($RandomId)) {
+//     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
+//     echo "<script>
+//         Swal.fire({
+//             title: 'Error!',
+//             text: 'Cannot Register Without Referral ID',
+//             icon: 'error',
+//             timer: 2000,
+//             showConfirmButton: false
+//         }).then(() => {
+//             window.location.href = 'Login';
+//         });
+//     </script>";
+//     exit();
+// }
 
 $str = "Select * from tbl_memberreg where member_user_id='$sponcer_id' AND member_status = 1 ";
 
@@ -149,8 +149,18 @@ if ($result->num_rows > 0) {
                         </div>
 
                         <div class="mb-16">
+                            <label for="member_name" class="form-label">Member Name</label>
+                            <input type="text" class="form-control" id="member_name" value="" required>
+                        </div>
+
+                        <div class="mb-16">
                             <label for="email_id" class="form-label">Email Id </label>
                             <input type="text" class="form-control" id="email_id" value="" required>
+                        </div>
+
+                        <div class="mb-16">
+                            <label for="mobile_number" class="form-label">Mobile Number </label>
+                            <input type="text" class="form-control" id="mobile_number" value="" required>
                         </div>
 
                         <div class="mb-16">
@@ -264,9 +274,11 @@ if ($result->num_rows > 0) {
             async function Registration() {
                     try {
                         var sponcer_id = '<?php echo $sponcer_id; ?>';
+                        var member_name = $("#member_name").val();;
                         // var cpackage = $("#spackage").val();
                         // var position = $("#position").val();
                         var email_id = $("#email_id").val();
+                        var mobile_number = $("#mobile_number").val();
                         var password = $("#password").val();
                         var tokenbalance = $.trim($("#tokenbalance").val());
                         
@@ -288,8 +300,7 @@ if ($result->num_rows > 0) {
                             var dataStringr = 'email_id=' + email_id + '&password=' + password;
                             // console.log("Data during login is ",dataStringr)
 
-                            var dataStringNew = 'email_id=' + email_id + '&password=' + password + '&sponsor_id=' + sponcer_id +
-                             '&position=' + position;
+                            var dataStringNew = 'member_name=' +  member_name + '&email_id=' + email_id +'&mobile_number=' + mobile_number + '&password=' + password + '&sponsor_id=' + sponcer_id ;
                             console.log("Data during login prior is ",dataStringNew)
 
                             $.ajax({

@@ -97,11 +97,11 @@ session_start();
                                 if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                     // User is logged in, show the box with the user's email
                                     echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
-                                    echo 'Hello, ' . $_SESSION['email_id'];
+                                    echo 'Hello, ' . $_SESSION['member_name'];
                                     echo '</div>';
                                 } else {
                                     // User is not logged in, show the buttons
-                                ?>a
+                                ?>
                                     <div class="btn-border-only wishlist category-hover-header">
                                         <span class="text"><a href="http://localhost/Himallya-MLM/login" class="">Login</a>
                                         </span>
@@ -433,7 +433,7 @@ session_start();
             if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                 // User is logged in, show the box with the user's email
                 echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
-                echo 'Hello, ' . $_SESSION['email_id'];
+                echo 'Helloo, ' . $_SESSION['member_name'];
                 echo '</div>';
             } else {
             ?>

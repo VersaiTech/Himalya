@@ -11,9 +11,9 @@ if (!$connection) {
   die('Database connection failed: ' . mysqli_connect_error());
 }
 if (empty($_SESSION['member_name'])) {
-  $referralURL = $baseURL . '/auth-register-metamask.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=Please Invest First';
+  $referralURL = $baseURL . '/auth-register-metamask-1.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=Please Invest First';
 } else {
-  $referralURL = $baseURL . '/auth-register-metamask.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=' . substr($_SESSION['member_name'], 0, 10);
+  $referralURL = $baseURL . '/auth-register-metamask-1.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=' . substr($_SESSION['member_name'], 0, 10);
 }
 ?>
 

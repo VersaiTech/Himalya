@@ -27,14 +27,14 @@ if (!$connection) {
 if ($server['servername'] == '82.180.167.190') {
   $baseURL = 'https://app.oriontradeai.com';
 } else {
-  $baseURL = url() . '/Orion-Main';
+  $baseURL = url() . '/Himallya-MLM';
 }
 
 // Construct the final URL
 if (empty($_SESSION['member_name'])) {
     $referralURL = 'Login?err=Please Invest First';
 } else {
-    $referralURL = $baseURL . '/auth-register-metamask.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=' . substr($_SESSION['member_name'], 0, 10);
+    $referralURL = $baseURL . '/auth-register-metamask-1.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=' . substr($_SESSION['member_name'], 0, 10);
 }
 
 
