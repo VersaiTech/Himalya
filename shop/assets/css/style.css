@@ -14,7 +14,7 @@
 13.button
 14.nav
 15.banner
-16.swiper
+16.
 17.funfacts
 18.cta
 19.about
@@ -16899,6 +16899,8 @@ li.with-megamenu:hover .rts-megamenu {
   pointer-events: none;
   z-index: 50;
 }
+
+
 
 .index-bg-gray {
   background: #F3F4F6;
