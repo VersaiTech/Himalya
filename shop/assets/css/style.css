@@ -9307,12 +9307,18 @@ ol ul {
 max-width: 100%;
 height: 55px;
 }
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+  .logo-area .logo {
+      width: 300px; /* Adjust the width as per your requirement */
+  }
+}
+
 
 img {
   -ms-interpolation-mode: bicubic;
   border: 0;
   vertical-align: middle;
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
 }
 
