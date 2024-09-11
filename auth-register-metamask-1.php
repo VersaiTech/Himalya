@@ -4,7 +4,7 @@ include './config/function.php';
 // include './process/ProcessRegistration.php';
 
 $sponcer_id = $_REQUEST['UplineId'];
-// $RandomId = trim($_REQUEST['RandomId']);
+$RandomId = trim($_REQUEST['RandomId']);
 
 // if (($RandomId)) {
 //     echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
@@ -22,7 +22,7 @@ $sponcer_id = $_REQUEST['UplineId'];
 //     exit();
 // }
 
-$str = "Select * from tbl_memberreg where member_user_id='$sponcer_id' AND member_status = 1 ";
+$str = "Select * from tbl_memberreg where member_user_id='$sponcer_id'";
 
 // Ensure connection is established
 if (!$connection) {
