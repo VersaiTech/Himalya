@@ -200,7 +200,7 @@
                 </div>
                 <div class="row g-32 mt-20">
                   <div class="col-12 " style="font-size: 12px;">
-                  Affiliate Join Date: 23-09-2022 12:40 AM , India
+                    Affiliate Join Date: 23-09-2022 12:40 AM , India
                   </div>
                 </div>
               </div>
@@ -263,6 +263,9 @@
                           <b style="font-size: 18px;">Total Referrals</b>
                         </p>
                       </div>
+
+
+
                     </div>
                   </div>
                 </div>
@@ -358,47 +361,49 @@
                 </div>
               </div>
               <div class="col-12 col-md-12 col-xl-12">
-                    <select class="styled-dropdownn">
-                    <!-- <option value="status1" disabled selected>Account Number</option> -->
-                    <a href="">  <option value="status2">You can learn more  about affiliate program and start to earings referrals here </option> </a>
-                  </select>
+                <select class="styled-dropdownn">
+                  <!-- <option value="status1" disabled selected>Account Number</option> -->
+                  <a href="">
+                    <option value="status2">You can learn more about affiliate program and start to earings referrals here </option>
+                  </a>
+                </select>
               </div>
 
             </div>
 
             <div class="row g-32 mb-32 mt-10">
-            <div class="col-12 col-md-12 col-xl-12">
-    <div class="card" style="height: auto;">
-        <div class="card-body">
-            <h4 class="card-title text-center mb-4">Summary for This Month</h4>
-            <table class="table table-bordered table-striped">
-                <tbody>
-                    <tr>
-                        <th scope="row">Total Referrals</th>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Total Earnings</th>
-                        <td>0.00 INR</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Unverified Referrals</th>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Clicks</th>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Conversion</th>
-                        <td>0%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-             
+              <div class="col-12 col-md-12 col-xl-12">
+                <div class="card" style="height: auto;">
+                  <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Summary for This Month</h4>
+                    <table class="table table-bordered table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">Total Referrals</th>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Total Earnings</th>
+                          <td>0.00 INR</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Unverified Referrals</th>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Clicks</th>
+                          <td>0</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Conversion</th>
+                          <td>0%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
               <div class="col-12 col-md-3">
                 <div class="hp-select-box-item">
                   <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
@@ -448,9 +453,9 @@
                 </div>
               </div>
             </div>
-           
 
-         
+
+
 
 
 

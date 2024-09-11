@@ -231,15 +231,10 @@ session_start();
                             </div>
                             <div class="main-wrapper-action-2 d-flex">
                                 <div class="accont-wishlist-cart-area-header">
-                                    <a href="http://localhost/Himallya-MLM/shop/index" class="btn-border-only account">
+                                    <a href="http://localhost/Himallya-MLM/overview" class="btn-border-only account">
                                         <i class="fa-light fa-user"></i>
                                         Account
                                     </a>
-                                    <a href="wishlist.html" class="btn-border-only wishlist">
-                                        <i class="fa-regular fa-heart"></i>
-                                        Wishlist
-                                    </a>
-
                                 </div>
                                 <div class="actions-area">
                                     <div class="search-btn" id="search">
@@ -828,9 +823,7 @@ session_start();
                                 <img src="assets/images/grocery/15.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
-                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
-                                    <i class="fa-light fa-heart"></i>
-                                </div>
+                               
                                 <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="fa-solid fa-arrows-retweet"></i>
                                 </div>

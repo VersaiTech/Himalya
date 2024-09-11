@@ -11,12 +11,6 @@ $password = RemoveSpecialChar(trim($_REQUEST['password']));
 $member_name = RemoveSpecialChar(trim($_REQUEST['member_name']));
 $mobile_number = RemoveSpecialChar(trim($_REQUEST['mobile_number']));
 
-
-// if ($position == "") {
-//     echo "Position cannot be empty.";
-//     exit();
-// }
-
 // Hash the password
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
@@ -30,7 +24,7 @@ if (!$connection) {
 }
 
 // Check if the email address already exists
-$chkWallet = "SELECT * FROM tbl_memberreg WHERE email_id =?";
+$chkWallet = "SELECT * FROM tbl_memberreg WHERE email_id = ?";
 $stmt_chk = mysqli_prepare($connection, $chkWallet);
 mysqli_stmt_bind_param($stmt_chk, "s", $email_id);
 mysqli_stmt_execute($stmt_chk);
@@ -61,7 +55,7 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
     $zero_point_zero = 0.00;
 
     // Insert the new member into the tbl_memberreg
-    $qry = "INSERT INTO tbl_memberreg (member_name, member_user_id,mobile_number, sponcer_id, sponcer_name, registration_date, topup_amount, status, current_investment, email_id, password)
+    $qry = "INSERT INTO tbl_memberreg (member_name, member_user_id, mobile_number, sponcer_id, sponcer_name, registration_date, topup_amount, status, current_investment, email_id, password)
     VALUES (?,?,?,?,?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($connection, $qry);
     mysqli_stmt_bind_param(
@@ -71,7 +65,7 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
         $member_user_id,
         $mobile_number,
         $sponcer_id, 
-        $sponcer_name, // Insert the sponsor's name
+        $sponcer_name,
         $reg_date,
         $plan_amt,
         $zero,
@@ -79,6 +73,7 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
         $email_id,
         $hashed_password
     );
+    
     if (!mysqli_stmt_execute($stmt)) {
         echo "Error: " . mysqli_stmt_error($stmt);
     } else {
@@ -90,10 +85,67 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
         $_SESSION['member_name'] = $member_name;
 
         echo json_encode(array('status' => 'success'));
+
+        // Referral Bonus for 3 levels
+        $referralBonus = 10;
+        giveReferralBonus($connection, $member_user_id, $sponcer_id, $reg_date);
     }
 
     mysqli_stmt_close($stmt);
 }
 
 mysqli_close($connection);
+
+
+// Function to give referral bonus up to 3 levels
+function giveReferralBonusForLevel($connection, $sponsor_id, $new_member_id, $reg_date, $level) {
+    if (!empty($sponsor_id)) {
+        // Insert into tbl_referrals for the current level
+        $insertReferralQuery = "INSERT INTO tbl_referrals (sponsor_user_id, referred_user_id, level, referral_date) VALUES (?, ?, ?, ?)";
+        $stmt_insertReferral = mysqli_prepare($connection, $insertReferralQuery);
+        mysqli_stmt_bind_param($stmt_insertReferral, "ssis", $sponsor_id, $new_member_id, $level, $reg_date);
+        mysqli_stmt_execute($stmt_insertReferral);
+        mysqli_stmt_close($stmt_insertReferral);
+
+        // Add referral bonus to the sponsor for the current level
+        $updateReferralBonus = "UPDATE tbl_memberreg SET ref_amount = ref_amount + 10 WHERE member_user_id = ?";
+        $stmt_updateBonus = mysqli_prepare($connection, $updateReferralBonus);
+        mysqli_stmt_bind_param($stmt_updateBonus, "s", $sponsor_id);
+        mysqli_stmt_execute($stmt_updateBonus);
+        mysqli_stmt_close($stmt_updateBonus);
+    }
+}
+
+
+function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) {
+    // Level 1 - Direct Sponsor
+    giveReferralBonusForLevel($connection, $sponcer_id, $new_member_id, $reg_date, 1);
+
+    // Level 2 - Get the sponsor of the sponsor (if exists)
+    $level2SponsorQuery = "SELECT sponcer_id FROM tbl_memberreg WHERE member_user_id = ?";
+    $stmt_level2 = mysqli_prepare($connection, $level2SponsorQuery);
+    mysqli_stmt_bind_param($stmt_level2, "s", $sponcer_id);
+    mysqli_stmt_execute($stmt_level2);
+    mysqli_stmt_bind_result($stmt_level2, $level2SponsorId);
+    mysqli_stmt_fetch($stmt_level2);
+    mysqli_stmt_close($stmt_level2);
+
+    if (!empty($level2SponsorId)) {
+        giveReferralBonusForLevel($connection, $level2SponsorId, $new_member_id, $reg_date, 2);
+        
+        // Level 3 - Get the sponsor of the sponsor of the sponsor (if exists)
+        $level3SponsorQuery = "SELECT sponcer_id FROM tbl_memberreg WHERE member_user_id = ?";
+        $stmt_level3 = mysqli_prepare($connection, $level3SponsorQuery);
+        mysqli_stmt_bind_param($stmt_level3, "s", $level2SponsorId);
+        mysqli_stmt_execute($stmt_level3);
+        mysqli_stmt_bind_result($stmt_level3, $level3SponsorId);
+        mysqli_stmt_fetch($stmt_level3);
+        mysqli_stmt_close($stmt_level3);
+
+        if (!empty($level3SponsorId)) {
+            giveReferralBonusForLevel($connection, $level3SponsorId, $new_member_id, $reg_date, 3);
+        }
+    }
+}
+
 ?>
