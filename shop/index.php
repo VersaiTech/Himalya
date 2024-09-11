@@ -141,7 +141,7 @@ session_start();
                         </div>
                         <div class="logo-search-category-wrapper">
                             <a href="index" class="logo-area">
-                                <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
+                                <img class="logo_ig" src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
                                 <div class="category-btn category-hover-header">
@@ -879,7 +879,7 @@ session_start();
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            index
+                            
                             <img src="assets/images/grocery/16.png" alt="grocery">
                             </a>
                             <div class="action-share-option">

@@ -9303,6 +9303,10 @@ li>ol {
 ol ul {
   margin-bottom: 0;
 }
+.logo_ig {
+max-width: 100%;
+height: 55px;
+}
 
 img {
   -ms-interpolation-mode: bicubic;
@@ -19217,7 +19221,7 @@ p {
 
 .weekly-best-seller-item-single .inner a .title {
   margin-bottom: 15px;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 500;
 }
 
