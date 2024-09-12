@@ -443,7 +443,7 @@ session_start();
                                 <h1 class="title">India's Most Amazing <br>
                                     RO Service</h1>
                                 <p class="disc">
-                                    We have prepared special discounts for you on grocery products. Don't <br> miss these opportunities...
+                                    We have prepared special discounts for you <br>on grocery products. Don't miss these <br>opportunities...
                                 </p>
                                 <div class="rts-btn-banner-area">
                                     <a href="#" class="rts-btn btn-primary radious-sm with-icon">
