@@ -98,24 +98,46 @@ mysqli_close($connection);
 
 
 // Function to give referral bonus up to 3 levels
+// Function to give referral bonus up to 3 levels with percentage-based calculation
 function giveReferralBonusForLevel($connection, $sponsor_id, $new_member_id, $reg_date, $level) {
     if (!empty($sponsor_id)) {
-        // Insert into tbl_referrals for the current level
-        $insertReferralQuery = "INSERT INTO tbl_referrals (sponsor_user_id, referred_user_id, level, referral_date) VALUES (?, ?, ?, ?)";
-        $stmt_insertReferral = mysqli_prepare($connection, $insertReferralQuery);
-        mysqli_stmt_bind_param($stmt_insertReferral, "ssis", $sponsor_id, $new_member_id, $level, $reg_date);
-        mysqli_stmt_execute($stmt_insertReferral);
-        mysqli_stmt_close($stmt_insertReferral);
+        // Get the latest payment amount for the new member from tbl_payment_history
+        $latestPaymentQuery = "SELECT payment_amount FROM tbl_payment_history WHERE member_user_id = ? ORDER BY created_at DESC LIMIT 1";
+        $stmt_latestPayment = mysqli_prepare($connection, $latestPaymentQuery);
+        mysqli_stmt_bind_param($stmt_latestPayment, "s", $new_member_id);
+        mysqli_stmt_execute($stmt_latestPayment);
+        mysqli_stmt_bind_result($stmt_latestPayment, $payment_amount);
+        mysqli_stmt_fetch($stmt_latestPayment);
+        mysqli_stmt_close($stmt_latestPayment);
 
-        // Add referral bonus to the sponsor for the current level
-        $updateReferralBonus = "UPDATE tbl_memberreg SET ref_amount = ref_amount + 10 WHERE member_user_id = ?";
-        $stmt_updateBonus = mysqli_prepare($connection, $updateReferralBonus);
-        mysqli_stmt_bind_param($stmt_updateBonus, "s", $sponsor_id);
-        mysqli_stmt_execute($stmt_updateBonus);
-        mysqli_stmt_close($stmt_updateBonus);
+        if ($payment_amount > 0) {
+            // Calculate the referral bonus based on the level
+            if ($level == 1) {
+                $bonusPercentage = 10; // 10% for level 1
+            } elseif ($level == 2) {
+                $bonusPercentage = 5; // 5% for level 2
+            } elseif ($level == 3) {
+                $bonusPercentage = 3; // 3% for level 3
+            }
+
+            $referralBonusAmount = ($payment_amount * $bonusPercentage) / 100;
+
+            // Insert into tbl_referrals for the current level
+            $insertReferralQuery = "INSERT INTO tbl_referrals (sponsor_user_id, referred_user_id, level, referral_date, referral_bonus_amount) VALUES (?, ?, ?, ?, ?)";
+            $stmt_insertReferral = mysqli_prepare($connection, $insertReferralQuery);
+            mysqli_stmt_bind_param($stmt_insertReferral, "ssisd", $sponsor_id, $new_member_id, $level, $reg_date, $referralBonusAmount);
+            mysqli_stmt_execute($stmt_insertReferral);
+            mysqli_stmt_close($stmt_insertReferral);
+
+            // Add the referral bonus to the sponsor for the current level
+            $updateReferralBonus = "UPDATE tbl_memberreg SET ref_amount = ref_amount + ? WHERE member_user_id = ?";
+            $stmt_updateBonus = mysqli_prepare($connection, $updateReferralBonus);
+            mysqli_stmt_bind_param($stmt_updateBonus, "ds", $referralBonusAmount, $sponsor_id);
+            mysqli_stmt_execute($stmt_updateBonus);
+            mysqli_stmt_close($stmt_updateBonus);
+        }
     }
 }
-
 
 function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) {
     // Level 1 - Direct Sponsor
@@ -132,7 +154,7 @@ function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) 
 
     if (!empty($level2SponsorId)) {
         giveReferralBonusForLevel($connection, $level2SponsorId, $new_member_id, $reg_date, 2);
-        
+
         // Level 3 - Get the sponsor of the sponsor of the sponsor (if exists)
         $level3SponsorQuery = "SELECT sponcer_id FROM tbl_memberreg WHERE member_user_id = ?";
         $stmt_level3 = mysqli_prepare($connection, $level3SponsorQuery);
@@ -147,5 +169,6 @@ function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) 
         }
     }
 }
+
 
 ?>

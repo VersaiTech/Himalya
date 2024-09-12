@@ -127,7 +127,7 @@ session_start();
                                             <a class="nav-link" href="blog-details.html">Service</a>
 
                                         </li>-->
-                                     
+
                                         <li class="parent"><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -412,13 +412,13 @@ session_start();
             } else {
             ?>
                 <div class="button-area-bottom">
-                   
+
                 </div>
-                <?php
+            <?php
             }
             ?>
- <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
- 
+            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+
 
             <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn">My Account</a>
             <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
@@ -541,7 +541,7 @@ session_start();
                                                                 <span class="original-price" style="text-decoration: line-through; color: #999;">₹7000</span>
                                                                 <span class="discount-price" style="color: #ff0000; margin-left: 10px;">₹5000</span>
                                                             </div>
-                                                            <a href="index" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
+                                                            <a href="payment.php" class="buy-now-btn" style="display: block; margin-top: 10px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 15px; border-radius: 5px;">
                                                                 Buy Now
                                                             </a>
                                                         </div>
@@ -643,7 +643,7 @@ session_start();
                                                         </div>
                                                     </div>
 
-                                                   
+
                                                     <!-- single swiper slide end -->
                                                 </div>
                                             </div>
@@ -823,7 +823,7 @@ session_start();
                                 <img src="assets/images/grocery/15.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
-                               
+
                                 <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="fa-solid fa-arrows-retweet"></i>
                                 </div>
@@ -841,17 +841,18 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="index">
+                            <a href="process">
                                 <h4 class="title">Installation of RO Systems Ro
                                 </h4>
                             </a>
-                            <span class="availability">500g Pack</span>
+                            <span class="availability">500g</span>
                             <div class="price-area">
                                 <span class="current">Rs12000</span>
                                 <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
+                                <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
+                                 onclick="buy_now_fun(2000)">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
@@ -872,7 +873,7 @@ session_start();
                             <span>On sale</span>
                         </div>
                         <div class="image-and-action-area-wrapper">
-                            
+
                             <img src="assets/images/grocery/16.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
@@ -952,8 +953,8 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="shop-details.html">
-                                <h4 class="title">Aqua Natural RO Water Purifier 
-                                    </h4>
+                                <h4 class="title">Aqua Natural RO Water Purifier
+                                </h4>
                             </a>
                             <span class="availability">500g Pack</span>
                             <div class="price-area">
@@ -2370,6 +2371,43 @@ session_start();
 
     <!-- custom js -->
     <script defer src="assets/js/main.js"></script>
+
+    <script>
+        // function buy_now_fun(amount) {
+
+
+        //     let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+        //     if (is_login) {
+        //         console.log(amount)
+        //         console.log('<?php echo $_SESSION['member_user_id']; ?>');
+
+        //     } else {
+        //         alert('Please login first.');
+        //     }
+        // }
+
+        function buy_now_fun(amount) {
+    let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    if (is_login) {
+        console.log(amount)
+        console.log('<?php echo $_SESSION['member_user_id']; ?>');
+        console.log('<?php echo $_SESSION['email_id']; ?>');
+
+        let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
+        let email_id = '<?php echo $_SESSION['email_id']; ?>';
+        let formData = new FormData();
+        formData.append('member_user_id', member_user_id);
+        formData.append('email_id', email_id);
+        formData.append('amount', amount);
+        fetch('process.php?simulate_payment=true', {
+            method: 'POST',
+            body: formData
+        });
+    } else {
+        alert('Please login first.');
+    }
+}
+    </script>
     <!-- header style two End -->
 
 
