@@ -191,7 +191,7 @@
           <div class="col-12">
             <div class="row align-items-center justify-content-between g-24">
               <div class="col-12 col-md-6">
-                <h3>Welcome back, User 👋</h3>
+                <h3>Welcome back, <?php echo $member_name?> 👋</h3>
                 <div class="dropdown-containerr" style="margin-bottom: 3vh;">
                   <select class="styled-dropdownn">
                     <!-- <option value="status1" disabled selected>Account Number</option> -->
@@ -384,7 +384,7 @@
                         </tr>
                         <tr>
                           <th scope="row">Total Earnings</th>
-                          <td>0.00 INR</td>
+                          <td><?php echo $ref_amount; ?> INR</td>
                         </tr>
                         <tr>
                           <th scope="row">Unverified Referrals</th>

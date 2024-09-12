@@ -287,63 +287,7 @@
 		</div>
 	</div>
 
-	<!-- Add User Modal -->
-	<!-- <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="addUserModalLabel">Add User</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form class="mt-16 mt-sm-32 mb-8">
-						<div class="mb-16">
-							<label for="sponcer_id" class="form-label">Referral Id</label>
-							<input type="number" class="form-control" id="sponcer_id" placeholder="Enter Referral Id">
-						</div>
 
-						<div class="d-flex flex-column mb-16">
-							<label for="packageType" class="form-label">Package Type</label>
-							<select class="form-select" id="packageType" onchange="updatePackageOptions()">
-								<option selected>Select Package Type</option>
-								<option value="basic">Basic Package</option>
-								<option value="premium">Premium Package</option>
-							</select>
-						</div>
-
-						<div class="d-flex flex-column mb-16">
-							<label for="spackage" class="form-label">Package (USDT)</label>
-							<select class="form-select" id="spackage">
-								<option selected>Select Package</option>
-							</select>
-						</div>
-
-						<div class="d-flex flex-column mb-16">
-							<label for="position" class="form-label">Position</label>
-							<select class="form-select" id="position">
-								<option selected>Select Position</option>
-								<option value="left">Left</option>
-								<option value="right">Right</option>
-							</select>
-						</div>
-
-						<div class="d-flex flex-column mb-16">
-							<label for="walletAddress" class="form-label">Wallet Address</label>
-							<input type="text" class="form-control" id="walletAddress" placeholder="Enter Wallet Address">
-						</div>
-
-
-						<button id="registrationButton" type="button" class="btn btn-primary w-100">
-							Add User
-						</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- /Add User Modal -->
 
 	<!-- jQuery -->
 	<script src="assets/js/jquery-3.5.0.min.js"></script>
