@@ -118,7 +118,7 @@
         </ul>
         <ul>
             <li>
-                <a href="mt5" class="submenu-item">
+                <a href="withdraw-request" class="submenu-item">
                     <span>
                         <span class="submenu-item-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none">
@@ -127,7 +127,7 @@
                             </svg>
                         </span>
 
-                        <span>Withdrawal History</span>
+                        <span>Withdrawal Request</span>
                     </span>
                 </a>
             </li>

@@ -1,10 +1,16 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include "components/phpComponents/phpcomponents.php"; // Ensure this file includes session_start()
 include "./config/config.php"; // Ensure the database connection $conn is in this file
 
 // Check if session variables exist
 if (!isset($_SESSION['member_user_id']) || !isset($_SESSION['email_id'])) {
     exit();
+}
+
+if ($connection === null || !$connection->ping()) {
+    die("Database connection is not properly initialized or not connected.");
 }
 
 // Get session data
@@ -77,7 +83,29 @@ $stmt->close();
             // Hide error and proceed if the amount is valid
             amountError.style.display = "none";
             amountInput.style.borderColor = ""; // Reset border color
-            alert("Withdraw successful!");
+
+            // AJAX request to submit the withdrawal request
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "submit_withdrawal", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        alert("Withdrawal Request Submitted");
+                        // Close the modal (assuming you're using Bootstrap)
+                        const modal = document.querySelector("#profileContactEditModal");
+                        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+                        bootstrapModal.hide();
+                    } else {
+                        alert("Failed to submit withdrawal request. Please try again.");
+                    }
+                }
+            };
+
+            const requestData = `amount=${encodeURIComponent(amountValue)}`;
+            xhr.send(requestData);
         }
     }
     </script>
@@ -316,7 +344,7 @@ $stmt->close();
                                             </div>
 
                                             <div class="col-12 col-md-6 hp-profile-action-btn text-end">
-                                                <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profileContactEditModal">Edit</button>
+                                                <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profileContactEditModal">Create Request</button>
                                             </div>
 
                                             <div class="col-12 hp-profile-content-list mt-8 pb-0 pb-sm-20">
