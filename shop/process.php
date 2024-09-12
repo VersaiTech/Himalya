@@ -130,12 +130,31 @@ function giveReferralBonusForLevel($connection, $sponsor_id, $new_member_id, $pa
     // Calculate bonus based on the level percentage
     $bonusAmount = ($level === 1) ? ($amount * 0.10) : (($level === 2) ? ($amount * 0.05) : ($amount * 0.03));
 
-    // Insert the referral bonus into the referral_bonus table
-    $insertReferralBonusQuery = "INSERT INTO referral_bonus (sponcer_id, referred_member_id, bonus_amount, level, created_at) VALUES (?, ?, ?, ?, ?)";
-    $stmt_insertReferralBonus = $connection->prepare($insertReferralBonusQuery);
-    $stmt_insertReferralBonus->bind_param("ssdss", $sponsor_id, $new_member_id, $bonusAmount, $level, $payment_date);
-    $stmt_insertReferralBonus->execute();
-    $stmt_insertReferralBonus->close();
+    // Start transaction
+    $connection->begin_transaction();
+
+    try {
+        // Insert the referral bonus into the referral_bonus table
+        $insertReferralBonusQuery = "INSERT INTO referral_bonus(sponcer_id, referred_member_id, bonus_amount, level, created_at) VALUES (?, ?, ?, ?, ?)";
+        $stmt_insertReferralBonus = $connection->prepare($insertReferralBonusQuery);
+        $stmt_insertReferralBonus->bind_param("ssdss", $sponsor_id, $new_member_id, $bonusAmount, $level, $payment_date);
+        $stmt_insertReferralBonus->execute();
+        $stmt_insertReferralBonus->close();
+
+        // Update the ref_amount in tble_memberreg for the sponsor_id
+        $updateRefAmountQuery = "UPDATE tbl_memberreg SET ref_amount = ref_amount + ? WHERE member_user_id = ?";
+        $stmt_updateRefAmount = $connection->prepare($updateRefAmountQuery);
+        $stmt_updateRefAmount->bind_param("ds", $bonusAmount, $sponsor_id);
+        $stmt_updateRefAmount->execute();
+        $stmt_updateRefAmount->close();
+
+        // Commit the transaction
+        $connection->commit();
+    } catch (Exception $e) {
+        // Rollback the transaction if any error occurs
+        $connection->rollback();
+        throw $e; // Rethrow the exception for debugging purposes
+    }
 }
 
 $ticketNumber = rand(1000000, 9999999);

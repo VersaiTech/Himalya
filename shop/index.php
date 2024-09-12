@@ -852,7 +852,7 @@ session_start();
                             </div>
                             <div class="cart-counter-action">
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                 onclick="buy_now_fun(2000)">
+                                 onclick="buy_now_fun(1000)">
                                     <div class="btn-text">
                                         Buy Now
                                     </div>
