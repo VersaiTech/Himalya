@@ -1,4 +1,7 @@
-﻿<?php include "components/phpComponents/phpcomponents.php";?>
+﻿<?php include "components/phpComponents/phpcomponents.php";
+$email_id = $_SESSION['email_id'];
+
+?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -393,24 +396,12 @@
                                             <div class="col-12 hp-profile-content-list mt-8 pb-0 pb-sm-20">
                                                 <ul>
                                                     <li class="mt-18">
-                                                        <span class="hp-p1-body">First Name</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $member_user_id;?></span>
-                                                    </li>
-                                                    <li class="mt-18">
-                                                        <span class="hp-p1-body">Last Name</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $wallet_address; ?></span>
+                                                        <span class="hp-p1-body">Name</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $member_name;?></span>
                                                     </li>
                                                     <li class="mt-18">
                                                         <span class="hp-p1-body">Email Address</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo number_format($wallet_amount, 2);?></span>
-                                                    </li>
-                                                    <li class="mt-18">
-                                                        <span class="hp-p1-body">Country</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $current_investment; ?></span>
-                                                    </li>
-                                                    <li class="mt-18">
-                                                        <span class="hp-p1-body">Address</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $current_investment; ?></span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $email_id?></span>
                                                     </li>
                                                    
                                                 </ul>
@@ -420,7 +411,6 @@
 
                                     <div class="divider border-black-40 hp-border-color-dark-80"></div>
 
-                                   
                                 </div>
                             </div>
                         </div>
@@ -443,15 +433,9 @@
                                 <form>
                                     <div class="row g-24">
                                         <div class="col-12">
-                                            <label for="fullName" class="form-label">First Name</label>
+                                            <label for="fullName" class="form-label">Name</label>
                                             <input type="text" class="form-control" id="fullName">
                                         </div>
-                                        <div class="col-12">
-                                            <label for="fullName" class="form-label">Last Name</label>
-                                            <input type="text" class="form-control" id="fullName">
-                                        </div>
-
-                                       
 
                                         <div class="col-12">
                                             <label for="email" class="form-label">Email</label>
@@ -459,15 +443,6 @@
                                         </div>
 
                                        
-
-                                        <div class="col-12">
-                                            <label for="address" class="form-label">Country</label>
-                                            <textarea name="address" id="address" class="form-control"></textarea>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="address" class="form-label">Address</label>
-                                            <textarea name="address" id="address" class="form-control"></textarea>
-                                        </div>
 
                                         <div class="col-6">
                                             <button type="button" class="btn btn-primary w-100">Update</button>
