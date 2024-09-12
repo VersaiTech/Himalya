@@ -5,11 +5,11 @@ ob_start();
  include "config/function.php"; 
  
  $private_key=get_privatekey();
- $request_from_server=$_SERVER['HTTP_REFERER'];
+//  $request_from_server=$_SERVER['HTTP_REFERER'];
 $this_server=$_SERVER['HTTP_HOST'];
-if($request_from_server!=''){
-	check_access_url($request_from_server,$this_server);
-}
+// if($request_from_server!=''){
+// 	check_access_url($request_from_server,$this_server);
+// }
 
 // echo $_SESSION['login_status'];echo "<br>";
 // echo $_SESSION['private_key'];echo "<br>";
@@ -40,7 +40,7 @@ if($_SESSION['login_status']!='YES' || $_SESSION['private_key']!=$private_key ||
 				<li class="nav-item dropdown">
 					<a href="javascript:void(0)" class="dropdown-toggle user-link  nav-link" data-toggle="dropdown">
 						<span class="user-img">
-							<img class="rounded-circle" src="..\app-assets\img\logo\logo-small.png" width="40" alt="Admin">
+							<!-- <img  src="..\app-assets\img\logo\HIMLOGOSMALL.png" width="30" alt="Admin"> -->
 						</span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
