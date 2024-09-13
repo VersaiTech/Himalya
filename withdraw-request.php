@@ -107,6 +107,11 @@ mysqli_stmt_close($stmt);
                             const modal = document.querySelector("#profileContactEditModal");
                             const bootstrapModal = bootstrap.Modal.getInstance(modal);
                             bootstrapModal.hide();
+                             // Redirect to withdraw-history after the modal is hidden
+            setTimeout(function() {
+                window.location.href = "withdraw-history"; // Adjust the URL as per your project structure
+            }, 500); // Add a short delay to ensure the modal is closed before redirecting
+        
                         } else {
                             alert("Failed to submit withdrawal request. Please try again.");
                         }
