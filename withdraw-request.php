@@ -19,13 +19,13 @@ $email_id = $_SESSION['email_id'];
 $member_name = $_SESSION['member_name'];
 
 
-$query = "SELECT ref_amount FROM tbl_memberreg WHERE member_user_id = ?";
-$stmt = $connection->prepare($query);
-$stmt->bind_param("s", $member_user_id);
-$stmt->execute();
-$stmt->bind_result($ref_amount);
-$stmt->fetch();
-$stmt->close();
+// $query = "SELECT ref_amount FROM tbl_memberreg WHERE member_user_id = ?";
+// $stmt = $connection->prepare($query);
+// $stmt->bind_param("s", $member_user_id);
+// $stmt->execute();
+// $stmt->bind_result($ref_amount);
+// $stmt->fetch();
+// $stmt->close();
 
 // Assuming $member_user_id is already set and you have a database connection
 $query = "SELECT topUp_status FROM tbl_memberreg WHERE member_user_id = ?";
@@ -35,6 +35,20 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_bind_result($stmt, $topUp_status);
 mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
+
+// Assuming $connection is your active database connection and $member_user_id is set
+$query = "SELECT ref_amount FROM tbl_memberreg WHERE member_user_id = ?";
+
+if ($stmt = mysqli_prepare($connection, $query)) {
+    mysqli_stmt_bind_param($stmt, "s", $member_user_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $ref_amount);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+} else {
+    // Handle query preparation error
+    echo "Failed to prepare the SQL statement: " . mysqli_error($connection);
+}
 
 ?>
 
@@ -56,6 +70,10 @@ mysqli_stmt_close($stmt);
     ?>
 
     <title>Profile- Orion Trade Ai</title>
+     <script>
+        // Pass PHP variable to JavaScript
+        var ref_amount = <?php echo json_encode($ref_amount); ?>;
+    </script>
 
     <script>
         ! function(t, h, e, j, s, n) {
@@ -73,27 +91,102 @@ mysqli_stmt_close($stmt);
         }(window, document)
 
 
+        // function validateAmount() {
+        //     const amountInput = document.getElementById("withdrawAmount");
+        //     const amountValue = parseFloat(amountInput.value);
+        //     const amountError = document.getElementById("amountError");
+
+        //     if (isNaN(amountValue) || amountValue <= 1500) {
+        //         // Show error if the amount is not valid or less than 1500
+        //         amountError.style.display = "block";
+        //         amountInput.style.borderColor = "red"; // Add red border color
+
+        //         // Remove the error message and reset the border color after 2 seconds
+        //         setTimeout(() => {
+        //             amountError.style.display = "none";
+        //             amountInput.style.borderColor = ""; // Reset border color
+        //         }, 2000); // 2000 ms = 2 seconds
+        //     } else {
+        //         // Hide error and proceed if the amount is valid
+        //         amountError.style.display = "none";
+        //         amountInput.style.borderColor = ""; // Reset border color
+
+        //         // AJAX request to submit the withdrawal request
+        //         const xhr = new XMLHttpRequest();
+        //         xhr.open("POST", "submit_withdrawal", true);
+        //         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        //         xhr.onload = function() {
+        //             if (xhr.status === 200) {
+        //                 const response = JSON.parse(xhr.responseText);
+        //                 if (response.success) {
+        //                     alert("Withdrawal Request Submitted");
+        //                     // Close the modal (assuming you're using Bootstrap)
+        //                     const modal = document.querySelector("#profileContactEditModal");
+        //                     const bootstrapModal = bootstrap.Modal.getInstance(modal);
+        //                     bootstrapModal.hide();
+        //                      // Redirect to withdraw-history after the modal is hidden
+        //     setTimeout(function() {
+        //         window.location.href = "withdraw-history"; // Adjust the URL as per your project structure
+        //     }, 500); // Add a short delay to ensure the modal is closed before redirecting
+
+        //                 } else {
+        //                     alert("Failed to submit withdrawal request. Please try again.");
+        //                 }
+        //             }
+        //         };
+
+        //         const requestData = `amount=${encodeURIComponent(amountValue)}`;
+        //         xhr.send(requestData);
+        //     }
+        // }
+
         function validateAmount() {
             const amountInput = document.getElementById("withdrawAmount");
             const amountValue = parseFloat(amountInput.value);
             const amountError = document.getElementById("amountError");
 
-            if (isNaN(amountValue) || amountValue <= 1500) {
-                // Show error if the amount is not valid or less than 1500
+            if (isNaN(amountValue)) {
+                // Show error if the amount is not a valid number
+                amountError.textContent = "Invalid Amount";
                 amountError.style.display = "block";
-                amountInput.style.borderColor = "red"; // Add red border color
+                amountInput.style.borderColor = "red";
 
-                // Remove the error message and reset the border color after 2 seconds
                 setTimeout(() => {
                     amountError.style.display = "none";
                     amountInput.style.borderColor = ""; // Reset border color
-                }, 2000); // 2000 ms = 2 seconds
-            } else {
-                // Hide error and proceed if the amount is valid
+                }, 2000);
+                return;
+            }
+
+            // Step 1: Check if the amount is greater than the available balance
+            if (amountValue > ref_amount) {
+                amountError.textContent = "Insufficient Balance";
+                amountError.style.display = "block";
+                amountInput.style.borderColor = "red";
+
+                setTimeout(() => {
+                    amountError.style.display = "none";
+                    amountInput.style.borderColor = ""; // Reset border color
+                }, 2000);
+            }
+            // Step 2: Check if amount is less than or equal to 1500
+            else if (amountValue <= 1500) {
+                amountError.textContent = "Amount must be greater than 1500";
+                amountError.style.display = "block";
+                amountInput.style.borderColor = "red";
+
+                setTimeout(() => {
+                    amountError.style.display = "none";
+                    amountInput.style.borderColor = ""; // Reset border color
+                }, 2000);
+            }
+            // Step 3: If both checks pass, proceed with the withdrawal
+            else {
                 amountError.style.display = "none";
                 amountInput.style.borderColor = ""; // Reset border color
 
-                // AJAX request to submit the withdrawal request
+                // Proceed with AJAX request to submit withdrawal
                 const xhr = new XMLHttpRequest();
                 xhr.open("POST", "submit_withdrawal", true);
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -107,11 +200,10 @@ mysqli_stmt_close($stmt);
                             const modal = document.querySelector("#profileContactEditModal");
                             const bootstrapModal = bootstrap.Modal.getInstance(modal);
                             bootstrapModal.hide();
-                             // Redirect to withdraw-history after the modal is hidden
-            setTimeout(function() {
-                window.location.href = "withdraw-history"; // Adjust the URL as per your project structure
-            }, 500); // Add a short delay to ensure the modal is closed before redirecting
-        
+                            // Redirect to withdraw-history after the modal is hidden
+                            setTimeout(function() {
+                                window.location.href = "withdraw-history"; // Adjust the URL as per your project structure
+                            }, 500);
                         } else {
                             alert("Failed to submit withdrawal request. Please try again.");
                         }
