@@ -32,3 +32,24 @@
 
   <!-- Custom -->
   <script src="/assets/js/main.js"></script>
+  <script>
+    
+  document.getElementById('copyButton').addEventListener('click', function() {
+    // Get the text content of the memberUserId span
+    var memberUserId = document.getElementById('memberUserId').innerText;
+    
+    // Create a temporary input element to copy the text to the clipboard
+    var tempInput = document.createElement('input');
+    tempInput.value = memberUserId;
+    document.body.appendChild(tempInput);
+    
+    // Select the text and copy it to the clipboard
+    tempInput.select();
+    document.execCommand('copy');
+    
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+    
+   
+  });
+  </script>
