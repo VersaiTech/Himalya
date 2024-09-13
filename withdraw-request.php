@@ -27,6 +27,15 @@ $stmt->bind_result($ref_amount);
 $stmt->fetch();
 $stmt->close();
 
+// Assuming $member_user_id is already set and you have a database connection
+$query = "SELECT topUp_status FROM tbl_memberreg WHERE member_user_id = ?";
+$stmt = mysqli_prepare($connection, $query);
+mysqli_stmt_bind_param($stmt, "s", $member_user_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $topUp_status);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+
 ?>
 
 
@@ -65,49 +74,49 @@ $stmt->close();
 
 
         function validateAmount() {
-        const amountInput = document.getElementById("withdrawAmount");
-        const amountValue = parseFloat(amountInput.value);
-        const amountError = document.getElementById("amountError");
+            const amountInput = document.getElementById("withdrawAmount");
+            const amountValue = parseFloat(amountInput.value);
+            const amountError = document.getElementById("amountError");
 
-        if (isNaN(amountValue) || amountValue <= 1500) {
-            // Show error if the amount is not valid or less than 1500
-            amountError.style.display = "block";
-            amountInput.style.borderColor = "red"; // Add red border color
+            if (isNaN(amountValue) || amountValue <= 1500) {
+                // Show error if the amount is not valid or less than 1500
+                amountError.style.display = "block";
+                amountInput.style.borderColor = "red"; // Add red border color
 
-            // Remove the error message and reset the border color after 2 seconds
-            setTimeout(() => {
+                // Remove the error message and reset the border color after 2 seconds
+                setTimeout(() => {
+                    amountError.style.display = "none";
+                    amountInput.style.borderColor = ""; // Reset border color
+                }, 2000); // 2000 ms = 2 seconds
+            } else {
+                // Hide error and proceed if the amount is valid
                 amountError.style.display = "none";
                 amountInput.style.borderColor = ""; // Reset border color
-            }, 2000); // 2000 ms = 2 seconds
-        } else {
-            // Hide error and proceed if the amount is valid
-            amountError.style.display = "none";
-            amountInput.style.borderColor = ""; // Reset border color
 
-            // AJAX request to submit the withdrawal request
-            const xhr = new XMLHttpRequest();
-            xhr.open("POST", "submit_withdrawal", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                // AJAX request to submit the withdrawal request
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "submit_withdrawal", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-                    if (response.success) {
-                        alert("Withdrawal Request Submitted");
-                        // Close the modal (assuming you're using Bootstrap)
-                        const modal = document.querySelector("#profileContactEditModal");
-                        const bootstrapModal = bootstrap.Modal.getInstance(modal);
-                        bootstrapModal.hide();
-                    } else {
-                        alert("Failed to submit withdrawal request. Please try again.");
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            alert("Withdrawal Request Submitted");
+                            // Close the modal (assuming you're using Bootstrap)
+                            const modal = document.querySelector("#profileContactEditModal");
+                            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+                            bootstrapModal.hide();
+                        } else {
+                            alert("Failed to submit withdrawal request. Please try again.");
+                        }
                     }
-                }
-            };
+                };
 
-            const requestData = `amount=${encodeURIComponent(amountValue)}`;
-            xhr.send(requestData);
+                const requestData = `amount=${encodeURIComponent(amountValue)}`;
+                xhr.send(requestData);
+            }
         }
-    }
     </script>
 </head>
 
@@ -300,7 +309,7 @@ $stmt->close();
                                             </div>
                                         </div>
 
-                                        <h3 class="mt-24 mb-4"><?php echo $member_name; ?></h3>
+                                        <h3 class="mt-24 mb-4"><?php echo ucwords($member_name); ?></h3>
 
                                     </div>
                                 </div>
@@ -329,7 +338,7 @@ $stmt->close();
                                 <div class="row">
                                     <div class="col-12 col-md-8">
                                         <h2>Make Your Withdrawal Request</h2>
-                                        <p class="hp-p1-body mb-0">Ensure that the minimum withdrawal amount is RS. 1500
+                                        <p class="hp-p1-body mb-0">For a successful withdrawal you must have done atleast one payment.<br /> Also ensure that the minimum withdrawal amount is RS. 1500
 
                                         </p>
                                     </div>
@@ -343,8 +352,36 @@ $stmt->close();
                                                 <h3>Account Information</h3>
                                             </div>
 
-                                            <div class="col-12 col-md-6 hp-profile-action-btn text-end">
+                                            <!-- <div class="col-12 col-md-6 hp-profile-action-btn text-end">
                                                 <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profileContactEditModal">Create Request</button>
+                                            </div> -->
+
+                                            <div class="col-12 col-md-6 hp-profile-action-btn text-end">
+                                                <?php if ($topUp_status == 1): ?>
+                                                    <!-- If topUp_status is 1, show the Create Request button -->
+                                                    <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profileContactEditModal">Create Request</button>
+                                                <?php else: ?>
+                                                    <!-- If topUp_status is 0, show a different modal -->
+                                                    <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#paymentRequiredModal">Create Request</button>
+                                                <?php endif; ?>
+                                            </div>
+
+                                            <!-- Modal for "At least one payment is required for withdrawal" -->
+                                            <div class="modal fade" id="paymentRequiredModal" tabindex="-1" aria-labelledby="paymentRequiredModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="paymentRequiredModalLabel">Payment Required</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            At least one payment is required for withdrawal.
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <div class="col-12 hp-profile-content-list mt-8 pb-0 pb-sm-20">
@@ -361,10 +398,10 @@ $stmt->close();
                                                 </ul>
                                             </div>
                                         </div>
-                                        
+
                                     </div>
 
-                                    
+
 
                                     <div class="divider border-black-40 hp-border-color-dark-80"></div>
 
@@ -389,26 +426,26 @@ $stmt->close();
                             <div class="divider my-0"></div>
 
                             <div class="modal-body py-48">
-    <form id="withdrawForm">
-        <div class="row g-24">
-            <div class="col-12">
-                <label for="withdrawAmount" class="form-label">Withdraw Amount *</label>
-                <input type="text" class="form-control" id="withdrawAmount" name="withdrawAmount" />
-                <!-- Error message -->
-                <div id="amountError" style="color: red; display: none;">
-                    <small class="text-danger" style="font-size: 14px;">Amount must be greater than 1500</small>
-                </div>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-primary w-100" onclick="validateAmount()">Withdraw</button>
-            </div>
+                                <form id="withdrawForm">
+                                    <div class="row g-24">
+                                        <div class="col-12">
+                                            <label for="withdrawAmount" class="form-label">Withdraw Amount *</label>
+                                            <input type="text" class="form-control" id="withdrawAmount" name="withdrawAmount" />
+                                            <!-- Error message -->
+                                            <div id="amountError" style="color: red; display: none;">
+                                                <small class="text-danger" style="font-size: 14px;">Amount must be greater than 1500</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="button" class="btn btn-primary w-100" onclick="validateAmount()">Withdraw</button>
+                                        </div>
 
-            <div class="col-6">
-                <div class="btn w-100" data-bs-dismiss="modal">Cancel</div>
-            </div>
-        </div>
-    </form>
-</div>
+                                        <div class="col-6">
+                                            <div class="btn w-100" data-bs-dismiss="modal">Cancel</div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
 
                         </div>
                     </div>
