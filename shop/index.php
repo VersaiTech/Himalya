@@ -671,7 +671,7 @@ session_start();
                     <!-- single feature product area -->
                     <div class="feature-product-area-single bg_image">
                         <div class="inner-image">
-                            <img src="/shop/assets/images/whychooseus/user.png" alt="User Icon" style="width: 80px; margin: 0 auto; display: block;">
+                            <!--<img src="/shop/assets/images/whychooseus/user.png" alt="User Icon" style="width: 80px; margin: 0 auto; display: block;">-->
                         </div>
                         <div class="inner-content" style="text-align: center;">
                             <h2 class="title">Login to your Affiliate Account</h2>
@@ -690,7 +690,7 @@ session_start();
                     <!-- single feature product area -->
                     <div class="feature-product-area-single two bg_image">
                         <div class="inner-image">
-                            <img src="/shop/assets/images/whychooseus/signup.png" alt="User Icon" style="width: 80px; margin: 0 auto; display: block;">
+                            <!--<img src="/shop/assets/images/whychooseus/signup.png" alt="User Icon" style="width: 80px; margin: 0 auto; display: block;">-->
                         </div>
                         <div class="inner-content" style="text-align: center;">
                             <h2 class="title">Join Free Affiliate Program</h2>
@@ -830,7 +830,7 @@ session_start();
                                 <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                     <i class="fa-regular fa-eye"></i>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
 
                         <div class="body-content">
@@ -842,7 +842,7 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="process">
-                                <h4 class="title">Installation of RO Systems Ro
+                                <h4 class="title">Installation of RO Systems RO
                                 </h4>
                             </a>
                             <span class="availability">500g</span>
