@@ -32,6 +32,7 @@ mysqli_stmt_close($stmt);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $member_name = $_POST['name'];
     $email_id = $_POST['email'];
+    $mobile_number = $_POST['mobile_number'];
 
     // Check if record exists
     $query = "SELECT COUNT(*) FROM tbl_memberreg WHERE member_user_id = ?";
@@ -45,28 +46,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($count > 0) {
         // Update existing record
         $query = "UPDATE tbl_memberreg
-                  SET member_name = ?, email_id = ? 
+                  SET member_name = ?, email_id = ?,mobile_number = ?
                   WHERE member_user_id = ?";
+
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "sss", $member_name, $email_id, $member_user_id);
+        mysqli_stmt_bind_param($stmt, "ssis", $member_name, $email_id, $mobile_number, $member_user_id );
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
         // Update session variables
     $_SESSION['member_name'] = $member_name;
+    $_SESSION['mobile_number'] = $mobile_number;
     $_SESSION['email_id'] = $email_id;
     } else {
         // Insert new record
-        $query = "INSERT INTO tbl_memberreg (member_name, email_id) 
-                  VALUES (?, ?,)";
+        $query = "INSERT INTO tbl_memberreg (member_name, email_id ,mobile_number) 
+                  VALUES (?, ?,?)";
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "ss",$member_name,$email_id);
+        mysqli_stmt_bind_param($stmt, "ssi",$member_name,$email_id,$mobile_number);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
         // Update session variables
     $_SESSION['member_name'] = $member_name;
     $_SESSION['email_id'] = $email_id;
+    $_SESSION['mobile_number'] = $mobile_number;
     }
 
     echo json_encode(['success' => true]); // Return success response
@@ -76,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Fetching from database and ensuring that variables are never null
 $member_name = $member_name ?? '';
 $email_id = $email_id ?? '';
+$mobile_number = $_SESSION['mobile_number'] ?? '';
 
 ?>
 <!DOCTYPE html>
@@ -510,6 +515,10 @@ $email_id = $email_id ?? '';
                                                         <span class="hp-p1-body">Email Address</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $email_id?></span>
                                                     </li>
+                                                    <li class="mt-18">
+                                                        <span class="hp-p1-body">Mobile Number</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $mobile_number?></span>
+                                                    </li>
                                                    
                                                 </ul>
                                             </div>
@@ -547,6 +556,10 @@ $email_id = $email_id ?? '';
                                         <div class="col-12">
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($email_id, ENT_QUOTES, 'UTF-8'); ?>">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="mobile_number" class="form-label">Mobile Number</label>
+                                            <input type="number" class="form-control" id="mobile_number" name="mobile_number" value="<?php echo htmlspecialchars($mobile_number, ENT_QUOTES, 'UTF-8'); ?>">
                                         </div>
 
                                        
