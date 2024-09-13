@@ -1,4 +1,60 @@
-﻿<?php include "components/phpComponents/phpcomponents.php"; ?>
+﻿<?php include "components/phpComponents/phpcomponents.php"; 
+include "config/config.php";
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+} // Ensure session is started if needed for user login tracking
+
+// Initialize variables for success and error messages
+$message = '';
+$messageType = ''; // 'success' or 'error'
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $oldPassword = $_POST['oldPassword'];
+    $newPassword = $_POST['newPassword'];
+    $confirmPassword = $_POST['confirmPassword'];
+
+    // Basic validation
+    if (empty($oldPassword) || empty($newPassword) || empty($confirmPassword)) {
+        $message = "All fields are required.";
+        $messageType = 'error';
+    } elseif ($newPassword !== $confirmPassword) {
+        $message = "New password and confirm password do not match.";
+        $messageType = 'error';
+    } else {
+        // Assume user ID is stored in session
+        $userId = $_SESSION['member_user_id']; // Ensure this value is set correctly in your session handling
+
+        // Fetch old password hash from the database
+        $stmt = $connection->prepare("SELECT password FROM tbl_memberreg WHERE member_user_id = ?");
+        $stmt->bind_param("i", $userId);
+        $stmt->execute();
+        $stmt->bind_result($hashedPassword);
+        $stmt->fetch();
+        $stmt->close();
+
+        // Verify the old password
+        if (!password_verify($oldPassword, $hashedPassword)) {
+            $message = "Old password is incorrect.";
+            $messageType = 'error';
+        } else {
+            // Hash the new password
+            $newHashedPassword = password_hash($newPassword, PASSWORD_BCRYPT);
+
+            // Update the password in the database
+            $stmt = $connection->prepare("UPDATE tbl_memberreg SET password = ? WHERE member_user_id = ?");
+            $stmt->bind_param("si", $newHashedPassword, $userId);
+            if ($stmt->execute()) {
+                $message = "Password changed successfully.";
+                $messageType = 'success';
+            } else {
+                $message = "Error changing password.";
+                $messageType = 'error';
+            }
+            $stmt->close();
+        }
+    }
+}
+?>  
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -6,6 +62,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <meta name="author" content="Hypeople" />
   <meta
@@ -270,7 +327,7 @@
                       </div>
                     </div>
 
-                    <h3 class="mt-24 mb-4">Dolores Bianca</h3>
+                    <h3 class="mt-24 mb-4"><?php echo ucwords($member_name); ?></h3>
 
 
                   </div>
@@ -477,40 +534,53 @@
                     <div class="row">
                       <div
                         class="col-12 col-sm-8 col-md-7 col-xl-5 col-xxxl-3">
-                        <form>
-                          <div class="mb-24">
-                            <label for="profileOldPassword" class="form-label">Old Password :</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="profileOldPassword"
-                              placeholder="Password" />
-                          </div>
+                        <?php if ($message): ?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: '<?php echo $messageType === 'success' ? 'Success' : 'Error'; ?>',
+                    text: '<?php echo htmlspecialchars($message, ENT_QUOTES, 'UTF-8'); ?>',
+                    icon: '<?php echo $messageType; ?>',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>
+    <?php endif; ?>
+    <form method="post" action="">
+        <div class="mb-24">
+            <label for="profileOldPassword" class="form-label">Old Password :</label>
+            <input
+                type="password"
+                class="form-control"
+                id="profileOldPassword"
+                name="oldPassword"
+                placeholder="Password" />
+        </div>
 
-                          <div class="mb-24">
-                            <label for="profileNewPassword" class="form-label">New Password :</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="profileNewPassword"
-                              placeholder="Password" />
-                          </div>
+        <div class="mb-24">
+            <label for="profileNewPassword" class="form-label">New Password :</label>
+            <input
+                type="password"
+                class="form-control"
+                id="profileNewPassword"
+                name="newPassword"
+                placeholder="Password" />
+        </div>
 
-                          <div class="mb-24">
-                            <label
-                              for="profileConfirmPassword"
-                              class="form-label">Confirm New Password :</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="profileConfirmPassword"
-                              placeholder="Password" />
-                          </div>
+        <div class="mb-24">
+            <label for="profileConfirmPassword" class="form-label">Confirm New Password :</label>
+            <input
+                type="password"
+                class="form-control"
+                id="profileConfirmPassword"
+                name="confirmPassword"
+                placeholder="Password" />
+        </div>
 
-                          <button type="submit" class="btn btn-primary w-100">
-                            Change Password
-                          </button>
-                        </form>
+        <button type="submit" class="btn btn-primary w-100">
+            Change Password
+        </button>
+    </form>
                       </div>
                     </div>
                   </div>
