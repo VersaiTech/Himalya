@@ -170,9 +170,9 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                     amountInput.style.borderColor = ""; // Reset border color
                 }, 2000);
             }
-            // Step 2: Check if amount is less than or equal to 1000
-            else if (amountValue <= 1000) {
-                amountError.textContent = "Amount must be more than 1000";
+            // Step 2: Check if amount is less than or equal to 1500
+            else if (amountValue <= 1500) {
+                amountError.textContent = "Amount must be more than 1500";
                 amountError.style.display = "block";
                 amountInput.style.borderColor = "red";
 
@@ -453,6 +453,8 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                                                 <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profileContactEditModal">Create Request</button>
                                             </div> -->
 
+
+                                            
                                             <div class="col-12 col-md-6 hp-profile-action-btn text-end">
                                                 <?php if ($topUp_status == 1): ?>
                                                     <!-- If topUp_status is 1, show the Create Request button -->
