@@ -16,6 +16,63 @@ session_start();
     <!-- plugins css -->
     <link rel="stylesheet preload" href="assets/css/plugins.css" as="style">
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <style>
+    
+/* Modal background, padding, and border radius */
+.custom-modal {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Custom Primary Button (Pay through Payment Gateway) */
+.custom-btn-primary {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient effect */
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 0;
+  border-radius: 30px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: all 0.3s ease;
+}
+
+.custom-btn-primary:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb); /* Invert gradient on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Hover shadow */
+}
+
+/* Custom Secondary Button (Pay through QR Code) */
+.custom-btn-secondary {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  padding: 10px 0;
+  border: 2px solid #6c757d;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.custom-btn-secondary:hover {
+  background-color: #e9ecef;
+  border-color: #495057;
+}
+
+/* Close Button */
+.custom-btn-close {
+  background-color: #6c757d;
+  color: white;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-btn-close:hover {
+  background-color: #495057;
+}
+
+    </style>
 
 </head>
 
@@ -709,7 +766,53 @@ session_start();
     </div>
     <!-- feature product end -->
 
+  <!-- MODAL -->
 
+                        <!-- Modal 1: Payment Options -->
+                       
+
+                        <div class="modal fade" id="paymentOptionsModal" tabindex="-1" aria-labelledby="paymentOptionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 shadow-lg custom-modal"> <!-- Custom class added -->
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold" id="paymentRequiredModalLabel">Choose Payment Method</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p class="mb-4">Please select one payment method:</p>
+                <button type="button" class="btn custom-btn-primary w-100 mb-3" onclick="payThroughGateway(1000)">Pay through Payment Gateway</button>
+                <button type="button" class="btn custom-btn-secondary w-100" onclick="openQRCodeModal()">Pay through QR Code</button>
+            </div>
+            <div class="modal-footer border-top-0 d-flex justify-content-center">
+                <button type="button" class="btn custom-btn-close" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+                       
+                                            <!-- Modal 2: QR Code Payment -->
+                                            <div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"> <!-- Centered modal -->
+        <div class="modal-content rounded-4 shadow-lg custom-modal"> <!-- Added rounded and shadow classes -->
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fw-bold" id="qrCodeModalLabel">Pay with QR Code</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="https://files.oaiusercontent.com/file-CqUIHvOz1qCzGcvuhwiD3IKq?se=2024-09-13T07%3A43%3A13Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Ddb4032ef-a1b1-4706-bc30-293e2ccfd63d.webp&sig=spiwDp7XQJefY8TwcqWDblK3M3SGvAOnV2ZNsTvzKWo%3D" alt="QR Code" class="img-fluid mb-4 rounded"> <!-- Rounded image with margin-bottom -->
+                <input type="text" id="utrNumber" class="form-control custom-input" placeholder="Enter UTR Number"> <!-- Custom input style -->
+            </div>
+            <div class="modal-footer border-top-0 d-flex justify-content-center">
+                <button type="button" class="btn custom-btn-primary w-100" onclick="submitUTR(1000)">Submit</button> <!-- Custom button -->
+            </div>
+        </div>
+    </div>
+</div>
+
+                        <!-- Modal -->
 
 
     <!-- rts shorts service area start -->
@@ -852,245 +955,249 @@ session_start();
                             </div>
                             <div class="cart-counter-action">
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                 onclick="buy_now_fun(1000)">
-                                    <div class="btn-text">
-                                        Buy Now
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
+                                    onclick="openPaymentModal(1000)"">
+                                    <div class=" btn-text">
+                                    Buy Now
                             </div>
+                            <div class="arrow-icon">
+                                <i class="fa-regular fa-cart-shopping"></i>
+                            </div>
+                            <div class="arrow-icon">
+                                <i class="fa-regular fa-cart-shopping"></i>
+                            </div>
+                            </a>
                         </div>
+
+
+                      
                     </div>
                 </div>
-                <div class="col-lg-20 col-md-4 col-sm-6 col-12">
-                    <div class="single-shopping-card-one deals-of-day">
-                        <div class="onsale-offer">
-                            <span>On sale</span>
-                        </div>
-                        <div class="image-and-action-area-wrapper">
-
-                            <img src="assets/images/grocery/16.png" alt="grocery">
-                            </a>
-                           
-                            <!--<div class="action-share-option">
-                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
-                                    <i class="fa-light fa-heart"></i>
-                                </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
-                            </div>-->
-                        </div>
-
-                        <div class="body-content">
-                            <div class="start-area-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <a href="index">
-                                <h4 class="title">Wall Mounted Livpure Glitz RO
-                                </h4>
-                            </a>
-                            <span class="availability">500g Pack</span>
-                            <div class="price-area">
-                                <span class="current">Rs10000</span>
-                                <div class="previous">Rs15000</div>
-                            </div>
-                            <div class="cart-counter-action">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Buy Now
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-20 col-md-4 col-sm-6 col-12">
-                    <div class="single-shopping-card-one deals-of-day">
-                        <div class="onsale-offer">
-                            <span>On sale</span>
-                        </div>
-                        <div class="image-and-action-area-wrapper">
-                            <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/17.png" alt="grocery">
-                            </a>
-                            <!--<div class="action-share-option">
-                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
-                                    <i class="fa-light fa-heart"></i>
-                                </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
-                            </div>-->
-                        </div>
-
-                        <div class="body-content">
-                            <div class="start-area-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <a href="shop-details.html">
-                                <h4 class="title">Aqua Natural RO Water Purifier
-                                </h4>
-                            </a>
-                            <span class="availability">500g Pack</span>
-                            <div class="price-area">
-                                <span class="current">Rs17000</span>
-                                <div class="previous">Rs21000</div>
-                            </div>
-                            <div class="cart-counter-action">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Buy Now
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-20 col-md-4 col-sm-6 col-12">
-                    <div class="single-shopping-card-one deals-of-day">
-                        <div class="onsale-offer">
-                            <span>On sale</span>
-                        </div>
-                        <div class="image-and-action-area-wrapper">
-                            <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/18.png" alt="grocery">
-                            </a>
-                            <!--<div class="action-share-option">
-                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
-                                    <i class="fa-light fa-heart"></i>
-                                </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
-                            </div>-->
-                        </div>
-
-                        <div class="body-content">
-                            <div class="start-area-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <a href="index">
-                                <h4 class="title">Wall Mounted Livpure Glitz RO
-                                </h4>
-                            </a>
-                            <span class="availability">500g Pack</span>
-                            <div class="price-area">
-                                <span class="current">Rs9000</span>
-                                <div class="previous">Rs13000</div>
-                            </div>
-                            <div class="cart-counter-action">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Buy Now
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-20 col-md-4 col-sm-6 col-12">
-                    <div class="single-shopping-card-one deals-of-day">
-                        <div class="onsale-offer">
-                            <span>On sale</span>
-                        </div>
-                        <div class="image-and-action-area-wrapper">
-                            <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/19.png" alt="grocery">
-                            </a>
-                            <!--<div class="action-share-option">
-                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
-                                    <i class="fa-light fa-heart"></i>
-                                </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
-                            </div>-->
-                        </div>
-
-                        <div class="body-content">
-                            <div class="start-area-rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <a href="index">
-                                <h4 class="title">Kent Smart Alkalizer Water purifier
-                                </h4>
-                            </a>
-                            <span class="availability">500g Pack</span>
-                            <div class="price-area">
-                                <span class="current">Rs31000</span>
-                                <div class="previous">Rs40000</div>
-                            </div>
-                            <div class="cart-counter-action">
-                                <a href="#" class="rts-btn btn-primary radious-sm with-icon">
-                                    <div class="btn-text">
-                                        Buy Now
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="arrow-icon">
-                                        <i class="fa-regular fa-cart-shopping"></i>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            
+            <div class="col-lg-20 col-md-4 col-sm-6 col-12">
+                <div class="single-shopping-card-one deals-of-day">
+                    <div class="onsale-offer">
+                        <span>On sale</span>
+                    </div>
+                    <div class="image-and-action-area-wrapper">
+
+                        <img src="assets/images/grocery/16.png" alt="grocery">
+                        </a>
+
+                        <!--<div class="action-share-option">
+                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
+                                    <i class="fa-light fa-heart"></i>
+                                </div>
+                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-arrows-retweet"></i>
+                                </div>
+                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                            </div>-->
+                    </div>
+
+                    <div class="body-content">
+                        <div class="start-area-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <a href="index">
+                            <h4 class="title">Wall Mounted Livpure Glitz RO
+                            </h4>
+                        </a>
+                        <span class="availability">500g Pack</span>
+                        <div class="price-area">
+                            <span class="current">Rs10000</span>
+                            <div class="previous">Rs15000</div>
+                        </div>
+                        <div class="cart-counter-action">
+                            <a href="#" class="rts-btn btn-primary radious-sm with-icon">
+                                <div class="btn-text">
+                                    Buy Now
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-20 col-md-4 col-sm-6 col-12">
+                <div class="single-shopping-card-one deals-of-day">
+                    <div class="onsale-offer">
+                        <span>On sale</span>
+                    </div>
+                    <div class="image-and-action-area-wrapper">
+                        <a href="index" class="thumbnail-preview">
+                            <img src="assets/images/grocery/17.png" alt="grocery">
+                        </a>
+                        <!--<div class="action-share-option">
+                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
+                                    <i class="fa-light fa-heart"></i>
+                                </div>
+                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-arrows-retweet"></i>
+                                </div>
+                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                            </div>-->
+                    </div>
+
+                    <div class="body-content">
+                        <div class="start-area-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <a href="shop-details.html">
+                            <h4 class="title">Aqua Natural RO Water Purifier
+                            </h4>
+                        </a>
+                        <span class="availability">500g Pack</span>
+                        <div class="price-area">
+                            <span class="current">Rs17000</span>
+                            <div class="previous">Rs21000</div>
+                        </div>
+                        <div class="cart-counter-action">
+                            <a href="#" class="rts-btn btn-primary radious-sm with-icon">
+                                <div class="btn-text">
+                                    Buy Now
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-20 col-md-4 col-sm-6 col-12">
+                <div class="single-shopping-card-one deals-of-day">
+                    <div class="onsale-offer">
+                        <span>On sale</span>
+                    </div>
+                    <div class="image-and-action-area-wrapper">
+                        <a href="index" class="thumbnail-preview">
+                            <img src="assets/images/grocery/18.png" alt="grocery">
+                        </a>
+                        <!--<div class="action-share-option">
+                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
+                                    <i class="fa-light fa-heart"></i>
+                                </div>
+                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-arrows-retweet"></i>
+                                </div>
+                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                            </div>-->
+                    </div>
+
+                    <div class="body-content">
+                        <div class="start-area-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <a href="index">
+                            <h4 class="title">Wall Mounted Livpure Glitz RO
+                            </h4>
+                        </a>
+                        <span class="availability">500g Pack</span>
+                        <div class="price-area">
+                            <span class="current">Rs9000</span>
+                            <div class="previous">Rs13000</div>
+                        </div>
+                        <div class="cart-counter-action">
+                            <a href="#" class="rts-btn btn-primary radious-sm with-icon">
+                                <div class="btn-text">
+                                    Buy Now
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-20 col-md-4 col-sm-6 col-12">
+                <div class="single-shopping-card-one deals-of-day">
+                    <div class="onsale-offer">
+                        <span>On sale</span>
+                    </div>
+                    <div class="image-and-action-area-wrapper">
+                        <a href="index" class="thumbnail-preview">
+                            <img src="assets/images/grocery/19.png" alt="grocery">
+                        </a>
+                        <!--<div class="action-share-option">
+                                <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
+                                    <i class="fa-light fa-heart"></i>
+                                </div>
+                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <i class="fa-solid fa-arrows-retweet"></i>
+                                </div>
+                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
+                                    <i class="fa-regular fa-eye"></i>
+                                </div>
+                            </div>-->
+                    </div>
+
+                    <div class="body-content">
+                        <div class="start-area-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <a href="index">
+                            <h4 class="title">Kent Smart Alkalizer Water purifier
+                            </h4>
+                        </a>
+                        <span class="availability">500g Pack</span>
+                        <div class="price-area">
+                            <span class="current">Rs31000</span>
+                            <div class="previous">Rs40000</div>
+                        </div>
+                        <div class="cart-counter-action">
+                            <a href="#" class="rts-btn btn-primary radious-sm with-icon">
+                                <div class="btn-text">
+                                    Buy Now
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                                <div class="arrow-icon">
+                                    <i class="fa-regular fa-cart-shopping"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
     </div>
     <!-- deal of the day area end -->
 
@@ -2388,26 +2495,115 @@ session_start();
         // }
 
         function buy_now_fun(amount) {
+            let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+            if (is_login) {
+                console.log(amount)
+                console.log('<?php echo $_SESSION['member_user_id']; ?>');
+                console.log('<?php echo $_SESSION['email_id']; ?>');
+
+                let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
+                let email_id = '<?php echo $_SESSION['email_id']; ?>';
+                let formData = new FormData();
+                formData.append('member_user_id', member_user_id);
+                formData.append('email_id', email_id);
+                formData.append('amount', amount);
+                fetch('process.php?simulate_payment=true', {
+                    method: 'POST',
+                    body: formData
+                });
+            } else {
+                alert('Please login first.');
+            }
+        }
+        // Function to open the payment options modal
+function openPaymentModal(amount) {
+    const paymentModal = new bootstrap.Modal(document.getElementById('paymentOptionsModal'));
+    paymentModal.show();
+}
+
+// Function to handle the Payment Gateway option
+function payThroughGateway(amount) {
     let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
     if (is_login) {
-        console.log(amount)
-        console.log('<?php echo $_SESSION['member_user_id']; ?>');
-        console.log('<?php echo $_SESSION['email_id']; ?>');
-
         let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
         let email_id = '<?php echo $_SESSION['email_id']; ?>';
+
         let formData = new FormData();
         formData.append('member_user_id', member_user_id);
         formData.append('email_id', email_id);
         formData.append('amount', amount);
-        fetch('process.php?simulate_payment=true', {
+
+        fetch('process?simulate_payment=true', {
             method: 'POST',
             body: formData
-        });
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  alert("Payment Successful!");
+              } else {
+                  alert("Payment Failed. Try again.");
+              }
+          });
+
+        // Close the modal after payment is triggered
+        const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
+        paymentModal.hide();
     } else {
         alert('Please login first.');
     }
 }
+
+// Function to open the QR code modal
+function openQRCodeModal() {
+    const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
+    paymentModal.hide(); // Close the first modal
+
+    const qrCodeModal = new bootstrap.Modal(document.getElementById('qrCodeModal'));
+    qrCodeModal.show(); // Show the QR code modal
+}
+
+// Function to submit UTR for QR Code payment
+// Function to submit UTR for QR Code payment
+function submitUTR(amount) {
+    let utrNumber = document.getElementById('utrNumber').value;
+
+    if (utrNumber === "") {
+        alert("Please enter a UTR number");
+        return;
+    }
+
+    let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    if (is_login) {
+        let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
+        let email_id = '<?php echo $_SESSION['email_id']; ?>';
+
+        let formData = new FormData();
+        formData.append('member_user_id', member_user_id);
+        formData.append('email_id', email_id);
+        formData.append('utr_number', utrNumber);
+        formData.append('amount', amount);
+
+        fetch('process_utr', {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  alert("UTR Submitted Successfully! Awaiting Admin Approval.");
+              } else {
+                  alert("Failed to submit UTR. Try again.");
+              }
+          });
+
+        // Close the QR code modal
+        const qrCodeModal = bootstrap.Modal.getInstance(document.getElementById('qrCodeModal'));
+        qrCodeModal.hide();
+    } else {
+        alert('Please login first.');
+    }
+}
+
+
     </script>
     <!-- header style two End -->
 
