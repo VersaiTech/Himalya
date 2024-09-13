@@ -102,7 +102,7 @@
                 </a>
             </li>
             <li>
-                <a href="payout-details" class="submenu-item">
+                <a href="profile-notifications" class="submenu-item">
                     <span>
                         <span class="submenu-item-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 24 24" fill="none">

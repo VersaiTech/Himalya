@@ -1,5 +1,86 @@
-﻿<?php include "components/phpComponents/phpcomponents.php";
+﻿<?php 
+include "components/phpComponents/phpcomponents.php";
+include "./config/config.php"; // Ensure the database connection $conn is in this file
+
+// Check if session variables exist
+if (!isset($_SESSION['member_user_id']) || !isset($_SESSION['email_id'])) {
+    exit();
+}
+
+if ($connection === null || !$connection->ping()) {
+    die("Database connection is not properly initialized or not connected.");
+}
+
+$member_user_id = $_SESSION['member_user_id'];
 $email_id = $_SESSION['email_id'];
+$member_name = $_SESSION['member_name'];
+
+
+
+// Fetch existing bank details
+$query = "SELECT member_name, email_id
+          FROM tbl_memberreg 
+          WHERE member_user_id = ?";
+$stmt = mysqli_prepare($connection, $query);
+mysqli_stmt_bind_param($stmt, "s", $member_user_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $member_name, $email_id);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $member_name = $_POST['name'];
+    $email_id = $_POST['email'];
+    $mobile_number = $_POST['mobile_number'];
+
+    // Check if record exists
+    $query = "SELECT COUNT(*) FROM tbl_memberreg WHERE member_user_id = ?";
+    $stmt = mysqli_prepare($connection, $query);
+    mysqli_stmt_bind_param($stmt, "s", $member_user_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $count);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($count > 0) {
+        // Update existing record
+        $query = "UPDATE tbl_memberreg
+                  SET member_name = ?, email_id = ?,mobile_number = ?
+                  WHERE member_user_id = ?";
+
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, "ssis", $member_name, $email_id, $mobile_number, $member_user_id );
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+
+        // Update session variables
+    $_SESSION['member_name'] = $member_name;
+    $_SESSION['mobile_number'] = $mobile_number;
+    $_SESSION['email_id'] = $email_id;
+    } else {
+        // Insert new record
+        $query = "INSERT INTO tbl_memberreg (member_name, email_id ,mobile_number) 
+                  VALUES (?, ?,?)";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, "ssi",$member_name,$email_id,$mobile_number);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+
+        // Update session variables
+    $_SESSION['member_name'] = $member_name;
+    $_SESSION['email_id'] = $email_id;
+    $_SESSION['mobile_number'] = $mobile_number;
+    }
+
+    echo json_encode(['success' => true]); // Return success response
+    exit();
+}
+
+// Fetching from database and ensuring that variables are never null
+$member_name = $member_name ?? '';
+$email_id = $email_id ?? '';
+$mobile_number = $_SESSION['mobile_number'] ?? '';
 
 ?>
 <!DOCTYPE html>
@@ -33,6 +114,37 @@ $email_id = $_SESSION['email_id'];
                 n.src = "https://static.hotjar.com/c/hotjar-" + t._hjSettings.hjid + ".js?sv=" + t._hjSettings.hjsv,
                 s.appendChild(n)
         }(window, document)
+    </script>
+     <script>
+        function submitForm() {
+            const form = document.getElementById('bankDetailsForm');
+            const formData = new FormData(form);
+
+            fetch('profile-information', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('profile Updated successfully');
+                     // Close the modal
+            const modal = document.querySelector("#profileContactEditModal");
+            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+            bootstrapModal.hide();
+
+            // Refresh the page after a short delay
+            setTimeout(() => {
+                location.reload();
+            }, 500); // Adjust the delay as needed
+                } else {
+                    alert('Failed to update bank details');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
     </script>
 </head>
 
@@ -225,7 +337,7 @@ $email_id = $_SESSION['email_id'];
                                             </div>
                                         </div>
 
-                                        <h3 class="mt-24 mb-4">Your Name</h3>
+                                        <h3 class="mt-24 mb-4"><?php echo ucwords($member_name); ?></h3>
                                        
                                     </div>
                                 </div>
@@ -403,6 +515,10 @@ $email_id = $_SESSION['email_id'];
                                                         <span class="hp-p1-body">Email Address</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $email_id?></span>
                                                     </li>
+                                                    <li class="mt-18">
+                                                        <span class="hp-p1-body">Mobile Number</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $mobile_number?></span>
+                                                    </li>
                                                    
                                                 </ul>
                                             </div>
@@ -430,22 +546,26 @@ $email_id = $_SESSION['email_id'];
                             <div class="divider my-0"></div>
 
                             <div class="modal-body py-48">
-                                <form>
+                            <form id="bankDetailsForm">
                                     <div class="row g-24">
                                         <div class="col-12">
                                             <label for="fullName" class="form-label">Name</label>
-                                            <input type="text" class="form-control" id="fullName">
+                                            <input type="text" class="form-control" id="fullName" name="name" value="<?php echo htmlspecialchars($member_name, ENT_QUOTES, 'UTF-8'); ?>">
                                         </div>
 
                                         <div class="col-12">
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="email" class="form-control" id="email">
+                                            <input type="email" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($email_id, ENT_QUOTES, 'UTF-8'); ?>">
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="mobile_number" class="form-label">Mobile Number</label>
+                                            <input type="number" class="form-control" id="mobile_number" name="mobile_number" value="<?php echo htmlspecialchars($mobile_number, ENT_QUOTES, 'UTF-8'); ?>">
                                         </div>
 
                                        
 
                                         <div class="col-6">
-                                            <button type="button" class="btn btn-primary w-100">Update</button>
+                                            <button type="button" class="btn btn-primary w-100"  onclick="submitForm()">Update</button>
                                         </div>
 
                                         <div class="col-6">
