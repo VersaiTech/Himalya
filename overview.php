@@ -406,28 +406,30 @@
               </div>
 
               <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/realtree.png">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block">Binary Tree</span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Referrals</span>
+                <a href="binary-tree">
+                  <div class="hp-select-box-item">
+                    <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
+                    <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row text-center mb-8">
+                            <div class="col-12 my-12">
+                              <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
+                                <img src="assets/realtree.png">
+                              </span>
+                            </div>
+                            <div class="col-12">
+                              <span class="h4 d-block">Binary Tree</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Referrals</span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </label>
-                </div>
+                    </label>
+                  </div>
+                </a>
               </div>
               <div class="col-12 col-md-3">
                 <div class="hp-select-box-item">
@@ -595,19 +597,6 @@
                   </div>
                 </div>
 
-                <script>
-                  document.getElementById('copyButton').addEventListener('click', function() {
-                    var referralLink = document.getElementById('referralLink').innerText;
-                    var tempInput = document.createElement('input');
-                    tempInput.value = referralLink;
-                    document.body.appendChild(tempInput);
-                    tempInput.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(tempInput);
-
-                    $('#copyToast').toast('show');
-                  });
-                </script>
               </div>
             </div>
 
@@ -615,11 +604,11 @@
           </div>
         </div>
       </div>
-    </div>
-
     <?php
     include "components/footer.php";
     ?>
+    </div>
+
 
     </div>
   </main>
@@ -646,6 +635,21 @@
   <?php
   include "components/jsComponents/overview-js.php"
   ?>
+
+ 
+                <script>
+                  document.getElementById('copyButton').addEventListener('click', function() {
+                    var referralLink = document.getElementById('referralLink').innerText;
+                    var tempInput = document.createElement('input');
+                    tempInput.value = referralLink;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+
+                    $('#copyToast').toast('show');
+                  });
+                </script>
 </body>
 
 </html>

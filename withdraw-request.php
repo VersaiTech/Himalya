@@ -170,7 +170,7 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                     amountInput.style.borderColor = ""; // Reset border color
                 }, 2000);
             }
-            // Step 2: Check if amount is less than or equal to 1500
+            // Step 2: Check if amount is less than or equal to 1000
             else if (amountValue <= 1000) {
                 amountError.textContent = "Amount must be more than 1000";
                 amountError.style.display = "block";

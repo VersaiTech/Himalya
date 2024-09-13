@@ -209,7 +209,7 @@ if (isset($_SESSION['member_user_id'])) {
                 <div class="row mb-32 gy-32">
                     <!-- custom form -->
                     <div class="col-12">
-                        <div class="card custom-card">
+                        <div class="card custom-card p-0 m-0" >
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
                                     <h3 class="card-title mb-15">Withdraw History</h3>
