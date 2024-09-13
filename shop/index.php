@@ -822,7 +822,7 @@ session_start();
                             <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/15.png" alt="grocery">
                             </a>
-                            <div class="action-share-option">
+                            <!--<div class="action-share-option">
                                
                                 <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="fa-solid fa-arrows-retweet"></i>
@@ -830,7 +830,7 @@ session_start();
                                 <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                     <i class="fa-regular fa-eye"></i>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="body-content">
@@ -875,7 +875,8 @@ session_start();
                             
                             <img src="assets/images/grocery/16.png" alt="grocery">
                             </a>
-                            <div class="action-share-option">
+                           
+                            <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
@@ -885,7 +886,7 @@ session_start();
                                 <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                     <i class="fa-regular fa-eye"></i>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="body-content">
@@ -897,7 +898,7 @@ session_start();
                                 <i class="fa-solid fa-star"></i>
                             </div>
                             <a href="index">
-                                <h4 class="title">Wall Mounted Livpure Glitz
+                                <h4 class="title">Wall Mounted Livpure Glitz RO
                                 </h4>
                             </a>
                             <span class="availability">500g Pack</span>
@@ -930,7 +931,7 @@ session_start();
                             <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/17.png" alt="grocery">
                             </a>
-                            <div class="action-share-option">
+                            <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
@@ -940,7 +941,7 @@ session_start();
                                 <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                     <i class="fa-regular fa-eye"></i>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="body-content">
@@ -985,7 +986,7 @@ session_start();
                             <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/18.png" alt="grocery">
                             </a>
-                            <div class="action-share-option">
+                            <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
@@ -995,7 +996,7 @@ session_start();
                                 <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                     <i class="fa-regular fa-eye"></i>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="body-content">
@@ -1040,7 +1041,7 @@ session_start();
                             <a href="index" class="thumbnail-preview">
                                 <img src="assets/images/grocery/19.png" alt="grocery">
                             </a>
-                            <div class="action-share-option">
+                            <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
@@ -1050,7 +1051,7 @@ session_start();
                                 <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                     <i class="fa-regular fa-eye"></i>
                                 </div>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="body-content">
@@ -1145,7 +1146,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/29.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1155,7 +1156,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1198,7 +1199,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/18.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1208,7 +1209,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1267,7 +1268,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/19.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1277,7 +1278,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1321,7 +1322,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/32.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1331,7 +1332,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1391,7 +1392,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/31.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1401,7 +1402,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1445,7 +1446,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/33.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1455,7 +1456,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1515,7 +1516,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/36.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1525,7 +1526,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">
@@ -1569,7 +1570,7 @@ session_start();
                                         <a href="index" class="thumbnail-preview">
                                             <img src="assets/images/grocery/35.png" alt="grocery">
                                         </a>
-                                        <div class="action-share-option">
+                                        <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                                 <i class="fa-light fa-heart"></i>
                                             </div>
@@ -1579,7 +1580,7 @@ session_start();
                                             <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
                                                 <i class="fa-regular fa-eye"></i>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div class="body-content">
                                         <div class="start-area-rating">

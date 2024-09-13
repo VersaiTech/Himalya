@@ -9318,7 +9318,7 @@ img {
   -ms-interpolation-mode: bicubic;
   border: 0;
   vertical-align: middle;
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -17307,12 +17307,18 @@ li.with-megamenu:hover .rts-megamenu {
 }
 
 .bg_banner-2 {
-  background-image: url(../images/banner/main_02.jpg);
+  background-image: url(../images/banner/02.jpg);
   height: 520px;
   border-radius: 6px;
 }
-
-
+@media (max-width: 767px) {
+  .bg_banner-2 {
+    background-image: url(../images/banner/banner_main.jpg);
+    height: 520px; /* Adjust the height for phone screens */
+    background-size: cover; /* Ensures the image covers the entire banner */
+    background-position: center; /* Keeps the image centered */
+  }
+}
 .banner-area-two-start .content {
   padding: 116px 120px;
 }
@@ -17325,7 +17331,7 @@ li.with-megamenu:hover .rts-megamenu {
 
 @media only screen and (max-width: 575px) {
   .banner-area-two-start .content {
-    padding: 45px 20px;
+    padding: 1px 1px;
   }
 }
 
@@ -17361,7 +17367,7 @@ li.with-megamenu:hover .rts-megamenu {
 }
 
 .banner-area-two-start .content p.disc {
-  margin-bottom: 30px;
+  margin-bottom: 8px;
 }
 
 @media only screen and (max-width: 767px) {
