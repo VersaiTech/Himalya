@@ -268,7 +268,7 @@
                                 timerProgressBar: true,
                                 showConfirmButton: false
                             }).then(() => {
-                                window.location.href = 'binary-tree';
+                                window.location.href = 'overview';
                             });
                         } else {
                             Swal.fire({
