@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "./config/config.php";
 include "components/phpComponents/phpcomponents.php";
 
@@ -8,12 +8,12 @@ if (isset($_SESSION['member_user_id'])) {
 
     // Query to fetch the user's withdrawal requests from the database
     $query = "SELECT id, request_date, amount, status FROM withdrawal_requests WHERE member_user_id = ?";
-    
+
 
     if ($connection === null || !$connection->ping()) {
         die("Database connection is not properly initialized or not connected.");
     }
-    
+
     // Prepare and execute the query
     if ($stmt = $connection->prepare($query)) {
         $stmt->bind_param("i", $member_user_id); // Bind the member_user_id parameter
@@ -42,7 +42,7 @@ if (isset($_SESSION['member_user_id'])) {
     <?php
     include "components/cssComponents/withdraw-history-css.php";
     ?>
-    
+
 
     <title>Dashboard- Orion Trade Ai</title>
 
@@ -81,14 +81,14 @@ if (isset($_SESSION['member_user_id'])) {
                         <div class="w-auto px-0">
                             <div class="hp-header-logo d-flex align-items-center">
                                 <a href="overview" class="position-relative">
-                                   
 
-                                    <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/logo-small-dark.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/logo-small.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/LOGOFORWHITE.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/LOGOFORBLACK.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+
+                                    <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -104,40 +104,36 @@ if (isset($_SESSION['member_user_id'])) {
                     </div>
 
                     <?php
-  include "components/sidebar.php";
-  ?>
+                    include "components/sidebar.php";
+                    ?>
                 </div>
 
                 <?php
-  include "components/sideProfile.php";
-  ?>
+                include "components/sideProfile.php";
+                ?>
             </div>
         </div>
 
         <div class="hp-main-layout">
-        <?php
-        $title1="My Payments";
-        $title2="Withdraw History";
-  include "components/header.php";
-  ?>
+            <?php
+            $title1 = "My Payments";
+            $title2 = "Withdraw History";
+            include "components/header.php";
+            ?>
 
             <div class="offcanvas offcanvas-start hp-mobile-sidebar bg-black-20 hp-bg-dark-90" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel" style="width: 256px;">
                 <div class="offcanvas-header justify-content-between align-items-center ms-16 me-8 mt-16 p-0">
                     <div class="w-auto px-0">
                         <div class="hp-header-logo d-flex align-items-center">
                             <a href="overview" class="position-relative">
-                                <div class="hp-header-logo-icon position-absolute bg-black-20 hp-bg-dark-90 rounded-circle border border-black-0 hp-border-color-dark-90 d-flex align-items-center justify-content-center" style="width: 18px; height: 18px; top: -5px;">
-                                    <svg class="hp-fill-color-dark-0" width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.709473 0L1.67247 10.8L5.99397 12L10.3267 10.7985L11.2912 0H0.710223H0.709473ZM9.19497 3.5325H4.12647L4.24722 4.88925H9.07497L8.71122 8.95575L5.99397 9.70875L3.28047 8.95575L3.09522 6.87525H4.42497L4.51947 7.93275L5.99472 8.33025L5.99772 8.3295L7.47372 7.93125L7.62672 6.21375H3.03597L2.67897 2.208H9.31422L9.19572 3.5325H9.19497Z" fill="#2D3436"></path>
-                                    </svg>
-                                </div>
+                               
 
-                                <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/logo-small-dark.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/logo-small.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/LOGOFORWHITE.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/LOGOFORBLACK.png" alt="logo">
-                                 <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                             </a>
 
                         </div>
@@ -172,12 +168,12 @@ if (isset($_SESSION['member_user_id'])) {
                                                 </svg>
                                             </div>
 
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/logo-small-dark.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/logo-small.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/LOGOFORWHITE.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/LOGOFORBLACK.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                                         </a>
 
                                         <a href="https://hypeople-studio.gitbook.io/yoda/change-log" target="_blank" class="d-flex">
@@ -197,13 +193,13 @@ if (isset($_SESSION['member_user_id'])) {
                             </div>
 
                             <?php
-  include "components/sidebar.php";
-  ?>
+                            include "components/sidebar.php";
+                            ?>
                         </div>
 
                         <?php
-  include "components/sideProfile.php";
-  ?>
+                        include "components/sideProfile.php";
+                        ?>
                     </div>
                 </div>
             </div>
@@ -251,47 +247,47 @@ if (isset($_SESSION['member_user_id'])) {
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>
-                                        <th scope="col" style="min-width: 150px;">Date</th>
-            <th scope="col" style="min-width: 170px;">TRANSACTION ID</th>
-            <th scope="col" style="min-width: 120px;">AMOUNT</th>
-            <th scope="col" style="min-width: 120px;">STATUS</th>
+                                            <th scope="col" style="min-width: 150px;">Date</th>
+                                            <th scope="col" style="min-width: 170px;">TRANSACTION ID</th>
+                                            <th scope="col" style="min-width: 120px;">AMOUNT</th>
+                                            <th scope="col" style="min-width: 120px;">STATUS</th>
                                         </thead>
                                         <tbody id="tableBody">
-        <?php if ($result && $result->num_rows > 0): ?>
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <td><?php echo date('d-m-Y', strtotime($row['request_date'])); ?></td>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['amount']; ?></td>
-                    <td><?php echo ucfirst($row['status']); ?></td>
-                </tr>
-            <?php endwhile; ?>
-        <?php else: ?>
-            <tr>
-                <td colspan="6">No withdrawal requests found for this user.</td>
-            </tr>
-        <?php endif; ?>
-    </tbody>
+                                            <?php if ($result && $result->num_rows > 0): ?>
+                                                <?php while ($row = $result->fetch_assoc()): ?>
+                                                    <tr>
+                                                        <td><?php echo date('d-m-Y', strtotime($row['request_date'])); ?></td>
+                                                        <td><?php echo $row['id']; ?></td>
+                                                        <td><?php echo $row['amount']; ?></td>
+                                                        <td><?php echo ucfirst($row['status']); ?></td>
+                                                    </tr>
+                                                <?php endwhile; ?>
+                                            <?php else: ?>
+                                                <tr>
+                                                    <td colspan="6">No withdrawal requests found for this user.</td>
+                                                </tr>
+                                            <?php endif; ?>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>      
+            </div>
             <?php
-  include "components/footer.php";
-  ?>
-        
+            include "components/footer.php";
+            ?>
+
         </div>
     </main>
 
     <?php
-  include "components/appTheme.php";
-  ?>
+    include "components/appTheme.php";
+    ?>
 
     <a href="https://themeforest.net/item/yoda-react-admin-template-react-hooks-redux-toolkit-ant-design/33791048" target="_blank" class="hp-buy-now-btn position-fixed">
-        
+
     </a>
 
     <div class="scroll-to-top">
