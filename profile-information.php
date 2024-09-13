@@ -1,6 +1,19 @@
-﻿<?php include "components/phpComponents/phpcomponents.php";
-$email_id = $_SESSION['email_id'];
+﻿<?php 
+include "components/phpComponents/phpcomponents.php";
+include "./config/config.php"; // Ensure the database connection $conn is in this file
 
+// Check if session variables exist
+if (!isset($_SESSION['member_user_id']) || !isset($_SESSION['email_id'])) {
+    exit();
+}
+
+if ($connection === null || !$connection->ping()) {
+    die("Database connection is not properly initialized or not connected.");
+}
+
+$member_user_id = $_SESSION['member_user_id'];
+$email_id = $_SESSION['email_id'];
+$member_name = $_SESSION['member_name'];
 ?>
 <!DOCTYPE html>
 <html dir="ltr">
@@ -225,7 +238,7 @@ $email_id = $_SESSION['email_id'];
                                             </div>
                                         </div>
 
-                                        <h3 class="mt-24 mb-4">Your Name</h3>
+                                        <h3 class="mt-24 mb-4"><?php echo ucwords($member_name); ?></h3>
                                        
                                     </div>
                                 </div>

@@ -1,4 +1,75 @@
-﻿<?php include "components/phpComponents/phpcomponents.php";?>
+﻿<?php 
+include "components/phpComponents/phpcomponents.php";
+include "./config/config.php"; // Ensure the database connection $conn is in this file
+
+// Check if session variables exist
+if (!isset($_SESSION['member_user_id']) || !isset($_SESSION['email_id'])) {
+    exit();
+}
+
+if ($connection === null || !$connection->ping()) {
+    die("Database connection is not properly initialized or not connected.");
+}
+
+$member_user_id = $_SESSION['member_user_id'];
+$email_id = $_SESSION['email_id'];
+$member_name = $_SESSION['member_name'];
+// Fetch existing bank details
+$query = "SELECT account_holder_name, bank_name, ifsc_code, account_number 
+          FROM tbl_bankdetails 
+          WHERE member_user_id = ?";
+$stmt = mysqli_prepare($connection, $query);
+mysqli_stmt_bind_param($stmt, "s", $member_user_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $account_holder_name, $bank_name, $ifsc_code, $account_number);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $new_account_holder_name = $_POST['account_holder_name'];
+    $new_bank_name = $_POST['bank_name'];
+    $new_ifsc_code = $_POST['ifsc_code'];
+    $new_account_number = $_POST['account_number'];
+
+    // Check if record exists
+    $query = "SELECT COUNT(*) FROM tbl_bankdetails WHERE member_user_id = ?";
+    $stmt = mysqli_prepare($connection, $query);
+    mysqli_stmt_bind_param($stmt, "s", $member_user_id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $count);
+    mysqli_stmt_fetch($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($count > 0) {
+        // Update existing record
+        $query = "UPDATE tbl_bankdetails 
+                  SET account_holder_name = ?, bank_name = ?, ifsc_code = ?, account_number = ? 
+                  WHERE member_user_id = ?";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, "sssss", $new_account_holder_name, $new_bank_name, $new_ifsc_code, $new_account_number, $member_user_id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    } else {
+        // Insert new record
+        $query = "INSERT INTO tbl_bankdetails (member_user_id, account_holder_name, bank_name, ifsc_code, account_number) 
+                  VALUES (?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, "sssss", $member_user_id, $new_account_holder_name, $new_bank_name, $new_ifsc_code, $new_account_number);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+
+    echo json_encode(['success' => true]); // Return success response
+    exit();
+}
+
+// Fetching from database and ensuring that variables are never null
+$account_holder_name = $account_holder_name ?? '';
+$bank_name = $bank_name ?? '';
+$ifsc_code = $ifsc_code ?? '';
+$account_number = $account_number ?? '';
+?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -30,6 +101,38 @@
                 n.src = "https://static.hotjar.com/c/hotjar-" + t._hjSettings.hjid + ".js?sv=" + t._hjSettings.hjsv,
                 s.appendChild(n)
         }(window, document)
+    </script>
+
+     <script>
+        function submitForm() {
+            const form = document.getElementById('bankDetailsForm');
+            const formData = new FormData(form);
+
+            fetch('profile-notifications', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Bank details updated successfully');
+                     // Close the modal
+            const modal = document.querySelector("#profileContactEditModal");
+            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+            bootstrapModal.hide();
+
+            // Refresh the page after a short delay
+            setTimeout(() => {
+                location.reload();
+            }, 500); // Adjust the delay as needed
+                } else {
+                    alert('Failed to update bank details');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
     </script>
 </head>
 
@@ -222,7 +325,7 @@
                                             </div>
                                         </div>
 
-                                        <h3 class="mt-24 mb-4">Your Name</h3>
+                                        <h3 class="mt-24 mb-4"><?php echo ucwords($member_name); ?></h3>
                                     </div>
                                 </div>
 
@@ -307,7 +410,7 @@
 
                                                 </div>
                                                 
-                                                <h3 class="mt-24 mb-4">Your Name</h3>
+                                                <h3 class="mt-24 mb-4"><?php echo ucwords($member_name);?></h3>
                                             </div>
                                         </div>
 
@@ -385,19 +488,19 @@
                                                 <ul>
                                                     <li>
                                                         <span class="hp-p1-body">ACCOUNT HOLDER'S NAME:*</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0">Dummy </span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $account_holder_name?></span>
                                                     </li>
                                                     <li class="mt-18">
                                                         <span class="hp-p1-body">BANK NAME:*</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0">Dummylast</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $bank_name?></span>
                                                     </li>
                                                     <li class="mt-18">
                                                         <span class="hp-p1-body">IFSC CODE</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0">dummy123</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $ifsc_code?></span>
                                                     </li>
                                                     <li class="mt-18">
                                                         <span class="hp-p1-body">ACCOUNT NUMBER</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0">3434983493</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $account_number?></span>
                                                     </li>
                                                   
                                                 </ul>
@@ -414,7 +517,7 @@
                 <div class="modal-dialog modal-dialog-centered" style="max-width: 416px;">
                     <div class="modal-content">
                         <div class="modal-header py-16">
-                            <h5 class="modal-title" id="profileContactEditModalLabel">Edit Profile</h5>
+                            <h5 class="modal-title" id="profileContactEditModalLabel">Edit Bank Details</h5>
                             <button type="button" class="btn-close hp-bg-none d-flex align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
                                 <i class="ri-close-line hp-text-color-dark-0 lh-1" style="font-size: 24px;"></i>
                             </button>
@@ -423,36 +526,31 @@
                         <div class="divider my-0"></div>
 
                         <div class="modal-body py-48">
-                            <form>
-                                <div class="row g-24">
-                                    <div class="col-12">
-                                        <label for="fullName" class="form-label">ACCOUNT HOLDER'S NAME </label>
-                                        <input type="text" class="form-control" id="fullName">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="fullName" class="form-label">BANK NAME</label>
-                                        <input type="text" class="form-control" id="fullName">
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="displayName" class="form-label">IFSC CODE</label>
-                                        <input type="text" class="form-control" id="displayName">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="displayName" class="form-label">Account Number</label>
-                                        <input type="text" class="form-control" id="displayName">
-                                    </div>
-
-                                   
-
-                                    <div class="col-6">
-                                        <button type="button" class="btn btn-primary w-100">Update</button>
-                                    </div>
-
-                                    <div class="col-6">
-                                        <div class="btn w-100" data-bs-dismiss="modal">Cancel</div>
-                                    </div>
-                                </div>
+                            <form id="bankDetailsForm">
+                            <div class="row g-24">
+                <div class="col-12">
+                    <label for="accountHolderName" class="form-label">ACCOUNT HOLDER'S NAME</label>
+                    <input type="text" class="form-control" id="accountHolderName" name="account_holder_name" value="<?php echo htmlspecialchars($account_holder_name, ENT_QUOTES, 'UTF-8'); ?>">
+                </div>
+                <div class="col-12">
+                    <label for="bankName" class="form-label">BANK NAME</label>
+                    <input type="text" class="form-control" id="bankName" name="bank_name" value="<?php echo htmlspecialchars($bank_name, ENT_QUOTES, 'UTF-8'); ?>">
+                </div>
+                <div class="col-12">
+                    <label for="ifscCode" class="form-label">IFSC CODE</label>
+                    <input type="text" class="form-control" id="ifscCode" name="ifsc_code" value="<?php echo htmlspecialchars($ifsc_code, ENT_QUOTES, 'UTF-8'); ?>">
+                </div>
+                <div class="col-12">
+                    <label for="accountNumber" class="form-label">Account Number</label>
+                    <input type="text" class="form-control" id="accountNumber" name="account_number" value="<?php echo htmlspecialchars($account_number, ENT_QUOTES, 'UTF-8'); ?>">
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary w-100" onclick="submitForm()">Update</button>
+                </div>
+                <div class="col-6">
+                    <div class="btn w-100" data-bs-dismiss="modal">Cancel</div>
+                </div>
+            </div>
                             </form>
                         </div>
                     </div>
