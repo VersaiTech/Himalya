@@ -191,16 +191,17 @@
           <div class="col-12">
             <div class="row align-items-center justify-content-between g-24">
               <div class="col-12 col-md-6">
-                <h3>Welcome back, <?php echo $member_name?> 👋</h3>
+                <h3>Welcome back, <?php echo $member_name ?> 👋</h3>
                 <div class="dropdown-containerr" style="margin-bottom: 3vh;">
-                  <select class="styled-dropdownn">
+                  <select class="styled-dropdownn" id="referralId">
                     <!-- <option value="status1" disabled selected>Account Number</option> -->
-                    <option value="status2"><?php echo $member_user_id; ?></option>
+                    <option value="status2">Your Referral ID: <?php echo $member_user_id; ?></option>
                   </select>
+
                 </div>
                 <div class="row g-32 mt-20">
-                  <div class="col-12 " style="font-size: 12px;">
-                    Affiliate Join Date: 23-09-2022 12:40 AM , India
+                  <div class="col-12 " style="font-size: 14px;">
+                    Affiliate Join Date: <?php echo date("d-m-Y H:i A", strtotime($row['registration_date'])); ?>
                   </div>
                 </div>
               </div>
@@ -277,7 +278,7 @@
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
                       <div style="width: 106px;" class="px-0">
                         <div class="h-100 bg-warning-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
-                          
+
                           <img src="assets/take-profit.png" alt="notdispatch">
                         </div>
                       </div>
@@ -336,8 +337,8 @@
                           <span class="hp-badge-text ms-8 text-primary hp-text-color-dark-primary-2">INR</span>
                         </h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;"><b>Current Account Balance</b></p>
-                        </div>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -452,8 +453,39 @@
                   </label>
                 </div>
               </div>
+              <div class="col-12 col-md-6">
+                <div class="hp-select-box-item">
+                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
+                  <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="row text-center mb-8">
+                          <div class="col-12 my-12">
+                            <span class="avatar-item d-flex align-items-center justify-content-center  mx-auto" style="width: 48px; height: 48px;">
+                              <img src="assets/id.png">
+                            </span>
+                          </div>
+                          <div class="col-12">
+                            <span class="h4 d-block" id="memberUserId"><?php echo $member_user_id; ?></span>
+                          </div>
+                          <div class="col-12">
+                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">
+                              Your Referral ID
+                              <button type="button" class="btn btn-text hp-bg-dark-85" id="copyButton">
+                                <i class="ri-file-copy-line"></i>
+                              </button>
+                            </span>
+                          </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                </label>
+              </div>
             </div>
 
+          </div>
 
 
 
@@ -470,9 +502,11 @@
 
 
 
-            <!-- ACTUAL REVENUE & PIE CHART -->
-            <div class="row g-32">
-              <!-- <div class="col-12 col-xl-8">
+
+
+          <!-- ACTUAL REVENUE & PIE CHART -->
+          <div class="row g-32">
+            <!-- <div class="col-12 col-xl-8">
                 <div class="row g-32">
                   <div class="col-12">
                     <div class="card hp-card-6 hp-chart-text-color">
@@ -490,7 +524,7 @@
                 </div>
               </div> -->
 
-              <!-- <div class="col-12 col-xl-4">
+            <!-- <div class="col-12 col-xl-4">
                 <div class="row g-32">
                   <div class="col-12">
                     <div class="card hp-card-6">
@@ -510,82 +544,82 @@
                 </div>
               </div> -->
 
-              <div class="card hp-card-1 hp-upgradePlanCardOne hp-upgradePlanCardOne-bg">
-                <div class="card-body">
-                  <div class="position-absolute h-100" style="top: 0px; right: 0px;">
-                    <svg class="hp-dark-none" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
-                      <path d="m394.94 86.299-177.9-100.66 34.328 92.136L131.659 8.35l109.303 155.528L78.423 73.626l47.648 95.459L4.478 118.751" stroke="url(#UpgradePlanCardOneLight-1)" stroke-width="20" stroke-linejoin="bevel"></path>
-                      <defs>
-                        <lineargradient id="UpgradePlanCardOneLight-1" x1="187.747" y1="-11.283" x2="206.538" y2="167.497" gradientunits="userSpaceOnUse">
-                          <stop></stop>
-                          <stop offset="0.737" stop-opacity="0"></stop>
-                        </lineargradient>
-                      </defs>
-                    </svg>
+            <div class="card hp-card-1 hp-upgradePlanCardOne hp-upgradePlanCardOne-bg">
+              <div class="card-body">
+                <div class="position-absolute h-100" style="top: 0px; right: 0px;">
+                  <svg class="hp-dark-none" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
+                    <path d="m394.94 86.299-177.9-100.66 34.328 92.136L131.659 8.35l109.303 155.528L78.423 73.626l47.648 95.459L4.478 118.751" stroke="url(#UpgradePlanCardOneLight-1)" stroke-width="20" stroke-linejoin="bevel"></path>
+                    <defs>
+                      <lineargradient id="UpgradePlanCardOneLight-1" x1="187.747" y1="-11.283" x2="206.538" y2="167.497" gradientunits="userSpaceOnUse">
+                        <stop></stop>
+                        <stop offset="0.737" stop-opacity="0"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
 
-                    <svg class="hp-dark-block" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
-                      <path d="m394.94 86.299-177.9-100.66 34.328 92.136L131.659 8.35l109.303 155.528L78.423 73.626l47.648 95.459L4.478 118.751" stroke="url(#UpgradePlanCardOneDark-2)" stroke-width="20" stroke-linejoin="bevel"></path>
-                      <defs>
-                        <lineargradient id="UpgradePlanCardOneDark-2" x1="187.747" y1="-11.283" x2="206.538" y2="167.497" gradientunits="userSpaceOnUse">
-                          <stop stop-color="#fff"></stop>
-                          <stop offset="0.737" stop-color="#fff" stop-opacity="0"></stop>
-                        </lineargradient>
-                      </defs>
-                    </svg>
-                  </div>
-
-
-                  <div class="row mt-8 align-items-center position-relative">
-                    <div class="mb-4 col-12">
-                      <div class="row align-items-center justify-content-between">
-                        <div class="flex-shrink-1 col">
-                          <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">Referral Link</p>
-                          <h4 class="mb-8 fw-bold" id="referralLink" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
-                            <?php echo $referralURL; ?></h4>
-                        </div>
-                        <div class="hp-flex-none w-auto col">
-                          <button type="button" id="copyButton" class="btn float-right mt-16 mt-sm-0 border-0 hp-hover-bg-black-100 hp-bg-black-bg hp-text-color-black-0 hp-hover-bg-dark-10 hp-bg-dark-0 hp-text-color-dark-100 btn-secondary">
-                            <span>Copy Link</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="toast-container">
-                    <div id="copyToast" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
-                      <div class="toast-body">
-                        Referral link copied to clipboard!
-                      </div>
-                    </div>
-                  </div>
-
-                  <script>
-                    document.getElementById('copyButton').addEventListener('click', function() {
-                      var referralLink = document.getElementById('referralLink').innerText;
-                      var tempInput = document.createElement('input');
-                      tempInput.value = referralLink;
-                      document.body.appendChild(tempInput);
-                      tempInput.select();
-                      document.execCommand('copy');
-                      document.body.removeChild(tempInput);
-
-                      $('#copyToast').toast('show');
-                    });
-                  </script>
+                  <svg class="hp-dark-block" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100">
+                    <path d="m394.94 86.299-177.9-100.66 34.328 92.136L131.659 8.35l109.303 155.528L78.423 73.626l47.648 95.459L4.478 118.751" stroke="url(#UpgradePlanCardOneDark-2)" stroke-width="20" stroke-linejoin="bevel"></path>
+                    <defs>
+                      <lineargradient id="UpgradePlanCardOneDark-2" x1="187.747" y1="-11.283" x2="206.538" y2="167.497" gradientunits="userSpaceOnUse">
+                        <stop stop-color="#fff"></stop>
+                        <stop offset="0.737" stop-color="#fff" stop-opacity="0"></stop>
+                      </lineargradient>
+                    </defs>
+                  </svg>
                 </div>
+
+
+                <div class="row mt-8 align-items-center position-relative">
+                  <div class="mb-4 col-12">
+                    <div class="row align-items-center justify-content-between">
+                      <div class="flex-shrink-1 col">
+                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">Referral Link</p>
+                        <h4 class="mb-8 fw-bold" id="referralLink" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+                          <?php echo $referralURL; ?></h4>
+                      </div>
+                      <div class="hp-flex-none w-auto col">
+                        <button type="button" id="copyButton" class="btn float-right mt-16 mt-sm-0 border-0 hp-hover-bg-black-100 hp-bg-black-bg hp-text-color-black-0 hp-hover-bg-dark-10 hp-bg-dark-0 hp-text-color-dark-100 btn-secondary">
+                          <span>Copy Link</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="toast-container">
+                  <div id="copyToast" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                    <div class="toast-body">
+                      Your Referral Id : <?php echo $member_user_id; ?> copied to clipboard
+                    </div>
+                  </div>
+                </div>
+
+                <script>
+                  document.getElementById('copyButton').addEventListener('click', function() {
+                    var referralLink = document.getElementById('referralLink').innerText;
+                    var tempInput = document.createElement('input');
+                    tempInput.value = referralLink;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+
+                    $('#copyToast').toast('show');
+                  });
+                </script>
               </div>
-
-
             </div>
+
+
           </div>
         </div>
       </div>
+    </div>
 
-      <?php
-      include "components/footer.php";
-      ?>
+    <?php
+    include "components/footer.php";
+    ?>
 
     </div>
   </main>

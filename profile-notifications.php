@@ -14,6 +14,8 @@ if ($connection === null || !$connection->ping()) {
 $member_user_id = $_SESSION['member_user_id'];
 $email_id = $_SESSION['email_id'];
 $member_name = $_SESSION['member_name'];
+
+
 // Fetch existing bank details
 $query = "SELECT account_holder_name, bank_name, ifsc_code, account_number 
           FROM tbl_bankdetails 
