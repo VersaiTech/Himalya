@@ -113,45 +113,44 @@ input[type=button]
 							<div class="card">
 								<div class="card-body">
 
-									<!-- <div class="table-responsive">
+									<div class="table-responsive">
 										<table class="table table-stripped" id="example">
 											<thead>
 												<tr style="background-color: #ff0080;color:#FFF">
 												    <th>#</th>
 												    <th>Date</th>
 													<th>User Id</th>
-													<th>Wallet Address</th>
-													<th>Staking(BUSD)</th>
-                                                    <th>Staking(Orion)</th>
+													<th>Amount</th>
 												</tr>
 											</thead>
 											<tbody>
 											    <?php 
-											    // $cnt=1;$busdStaking=0;$auraStaking=0;
-											    // $str="Select * from tbl_reinvest where status=1 and tr_date between '$fromdate' and '$todate' order by record_no desc";
-											    // $res=mysqli_query($connection,$str);
-											    // while($row=mysqli_fetch_array($res))
-											    // {
-											    //     $busdStaking=$busdStaking+$row['investment_busd'];
-											    //     $auraStaking=$auraStaking+$row['invest_package'];
-											     ?>
+											   $cnt = 1;
+											   $str = "SELECT * FROM tbl_payment_history ORDER BY created_at";
+											   $res = mysqli_query($connection, $str);
+   
+											   if (!$res) {
+												   die("Query Failed: " . mysqli_error($connection));
+											   }
+   
+											   while ($row = mysqli_fetch_array($res)) {
+											   ?>
+											     
 												<tr>
 												   
-										<td><?php //echo $cnt++; ?></td>
-										<td><?php //echo date("d-M-Y",strtotime($row['tr_date'])); ?></td>
-													<td><?php //echo $row['member_user_id']; ?></td>
-													<td><?php //echo $row['member_name']; ?></td>
-													<td><?php //echo $row['investment_busd']; ?></td>
-											<td><?php //echo $row['invest_package']; ?></td>
+										<td><?php echo $cnt++; ?></td>
+										<td> <?php 
+    if (!empty($row['created_at'])) {
+        echo date("d-M-Y", strtotime($row['created_at']));
+    } else {
+        echo "Date not available"; // Handle cases where 'created_at' is missing or null
+    }
+    ?></td>
+													<td><?php echo $row['member_user_id']; ?></td>
+											<td><?php echo $row['payment_amount']; ?></td>
 												</tr>
-												<?php //} ?>
+												<?php } ?>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><b>Total</b></td>
-                                            <td><b><//?php echo $busdStaking; ?></b></td>
-                                             <td><b><?//php echo $auraStaking; ?></b></td> 9054502910 glass patil
                                         </tr>
 
 											</tbody>
@@ -161,7 +160,7 @@ input[type=button]
 							</div>
 						</div>
 					</div>
-					<?php //} ?> -->
+					<?php //} ?>
 			</div>
 		</div> 
 	</div>

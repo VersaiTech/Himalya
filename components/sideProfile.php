@@ -7,6 +7,7 @@ if (!isset($_SESSION['member_user_id']) || !isset($_SESSION['email_id'])) {
   exit();
 }
 $member_user_id = $_SESSION['member_user_id'];
+$member_name = $_SESSION['member_name'];
 if (!$connection) {
   die('Database connection failed: ' . mysqli_connect_error());
 }
@@ -29,7 +30,7 @@ if (empty($_SESSION['member_name'])) {
               </div>
 
               <div class="w-auto ms-8 px-0 hp-sidebar-hidden mt-4">
-                <span class="d-block hp-text-color-black-100 hp-text-color-dark-0 hp-p1-body lh-1"><?php echo $member_user_id; ?></span>
+                <span class="d-block hp-text-color-black-100 hp-text-color-dark-0 hp-p1-body lh-1"><?php echo $member_name; ?></span>
                 <a href="profile-information" class="hp-badge-text fw-normal hp-text-color-dark-30">View Profile</a>
               </div>
             </div>

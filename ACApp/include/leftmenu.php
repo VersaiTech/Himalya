@@ -29,6 +29,16 @@
 									<li><a href="InvestmentSummary"> Payments For Affiliates</a></li>
 								</ul>
 						</li>
+
+						<li class="submenu">
+								<a href="#"><i class="fas fa-wallet"></i> <span> Withdrawal </span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="all-withdrawals"> All Withdrawals</a></li>
+									<!-- <li><a href="InvestmentSummary"> All Paid Referrals </a></li>
+									<li><a href="InvestmentSummary"> All UnPaid Referrals </a></li>
+									<li><a href="InvestmentSummary"> Payments For Affiliates</a></li> -->
+								</ul>
+						</li>
 						
 					    <!-- <li class="submenu">
 								<a href="#"><i class="fas fa-wallet"></i> <span> Deposit Request</span> <span class="menu-arrow"></span></a>

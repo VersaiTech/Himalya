@@ -1539,6 +1539,20 @@ button.bg-danger:hover {
 .user-menu.nav > li > a:focus i {
 	color: #333;
 }
+
+.mybadge {
+    display: inline-block;
+    padding: .55em .14em;
+    font-size: 85%;
+    font-weight: 500;
+	color: white;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
 .user-img {
 	display: inline-block;
 	margin-right: 3px;

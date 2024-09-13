@@ -14,9 +14,7 @@ $mobile_number = RemoveSpecialChar(trim($_REQUEST['mobile_number']));
 // Hash the password
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-$plan_amt = 0;
 $reg_date = date('Y-m-d H:i:s');
-$c_date = date('Y-m-d H:i:s');
 $member_user_id = substr(str_shuffle("123456789"), 0, 7);
 
 if (!$connection) {
@@ -51,25 +49,19 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
         exit();
     }
 
-    $zero = '0';
-    $zero_point_zero = 0.00;
-
     // Insert the new member into the tbl_memberreg
-    $qry = "INSERT INTO tbl_memberreg (member_name, member_user_id, mobile_number, sponcer_id, sponcer_name, registration_date, topup_amount, status, current_investment, email_id, password)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    $qry = "INSERT INTO tbl_memberreg (member_name, member_user_id, mobile_number, sponcer_id, sponcer_name, registration_date, email_id, password)
+    VALUES (?,?,?,?,?,?,?,?)";
     $stmt = mysqli_prepare($connection, $qry);
     mysqli_stmt_bind_param(
         $stmt,
-        "sssssssssss",
+        "ssssssss",
         $member_name,
         $member_user_id,
         $mobile_number,
         $sponcer_id, 
         $sponcer_name,
         $reg_date,
-        $plan_amt,
-        $zero,
-        $zero_point_zero,
         $email_id,
         $hashed_password
     );
@@ -86,9 +78,8 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
 
         echo json_encode(array('status' => 'success'));
 
-        // Referral Bonus for 3 levels
-        $referralBonus = 10;
-        giveReferralBonus($connection, $member_user_id, $sponcer_id, $reg_date);
+        // Insert the referral hierarchy (up to 3 levels)
+        insertReferralHierarchy($connection, $member_user_id, $sponcer_id, $reg_date);
     }
 
     mysqli_stmt_close($stmt);
@@ -96,30 +87,10 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
 
 mysqli_close($connection);
 
-
-// Function to give referral bonus up to 3 levels
-function giveReferralBonusForLevel($connection, $sponsor_id, $new_member_id, $reg_date, $level) {
-    if (!empty($sponsor_id)) {
-        // Insert into tbl_referrals for the current level
-        $insertReferralQuery = "INSERT INTO tbl_referrals (sponsor_user_id, referred_user_id, level, referral_date) VALUES (?, ?, ?, ?)";
-        $stmt_insertReferral = mysqli_prepare($connection, $insertReferralQuery);
-        mysqli_stmt_bind_param($stmt_insertReferral, "ssis", $sponsor_id, $new_member_id, $level, $reg_date);
-        mysqli_stmt_execute($stmt_insertReferral);
-        mysqli_stmt_close($stmt_insertReferral);
-
-        // Add referral bonus to the sponsor for the current level
-        $updateReferralBonus = "UPDATE tbl_memberreg SET ref_amount = ref_amount + 10 WHERE member_user_id = ?";
-        $stmt_updateBonus = mysqli_prepare($connection, $updateReferralBonus);
-        mysqli_stmt_bind_param($stmt_updateBonus, "s", $sponsor_id);
-        mysqli_stmt_execute($stmt_updateBonus);
-        mysqli_stmt_close($stmt_updateBonus);
-    }
-}
-
-
-function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) {
+// Function to insert referral hierarchy into tbl_referrals
+function insertReferralHierarchy($connection, $new_member_id, $sponcer_id, $reg_date) {
     // Level 1 - Direct Sponsor
-    giveReferralBonusForLevel($connection, $sponcer_id, $new_member_id, $reg_date, 1);
+    insertReferralForLevel($connection, $sponcer_id, $new_member_id, $reg_date, 1);
 
     // Level 2 - Get the sponsor of the sponsor (if exists)
     $level2SponsorQuery = "SELECT sponcer_id FROM tbl_memberreg WHERE member_user_id = ?";
@@ -131,9 +102,9 @@ function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) 
     mysqli_stmt_close($stmt_level2);
 
     if (!empty($level2SponsorId)) {
-        giveReferralBonusForLevel($connection, $level2SponsorId, $new_member_id, $reg_date, 2);
-        
-        // Level 3 - Get the sponsor of the sponsor of the sponsor (if exists)
+        insertReferralForLevel($connection, $level2SponsorId, $new_member_id, $reg_date, 2);
+
+        // Level 3 - Get the sponsor of the sponsor's sponsor (if exists)
         $level3SponsorQuery = "SELECT sponcer_id FROM tbl_memberreg WHERE member_user_id = ?";
         $stmt_level3 = mysqli_prepare($connection, $level3SponsorQuery);
         mysqli_stmt_bind_param($stmt_level3, "s", $level2SponsorId);
@@ -143,9 +114,32 @@ function giveReferralBonus($connection, $new_member_id, $sponcer_id, $reg_date) 
         mysqli_stmt_close($stmt_level3);
 
         if (!empty($level3SponsorId)) {
-            giveReferralBonusForLevel($connection, $level3SponsorId, $new_member_id, $reg_date, 3);
+            insertReferralForLevel($connection, $level3SponsorId, $new_member_id, $reg_date, 3);
         }
     }
 }
 
+function insertReferralForLevel($connection, $sponsor_id, $new_member_id, $reg_date, $level) {
+    if (!empty($sponsor_id)) {
+        // Fetch the sponsor's name
+        $sponsor_name = '';
+        $sponsorNameQuery = "SELECT member_name FROM tbl_memberreg WHERE member_user_id = ?";
+        $stmt_sponsorName = mysqli_prepare($connection, $sponsorNameQuery);
+        mysqli_stmt_bind_param($stmt_sponsorName, "s", $sponsor_id);
+        mysqli_stmt_execute($stmt_sponsorName);
+        mysqli_stmt_bind_result($stmt_sponsorName, $sponsor_name);
+        mysqli_stmt_fetch($stmt_sponsorName);
+        mysqli_stmt_close($stmt_sponsorName);
+
+         // Fetch the referred member's name from the session
+         $referred_member_name = $_SESSION['member_name'];
+
+          // Insert into tbl_referrals with sponsor and referred member names
+        $insertReferralQuery = "INSERT INTO tbl_referrals (sponsor_user_id, sponsor_name, referred_user_id, referred_member_name, level, referral_date) VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt_insertReferral = mysqli_prepare($connection, $insertReferralQuery);
+        mysqli_stmt_bind_param($stmt_insertReferral, "ssssss", $sponsor_id, $sponsor_name, $new_member_id, $referred_member_name, $level, $reg_date);
+        mysqli_stmt_execute($stmt_insertReferral);
+        mysqli_stmt_close($stmt_insertReferral);
+    }
+}
 ?>

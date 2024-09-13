@@ -104,11 +104,11 @@
           <div class="w-auto px-0">
             <div class="hp-header-logo d-flex align-items-center">
               <a href="overview" class="position-relative">
-                <div class="hp-header-logo-icon position-absolute bg-black-20 hp-bg-dark-90 rounded-circle border border-black-0 hp-border-color-dark-90 d-flex align-items-center justify-content-center" style="width: 18px; height: 18px; top: -5px;">
+                <!--<div class="hp-header-logo-icon position-absolute bg-black-20 hp-bg-dark-90 rounded-circle border border-black-0 hp-border-color-dark-90 d-flex align-items-center justify-content-center" style="width: 18px; height: 18px; top: -5px;">
                   <svg class="hp-fill-color-dark-0" width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.709473 0L1.67247 10.8L5.99397 12L10.3267 10.7985L11.2912 0H0.710223H0.709473ZM9.19497 3.5325H4.12647L4.24722 4.88925H9.07497L8.71122 8.95575L5.99397 9.70875L3.28047 8.95575L3.09522 6.87525H4.42497L4.51947 7.93275L5.99472 8.33025L5.99772 8.3295L7.47372 7.93125L7.62672 6.21375H3.03597L2.67897 2.208H9.31422L9.19572 3.5325H9.19497Z" fill="#2D3436"></path>
                   </svg>
-                </div>
+                </div>-->
 
                 <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
                 <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
@@ -191,7 +191,7 @@
           <div class="col-12">
             <div class="row align-items-center justify-content-between g-24">
               <div class="col-12 col-md-6">
-                <h3>Welcome back, User 👋</h3>
+                <h3>Welcome back, <?php echo $member_name?> 👋</h3>
                 <div class="dropdown-containerr" style="margin-bottom: 3vh;">
                   <select class="styled-dropdownn">
                     <!-- <option value="status1" disabled selected>Account Number</option> -->
@@ -223,7 +223,7 @@
                           <i class="ri-arrow-right-up-line text-success" style="font-size: 16px;"></i>
                         </p>
 
-                        <h2 class="my-4"><?php echo $current_investment; ?></h2>
+                        <h2 class="my-4"><?php echo $ref_amount; ?></h2>
                         <div class="d-flex align-items-center">
                           <!-- <p class="mb-0 hp-badge-text text-success">10%</p> -->
                         </div>
@@ -246,7 +246,7 @@
             <div class="row g-32 " style="
                         margin-bottom: 12px;
                     ">
-              <div class="col-12 col-sm-12 col-xl-4">
+              <div class="col-12 col-sm-6 col-xl-6">
                 <div class="card hp-card-1">
                   <div class="card-body p-16">
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
@@ -271,13 +271,13 @@
                 </div>
               </div>
 
-              <div class="col-12 col-sm-6 col-xl-4">
+              <div class="col-12 col-sm-6 col-xl-6" onclick="window.location.href='withdraw-request';" style="cursor: pointer;">
                 <div class="card hp-card-1">
                   <div class="card-body p-16">
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
                       <div style="width: 106px;" class="px-0">
                         <div class="h-100 bg-warning-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
-                          <!-- <div id="statistics-users"></div> -->
+                          
                           <img src="assets/take-profit.png" alt="notdispatch">
                         </div>
                       </div>
@@ -285,7 +285,7 @@
                       <div class="col pe-0">
                         <h3 class="mb-0 fw-semibold"><?php echo $matching_income; ?></h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
-                          <b style="font-size: 18px; font-weight:600">Paid Referrals</b>
+                          <b style="font-size: 18px; font-weight:600">Withdraw Request</b>
                         </p>
                       </div>
                     </div>
@@ -294,13 +294,13 @@
               </div>
 
 
-              <div class="col-12 col-sm-6 col-xl-4">
+              <!-- <div class="col-12 col-sm-6 col-xl-4">
                 <div class="card hp-card-1">
                   <div class="card-body p-16">
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
                       <div style="width: 106px;" class="px-0">
                         <div class="h-100 bg-success-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
-                          <!-- <div id="statistics-subscribe"></div> -->
+                          
                           <img src="assets/speedometer.png" alt="">
                         </div>
                       </div>
@@ -314,14 +314,14 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
 
 
 
             <!-- WALLET EQUITY AND MARGIN -->
             <div class="row g-32 mb-32 mt-10">
-              <div class="col-12 col-md-6 col-xl-6">
+              <div class="col-12 col-md-12 col-xl-12">
                 <div class="card" style="height: 200px;">
                   <div class="card-body d-flex flex-column justify-content-center">
                     <div class="row g-16">
@@ -330,19 +330,19 @@
                           <i class="iconly-Light-Wallet text-primary hp-text-color-dark-primary-2" style="font-size: 24px;"></i>
                         </div>
                       </div>
-                      <div class="col d-flex flex-column justify-content-center">
+                      <div class="col-6 ">
                         <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                           <?php echo number_format($wallet_amount, 2); ?>
                           <span class="hp-badge-text ms-8 text-primary hp-text-color-dark-primary-2">INR</span>
                         </h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;"><b>Cureent Account Balance</b></p>
+                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;"><b>Current Account Balance</b></p>
+                        </div>
                       </div>
-                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-12 col-md-6 col-xl-6">
+              <!-- <div class="col-12 col-md-6 col-xl-6">
                 <div class="card" style="height: 200px;">
                   <div class="card-body d-flex flex-column justify-content-center">
                     <div class="row g-16">
@@ -359,7 +359,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="col-12 col-md-12 col-xl-12">
                 <select class="styled-dropdownn">
                   <!-- <option value="status1" disabled selected>Account Number</option> -->
@@ -384,7 +384,7 @@
                         </tr>
                         <tr>
                           <th scope="row">Total Earnings</th>
-                          <td>0.00 INR</td>
+                          <td><?php echo $ref_amount; ?> INR</td>
                         </tr>
                         <tr>
                           <th scope="row">Unverified Referrals</th>

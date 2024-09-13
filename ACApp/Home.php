@@ -99,7 +99,7 @@ $roipercentage = $row['set_roi_percent'];
 
                     <!-- Other dashboard widgets and data ... -->
 
-                    <?php
+                    <!-- <?php
                     $str = "Select count(*) as cnt from tbl_memberreg where status=1 and isblock!=1";
                     $ActiveUser = get_value($str);
                     ?>
@@ -141,13 +141,16 @@ $roipercentage = $row['set_roi_percent'];
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
 
 
                     <?php
-                    $str = "Select IFNULL(sum(current_investment),0) as current_investment from tbl_memberreg";
-                    $current_investment = get_value($str);
+// Query to fetch the total sum of the payment_amount field from the tbl_payment_history table
+$str = "SELECT IFNULL(SUM(payment_amount), 0) AS total_payment FROM tbl_payment_history";
+
+// Assuming get_value() is a custom function to execute the query and return the result
+$total_payment = get_value($str);
                     ?>
                     <div class="col-xl-4 col-sm-6 col-12">
                         <a href="InvestmentSummary" style="color:#333" target="_blank">
@@ -158,8 +161,8 @@ $roipercentage = $row['set_roi_percent'];
                                             <i class="fas fa-qrcode"></i>
                                         </span>
                                         <div class="dash-widget-info">
-                                            <h3><?php echo $current_investment; ?> $</h3>
-                                            <h6 class="text-muted">Total Investment USD</h6>
+                                            <h3><?php echo $total_payment; ?> INR</h3>
+                                            <h6 class="text-muted">Total Income INR</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -168,7 +171,7 @@ $roipercentage = $row['set_roi_percent'];
                     </div>
 
 
-                    <?php
+                    <!-- <?php
                     $str = "Select IFNULL(sum(topup_amount),0) as topup_amount from tbl_memberreg";
                     $topup_amount = get_value($str);
                     ?>
@@ -188,12 +191,12 @@ $roipercentage = $row['set_roi_percent'];
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     <?php
                     $PendingWithdraw = 0;
-                    $str = "Select IFNULL(sum(net_amt),0) as net_amt from tbl_income_withdrawal where status=0";
-                    $PendingWithdraw = get_value($str);
+                   $str = "SELECT COUNT(*) as total_pending FROM withdrawal_requests WHERE status = 'pending'";
+                     $PendingWithdraw = get_value($str);
                     ?>
                     <div class="col-xl-4 col-sm-6 col-12">
                         <a href="PendingWithdrawRequest" style="color:#333" target="_blank">
@@ -204,7 +207,7 @@ $roipercentage = $row['set_roi_percent'];
                                             <i class="far fa-credit-card"></i>
                                         </span>
                                         <div class="dash-widget-info">
-                                            <h3>$ <?php echo $PendingWithdraw; ?></h3>
+                                            <h3><?php echo $PendingWithdraw; ?></h3>
                                             <h6 class="text-muted">Pending Withdraw Request</h6>
                                         </div>
                                     </div>
@@ -212,7 +215,7 @@ $roipercentage = $row['set_roi_percent'];
                             </div>
                         </a>
                     </div>
-                    <?php
+                    <!-- <?php
                     $PendingWithdraw = 0;
                     $str = "Select IFNULL(sum(net_amt),0) as net_amt from tbl_income_withdrawal where status=0";
                     $PendingWithdraw = get_value($str);
@@ -233,9 +236,9 @@ $roipercentage = $row['set_roi_percent'];
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
-                    <?php
+                    <!-- <?php
                     $TotalWithdraw = 0;
                     $str = "Select IFNULL(sum(net_amt),0) as net_amt from tbl_income_withdrawal where status=1";
                     $TotalWithdraw = get_value($str);
@@ -256,11 +259,11 @@ $roipercentage = $row['set_roi_percent'];
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                     <?php
-                    $Totalref = 0;
-                    $str = "Select IFNULL(sum(ref_amount),0) as ref_amount from tbl_memberreg where status=1";
-                    $Totalref = get_value($str);
+                     $TotalTransactions = 0;
+                     $str = "SELECT COUNT(*) as total_transactions FROM tbl_payment_history ";
+                       $TotalTransactions = get_value($str);
                     ?>
                     <div class="col-xl-4 col-sm-6 col-12">
                         <a href="TotalReferral" style="color:#333" target="_blank">
@@ -271,15 +274,15 @@ $roipercentage = $row['set_roi_percent'];
                                             <i class="fas fa-cube"></i>
                                         </span>
                                         <div class="dash-widget-info">
-                                            <h3>$ <?php echo $Totalref; ?></h3>
-                                            <h6 class="text-muted">Total Referral Amount </h6>
+                                            <h3><?php echo $TotalTransactions; ?></h3>
+                                            <h6 class="text-muted">Total Transactions </h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <?php
+                    <!-- <?php
                     $TotalMatching = 0;
                     $str = "Select IFNULL(sum(matching_income),0) as matching_income from tbl_binary ";
                     $TotalMatching = get_value($str);
@@ -300,7 +303,7 @@ $roipercentage = $row['set_roi_percent'];
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                     <!-- ROI PERCENTAGE -->
                     <div class="col-xl-4 col-sm-12 col-12">

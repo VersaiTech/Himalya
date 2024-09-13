@@ -1,4 +1,33 @@
-<?php include "components/phpComponents/phpcomponents.php";?>
+<?php 
+include "./config/config.php";
+include "components/phpComponents/phpcomponents.php";
+
+// Check if the user is logged in and has a session
+if (isset($_SESSION['member_user_id'])) {
+    $member_user_id = $_SESSION['member_user_id'];
+
+    // Query to fetch the user's withdrawal requests from the database
+    $query = "SELECT id, request_date, amount, status FROM withdrawal_requests WHERE member_user_id = ?";
+    
+
+    if ($connection === null || !$connection->ping()) {
+        die("Database connection is not properly initialized or not connected.");
+    }
+    
+    // Prepare and execute the query
+    if ($stmt = $connection->prepare($query)) {
+        $stmt->bind_param("i", $member_user_id); // Bind the member_user_id parameter
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } else {
+        echo "Error preparing statement: " . $connection->error;
+    }
+} else {
+    echo "User not logged in.";
+}
+
+
+?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -222,42 +251,27 @@
                                 <div class="table-responsive">
                                     <table class="table table-hover">
                                         <thead>
-                                            <tr>
-                                                <th scope="col" style="min-width: 150px;">Date</th>
-                                                <th scope="col" style="min-width: 170px;">TRANSACTION ID</th>
-                                                <th scope="col" style="min-width: 120px;">AMOUNT</th>
-                                                <th scope="col" style="min-width: 120px;">WALLET METHOD</th>
-                                                <th scope="col" style="min-width: 120px;">WALLET ADDRESS</th>
-                                                <th scope="col" style="min-width: 120px;">STATUS</th>
-                                            </tr>
+                                        <th scope="col" style="min-width: 150px;">Date</th>
+            <th scope="col" style="min-width: 170px;">TRANSACTION ID</th>
+            <th scope="col" style="min-width: 120px;">AMOUNT</th>
+            <th scope="col" style="min-width: 120px;">STATUS</th>
                                         </thead>
                                         <tbody id="tableBody">
-                                            <tr>
-                                                <td>01-01-2023</td>
-                                                <td>123456</td>
-                                                <td>Orion</td>
-                                                <td>100</td>
-                                                <td>$10,000</td>
-                                                <td>$5,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01-01-2023</td>
-                                                <td>123456</td>
-                                                <td>Orion</td>
-                                                <td>100</td>
-                                                <td>$10,000</td>
-                                                <td>$5,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>01-01-2023</td>
-                                                <td>123456</td>
-                                                <td>Orion</td>
-                                                <td>100</td>
-                                                <td>$10,000</td>
-                                                <td>$5,000</td>
-                                            </tr>
-                                            <!-- Add more rows as needed -->
-                                        </tbody>
+        <?php if ($result && $result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo date('d-m-Y', strtotime($row['request_date'])); ?></td>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['amount']; ?></td>
+                    <td><?php echo ucfirst($row['status']); ?></td>
+                </tr>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="6">No withdrawal requests found for this user.</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
                                     </table>
                                 </div>
                             </div>
