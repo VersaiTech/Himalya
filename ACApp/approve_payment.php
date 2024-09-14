@@ -2,13 +2,12 @@
 include '../config/config.php'; // Your DB connection
 
 // Check if the required parameters are set
-if (isset($_POST['action']) && isset($_POST['id'])) {
-    $action = $_POST['action'];
-    $id = $_POST['id'];
+if (isset($_GET['action']) && isset($_GET['id'])) {
+    $action = $_GET['action'];
+    $id = $_GET['id'];
 
     if ($connection === null || !$connection->ping()) {
-        echo json_encode(['status' => false, 'message' => 'Database connection is not properly initialized or not connected.']);
-        exit;
+        die("Database connection is not properly initialized or not connected.");
     }
 
     if ($action === 'approve') {
@@ -26,18 +25,17 @@ if (isset($_POST['action']) && isset($_POST['id'])) {
             // Update the status in the database
             $updateQuery = "UPDATE tbl_pendingpayment SET status = '$status' WHERE id = '$id'";
             if (mysqli_query($connection, $updateQuery)) {
-                echo json_encode([
-                    'status' => true,
-                    'action' => 'approve',
-                    'member_user_id' => $member_user_id,
-                    'email_id' => $email_id,
-                    'amount' => $amount
-                ]);
+                // Output JavaScript to call the payThroughGateway function
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        payThroughGateway('$member_user_id', '$email_id', '$amount');
+                    });
+                </script>";
             } else {
-                echo json_encode(['status' => false, 'message' => mysqli_error($connection)]);
+                echo "<script>window.location.href = 'InvestmentSummaryPending?error=" . mysqli_error($connection) . "';</script>";
             }
         } else {
-            echo json_encode(['status' => false, 'message' => 'Record not found']);
+            echo "<script>window.location.href = 'InvestmentSummaryPending?error=Record not found';</script>";
         }
     } else if ($action === 'deny') {
         $status = 'denied';
@@ -45,67 +43,118 @@ if (isset($_POST['action']) && isset($_POST['id'])) {
         // Update the status in the database
         $query = "UPDATE tbl_pendingpayment SET status = '$status' WHERE id = '$id'";
         if (mysqli_query($connection, $query)) {
-            echo json_encode(['status' => true, 'action' => 'deny']);
+            // Redirect back to the pending payments page with success message
+            header('Location: InvestmentSummaryPending?error=' . $action);
         } else {
-            echo json_encode(['status' => false, 'message' => mysqli_error($connection)]);
+            // Redirect back to the pending payments page with error message
+            header('Location: InvestmentSummaryPending?error=' . mysqli_error($connection));
         }
     }
-} else {
-    echo json_encode(['status' => false, 'message' => 'Invalid request']);
 }
 ?>
-<script>
-function handleAction(action, id) {
-    fetch('process_request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ action: action, id: id })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status) {
-            if (action === 'approve') {
-                payThroughGateway(data.member_user_id, data.email_id, data.amount);
-            } else {
-                window.location.href = 'InvestmentSummaryPending?success=' + action;
-            }
-        } else {
-            alert("Error: " + data.message);
-            window.location.href = 'InvestmentSummaryPending?error=' + encodeURIComponent(data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert("An error occurred.");
-    });
-}
-
+<!-- Ensure the script tag is placed after the rest of the DOM -->
+<!-- <script>
 function payThroughGateway(member_user_id, email_id, amount) {
+    console.log("Attempting payment with data:", {
+        member_user_id,
+        email_id,
+        amount
+    });
+
     let formData = new FormData();
     formData.append('member_user_id', member_user_id);
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('process?simulate_payment=true', {
+    fetch('/Himallya-MLM/shop/process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })
     .then(response => response.json())
     .then(data => {
+        console.log("Payment response data:", data);
         if (data.status) {
             alert("Payment processed successfully!");
-            if (data.data.payment_url) {
-                window.location.href = data.data.payment_url;
-            } else {
+                // Redirect after payment is successfully processed
                 window.location.href = 'InvestmentSummaryPending?success=approve';
-            }
         } else {
             alert("Payment failed. Please try again.");
+            // Redirect back to show the failure in the UI
+            window.location.href = 'InvestmentSummaryPending?error=payment_failed';
         }
     })
     .catch(error => {
         console.error('Error during payment processing:', error);
         alert("Error occurred during payment processing.");
+        // Redirect back to show the error in the UI
+        window.location.href = 'InvestmentSummaryPending?error=fetch_error';
+    });
+}
+</script> -->
+
+<script>
+function payThroughGateway(member_user_id, email_id, amount) {
+    console.log("Attempting payment with data:", {
+        member_user_id,
+        email_id,
+        amount
+    });
+
+    let formData = new FormData();
+    formData.append('member_user_id', member_user_id);
+    formData.append('email_id', email_id);
+    formData.append('amount', amount);
+
+    fetch('/Himallya-MLM/shop/process?simulate_payment=true', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        console.log("Response status:", response.status);
+        console.log("Response headers:", [...response.headers.entries()]);
+
+        if (response.status === 200) {
+            return response.text(); // Get raw response text
+        } else {
+            throw new Error('Unexpected response status');
+        }
+    })
+    .then(text => {
+        console.log("Raw response text:", text);
+        
+        // Extract JSON from the response text
+        const jsonStart = text.indexOf('{');
+        const jsonEnd = text.lastIndexOf('}') + 1;
+
+        if (jsonStart !== -1 && jsonEnd !== -1) {
+            const jsonString = text.substring(jsonStart, jsonEnd);
+            try {
+                const data = JSON.parse(jsonString); // Parse the extracted JSON
+                console.log("Parsed JSON data:", data);
+
+                if (data.status) {
+                    window.location.href = 'InvestmentSummaryPending?success=approve';
+                } else {
+                    window.location.href = 'InvestmentSummaryPending?error=payment_failed';
+                }
+            } catch (e) {
+                console.error('Error parsing JSON:', e);
+                alert("Error occurred during payment processing.");
+                window.location.href = 'InvestmentSummaryPending?error=json_parse_error';
+            }
+        } else {
+            console.error('No JSON data found in response');
+            alert("Error occurred during payment processing.");
+            window.location.href = 'InvestmentSummaryPending?error=no_json_data';
+        }
+    })
+    .catch(error => {
+        console.error('Error during payment processing:', error);
+        alert("Error occurred during payment processing.");
+        window.location.href = 'InvestmentSummaryPending?error=fetch_error';
     });
 }
 </script>
+
+
+

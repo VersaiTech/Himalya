@@ -45,6 +45,52 @@
 			background-color: #140dec;
 
 		}
+
+		/* Snackbar styles */
+		#snackbar {
+			visibility: hidden;
+			min-width: 250px;
+			margin-left: -125px;
+			background-color: #333;
+			color: #fff;
+			text-align: center;
+			border-radius: 2px;
+			padding: 16px;
+			position: fixed;
+			z-index: 1;
+			left: 50%;
+			bottom: 30px;
+			font-size: 17px;
+		}
+
+		#snackbar.show {
+			visibility: visible;
+			animation: fadein 0.5s, fadeout 0.5s 2.5s;
+		}
+
+		@keyframes fadein {
+			from {
+				bottom: 0;
+				opacity: 0;
+			}
+
+			to {
+				bottom: 30px;
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeout {
+			from {
+				bottom: 30px;
+				opacity: 1;
+			}
+
+			to {
+				bottom: 0;
+				opacity: 0;
+			}
+		}
 	</style>
 </head>
 
@@ -67,6 +113,8 @@
 					<div class="row">
 						<div class="col">
 							<h5 class="page-title">Pending Payments</h5>
+							<!-- Snackbar container -->
+							<div id="snackbar"></div>
 						</div>
 						<div class="col-auto text-right">
 							<a class="btn btn-white filter-btn" href="javascript:void(0);" id="filter_search">
@@ -233,6 +281,35 @@
 				]
 			});
 		});
+
+		// Function to get query parameters
+		function getQueryParameter(name) {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get(name);
+		}
+
+		// Function to show the snackbar with a message
+		function showSnackbar(message, isSuccess) {
+			const snackbar = document.getElementById("snackbar");
+			snackbar.innerHTML = message;
+			snackbar.style.backgroundColor = isSuccess ? "#4CAF50" : "#f44336"; // Green for success, red for error
+			snackbar.className = "show";
+
+			// Hide the snackbar after 3 seconds
+			setTimeout(function() {
+				snackbar.className = snackbar.className.replace("show", "");
+			}, 3000);
+		}
+
+		// Check for query parameters and show the appropriate snackbar
+		const success = getQueryParameter('success');
+		const error = getQueryParameter('error');
+
+		if (success) {
+			showSnackbar("Payment processed successfully!", true);
+		} else if (error) {
+			showSnackbar("Payment failed. Please try again.", false);
+		}
 	</script>
 
 </body>
