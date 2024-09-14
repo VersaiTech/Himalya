@@ -2,71 +2,113 @@
 
 class Node
 {
-    public $id;
-    public $lower_id_left;
-    public $lower_id_right;
-    public $topup_amount;
-    public $position;
-    public $referrer_id;
+    public $user_id;
+    public $member_name;
+    public $topup_status;
+    public $sponcer_id;
+    public $sponcer_name;
 }
 
-function getNodeFromDB($userId)
+class TreeGenerator
 {
-    $connection = mysqli_connect("localhost", "root", "", "u358688394_aura3");
-    if (!$connection) {
-        $connection = mysqli_connect("82.180.167.190", "u358688394_aura3", "umDvTH@4", "u358688394_aura3");
+    private $connection;
+    private $seenUsers = [];
+
+    public function __construct()
+    {
+        // Establish the database connection
+        $this->connection = mysqli_connect("localhost", "root", "", "u358688394_aura3");
+        if (!$this->connection) {
+            $this->connection = mysqli_connect("82.180.167.190", "u358688394_aura3", "umDvTH@4", "u358688394_aura3");
+        }
     }
-    $query = "SELECT * FROM tbl_binary WHERE user_id = '$userId'";
-    $result = mysqli_query($connection, $query);
-    $nodeData = mysqli_fetch_assoc($result);
-    mysqli_close($connection);
 
-    if (!$nodeData) {
-        return null; // user_id does not exist
+    public function __destruct()
+    {
+        // Close the database connection on object destruction
+        mysqli_close($this->connection);
     }
 
-    $node = new Node();
-    $node->id = $nodeData['user_id'];
-    $node->lower_id_left = $nodeData['lower_id_left'];
-    $node->lower_id_right = $nodeData['lower_id_right'];
-    $node->topup_amount = $nodeData['topup_amount'];
-    $node->position = $nodeData['position'];
-    $node->referrer_id = $nodeData['referrer_id'];
+    public function getNodeFromDB($userId)
+    {
+        $query = "SELECT * FROM tbl_memberreg WHERE member_user_id = '$userId'";
+        $result = mysqli_query($this->connection, $query);
+        $nodeData = mysqli_fetch_assoc($result);
 
-    return $node;
+        if (!$nodeData) {
+            return null; // User does not exist
+        }
+
+        // Create a Node object from database result
+        $node = new Node();
+        $node->user_id = $nodeData['member_user_id'];
+        $node->member_name = $nodeData['member_name'];
+        $node->topup_status = $nodeData['topUp_status'];
+        $node->sponcer_id = $nodeData['sponcer_id'];
+        $node->sponcer_name = $nodeData['sponcer_name'];
+
+        return $node;
+    }
+
+    public function generateTree($node, $level = 0)
+    {
+        if (!$node || isset($this->seenUsers[$node->user_id])) {
+            return; // Skip if node is empty or already processed to avoid duplicates
+        }
+
+        $this->seenUsers[$node->user_id] = true; // Mark the node as processed
+        $indent = str_repeat("  ", $level);
+
+        echo "$indent<li>\n";
+        echo "$indent  <a href=\"#\" title=\"TopUp Status: $node->topup_status, Sponsor: $node->sponcer_name\">$node->user_id - $node->member_name</a>\n";
+
+        if ($level < 3) { // Limit to 3 levels
+            $referredMembers = $this->getReferredMembers($node->user_id);
+            if (count($referredMembers) > 0) {
+                echo "$indent  <ul>\n";
+                foreach ($referredMembers as $referralNode) {
+                    $this->generateTree($referralNode, $level + 1);
+                }
+                echo "$indent  </ul>\n";
+            }
+        }
+
+        echo "$indent</li>\n";
+    }
+
+    public function getReferredMembers($userId)
+    {
+        $query = "SELECT DISTINCT referred_user_id FROM tbl_referrals WHERE sponsor_user_id = '$userId'";
+        $result = mysqli_query($this->connection, $query);
+        $referredMembers = [];
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            $referralNode = $this->getNodeFromDB($row['referred_user_id']);
+            if ($referralNode) {
+                $referredMembers[] = $referralNode;
+            }
+        }
+
+        return $referredMembers;
+    }
 }
 
-function generateTree($node, $level = 0)
-{
-    if (!$node) {
-        echo "Your investment history is empty. Please perform an investment to see your tree.";
-        return;
-    }
-
-    $indent = str_repeat("  ", $level);
-    echo "$indent<li>\n";
-    echo "$indent  <a href=\"#\" title=\"Topup Amount: $node->topup_amount, Position: $node->position, Referral: $node->referrer_id\">$node->id</a>\n";
-    if ($node->lower_id_left || $node->lower_id_right) {
-        echo "$indent  <ul>\n";
-        if ($node->lower_id_left) {
-            $leftNode = getNodeFromDB($node->lower_id_left);
-            generateTree($leftNode, $level + 1);
-        }
-        if ($node->lower_id_right) {
-            $rightNode = getNodeFromDB($node->lower_id_right);
-            generateTree($rightNode, $level + 1);
-        }
-        echo "$indent  </ul>\n";
-    }
-    echo "$indent</li>\n";
+// Ensure user session is set
+if (isset($_SESSION['member_user_id'])) {
+    $treeGenerator = new TreeGenerator();
+    $node = $treeGenerator->getNodeFromDB($_SESSION['member_user_id']);
 }
-
-$node = getNodeFromDB($_SESSION['member_user_id']);
 
 ?>
 
 <div class="tree">
     <ul>
-        <?php generateTree($node); ?>
+        <?php
+        if (isset($node)) {
+            $treeGenerator->generateTree($node);
+        } else {
+            echo "<li>No user found or session not set.</li>";
+        }
+        ?>
     </ul>
 </div>
