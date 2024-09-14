@@ -213,6 +213,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Simulate payment success
         $paymentStatus = 'success';
         $responseData = array('status' => true, 'data' => array('payment_url' => ''));
+        echo "Simulated payment success.<br>";
     } else {
         // Original payment gateway integration code
         $apiEndpoint = "https://api.ekqr.in/api/create_order";
@@ -222,6 +223,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($paymentStatus == 'success') {
        // Trigger payment confirmation webhook
+       $responseData = array('status' => true, 'message' => 'Payment successful');
+       echo "Payment status is success.<br>";
        ?>
        <script>
        console.log('Payment done');
@@ -250,7 +253,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     } else {
+        $responseData = array('status' => false, 'error' => 'Payment failed');
     }
+
+// Send JSON response
+header('Content-Type: application/json');
+echo json_encode($responseData);
+exit();
 
 
     // ************************
