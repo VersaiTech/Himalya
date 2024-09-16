@@ -211,7 +211,7 @@
            
 
             <li>
-                <a href="investor-reset-password">
+                <a href="referral-history">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="Landing" aria-label="Landing"></div>
 
                     <span>

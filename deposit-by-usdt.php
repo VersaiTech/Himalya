@@ -32,7 +32,7 @@ $wallet_address = checkWalletAddress();
   include "components/cssComponents/deposit1-css.php"
   ?>
 
-  <title>Dashboard- Orion Trade Ai</title>
+  <title>Dashboard- Himallya RO Services</title>
   <style>
     .snackbar {
       visibility: hidden;

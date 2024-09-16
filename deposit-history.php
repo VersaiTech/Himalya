@@ -20,7 +20,7 @@ $member_user_id = $_SESSION['member_user_id'];
     include "components/cssComponents/deposit2-css.php"
     ?>
 
-    <title>Dashboard- Orion Trade Ai</title>
+    <title>Dashboard- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {

@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 
   <?php include "components/cssComponents/overview-css.php"; ?>
 
-  <title>Dashboard- Orion Trade Ai</title>
+  <title>Dashboard- Himallya RO Services</title>
 
 </head>
 

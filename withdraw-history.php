@@ -44,7 +44,7 @@ if (isset($_SESSION['member_user_id'])) {
     ?>
 
 
-    <title>Dashboard- Orion Trade Ai</title>
+    <title>Dashboard- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {

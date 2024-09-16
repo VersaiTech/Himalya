@@ -1,4 +1,48 @@
-<?php include "components/phpComponents/phpcomponents.php";?>
+<?php
+include "./config/config.php";
+include "components/phpComponents/phpcomponents.php";
+
+// Check if the user is logged in and has a session
+if (isset($_SESSION['member_user_id'])) {
+    $member_user_id = $_SESSION['member_user_id'];
+    $sponsor_name = $_SESSION['member_name'];
+
+    // Query to fetch the user's withdrawal requests from the database
+    // $query = "SELECT id,sponsor_user_id,sponsor_name,referred_user_id,referred_member_name,referral_date FROM tbl_referrals WHERE sponsor_user_id = ? and level=1";
+
+      // Query to fetch the user's referrals and the topUp_status of referred users
+      $query = "
+      SELECT 
+          r.id, 
+          r.sponsor_user_id, 
+          r.sponsor_name, 
+          r.referred_user_id, 
+          r.referred_member_name, 
+          r.referral_date, 
+          m.topUp_status
+      FROM tbl_referrals r
+      LEFT JOIN tbl_memberreg m ON r.referred_user_id = m.member_user_id
+      WHERE r.sponsor_user_id = ? AND r.level = 1
+  ";
+
+    if ($connection === null || !$connection->ping()) {
+        die("Database connection is not properly initialized or not connected.");
+    }
+
+    // Prepare and execute the query
+    if ($stmt = $connection->prepare($query)) {
+        $stmt->bind_param("i", $member_user_id); // Bind the member_user_id parameter
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } else {
+        echo "Error preparing statement: " . $connection->error;
+    }
+} else {
+    echo "User not logged in.";
+}
+
+
+?>
 <!DOCTYPE html>
 <html dir="ltr">
 
@@ -11,8 +55,9 @@
     <meta name="description" content="Responsive, Highly Customizable Dashboard Template">
 
     <?php
-    include "components/cssComponents/live3-css.php";
+    include "components/cssComponents/withdraw-history-css.php";
     ?>
+
 
     <title>Dashboard- Himallya RO Services</title>
 
@@ -53,12 +98,12 @@
                                 <a href="overview" class="position-relative">
 
 
-                                    <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/logo-small-dark.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/logo-small.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/LOGOFORWHITE.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/LOGOFORBLACK.png" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                    <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                    <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -86,8 +131,8 @@
 
         <div class="hp-main-layout">
             <?php
-            $title1 = "Live Account";
-            $title2 = "Live Account Details";
+            $title1 = "Overview";
+            $title2 = "Referral History";
             include "components/header.php";
             ?>
 
@@ -96,18 +141,14 @@
                     <div class="w-auto px-0">
                         <div class="hp-header-logo d-flex align-items-center">
                             <a href="overview" class="position-relative">
-                                <div class="hp-header-logo-icon position-absolute bg-black-20 hp-bg-dark-90 rounded-circle border border-black-0 hp-border-color-dark-90 d-flex align-items-center justify-content-center" style="width: 18px; height: 18px; top: -5px;">
-                                    <svg class="hp-fill-color-dark-0" width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0.709473 0L1.67247 10.8L5.99397 12L10.3267 10.7985L11.2912 0H0.710223H0.709473ZM9.19497 3.5325H4.12647L4.24722 4.88925H9.07497L8.71122 8.95575L5.99397 9.70875L3.28047 8.95575L3.09522 6.87525H4.42497L4.51947 7.93275L5.99472 8.33025L5.99772 8.3295L7.47372 7.93125L7.62672 6.21375H3.03597L2.67897 2.208H9.31422L9.19572 3.5325H9.19497Z" fill="#2D3436"></path>
-                                    </svg>
-                                </div>
 
-                                <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/logo-small-dark.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/logo-small.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/LOGOFORWHITE.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/LOGOFORBLACK.png" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+
+                                <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                             </a>
 
                         </div>
@@ -142,12 +183,12 @@
                                                 </svg>
                                             </div>
 
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/logo-small-dark.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/logo-small.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/LOGOFORWHITE.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/LOGOFORBLACK.png" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                            <img class="hp-logo-side hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                                         </a>
 
                                         <a href="https://hypeople-studio.gitbook.io/yoda/change-log" target="_blank" class="d-flex">
@@ -183,10 +224,10 @@
                 <div class="row mb-32 gy-32">
                     <!-- custom form -->
                     <div class="col-12">
-                        <div class="card custom-card">
+                        <div class="card custom-card p-0 m-0">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
-                                    <h3 class="card-title mb-15">Live Account Details</h3>
+                                    <h3 class="card-title mb-15">Referral History For <?php echo $sponsor_name ?></h3>
                                     <div class="d-flex flex-wrap align-items-center">
                                         <button class="btn btn-secondary me-2 mb-2 mb-md-0 btn-sm">
                                             <span class="bi bi-download"></span>&nbsp;&nbsp;Export to Excel</button>
@@ -219,49 +260,44 @@
                                 </div>
                                 <div class="mb-24"></div>
                                 <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" style="min-width: 150px;">Date</th>
-                                                <th scope="col" style="min-width: 170px;">MT5 ACCOUNT NO</th>
-                                                <th scope="col" style="min-width: 120px;">MT5 GROUP</th>
-                                                <th scope="col" style="min-width: 120px;">LEVERAGE</th>
-                                                <th scope="col" style="min-width: 120px;">EQUITY</th>
-                                                <th scope="col" style="min-width: 120px;">FREE MARGIN</th>
-                                                <th scope="col" style="min-width: 120px;">MARGIN LEVEL</th>
-                                                <th scope="col" style="min-width: 150px;">MT5 PASSWORD</th>
-                                                <th scope="col" style="min-width: 120px;">MT5 BALANCE</th>
-                                                <th scope="col" style="min-width: 150px;">TOTAL BALANCE</th>
-                                                <th scope="col" style="min-width: 120px;">BONUS</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tableBody">
-                                            <tr>
-                                                <td>01-01-2023</td>
-                                                <td>123456</td>
-                                                <td>Orion</td>
-                                                <td>100</td>
-                                                <td>$10,000</td>
-                                                <td>$5,000</td>
-                                                <td>200%</td>
-                                                <td>********</td>
-                                                <td>$15,000</td>
-                                                <td>$25,000</td>
-                                                <td>10%</td>
-                                            </tr>
-                                            <!-- Add more rows as needed -->
-                                        </tbody>
-                                    </table>
+                                <table class="table table-hover">
+    <thead>
+        <th scope="col" style="min-width: 130px;">Date</th>
+        <th scope="col" style="min-width: 80px;">ID</th>
+        <th scope="col" style="min-width: 140px;">REFERRED USER ID</th>
+        <th scope="col" style="min-width: 140px;">REFERRED USER NAME</th>
+        <th scope="col" style="min-width: 100px;">STATUS</th> <!-- New Status Column -->
+    </thead>
+    <tbody id="tableBody">
+        <?php if ($result && $result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo date('d-m-Y', strtotime($row['referral_date'])); ?></td>
+                    <td><?php echo $row['id']; ?></td>
+                    <td><?php echo $row['referred_user_id']; ?></td>
+                    <td><?php echo ucfirst($row['referred_member_name']); ?></td>
+                    <td>
+                        <?php 
+                        // Display "Paid" if topUp_status is 1, else "Unpaid"
+                        echo ($row['topUp_status'] == 1) ? 'Paid Referral' : 'Unpaid Referral'; 
+                        ?>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="6">No referral records found for this user.</td>
+            </tr>
+        <?php endif; ?>
+    </tbody>
+</table>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
             <?php
             include "components/footer.php";
             ?>
@@ -272,6 +308,10 @@
     <?php
     include "components/appTheme.php";
     ?>
+
+    <a href="https://themeforest.net/item/yoda-react-admin-template-react-hooks-redux-toolkit-ant-design/33791048" target="_blank" class="hp-buy-now-btn position-fixed">
+
+    </a>
 
     <div class="scroll-to-top">
         <button type="button" class="btn btn-primary btn-icon-only rounded-circle hp-primary-shadow">
@@ -284,9 +324,8 @@
         </button>
     </div>
 
-
     <?php
-    include "components/jsComponents/live3-js.php";
+    include "components/jsComponents/client-withdraw-js.php"
     ?>
 </body>
 

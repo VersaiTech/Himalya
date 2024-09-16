@@ -57,7 +57,7 @@
     <!-- Custom -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Dashboard- Orion Trade Ai</title>
+    <title>Dashboard- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {

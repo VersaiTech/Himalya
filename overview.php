@@ -18,7 +18,7 @@
   ?>
 
 
-  <title>Dashboard- Orion Trade Ai</title>
+  <title>Dashboard- Himallya RO Services</title>
 
   <script>
     ! function(t, h, e, j, s, n) {
@@ -258,8 +258,13 @@
                         </div>
                       </div>
 
+                      <?php
+                      $str = "SELECT COUNT(*) as total FROM tbl_referrals where sponsor_user_id='$member_user_id' and level=1";
+                      $res = mysqli_query($connection, $str);
+                      $row = mysqli_fetch_array($res);
+                      ?>
                       <div class="col pe-0">
-                        <h3 class="mb-0 fw-semibold"><?php echo isset($ref_amount) ? number_format($ref_amount, 2) : '0.00'; ?></h3>
+                        <h3 class="mb-0 fw-semibold"><?php echo $row['total']; ?></h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
                           <b style="font-size: 18px;">Total Referrals</b>
                         </p>
