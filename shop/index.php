@@ -1,12 +1,14 @@
 <?php
 // Start the session
 session_start();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="description" content="Ekomart-Grocery-Store(e-Commerce) HTML Template: A sleek, responsive, and user-friendly HTML template designed for online grocery stores.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +18,9 @@ session_start();
     <!-- plugins css -->
     <link rel="stylesheet preload" href="assets/css/plugins.css" as="style">
     <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+
+
+
     <style>
     
 /* Modal background, padding, and border radius */
@@ -73,6 +78,8 @@ session_start();
 }
 
     </style>
+
+
 
 </head>
 
@@ -769,8 +776,6 @@ session_start();
   <!-- MODAL -->
 
                         <!-- Modal 1: Payment Options -->
-                       
-
                         <div class="modal fade" id="paymentOptionsModal" tabindex="-1" aria-labelledby="paymentOptionsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content rounded-4 shadow-lg custom-modal"> <!-- Custom class added -->
@@ -902,7 +907,6 @@ session_start();
         </div>
     </div>
     <!-- rts shorts service area end -->
-
     <!-- deal of the day area start -->
     <div class="rts-deal-ofthe-day rts-section-gap">
         <div class="container-2">
@@ -954,10 +958,12 @@ session_start();
                                 <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                    onclick="openPaymentModal(1000)"">
+                                <!-- Hidden input to store login status -->
+<input type="hidden" id="loginStatus" value="<?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>">
+                             <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
+                                    onclick="openPaymentModal(1000)">
                                     <div class=" btn-text">
-                                    Buy Now
+                                    Buy Noww
                             </div>
                             <div class="arrow-icon">
                                 <i class="fa-regular fa-cart-shopping"></i>
@@ -2086,8 +2092,8 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- rts copyright area end -->
 
+    <!-- rts copyright area end -->
     <!-- modal -->
     <!-- <div id="myModal-1" class="modal fade" role="dialog">
         <div class="modal-dialog bg_image">
@@ -2419,40 +2425,6 @@ session_start();
         </div>
     </div>
 
-
-    <!--================= Preloader Section Start Here =================-->
-    <!-- <div id="weiboo-load">
-    <div class="preloader-new">
-        <svg class="cart_preloader" role="img" aria-label="Shopping cart_preloader line animation"
-            viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
-                <g class="cart__track" stroke="hsla(0,10%,10%,0.1)">
-                    <polyline points="4,4 21,4 26,22 124,22 112,64 35,64 39,80 106,80" />
-                    <circle cx="43" cy="111" r="13" />
-                    <circle cx="102" cy="111" r="13" />
-                </g>
-                <g class="cart__lines" stroke="currentColor">
-                    <polyline class="cart__top" points="4,4 21,4 26,22 124,22 112,64 35,64 39,80 106,80"
-                        stroke-dasharray="338 338" stroke-dashoffset="-338" />
-                    <g class="cart__wheel1" transform="rotate(-90,43,111)">
-                        <circle class="cart__wheel-stroke" cx="43" cy="111" r="13" stroke-dasharray="81.68 81.68"
-                            stroke-dashoffset="81.68" />
-                    </g>
-                    <g class="cart__wheel2" transform="rotate(90,102,111)">
-                        <circle class="cart__wheel-stroke" cx="102" cy="111" r="13" stroke-dasharray="81.68 81.68"
-                            stroke-dashoffset="81.68" />
-                    </g>
-                </g>
-            </g>
-        </svg>
-    </div>
-</div> -->
-    <!--================= Preloader End Here =================-->
-
-
-
-
-
     <div class="search-input-area">
         <div class="container">
             <div class="search-input-inner">
@@ -2480,50 +2452,25 @@ session_start();
     <!-- custom js -->
     <script defer src="assets/js/main.js"></script>
 
+
+    <!-- header style two End -->
+
     <script>
-        // function buy_now_fun(amount) {
+    function openPaymentModal(amount) {
+        let is_login = document.getElementById('loginStatus').value === 'true';
+        console.log("login status ", is_login);
 
-
-        //     let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
-        //     if (is_login) {
-        //         console.log(amount)
-        //         console.log('<?php echo $_SESSION['member_user_id']; ?>');
-
-        //     } else {
-        //         alert('Please login first.');
-        //     }
-        // }
-
-        function buy_now_fun(amount) {
-            let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
-            if (is_login) {
-                console.log(amount)
-                console.log('<?php echo $_SESSION['member_user_id']; ?>');
-                console.log('<?php echo $_SESSION['email_id']; ?>');
-
-                let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
-                let email_id = '<?php echo $_SESSION['email_id']; ?>';
-                let formData = new FormData();
-                formData.append('member_user_id', member_user_id);
-                formData.append('email_id', email_id);
-                formData.append('amount', amount);
-                fetch('process.php?simulate_payment=true', {
-                    method: 'POST',
-                    body: formData
-                });
-            } else {
-                alert('Please login first.');
-            }
+        if (is_login) {
+            const paymentModal = new bootstrap.Modal(document.getElementById('paymentOptionsModal'));
+            paymentModal.show();
+        } else {
+            alert('Please login first.');
         }
-        // Function to open the payment options modal
-function openPaymentModal(amount) {
-    const paymentModal = new bootstrap.Modal(document.getElementById('paymentOptionsModal'));
-    paymentModal.show();
-}
+    }
 
-// Function to handle the Payment Gateway option
 function payThroughGateway(amount) {
-    let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    // let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    let is_login = document.getElementById('loginStatus').value === 'true';
     if (is_login) {
         let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
         let email_id = '<?php echo $_SESSION['email_id']; ?>';
@@ -2553,7 +2500,6 @@ function payThroughGateway(amount) {
     }
 }
 
-// Function to open the QR code modal
 function openQRCodeModal() {
     const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
     paymentModal.hide(); // Close the first modal
@@ -2562,8 +2508,6 @@ function openQRCodeModal() {
     qrCodeModal.show(); // Show the QR code modal
 }
 
-// Function to submit UTR for QR Code payment
-// Function to submit UTR for QR Code payment
 function submitUTR(amount) {
     let utrNumber = document.getElementById('utrNumber').value;
 
@@ -2572,7 +2516,8 @@ function submitUTR(amount) {
         return;
     }
 
-    let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    // let is_login = <?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>;
+    let is_login = document.getElementById('loginStatus').value === 'true';
     if (is_login) {
         let member_user_id = '<?php echo $_SESSION['member_user_id']; ?>';
         let email_id = '<?php echo $_SESSION['email_id']; ?>';
@@ -2605,9 +2550,6 @@ function submitUTR(amount) {
 
 
     </script>
-    <!-- header style two End -->
-
-
 </body>
 
 </html>
