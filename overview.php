@@ -247,7 +247,7 @@
             <div class="row g-32 " style="
                         margin-bottom: 12px;
                     ">
-              <div class="col-12 col-sm-6 col-xl-6">
+              <div class="col-12 col-sm-6 col-xl-4">
                 <div class="card hp-card-1">
                   <div class="card-body p-16">
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
@@ -269,9 +269,70 @@
                           <b style="font-size: 18px;">Total Referrals</b>
                         </p>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <?php
+// Query for counting paid referrals (topUp_status = 1)
+$paid_query = "
+    SELECT COUNT(*) as total 
+    FROM tbl_referrals r 
+    LEFT JOIN tbl_memberreg m ON r.referred_user_id = m.member_user_id 
+    WHERE r.sponsor_user_id='$member_user_id' AND r.level=1 AND m.topUp_status = 1
+";
+$paid_res = mysqli_query($connection, $paid_query);
+$paid_row = mysqli_fetch_array($paid_res);
+
+// Query for counting unpaid referrals (topUp_status = 0)
+$unpaid_query = "
+    SELECT COUNT(*) as total 
+    FROM tbl_referrals r 
+    LEFT JOIN tbl_memberreg m ON r.referred_user_id = m.member_user_id 
+    WHERE r.sponsor_user_id='$member_user_id' AND r.level=1 AND m.topUp_status = 0
+";
+$unpaid_res = mysqli_query($connection, $unpaid_query);
+$unpaid_row = mysqli_fetch_array($unpaid_res);
+?>
 
 
-
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="card hp-card-1">
+                  <div class="card-body p-16">
+                    <div class="row align-items-center flex-shrink-1 w-100 mx-0">
+                      <div style="width: 106px;" class="px-0">
+                        <div class="h-100 bg-primary-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
+                          <!-- <div id="statistics-order"></div> -->
+                          <img src="assets/connections.png" alt="">
+                        </div>
+                      </div>
+                      <div class="col pe-0">
+                        <h3 class="mb-0 fw-semibold"><?php echo $paid_row['total']; ?></h3>
+                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
+                          <b style="font-size: 18px;">Paid Referrals</b>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-xl-4">
+                <div class="card hp-card-1">
+                  <div class="card-body p-16">
+                    <div class="row align-items-center flex-shrink-1 w-100 mx-0">
+                      <div style="width: 106px;" class="px-0">
+                        <div class="h-100 bg-primary-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
+                          <!-- <div id="statistics-order"></div> -->
+                          <img src="assets/connections.png" alt="">
+                        </div>
+                      </div>
+                      <div class="col pe-0">
+                        <h3 class="mb-0 fw-semibold"><?php echo $unpaid_row['total']; ?></h3>
+                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
+                          <b style="font-size: 18px;">Unpaid Referrals</b>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -137,7 +137,7 @@ session_start();
                                 // Check if the session is active and user is logged in
                                 if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
                                     // User is logged in, show the box with the user's email
-                                    echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
+                                    echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;min-width: 11vw">';
                                     echo 'Hello, ' . $_SESSION['member_name'];
                                     echo '</div>';
                                 } else {
@@ -186,13 +186,6 @@ session_start();
                                             <a class="nav-link" href="#">Home</a>
                                         </li>
                                         <li class="parent"><a href="about.html">About</a></li>
-
-                                        <!--<li class="parent has-dropdown">
-                                            <a class="nav-link" href="blog-details.html">Service</a>
-
-                                        </li>-->
-
-                                        <li class="parent"><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -334,10 +327,6 @@ session_start();
         <button class="close-icon-menu"><i class="far fa-times"></i></button>
 
 
-        <!-- <form action="#" class="search-input-area-menu mt--30">
-        <input type="text" placeholder="Search..." required>
-        <button><i class="fa-light fa-magnifying-glass"></i></button>
-    </form> -->
 
         <div class="mobile-menu-nav-area tab-nav-btn mt--20">
 
@@ -358,7 +347,7 @@ session_start();
                                 <li>
                                     <a href="about.html" class="main">About</a>
                                 </li>
-                                
+
                                 <!-- <li>
                                     <a href="contact.html" class="main">Contact Us</a>
                                 </li> -->
@@ -463,31 +452,29 @@ session_start();
         </div>
 
         <div class="button-area-main-wrapper-menuy-sidebar mt--50">
-
-
-
-
-            <?php
-            // Check if the session is active and user is logged in
-            if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
-                // User is logged in, show the box with the user's email
-                echo '<div class="welcome-box" style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7;">';
-                echo 'Helloo, ' . $_SESSION['member_name'];
-                echo '</div>';
-            } else {
-            ?>
-                <div class="button-area-bottom">
-
-                </div>
-            <?php
-            }
-            ?>
+    <?php
+    // Check if the session is active and user is logged in
+    if (isset($_SESSION['member_user_id']) && isset($_SESSION['email_id'])) {
+        // User is logged in, show the "Hello, user" box and "My Account" button
+        echo '<div class="welcome-box" 
+              style="width: 100%; text-align: center; padding: 10px; border: 1px solid #ccc; background-color: #f7f7f7; min-width: 9vw;">';
+        echo 'Hello, ' . $_SESSION['member_name'];
+        echo '</div>';
+        
+        // Show "My Account" button
+        echo '<a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn mt-10">My Account</a>';
+    } else {
+        // User is not logged in, show the "Login" and "Join" buttons
+    ?>
+        <div class="button-area-bottom">
             <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
-
-
-            <a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn">My Account</a>
             <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
         </div>
+    <?php
+    }
+    ?>
+</div>
+
     </div>
 
     </div>
