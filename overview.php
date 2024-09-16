@@ -301,10 +301,10 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
                 <div class="card hp-card-1">
                   <div class="card-body p-16">
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
-                      <div style="width: 106px;" class="px-0">
+                      <div style="width: 146px;margin-top: 1vw;" class="px-0">
                         <div class="h-100 bg-primary-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
                           <!-- <div id="statistics-order"></div> -->
-                          <img src="assets/connections.png" alt="">
+                          <img src="assets/refer-2.png" alt="">
                         </div>
                       </div>
                       <div class="col pe-0">
@@ -321,10 +321,10 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
                 <div class="card hp-card-1">
                   <div class="card-body p-16">
                     <div class="row align-items-center flex-shrink-1 w-100 mx-0">
-                      <div style="width: 106px;" class="px-0">
+                      <div style="width: 136px;margin-top:1vw;" class="px-0">
                         <div class="h-100 bg-primary-4 hp-bg-color-dark-90 d-flex align-items-center justify-content-center rounded-4">
                           <!-- <div id="statistics-order"></div> -->
-                          <img src="assets/connections.png" alt="">
+                          <img src="assets/refer-3.png" alt="">
                         </div>
                       </div>
                       <div class="col pe-0">
