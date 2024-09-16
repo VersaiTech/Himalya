@@ -358,9 +358,10 @@ session_start();
                                 <li>
                                     <a href="about.html" class="main">About</a>
                                 </li>
-                                <li>
+                                
+                                <!-- <li>
                                     <a href="contact.html" class="main">Contact Us</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
 

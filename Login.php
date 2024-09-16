@@ -272,7 +272,7 @@
                                 timerProgressBar: true,
                                 showConfirmButton: false
                             }).then(() => {
-                                window.location.href = 'shop';
+                                window.location.href = 'shop/index';
                             });
                         } else {
                             Swal.fire({

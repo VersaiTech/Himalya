@@ -134,40 +134,85 @@ if ($stmt = mysqli_prepare($connection, $query)) {
             }
             // Step 3: If both checks pass, proceed with the withdrawal
             else {
+                // amountError.style.display = "none";
+                // amountInput.style.borderColor = ""; // Reset border color
+
+                // // Proceed with AJAX request to submit withdrawal
+                // const xhr = new XMLHttpRequest();
+                // xhr.open("POST", "submit_withdrawal", true);
+                // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                // xhr.onload = function() {
+                //     console.log("Response status:", xhr.status); // Log the status
+                //     console.log("Response text:", xhr.responseText); // Log the response text
+
+                //     if (xhr.status === 200) {
+                //         const response = JSON.parse(xhr.responseText);
+                //         if (response.success) {
+                //             alert("Withdrawal Request Submitted. New Balance: " + response.new_balance);
+                //             console.log("Response status:", xhr.status); // Log the status
+                //             console.log("Response text:", xhr.responseText); 
+                //             const modal = document.querySelector("#profileContactEditModal");
+                //             const bootstrapModal = bootstrap.Modal.getInstance(modal);
+                //             bootstrapModal.hide();
+                //             setTimeout(function() {
+                //                 window.location.href = "withdraw-history";
+                //             }, 500);
+                //         } else {
+                //             alert("Failed to submit withdrawal request: " + response.message);
+                //         }
+                //     } else {
+                //         alert("Failed to submit withdrawal request, status: " + xhr.status);
+                //     }
+                // };
+
+                // const requestData = `amount=${encodeURIComponent(amountValue)}`;
+                // xhr.send(requestData);
+
                 amountError.style.display = "none";
-                amountInput.style.borderColor = ""; // Reset border color
+        amountInput.style.borderColor = ""; // Reset border color
 
-                // Proceed with AJAX request to submit withdrawal
-                const xhr = new XMLHttpRequest();
-                xhr.open("POST", "submit_withdrawal", true);
-                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-                xhr.onload = function() {
-                    console.log("Response status:", xhr.status); // Log the status
-                    console.log("Response text:", xhr.responseText); // Log the response text
-
-                    if (xhr.status === 200) {
-                        const response = JSON.parse(xhr.responseText);
-                        if (response.success) {
-                            alert("Withdrawal Request Submitted. New Balance: " + response.new_balance);
-                            const modal = document.querySelector("#profileContactEditModal");
-                            const bootstrapModal = bootstrap.Modal.getInstance(modal);
-                            bootstrapModal.hide();
-                            setTimeout(function() {
-                                window.location.href = "withdraw-history";
-                            }, 500);
-                        } else {
-                            alert("Failed to submit withdrawal request: " + response.message);
-                        }
-                    } else {
-                        alert("Failed to submit withdrawal request, status: " + xhr.status);
-                    }
-                };
-
-                const requestData = `amount=${encodeURIComponent(amountValue)}`;
-                xhr.send(requestData);
+        // Call submitWithdrawal function
+        submitWithdrawal(amountValue);
             }
         }
+
+        function submitWithdrawal(amountValue) {
+    const requestData = new URLSearchParams();
+    requestData.append('amount', amountValue);
+
+    fetch('submit_withdrawal', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: requestData.toString(),
+    })
+    .then(response => {
+        console.log("Response status:", response.status); // Log the status
+        return response.json();
+    })
+    .then(data => {
+        console.log("Response data:", data); // Log the JSON response
+
+        if (data.success) {
+            alert("Withdrawal Request Submitted. New Balance: " + data.new_balance);
+            const modal = document.querySelector("#profileContactEditModal");
+            const bootstrapModal = bootstrap.Modal.getInstance(modal);
+            bootstrapModal.hide();
+            setTimeout(function() {
+                window.location.href = "withdraw-history";
+            }, 500);
+        } else {
+            alert("Failed to submit withdrawal request: " + data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error occurred:", error);
+        alert("Failed to submit withdrawal request due to a network error.");
+    });
+}
+
     </script>
 </head>
 
