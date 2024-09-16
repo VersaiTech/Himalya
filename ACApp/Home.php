@@ -143,6 +143,7 @@ $roipercentage = $row['set_roi_percent'];
                         </a>
                     </div> -->
 
+               
 
 
                     <?php
@@ -171,27 +172,7 @@ $total_payment = get_value($str);
                     </div>
 
 
-                    <!-- <?php
-                    $str = "Select IFNULL(sum(topup_amount),0) as topup_amount from tbl_memberreg";
-                    $topup_amount = get_value($str);
-                    ?>
-                    <div class="col-xl-4 col-sm-6 col-12">
-                        <a href="UserPackage" style="color:#333" target="_blank">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="dash-widget-header">
-                                        <span class="dash-widget-icon bg-primary">
-                                            <i class="fas fa-user-shield"></i>
-                                        </span>
-                                        <div class="dash-widget-info">
-                                            <h3><?php echo $topup_amount; ?></h3>
-                                            <h6 class="text-muted">Total Packages Buy</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div> -->
+                    
 
                     <?php
                     $PendingWithdraw = 0;
@@ -215,6 +196,59 @@ $total_payment = get_value($str);
                             </div>
                         </a>
                     </div>
+
+ <!-- ////// -->
+
+                    <?php
+                    $str = "SELECT COUNT(*) as cnt FROM tbl_memberreg WHERE topUp_status = 1";
+                    $TotalActiveReferrals = get_value($str);
+                    ?>
+                    <div class="col-xl-6 col-sm-6 col-12">
+                        <a href="AllUserList" style="color:#333">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dash-widget-header">
+                                        <span class="dash-widget-icon bg-primary">
+                                            <i class="far fa-user"></i>
+                                        </span>
+                                        <div class="dash-widget-info">
+                                            <h3><?php echo $TotalActiveReferrals; ?></h3>
+                                            <h6 class="text-muted">Total Paid Referrals</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Other dashboard widgets and data ... -->
+
+                    <?php
+                    $str = "SELECT COUNT(*) as cnt FROM tbl_memberreg WHERE topUp_status = 0";
+                    $TotalInactiveReferrals = get_value($str);
+                    ?>
+                    <div class="col-xl-6 col-sm-6 col-12">
+                        <a href="ActiveUserList" style="color:#333">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dash-widget-header">
+                                        <span class="dash-widget-icon bg-primary">
+                                            <i class="fas fa-user-shield"></i>
+                                        </span>
+                                        <div class="dash-widget-info">
+                                            <h3><?php echo $TotalInactiveReferrals; ?></h3>
+                                            <h6 class="text-muted">Total Unpaid Referrals</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                 <!-- /////// -->
+
+
                     <!-- <?php
                     $PendingWithdraw = 0;
                     $str = "Select IFNULL(sum(net_amt),0) as net_amt from tbl_income_withdrawal where status=0";
@@ -260,6 +294,8 @@ $total_payment = get_value($str);
                             </div>
                         </a>
                     </div> -->
+
+
                     <?php
                      $TotalTransactions = 0;
                      $str = "SELECT COUNT(*) as total_transactions FROM tbl_payment_history ";
@@ -282,6 +318,8 @@ $total_payment = get_value($str);
                             </div>
                         </a>
                     </div>
+
+
                     <!-- <?php
                     $TotalMatching = 0;
                     $str = "Select IFNULL(sum(matching_income),0) as matching_income from tbl_binary ";
@@ -305,56 +343,9 @@ $total_payment = get_value($str);
                         </a>
                     </div> -->
 
-                    <!-- ROI PERCENTAGE -->
-                    <div class="col-xl-4 col-sm-12 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-primary">
-                                        <i class="far fa-user"></i>
-                                    </span>
-                                    <div class="dash-widget-info">
-                                        <h3 id="currentRoiAmount"><?php echo $roipercentage  . "%"; ?></h3>
-                                        <h6 class="text-muted">Current ROI Percentage</h6>
+                  
 
-                                        <!-- New input and update button -->
-                                        <div class="input-group mt-3 ml-2">
-                                            <input type="number" class="form-control" id="newRoiPercentage" placeholder="Enter new percentage">
-                                            <div class="input-group-append">
-                                                <button type="button" class="btn btn-primary" id="updateRoiButton">Update</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                      <!-- Referral System  Start-->
-                      <div class="col-xl-4 col-sm-12 col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="dash-widget-header">
-                                    <span class="dash-widget-icon bg-primary">
-                                        <i class="far fa-user"></i>
-                                    </span>
-                                    <div class="dash-widget-info">
-                                        <h3 id="currentReferralAmount"><?php echo $referralpercentage * 100 . "%"; ?></h3>
-                                        <h6 class="text-muted">Current Referral Percentage</h6>
-
-                                        <!-- New input and update button -->
-                                        <div class="input-group mt-3 ml-2">
-                                            <input type="number" step="0.01" class="form-control" id="newReferralPercentage" placeholder="Enter new percentage">
-                                            <div class="input-group-append">
-                                                <button type="button" class="btn btn-primary" id="updateButton">Update</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Referral System  End-->
                     <!-- <div class="col-xl-4 col-sm-6 col-12">
                         <a href="UserPackage" style="color:#333" target="_blank">
                             <div class="card">
