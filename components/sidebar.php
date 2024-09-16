@@ -171,7 +171,7 @@
                 </a>
             </li>
             <li>
-                <a href="investor-reset-password">
+                <a href="campaigns">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="Landing" aria-label="Landing"></div>
 
                     <span>
@@ -187,7 +187,7 @@
                 </a>
             </li>
             <li>
-                <a href="investor-reset-password">
+                <a href="creative">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="Landing" aria-label="Landing"></div>
 
                     <span>

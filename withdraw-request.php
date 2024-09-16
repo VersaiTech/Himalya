@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 include "components/phpComponents/phpcomponents.php"; // Ensure this file includes session_start()
 include "./config/config.php"; // Ensure the database connection $conn is in this file
 
@@ -70,7 +71,7 @@ if ($stmt = mysqli_prepare($connection, $query)) {
     ?>
 
     <title>Profile- Orion Trade Ai</title>
-     <script>
+    <script>
         // Pass PHP variable to JavaScript
         var ref_amount = <?php echo json_encode($ref_amount); ?>;
     </script>
@@ -90,56 +91,6 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                 s.appendChild(n)
         }(window, document)
 
-
-        // function validateAmount() {
-        //     const amountInput = document.getElementById("withdrawAmount");
-        //     const amountValue = parseFloat(amountInput.value);
-        //     const amountError = document.getElementById("amountError");
-
-        //     if (isNaN(amountValue) || amountValue <= 1500) {
-        //         // Show error if the amount is not valid or less than 1500
-        //         amountError.style.display = "block";
-        //         amountInput.style.borderColor = "red"; // Add red border color
-
-        //         // Remove the error message and reset the border color after 2 seconds
-        //         setTimeout(() => {
-        //             amountError.style.display = "none";
-        //             amountInput.style.borderColor = ""; // Reset border color
-        //         }, 2000); // 2000 ms = 2 seconds
-        //     } else {
-        //         // Hide error and proceed if the amount is valid
-        //         amountError.style.display = "none";
-        //         amountInput.style.borderColor = ""; // Reset border color
-
-        //         // AJAX request to submit the withdrawal request
-        //         const xhr = new XMLHttpRequest();
-        //         xhr.open("POST", "submit_withdrawal", true);
-        //         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-        //         xhr.onload = function() {
-        //             if (xhr.status === 200) {
-        //                 const response = JSON.parse(xhr.responseText);
-        //                 if (response.success) {
-        //                     alert("Withdrawal Request Submitted");
-        //                     // Close the modal (assuming you're using Bootstrap)
-        //                     const modal = document.querySelector("#profileContactEditModal");
-        //                     const bootstrapModal = bootstrap.Modal.getInstance(modal);
-        //                     bootstrapModal.hide();
-        //                      // Redirect to withdraw-history after the modal is hidden
-        //     setTimeout(function() {
-        //         window.location.href = "withdraw-history"; // Adjust the URL as per your project structure
-        //     }, 500); // Add a short delay to ensure the modal is closed before redirecting
-
-        //                 } else {
-        //                     alert("Failed to submit withdrawal request. Please try again.");
-        //                 }
-        //             }
-        //         };
-
-        //         const requestData = `amount=${encodeURIComponent(amountValue)}`;
-        //         xhr.send(requestData);
-        //     }
-        // }
 
         function validateAmount() {
             const amountInput = document.getElementById("withdrawAmount");
@@ -171,8 +122,8 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                 }, 2000);
             }
             // Step 2: Check if amount is less than or equal to 1500
-            else if (amountValue <= 1000) {
-                amountError.textContent = "Amount must be more than 1000";
+            else if (amountValue <= 1500) {
+                amountError.textContent = "Amount must be more than 1500";
                 amountError.style.display = "block";
                 amountInput.style.borderColor = "red";
 
@@ -192,21 +143,24 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
                 xhr.onload = function() {
+                    console.log("Response status:", xhr.status); // Log the status
+                    console.log("Response text:", xhr.responseText); // Log the response text
+
                     if (xhr.status === 200) {
                         const response = JSON.parse(xhr.responseText);
                         if (response.success) {
-                            alert("Withdrawal Request Submitted");
-                            // Close the modal (assuming you're using Bootstrap)
+                            alert("Withdrawal Request Submitted. New Balance: " + response.new_balance);
                             const modal = document.querySelector("#profileContactEditModal");
                             const bootstrapModal = bootstrap.Modal.getInstance(modal);
                             bootstrapModal.hide();
-                            // Redirect to withdraw-history after the modal is hidden
                             setTimeout(function() {
-                                window.location.href = "withdraw-history"; // Adjust the URL as per your project structure
+                                window.location.href = "withdraw-history";
                             }, 500);
                         } else {
-                            alert("Failed to submit withdrawal request. Please try again.");
+                            alert("Failed to submit withdrawal request: " + response.message);
                         }
+                    } else {
+                        alert("Failed to submit withdrawal request, status: " + xhr.status);
                     }
                 };
 
@@ -452,6 +406,8 @@ if ($stmt = mysqli_prepare($connection, $query)) {
                                             <!-- <div class="col-12 col-md-6 hp-profile-action-btn text-end">
                                                 <button class="btn btn-ghost btn-primary" data-bs-toggle="modal" data-bs-target="#profileContactEditModal">Create Request</button>
                                             </div> -->
+
+
 
                                             <div class="col-12 col-md-6 hp-profile-action-btn text-end">
                                                 <?php if ($topUp_status == 1): ?>

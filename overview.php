@@ -195,7 +195,7 @@
                 <div class="dropdown-containerr" style="margin-bottom: 3vh;">
                   <select class="styled-dropdownn" id="referralId">
                     <!-- <option value="status1" disabled selected>Account Number</option> -->
-                    <option value="status2">Your Referral ID: <?php echo $member_user_id; ?></option>
+                    <option value="status2" >Your Referral ID: <?php echo $member_user_id; ?></option>
                   </select>
 
                 </div>
@@ -405,30 +405,33 @@
                 </div>
               </div>
 
-              <div class="col-12 col-md-3">
-                <div class="hp-select-box-item">
-                  <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
-                  <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
-                    <div class="card">
-                      <div class="card-body">
-                        <div class="row text-center mb-8">
-                          <div class="col-12 my-12">
-                            <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
-                              <img src="assets/realtree.png">
-                            </span>
-                          </div>
-                          <div class="col-12">
-                            <span class="h4 d-block">Binary Tree</span>
-                          </div>
-                          <div class="col-12">
-                            <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Referrals</span>
+              <div class="col-12 col-md-3" onclick="window.location.href='binary-tree'">
+                <a href="binary-tree" class="d-block">
+                  <div class="hp-select-box-item">
+                    <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
+                    <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer m-0">
+                      <div class="card">
+                        <div class="card-body">
+                          <div class="row text-center mb-8">
+                            <div class="col-12 my-12">
+                              <span class="avatar-item d-flex align-items-center justify-content-center rounded-circle mx-auto" style="width: 48px; height: 48px;">
+                                <img src="assets/realtree.png" alt="Tree Image">
+                              </span>
+                            </div>
+                            <div class="col-12">
+                              <span class="h4 d-block">Network Tree</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">Referrals</span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </label>
-                </div>
+                    </label>
+                  </div>
+                </a>
               </div>
+
               <div class="col-12 col-md-3">
                 <div class="hp-select-box-item">
                   <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
@@ -466,7 +469,7 @@
                             </span>
                           </div>
                           <div class="col-12">
-                            <span class="h4 d-block" id="memberUserId"><?php echo $member_user_id; ?></span>
+                            <span class="h4 d-block" id="referralLink"><?php echo $member_user_id; ?></span>
                           </div>
                           <div class="col-12">
                             <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">
@@ -574,11 +577,11 @@
                     <div class="row align-items-center justify-content-between">
                       <div class="flex-shrink-1 col">
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">Referral Link</p>
-                        <h4 class="mb-8 fw-bold" id="referralLink" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+                        <h4 class="mb-8 fw-bold" id="referralLinks" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
                           <?php echo $referralURL; ?></h4>
                       </div>
                       <div class="hp-flex-none w-auto col">
-                        <button type="button" id="copyButton" class="btn float-right mt-16 mt-sm-0 border-0 hp-hover-bg-black-100 hp-bg-black-bg hp-text-color-black-0 hp-hover-bg-dark-10 hp-bg-dark-0 hp-text-color-dark-100 btn-secondary">
+                        <button type="button" id="copyButtons" class="btn float-right mt-16 mt-sm-0 border-0 hp-hover-bg-black-100 hp-bg-black-bg hp-text-color-black-0 hp-hover-bg-dark-10 hp-bg-dark-0 hp-text-color-dark-100 btn-secondary">
                           <span>Copy Link</span>
                         </button>
                       </div>
@@ -595,19 +598,6 @@
                   </div>
                 </div>
 
-                <script>
-                  document.getElementById('copyButton').addEventListener('click', function() {
-                    var referralLink = document.getElementById('referralLink').innerText;
-                    var tempInput = document.createElement('input');
-                    tempInput.value = referralLink;
-                    document.body.appendChild(tempInput);
-                    tempInput.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(tempInput);
-
-                    $('#copyToast').toast('show');
-                  });
-                </script>
               </div>
             </div>
 
@@ -615,11 +605,11 @@
           </div>
         </div>
       </div>
+      <?php
+      include "components/footer.php";
+      ?>
     </div>
 
-    <?php
-    include "components/footer.php";
-    ?>
 
     </div>
   </main>
@@ -646,6 +636,34 @@
   <?php
   include "components/jsComponents/overview-js.php"
   ?>
+
+
+  <script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+      var referralLink = document.getElementById('referralLink').innerText;
+      var tempInput = document.createElement('input');
+      tempInput.value = referralLink;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      $('#copyToast').toast('show');
+    });
+  </script>
+  <script>
+    document.getElementById('copyButtons').addEventListener('click', function() {
+      var referralLink = document.getElementById('referralLinks').innerText;
+      var tempInput = document.createElement('input');
+      tempInput.value = referralLink;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      $('#copyToast').toast('show');
+    });
+  </script>
 </body>
 
 </html>
