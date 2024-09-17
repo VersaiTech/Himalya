@@ -25,9 +25,9 @@
 								<ul style="display: none;">
 									<li><a href="InvestmentSummary"> All Transactions</a></li>
 									<li><a href="InvestmentSummaryPending"> All Pending Payments</a></li>
-									<li><a href="InvestmentSummary"> All Paid Referrals </a></li>
+									<!-- <li><a href="InvestmentSummary"> All Paid Referrals </a></li>
 									<li><a href="InvestmentSummary"> All UnPaid Referrals </a></li>
-									<li><a href="InvestmentSummary"> Payments For Affiliates</a></li>
+									<li><a href="InvestmentSummary"> Payments For Affiliates</a></li> -->
 								</ul>
 						</li>
 
