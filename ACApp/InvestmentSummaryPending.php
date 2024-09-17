@@ -166,14 +166,14 @@
 										<thead>
 											<tr style="background-color: #ff0080;color:#FFF">
 												<th></th>
-												<th>Date</th>
+												<th>DATE</th>
+												<th>TIME</th>
 												<th>ID</th>
-												<th>User Id</th>
-												<th>Email Id</th>
-												<th>Amount</th>
+												<th>USER ID</th>
+												<th>EMAIL Id</th>
+												<th>AMOUNT</th>
 												<th>UTR Number</th>
-												<th>Status</th>
-												<th>Time</th>
+												<th>STATUS</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -225,12 +225,22 @@
 																echo "Date not available"; // Handle cases where 'created_at' is missing or null
 															}
 															?></td>
+															<td>
+														<?php
+														if (!empty($row['time'])) {
+															// Display just the time
+															echo date("H:i:s", strtotime($row['time']));
+														} else {
+															echo "Time not available"; // Handle cases where 'created_at' is missing or null
+														}
+														?>
+													</td>
 													<td><?php echo $row['id']; ?></td>
 													<td><?php echo $row['member_user_id']; ?></td>
 													<td><?php echo $row['email_id']; ?></td>
 													<td><?php echo $row['amount']; ?></td>
 													<td><?php echo $row['utr_number']; ?></td>
-													<td><?php echo $row['status']; ?></td>
+													<td><?php echo ucfirst($row['status']); ?></td>
 												</tr>
 											<?php } ?>
 											<tr>

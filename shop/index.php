@@ -963,7 +963,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <input type="hidden" id="email_id" value="<?php echo $email_id; ?>">
 
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                    onclick="openPaymentModal(12000)">
+                                    onclick="openPaymentModal(500)">
                                     <div class=" btn-text">
                                         Buy Noww
                                     </div>
@@ -2525,6 +2525,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                   if (data.status) {
                       // Display a nice alert for successful payment
                       alert("" + data.message);
+                      window.location.href = 'http://localhost/Himallya-MLM/payment-history';
                   } else {
                       // Display an alert for payment failure
                       alert("⚠️ Payment Failed. Please try again.");
@@ -2587,6 +2588,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                 .then(data => {
                     if (data.success) {
                         alert("UTR Submitted Successfully! Awaiting Admin Approval.");
+                        window.location.href = 'http://localhost/Himallya-MLM/pending-payment-history';
                     } else {
                         alert("Failed to submit UTR. Try again.");
                     }

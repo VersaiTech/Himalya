@@ -18,13 +18,13 @@ $member_name = $_SESSION['member_name'];
 
 
 // Fetch existing bank details
-$query = "SELECT member_name, email_id
+$query = "SELECT member_name, email_id, mobile_number
           FROM tbl_memberreg 
           WHERE member_user_id = ?";
 $stmt = mysqli_prepare($connection, $query);
 mysqli_stmt_bind_param($stmt, "s", $member_user_id);
 mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $member_name, $email_id);
+mysqli_stmt_bind_result($stmt, $member_name, $email_id, $mobile_number);
 mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
 
@@ -517,7 +517,7 @@ $mobile_number = $_SESSION['mobile_number'] ?? '';
                                                     </li>
                                                     <li class="mt-18">
                                                         <span class="hp-p1-body">Mobile Number</span>
-                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $mobile_number?></span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo htmlspecialchars($mobile_number, ENT_QUOTES, 'UTF-8'); ?></span>
                                                     </li>
                                                    
                                                 </ul>

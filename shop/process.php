@@ -228,13 +228,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        ?>
        <script>
        console.log('Payment done');
-       window.location.href = 'http://localhost/Himallya-MLM/shop/index';
+       window.location.href = 'http://localhost/Himallya-MLM/payment-history';
    </script>
    <?php
     // Update topUp_status in tbl_memberreg
     $updateStmt = $conn->prepare("UPDATE tbl_memberreg SET topUp_status = 1 WHERE member_user_id = ?");
     $updateStmt->bind_param("i", $name); // assuming $name is the member_user_id
     $updateStmt->execute();
+
+       // New code: Add the total payment amount to the user's ref_amount
+       $updateUserAmountStmt = $conn->prepare("UPDATE tbl_memberreg SET ref_amount = ref_amount + ? WHERE member_user_id = ?");
+       $updateUserAmountStmt->bind_param("ds", $amount, $name);
+       $updateUserAmountStmt->execute();
 
       // Insert payment record into tbl_payment_history
       $insertStmt = $conn->prepare("INSERT INTO tbl_payment_history (member_user_id, payment_date, payment_amount, payment_status) VALUES (?, ?, ?, ?)");

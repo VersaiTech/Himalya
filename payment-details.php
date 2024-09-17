@@ -261,6 +261,11 @@
                       </div>
                     </div>
 
+<?php
+                      $str = "SELECT SUM(payment_amount) as total FROM tbl_payment_history where member_user_id='$member_user_id' AND payment_status='success'";
+                      $res = mysqli_query($connection, $str);
+                      $row = mysqli_fetch_array($res);
+                      ?>
                     <div class="row align-items-center g-16">
                       <div class="col-8">
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
@@ -268,7 +273,7 @@
                          
                         </p>
 
-                        <h2 class="my-4"><?php echo $current_investment; ?></h2>
+                        <h2 class="my-4"><?php echo $row['total']; ?></h2>
                         <div class="d-flex align-items-center">
                           <!-- <p class="mb-0 hp-badge-text text-success">10%</p> -->
                         </div>
@@ -296,6 +301,11 @@
                       </div>
                     </div>
 
+                    <?php
+                      $str = "SELECT COUNT(*) as total FROM tbl_payment_history where member_user_id='$member_user_id'";
+                      $res = mysqli_query($connection, $str);
+                      $row = mysqli_fetch_array($res);
+                      ?>
                     <div class="row align-items-center g-16">
                       <div class="col-8">
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
@@ -303,7 +313,7 @@
                          
                         </p>
 
-                        <h2 class="my-4"><?php echo $current_investment; ?></h2>
+                        <h2 class="my-4"><?php echo $row['total']; ?></h2>
                         <div class="d-flex align-items-center">
                           <!-- <p class="mb-0 hp-badge-text text-success">10%</p> -->
                         </div>
@@ -360,7 +370,7 @@
                         <div class="flex-shrink-1 col">
                           <!-- <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">Payment Details</p> -->
                           <h4 class="mb-8 fw-bold" id="referralLink" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
-                          You can setup or change your Payout details form <a href="payout-details">here</a></h4>
+                          You can setup or change your Payout details form <a href="profile-notifications">here</a></h4>
                         </div>
                       </div>
                     </div>
