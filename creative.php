@@ -254,11 +254,10 @@
 
 <style>
   .custom-image {
-    width: 100%;
-    height: 500px; /* You can adjust the height as needed */
+    width: 500px;
+    height: 360px; /* You can adjust the height as needed */
     object-fit: cover; /* Ensures the image fits within the height without distortion */
 }
-
 </style>
 
 
