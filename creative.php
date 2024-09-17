@@ -185,126 +185,82 @@
           </div>
         </div>
       </div>
-
+      <h3 class="p-24">Thought Stream</h3>
       <div class="hp-main-layout-content d-flex flex-wrap">
+      
     <!-- First Row -->
-    <div class="col-12 col-md-4">
-        <div class="hp-card-6 hp-eCommerceCardOne">
-            <div class="rounded overflow-hidden border border-black-40 hp-border-color-dark-80 bg-black-0 hp-bg-color-dark-100 h-100">
-                <div class="text-center bg-black-10 hp-bg-color-dark-80 hp-card-2 d-flex align-items-center justify-content-center">
-                    <img src="app-assets/img/campaigns/1.png" alt="Save water">
-                </div>
-                <div class="p-24">
-                    <div class="mb-16 mt-8">
-                        <h3 class="mb-4">Save the Oceans</h3>
-                    </div>
-                    <div class="mb-8">
-                        <p class="mb-4 text-black-100 hp-text-color-dark-0 hp-p1-body">A campaign to reduce ocean pollution by encouraging plastic recycling and organizing coastal cleanups worldwide.</p>
-                        <p class="mb-0 hp-caption text-black-60 hp-text-color-dark-50">By Himallya RO services</p>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+    <!-- First Card -->
+    <div class="col-12 col-md-6">
+        <div class="text-center border p-3">
+            <img src="app-assets/img/blog/1.png" alt="Save the Oceans" class="img-fluid mb-3 custom-image">
+            <h3 class="mb-2">Why Choose Himalaya RO Systems for Clean Water ?</h3>
+            <p>Discuss the benefits of Himalaya RO systems, including advanced filtration technologies, reliability, and cost-effectiveness. Highlight unique features that set them apart from other brands.</p>
+            <p class="text-muted">By Himallya RO services</p>
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
-        <div class="hp-card-6 hp-eCommerceCardOne">
-            <div class="rounded overflow-hidden border border-black-40 hp-border-color-dark-80 bg-black-0 hp-bg-color-dark-100 h-100">
-                <div class="text-center bg-black-10 hp-bg-color-dark-80 hp-card-2 d-flex align-items-center justify-content-center">
-                    <img src="app-assets/img/campaigns/2.png" alt="Educate all">
-                </div>
-                <div class="p-24">
-                    <div class="mb-16 mt-8">
-                        <h3 class="mb-4">Education for all</h3>
-                    </div>
-                    <div class="mb-8">
-                        <p class="mb-4 text-black-100 hp-text-color-dark-0 hp-p1-body"> A global initiative aimed at providing free and quality education to underprivileged children in rural areas.</p>
-                        <p class="mb-0 hp-caption text-black-60 hp-text-color-dark-50">By Himallya RO services</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Second Card -->
+    <div class="col-12 col-md-6">
+        <div class="text-center border p-3">
+            <img src="app-assets/img/blog/2.png" alt="Education for All" class="img-fluid mb-3 custom-image">
+            <h3 class="mb-2">The Importance of Regular Maintenance for Your Himalaya RO System</h3>
+            <p>Explain the need for regular servicing and maintenance of RO systems to ensure optimal performance and longevity. Provide tips on how to maintain the system and when to call for professional help.
+            </p>
+            <p class="text-muted">By Himallya RO services</p>
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
-        <div class="hp-card-6 hp-eCommerceCardOne">
-            <div class="rounded overflow-hidden border border-black-40 hp-border-color-dark-80 bg-black-0 hp-bg-color-dark-100 h-100">
-                <div class="text-center bg-black-10 hp-bg-color-dark-80 hp-card-2 d-flex align-items-center justify-content-center">
-                    <img src="app-assets/img/campaigns/3.png" alt="Plant Trees">
-                </div>
-                <div class="p-24">
-                    <div class="mb-16 mt-8">
-                        <h3 class="mb-4">Tree Planting Drive</h3>
-                    </div>
-                    <div class="mb-8">
-                        <p class="mb-4 text-black-100 hp-text-color-dark-0 hp-p1-body">A green movement encouraging individuals and communities to plant trees and contribute to combating climate change.</p>
-                        <p class="mb-0 hp-caption text-black-60 hp-text-color-dark-50">By Himallya RO services</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Third Card -->
+    <div class="col-12 col-md-6">
+        <div class="text-center border p-3">
+            <img src="app-assets/img/blog/3.png" alt="Tree Planting Drive" class="img-fluid mb-3 custom-image">
+            <h3 class="mb-2">How to Troubleshoot Common Issues with Your Himalaya RO System</h3>
+            <p>Offer a guide on diagnosing and solving common problems that users might face with their Himalaya RO systems, such as low water flow, unusual tastes, or leaks.</p>
+            <p class="text-muted">By Himallya RO services</p>
         </div>
     </div>
 
-    <!-- Second Row -->
-    <div class="col-12 col-md-4">
-        <div class="hp-card-6 hp-eCommerceCardOne">
-            <div class="rounded overflow-hidden border border-black-40 hp-border-color-dark-80 bg-black-0 hp-bg-color-dark-100 h-100">
-                <div class="text-center bg-black-10 hp-bg-color-dark-80 hp-card-2 d-flex align-items-center justify-content-center">
-                    <img src="app-assets/img/campaigns/4.png" alt="Mental Health">
-                </div>
-                <div class="p-24">
-                    <div class="mb-16 mt-8">
-                        <h3 class="mb-4"> Mental Health Awareness</h3>
-                    </div>
-                    <div class="mb-8">
-                        <p class="mb-4 text-black-100 hp-text-color-dark-0 hp-p1-body">Raising awareness about mental health issues and providing resources for mental well-being and support.</p>
-                        <p class="mb-0 hp-caption text-black-60 hp-text-color-dark-50">By Himallya RO services</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Fourth Card -->
+    <div class="col-12 col-md-6">
+        <div class="text-center border p-3">
+            <img src="app-assets/img/blog/4.png" alt="Mental Health Awareness" class="img-fluid mb-3 custom-image">
+            <h3 class="mb-2">Comparing Himalaya RO Systems: Which Model is Right for You?</h3>
+            <p>Compare different models of Himalaya RO systems available in the market. Discuss their features, capacities, and best use cases to help readers choose the right model for their needs.</p>
+            <p class="text-muted">By Himallya RO services</p>
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
-        <div class="hp-card-6 hp-eCommerceCardOne">
-            <div class="rounded overflow-hidden border border-black-40 hp-border-color-dark-80 bg-black-0 hp-bg-color-dark-100 h-100">
-                <div class="text-center bg-black-10 hp-bg-color-dark-80 hp-card-2 d-flex align-items-center justify-content-center">
-                    <img src="app-assets/img/campaigns/5.png" alt="Food for all ">
-                </div>
-                <div class="p-24">
-                
-                    <div class="mb-16 mt-8">
-                        <h3 class="mb-4">Food Drive for the Homeless
-                        </h3>
-                    </div>
-                    <div class="mb-8">
-                        <p class="mb-4 text-black-100 hp-text-color-dark-0 hp-p1-body"> A local initiative to collect and distribute non-perishable food items to homeless shelters and food banks  .</p>
-                        <p class="mb-0 hp-caption text-black-60 hp-text-color-dark-50">By Himallya RO services</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Fifth Card -->
+    <div class="col-12 col-md-6">
+        <div class="text-center border p-3">
+            <img src="app-assets/img/blog/5.png" alt="Food Drive for the Homeless" class="img-fluid mb-3 custom-image">
+            <h3 class="mb-2">Understanding the Filtration Process: How Himalaya RO Systems Purify Your Water</h3>
+            <p>Provide an in-depth explanation of the reverse osmosis process and how Himalaya RO systems effectively remove contaminants from water. Include diagrams or infographics for better understanding.</p>
+            <p class="text-muted">By Himallya RO services</p>
         </div>
     </div>
 
-    <div class="col-12 col-md-4">
-        <div class="hp-card-6 hp-eCommerceCardOne">
-            <div class="rounded overflow-hidden border border-black-40 hp-border-color-dark-80 bg-black-0 hp-bg-color-dark-100 h-100">
-                <div class="text-center bg-black-10 hp-bg-color-dark-80 hp-card-2 d-flex align-items-center justify-content-center">
-                    <img src="app-assets/img/campaigns/6.png" alt="Rescue and adopt animals">
-                </div>
-                <div class="p-24">
-                    <div class="mb-16 mt-8">
-                        <h3 class="mb-4">Animal Rescue and Adoption</h3>
-                    </div>
-                    <div class="mb-8">
-                        <p class="mb-4 text-black-100 hp-text-color-dark-0 hp-p1-body"> An effort to rescue abandoned animals and find them loving homes. The campaign includes adoption events, veterinary care, and fostering programs.</p>
-                        <p class="mb-0 hp-caption text-black-60 hp-text-color-dark-50">By Himallya RO services</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Sixth Card -->
+    <div class="col-12 col-md-6">
+        <div class="text-center border p-3">
+            <img src="app-assets/img/blog/6.png" alt="Animal Rescue and Adoption" class="img-fluid mb-3 custom-image">
+            <h3 class="mb-2">Customer Stories: Real Experiences with Himalaya RO Services</h3>
+            <p>Share testimonials and case studies from customers who have used Himalaya RO systems. Highlight their experiences, satisfaction levels, and how the RO system has improved their water quality.</p>
+            <p class="text-muted">By Himallya RO services</p>
         </div>
     </div>
 </div>
+
+<style>
+  .custom-image {
+    width: 100%;
+    height: 500px; /* You can adjust the height as needed */
+    object-fit: cover; /* Ensures the image fits within the height without distortion */
+}
+
+</style>
+
 
 
 
