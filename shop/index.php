@@ -780,8 +780,9 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                 </div>
                 <div class="modal-body text-center">
                     <p class="mb-4">Please select one payment method:</p>
-                    <button type="button" class="btn custom-btn-primary w-100 mb-3" onclick="payThroughGateway(1000)">Pay through Payment Gateway</button>
+                    <button type="button" class="btn custom-btn-primary w-100 mb-3" onclick="payThroughGateway()">Pay through Payment Gateway</button>
                     <button type="button" class="btn custom-btn-secondary w-100" onclick="openQRCodeModal()">Pay through QR Code</button>
+                    <input type="hidden" id="paymentAmount" value="1000">
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
                     <button type="button" class="btn custom-btn-close" data-bs-dismiss="modal">Close</button>
@@ -806,7 +807,9 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                     <input type="text" id="utrNumber" class="form-control custom-input" placeholder="Enter UTR Number"> <!-- Custom input style -->
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
-                    <button type="button" class="btn custom-btn-primary w-100" onclick="submitUTR(1000)">Submit</button> <!-- Custom button -->
+                    <!-- Hidden input field to store amount -->
+                <input type="hidden" id="utrAmount" value="1000">
+                <button type="button" class="btn custom-btn-primary w-100" onclick="submitUTR()">Submit UTR</button>
                 </div>
             </div>
         </div>
@@ -960,7 +963,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <input type="hidden" id="email_id" value="<?php echo $email_id; ?>">
 
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                    onclick="openPaymentModal(1000)">
+                                    onclick="openPaymentModal(12000)">
                                     <div class=" btn-text">
                                         Buy Noww
                                     </div>
@@ -2483,15 +2486,17 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
             if (!is_login) {
                 alert('Please login first.');
             } else {
+                document.getElementById('paymentAmount').value = amount;
                 const paymentModal = new bootstrap.Modal(document.getElementById('paymentOptionsModal'));
                 paymentModal.show();
             }
         }
 
 
-        function payThroughGateway(amount) {
+        function payThroughGateway() {
             let member_user_id = document.getElementById('member_user_id').value;
             let email_id = document.getElementById('email_id').value;
+            let amount = document.getElementById('paymentAmount').value;
 
             if (!member_user_id || !email_id) {
                 console.error("User ID or email ID is missing.");
@@ -2543,12 +2548,16 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
         function openQRCodeModal() {
             const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
             paymentModal.hide(); // Close the first modal
+            let amount = document.getElementById('paymentAmount').value;
+            document.getElementById('utrAmount').value = amount;
+            
+
 
             const qrCodeModal = new bootstrap.Modal(document.getElementById('qrCodeModal'));
             qrCodeModal.show(); // Show the QR code modal
         }
 
-        function submitUTR(amount) {
+        function submitUTR() {
             let utrNumber = document.getElementById('utrNumber').value;
 
             if (utrNumber === "") {
@@ -2558,6 +2567,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
 
             let member_user_id = document.getElementById('member_user_id').value;
             let email_id = document.getElementById('email_id').value;
+            let amount = document.getElementById('utrAmount').value;
 
             if (!member_user_id || !email_id) {
                 console.error("User ID or email ID is missing.");
