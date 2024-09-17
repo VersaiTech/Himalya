@@ -14,10 +14,9 @@
 								<a href="#"><i class="fas fa-user"></i> <span> Affiliates </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="AllUserList"> All AffiliatesList </a></li>
-									<!-- <li><a href="ActiveUserList"> Active User List </a></li>
-									<li><a href="BlockedUserList"> Blocked User List </a></li>
-									<li><a href="SearchUser"> Search User </a></li> -->
-								
+									 <li><a href="PaidUserList"> Paid Affiliate List </a></li>
+									<li><a href="UnpaidUserList"> Unpaid Affiliate List </a></li>
+									<!--<li><a href="SearchUser"> Search User </a></li> -->
 								</ul>
 						</li>
 						<li class="submenu">

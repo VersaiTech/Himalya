@@ -195,7 +195,7 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
-							<h5 class="page-title">Active Affiliates List</h5>
+							<h5 class="page-title">Unpaid Affiliates List</h5>
 						</div>
 					</div>
 				</div>
@@ -226,7 +226,7 @@
 										<tbody>
 											<?php
 											$cnt = 1;
-											$str = "SELECT * FROM tbl_memberreg  ORDER BY member_id";
+											$str = "SELECT * FROM tbl_memberreg WHERE topUp_status = 0  ORDER BY member_id";
 											$res = mysqli_query($connection, $str);
 
 											if (!$res) {

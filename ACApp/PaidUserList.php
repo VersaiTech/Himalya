@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>All Affiliates | Admin Panel</title>
+	<title>All Paid Affiliates | Admin Panel</title>
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" type="image/x-icon" href="../UserProfile/images/logo/logo.png">
@@ -195,7 +195,7 @@
 				<div class="page-header">
 					<div class="row align-items-center">
 						<div class="col">
-							<h5 class="page-title">Active Affiliates List</h5>
+							<h5 class="page-title">Paid Affiliates List</h5>
 						</div>
 					</div>
 				</div>
@@ -226,7 +226,7 @@
 										<tbody>
 											<?php
 											$cnt = 1;
-											$str = "SELECT * FROM tbl_memberreg  ORDER BY member_id";
+											$str = "SELECT * FROM tbl_memberreg WHERE topUp_status = 1 ORDER BY member_id";
 											$res = mysqli_query($connection, $str);
 
 											if (!$res) {
