@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
     include "./components/cssComponents/register-css.php"
     ?>
 
-    <title>Register- Orion Trade Ai</title>
+    <title>Register- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {

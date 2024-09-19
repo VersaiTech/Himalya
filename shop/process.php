@@ -217,8 +217,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Original payment gateway integration code
         $apiEndpoint = "https://api.ekqr.in/api/create_order";
-        $apiKey = "5f9a7e08-3d5c-4e6d-b3c4-0ef89a1c9be0";
+        // $apiKey = "5f9a7e08-3d5c-4e6d-b3c4-0ef89a1c9be0";
+        $apiKey = "31924cc3-7db8-4f84-b69b-cf5179aa04f9";
+        
         // ...
+        echo "Payment done.<br>";
+        
     }
 
     if ($paymentStatus == 'success') {
@@ -258,7 +262,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     } else {
-        $responseData = array('status' => false, 'error' => 'Payment failed');
+        // $responseData = array('status' => false, 'error' => 'Payment failed');
     }
 
 // Send JSON response

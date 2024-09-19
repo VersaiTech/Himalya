@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 
-    <title>Login- Orion Trade Ai</title>
+    <title>Login- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {
@@ -148,7 +148,7 @@
                     </div>
 
                     <div class="mt-48 mt-sm-96 col-12">
-                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Orion Trade AI </p>
+                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Himallya RO Services</p>
 
                         <div class="row align-items-center justify-content-center mx-n8">
                             <div class="w-auto hp-flex-none px-8 col">

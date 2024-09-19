@@ -69,7 +69,7 @@ if (isset($_POST['recoverEmail'])) {
             $mail->Port       = 587;                  
         
             //Recipients
-            $mail->setFrom('testing@oriontradeai.com', 'Orion Trade Ai');
+            $mail->setFrom('testing@oriontradeai.com', 'Himallya RO Services');
             $mail->addAddress($email, 'User Name');    
         
             // Content

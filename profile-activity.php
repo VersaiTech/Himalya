@@ -15,7 +15,7 @@
     include "components/cssComponents/profile-activity-css.php";
     ?>
 
-    <title>Profile- Orion Trade Ai</title>
+    <title>Profile- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {

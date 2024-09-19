@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include "components/cssComponents/profile-password-css.php"
   ?>
 
-  <title>Profile- Orion Trade Ai</title>
+  <title>Profile- Himallya RO Services</title>
   <script>
  
 
