@@ -17,13 +17,13 @@ $member_name = $_SESSION['member_name'];
 
 
 // Fetch existing bank details
-$query = "SELECT account_holder_name, bank_name, ifsc_code, account_number 
+$query = "SELECT account_holder_name, bank_name, ifsc_code, account_number, upi_id
           FROM tbl_bankdetails 
           WHERE member_user_id = ?";
 $stmt = mysqli_prepare($connection, $query);
 mysqli_stmt_bind_param($stmt, "s", $member_user_id);
 mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $account_holder_name, $bank_name, $ifsc_code, $account_number);
+mysqli_stmt_bind_result($stmt, $account_holder_name, $bank_name, $ifsc_code, $account_number, $upi_id);
 mysqli_stmt_fetch($stmt);
 mysqli_stmt_close($stmt);
 
@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_bank_name = $_POST['bank_name'];
     $new_ifsc_code = $_POST['ifsc_code'];
     $new_account_number = $_POST['account_number'];
+    $upi_id = $_POST['upi_id'];
 
     // Check if record exists
     $query = "SELECT COUNT(*) FROM tbl_bankdetails WHERE member_user_id = ?";
@@ -46,18 +47,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($count > 0) {
         // Update existing record
         $query = "UPDATE tbl_bankdetails 
-                  SET account_holder_name = ?, bank_name = ?, ifsc_code = ?, account_number = ? 
+                  SET account_holder_name = ?, bank_name = ?, ifsc_code = ?, account_number = ? , upi_id=?
                   WHERE member_user_id = ?";
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "sssss", $new_account_holder_name, $new_bank_name, $new_ifsc_code, $new_account_number, $member_user_id);
+        mysqli_stmt_bind_param($stmt, "ssssss", $new_account_holder_name, $new_bank_name, $new_ifsc_code, $new_account_number,$upi_id, $member_user_id);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     } else {
         // Insert new record
-        $query = "INSERT INTO tbl_bankdetails (member_user_id, account_holder_name, bank_name, ifsc_code, account_number) 
-                  VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO tbl_bankdetails (member_user_id, account_holder_name, bank_name, ifsc_code, account_number, upi_id) 
+                  VALUES (?, ?, ?, ?, ? ,?)";
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "sssss", $member_user_id, $new_account_holder_name, $new_bank_name, $new_ifsc_code, $new_account_number);
+        mysqli_stmt_bind_param($stmt, "ssssss", $member_user_id, $new_account_holder_name, $new_bank_name, $new_ifsc_code, $new_account_number,$upi_id);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }
@@ -71,6 +72,7 @@ $account_holder_name = $account_holder_name ?? '';
 $bank_name = $bank_name ?? '';
 $ifsc_code = $ifsc_code ?? '';
 $account_number = $account_number ?? '';
+$upi_id = $upi_id ?? '';
 ?>
 <!DOCTYPE html>
 <html dir="ltr">
@@ -504,6 +506,10 @@ $account_number = $account_number ?? '';
                                                         <span class="hp-p1-body">ACCOUNT NUMBER</span>
                                                         <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $account_number?></span>
                                                     </li>
+                                                    <li class="mt-18">
+                                                        <span class="hp-p1-body">UPI ID</span>
+                                                        <span class="mt-0 mt-sm-4 hp-p1-body text-black-100 hp-text-color-dark-0"><?php echo $upi_id?></span>
+                                                    </li>
                                                   
                                                 </ul>
                                             </div>
@@ -545,6 +551,10 @@ $account_number = $account_number ?? '';
                 <div class="col-12">
                     <label for="accountNumber" class="form-label">Account Number</label>
                     <input type="text" class="form-control" id="accountNumber" name="account_number" value="<?php echo htmlspecialchars($account_number, ENT_QUOTES, 'UTF-8'); ?>">
+                </div>
+                <div class="col-12">
+                    <label for="accountNumber" class="form-label">UPI Id</label>
+                    <input type="text" class="form-control" id="upiid" name="upi_id" value="<?php echo htmlspecialchars($upi_id, ENT_QUOTES, 'UTF-8'); ?>">
                 </div>
                 <div class="col-6">
                     <button type="button" class="btn btn-primary w-100" onclick="submitForm()">Update</button>

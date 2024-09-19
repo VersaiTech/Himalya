@@ -228,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($paymentStatus == 'success') {
        // Trigger payment confirmation webhook
        $responseData = array('status' => true, 'message' => 'Payment successful');
-       echo "Payment status is success.<br>";
+       echo "Payment status is success";
        ?>
        <script>
        console.log('Payment done');
@@ -241,9 +241,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updateStmt->execute();
 
        // New code: Add the total payment amount to the user's ref_amount
-       $updateUserAmountStmt = $conn->prepare("UPDATE tbl_memberreg SET ref_amount = ref_amount + ? WHERE member_user_id = ?");
-       $updateUserAmountStmt->bind_param("ds", $amount, $name);
-       $updateUserAmountStmt->execute();
+    //    $updateUserAmountStmt = $conn->prepare("UPDATE tbl_memberreg SET ref_amount = ref_amount + ? WHERE member_user_id = ?");
+    //    $updateUserAmountStmt->bind_param("ds", $amount, $name);
+    //    $updateUserAmountStmt->execute();
 
       // Insert payment record into tbl_payment_history
       $insertStmt = $conn->prepare("INSERT INTO tbl_payment_history (member_user_id, payment_date, payment_amount, payment_status) VALUES (?, ?, ?, ?)");
