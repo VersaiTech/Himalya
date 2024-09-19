@@ -70,7 +70,7 @@ if ($stmt = mysqli_prepare($connection, $query)) {
     include "components/cssComponents/profile-css.php";
     ?>
 
-    <title>Profile- Orion Trade Ai</title>
+    <title>Profile- Himallya RO Services</title>
     <script>
         // Pass PHP variable to JavaScript
         var ref_amount = <?php echo json_encode($ref_amount); ?>;

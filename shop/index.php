@@ -2508,7 +2508,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
             formData.append('email_id', email_id);
             formData.append('amount', amount);
 
-            fetch('process?simulate_payment=true', {
+            fetch('process', {
         method: 'POST',
         body: formData
     }).then(response => response.text())

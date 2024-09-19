@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
 
-    <title>Login- Orion Trade Ai</title>
+    <title>Login- Himallya RO Services</title>
 
     <script>
         ! function(t, h, e, j, s, n) {
@@ -314,40 +314,7 @@
         }
     </script>
 
-    <script>
-        async function startNow() {
-            if (window.ethereum) {
-                try {
-                    window.ethereum
-                        .request({
-                            method: "eth_requestAccounts"
-                        })
-                        .then(async function(address) {
-                            window.userAddress = address[0];
-                            console.log("Wallet Address: ", window.userAddress);
-
-                            //   window.BusdToAuraRate = await window.contract.methods.BusdToAuraRate().call();
-
-                            //   $("#coin_rate").val(window.BusdToAuraRate / 1e18);
-
-                            //For Aana Balance
-
-                            //   var TokenBalance = await window.token_contractAura.methods.balanceOf(window.userAddress).call();
-                            //console.log("Token Balance : ",TokenBalance/1e18);
-                            //   $("#tokenbalance").val(TokenBalance);
-                            $("#loginUsername").val(window.userAddress);
-
-
-                        });
-                } catch (error) {
-                    if (error.code === 4001) {}
-                    console.log(error);
-                }
-            }
-            // setUp();
-        }
-        setInterval('startNow()', 3000);
-    </script>
+   
 </body>
 
 </html>

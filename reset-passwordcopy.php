@@ -54,7 +54,7 @@
     <!-- Custom -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <title>Recover- Orion Trade Ai</title>
+    <title>Recover- Himallya RO Services</title>
 
     <script>
         ! function (t, h, e, j, s, n) {
@@ -225,7 +225,7 @@
                     </div>
 
                     <div class="mt-48 mt-sm-96 col-12">
-                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Orion Trade AI
+                        <p class="hp-p1-body text-center hp-text-color-black-60 mb-8"> Copyright 2024 Himallya RO Services
                         </p>
 
                         <div class="row align-items-center justify-content-center mx-n8">
