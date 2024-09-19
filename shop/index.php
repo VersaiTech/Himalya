@@ -950,7 +950,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <h4 class="title">Installation of RO Systems RO
                                 </h4>
                             </a>
-                            <span class="availability">500g</span>
+                            <span class="availability"></span>
                             <div class="price-area">
                                 <span class="current">Rs12000</span>
                                 <div class="previous">Rs20000</div>
@@ -1017,7 +1017,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <h4 class="title">Wall Mounted Livpure Glitz RO
                                 </h4>
                             </a>
-                            <span class="availability">500g Pack</span>
+                            <span class="availability"></span>
                             <div class="price-area">
                                 <span class="current">Rs10000</span>
                                 <div class="previous">Rs15000</div>
@@ -1072,7 +1072,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <h4 class="title">Aqua Natural RO Water Purifier
                                 </h4>
                             </a>
-                            <span class="availability">500g Pack</span>
+                            <span class="availability"></span>
                             <div class="price-area">
                                 <span class="current">Rs17000</span>
                                 <div class="previous">Rs21000</div>
@@ -1127,7 +1127,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <h4 class="title">Wall Mounted Livpure Glitz RO
                                 </h4>
                             </a>
-                            <span class="availability">500g Pack</span>
+                            <span class="availability"></span>
                             <div class="price-area">
                                 <span class="current">Rs9000</span>
                                 <div class="previous">Rs13000</div>
@@ -1182,7 +1182,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <h4 class="title">Kent Smart Alkalizer Water purifier
                                 </h4>
                             </a>
-                            <span class="availability">500g Pack</span>
+                            <span class="availability"></span>
                             <div class="price-area">
                                 <span class="current">Rs31000</span>
                                 <div class="previous">Rs40000</div>
@@ -1285,7 +1285,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                         <a href="index">
                                             <h4 class="title">Copper Enriched RO Water Purifier </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs10000</span>
                                             <div class="previous">Rs15000</div>
@@ -1338,7 +1338,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                         <a href="index">
                                             <h4 class="title">Wall Mounted Livpure Glitz<br>RO</h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs10500</span>
                                             <div class="previous">Rs13000</div>
@@ -1408,7 +1408,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                             <h4 class="title">Kent Smart RO Water Purifier RO
                                             </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs9500</span>
                                             <div class="previous">Rs11000</div>
@@ -1462,7 +1462,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                             <h4 class="title">Mayur aquatech king+ water purified
                                             </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs8500</span>
                                             <div class="previous">Rs11000</div>
@@ -1532,7 +1532,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                             <h4 class="title">Havells UV Plus Water Purifier
                                             </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs14000</span>
                                             <div class="previous">Rs19000</div>
@@ -1586,7 +1586,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                             <h4 class="title">Self-Healing Shunt Capacitor
                                             </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs9500</span>
                                             <div class="previous">Rs11000</div>
@@ -1656,7 +1656,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                             <h4 class="title">Ro Water Purifier Machine
                                             </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs12000</span>
                                             <div class="previous">Rs15000</div>
@@ -1710,7 +1710,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                             <h4 class="title">LG Water Purifier WW151NP
                                             </h4>
                                         </a>
-                                        <span class="availability">500g Pack</span>
+                                        <span class="availability"></span>
                                         <div class="price-area">
                                             <span class="current">Rs9500</span>
                                             <div class="previous">Rs12000</div>
