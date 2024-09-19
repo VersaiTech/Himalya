@@ -65,15 +65,22 @@
 											<tr style="background-color: #ff0080;color:#FFF">
 												<th></th>
 												<th>User Id</th>
+												<th>MEMBER NAME</th>
+												<th>UPI Id</th>
 												<th>Amount</th>
-												<th>Date</th>
+												<th>DATE</th>
+												<th>TIME</th>
 												<th>Status</th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php
 											$cnt = 1;
-											$str = "SELECT * FROM withdrawal_requests ORDER BY request_date";
+											$str = "SELECT wr.*, mr.member_name, bd.upi_id
+        FROM withdrawal_requests wr
+        LEFT JOIN tbl_memberreg mr ON wr.member_user_id = mr.member_user_id
+        LEFT JOIN tbl_bankdetails bd ON wr.member_user_id = bd.member_user_id
+        ORDER BY wr.request_date";
 											$res = mysqli_query($connection, $str);
 
 											if (!$res) {
@@ -82,56 +89,64 @@
 
 											while ($row = mysqli_fetch_array($res)) {
 											?>
-												<tr>
-													<td>
-														<div class="btn-group">
-															<button type="button" class="btn btn-primary">Action</button>
-															<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																<span class="sr-only">Toggle Dropdown</span>
-															</button>
+												 <tr>
+        <td>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Action</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                </button>
 
-															<div class="dropdown-menu">
-																<?php if ($row['status'] === 'pending') : ?>
-																	<a class="dropdown-item" href="approve_or_deny?action=approve&id=<?php echo $row['id']; ?>">Approve</a>
-																	<a class="dropdown-item" href="approve_or_deny?action=deny&id=<?php echo $row['id']; ?>">Deny</a>
-																<?php else : ?>
-																	<a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Approve</a>
-																	<a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Deny</a>
-																<?php endif; ?>
-															</div>
+                <div class="dropdown-menu">
+                    <?php if ($row['status'] === 'pending') : ?>
+                        <a class="dropdown-item" href="approve_or_deny?action=approve&id=<?php echo $row['id']; ?>">Approve</a>
+                        <a class="dropdown-item" href="approve_or_deny?action=deny&id=<?php echo $row['id']; ?>">Deny</a>
+                    <?php else : ?>
+                        <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Approve</a>
+                        <a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Deny</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </td>
+        <td><?php echo $row['member_user_id']; ?></td>
+        <td><?php echo $row['member_name']; ?></td> <!-- Show member name -->
+		<td>
+    <?php 
+    if (empty($row['upi_id'])) {
+        echo "Not Set";
+    } else {
+        echo $row['upi_id'];
+    }
+    ?>
+</td> <!-- Show UPI ID -->
+        <td><?php echo $row['amount']; ?></td>
+        <td><?php echo date("d-M-Y", strtotime($row['request_date'])); ?></td>
+        <td><?php echo date("H:i:s", strtotime($row['request_date'])); ?></td>
 
-														</div>
-													</td>
-													<td><?php echo $row['member_user_id']; ?></td>
-													<td><?php echo $row['amount']; ?></td>
-													<td><?php echo date("d-M-Y", strtotime($row['request_date'])); ?></td>
-													<td style="background-color: <?php
-																					$status = $row['status'];
-																					if ($status === 'pending') {
-																						echo "#ffff00";
-																					} 
-																					elseif ($status === 'success') {
-																						echo "#00ff00";
-																					} 
-																					elseif ($status === 'deny') {
-																						echo "#00ff00";
-																					} 
-																					else {
-																						echo "#ff0000";
-																					}
-																					?>;"><?php
-																	$status = $row['status'];
-																	if ($status === 'pending') {
-																		echo "Pending";
-																	} elseif ($status === 'success') {
-																		echo "Approved";
-																	} elseif ($status === 'deny') {
-																		echo "Denied";
-																	} else {
-																		echo "Worng";
-																	}
-																	?></td>
-												</tr>
+        <td style="background-color: <?php
+                                        $status = $row['status'];
+                                        if ($status === 'pending') {
+                                            echo "#ffff00";
+                                        } elseif ($status === 'success') {
+                                            echo "#00ff00";
+                                        } elseif ($status === 'deny') {
+                                            echo "#ff0000";
+                                        } else {
+                                            echo "#ff0000";
+                                        }
+                                        ?>;"><?php
+                                                $status = $row['status'];
+                                                if ($status === 'pending') {
+                                                    echo "Pending";
+                                                } elseif ($status === 'success') {
+                                                    echo "Approved";
+                                                } elseif ($status === 'deny') {
+                                                    echo "Denied";
+                                                } else {
+                                                    echo "Wrong";
+                                                }
+                                                ?></td>
+    </tr>
 
 												<!-- Modal for Top Up -->
 												<?php
