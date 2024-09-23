@@ -207,20 +207,20 @@
               </div>
 
               <div class="col-12 col-xl-6">
-                <div class="card hp-card-2">
+                <div class="card hp-card-2" onclick="window.location.href='referral-income';" style="cursor: pointer;">
                   <div class="card-body px-16">
                     <div class="row justify-content-between mb-8">
                       <div class="col">
                         <div class="d-flex align-items-center">
-                          <h5 class="me-8 mb-0">Live Balance</h5>
+                          <h5 class="me-8 mb-0">Account Balance</h5>
                         </div>
                       </div>
                     </div>
 
                     <div class="row align-items-center g-16">
-                      <div class="col-6">
+                      <div class="col-6" >
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
-                          <b style="font-size: 16px;"> Currently Earnings</b>
+                          <b style="font-size: 16px;"> Referral Bonus Earnings</b>
                           <i class="ri-arrow-right-up-line text-success" style="font-size: 16px;"></i>
                         </p>
 
@@ -259,12 +259,12 @@
                       </div>
 
                       <?php
-                      $str = "SELECT COUNT(*) as total FROM tbl_referrals where sponsor_user_id='$member_user_id' and level=1";
+                      $str = "SELECT COUNT(*) as totalREF FROM tbl_referrals where sponsor_user_id='$member_user_id' and level=1";
                       $res = mysqli_query($connection, $str);
                       $row = mysqli_fetch_array($res);
                       ?>
                       <div class="col pe-0">
-                        <h3 class="mb-0 fw-semibold"><?php echo $row['total']; ?></h3>
+                        <h3 class="mb-0 fw-semibold"><?php echo $row['totalREF']; ?></h3>
                         <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0">
                           <b style="font-size: 18px;">Total Referrals</b>
                         </p>
@@ -386,57 +386,17 @@
 
 
 
-            <!-- WALLET EQUITY AND MARGIN -->
-            <div class="row g-32 mb-32 mt-10">
-              <div class="col-12 col-md-12 col-xl-12">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-primary-4 hp-bg-color-dark-primary rounded-circle">
-                          <i class="iconly-Light-Wallet text-primary hp-text-color-dark-primary-2" style="font-size: 24px;"></i>
-                        </div>
-                      </div>
-                      <div class="col-6 ">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                          <?php echo number_format($wallet_amount, 2); ?>
-                          <span class="hp-badge-text ms-8 text-primary hp-text-color-dark-primary-2">INR</span>
-                        </h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 18px;"><b>Current Account Balance</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+           
 
-              <!-- <div class="col-12 col-md-6 col-xl-6">
-                <div class="card" style="height: 200px;">
-                  <div class="card-body d-flex flex-column justify-content-center">
-                    <div class="row g-16">
-                      <div class="col-6 hp-flex-none w-auto">
-                        <div class="avatar-item d-flex align-items-center justify-content-center avatar-lg bg-secondary-4 hp-bg-color-dark-secondary rounded-circle">
-                          <i class="ri-refund-2-line text-secondary" style="font-size: 24px;"></i>
-                        </div>
-                      </div>
-                      <div class="col d-flex flex-column justify-content-center">
-                        <h3 class="mb-4 mt-8" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                          <?php echo $total_ref; ?></h3>
-                        <p class="hp-p1-body mb-0 hp-text-color-black-100 hp-text-color-dark-0" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 18px;"><b>Withdraw Amount</b></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-              <div class="col-12 col-md-12 col-xl-12">
-                <select class="styled-dropdownn">
-                  <!-- <option value="status1" disabled selected>Account Number</option> -->
-                  <a href="">
-                    <option value="status2">You can learn more about affiliate program and start to earings referrals here </option>
-                  </a>
-                </select>
-              </div>
 
-            </div>
+            <!-- Payments made -->
+            <?php
+    $str = "SELECT SUM(payment_amount) as totalPay FROM tbl_payment_history WHERE member_user_id='$member_user_id'";
+    $res = mysqli_query($connection, $str);
+    $rowPay = mysqli_fetch_array($res);
+     // If the total is NULL or 0, set a custom message
+    $totalPayments = ($rowPay['totalPay'] == NULL || $rowPay['totalPay'] == 0) ? 'No payments made' : $rowPay['totalPay'];
+?>
 
             <div class="row g-32 mb-32 mt-10">
               <div class="col-12 col-md-12 col-xl-12">
@@ -446,24 +406,24 @@
                     <table class="table table-bordered table-striped">
                       <tbody>
                         <tr>
+                          <th scope="row">Total Earnings From Referrals</th>
+                          <td><?php echo $ref_amount;?> INR</td>
+                        </tr>
+                        <tr>
                           <th scope="row">Total Referrals</th>
-                          <td>0</td>
+                          <td><?php echo $row['totalREF']; ?></td>
                         </tr>
                         <tr>
-                          <th scope="row">Total Earnings</th>
-                          <td><?php echo $ref_amount; ?> INR</td>
+                          <th scope="row">Unpaid Referrals</th>
+                          <td><?php echo $unpaid_row['total']; ?></td>
                         </tr>
                         <tr>
-                          <th scope="row">Unverified Referrals</th>
-                          <td>0</td>
+                          <th scope="row">Paid Referrals</th>
+                          <td><?php echo $paid_row['total']; ?></td>
                         </tr>
                         <tr>
-                          <th scope="row">Clicks</th>
-                          <td>0</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Conversion</th>
-                          <td>0%</td>
+                          <th scope="row">Payments Made</th>
+                          <td><?php echo $totalPayments; ?></td>
                         </tr>
                       </tbody>
                     </table>
@@ -498,7 +458,7 @@
                 </a>
               </div>
 
-              <div class="col-12 col-md-3">
+              <div class="col-12 col-md-3" onclick="window.location.href='payment-history'">
                 <div class="hp-select-box-item">
                   <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">
                   <label for="select-box-boxed-user-item-4-2" class="d-block hp-cursor-pointer">
@@ -522,6 +482,7 @@
                   </label>
                 </div>
               </div>
+              
               <div class="col-12 col-md-6">
                 <div class="hp-select-box-item">
                   <input type="radio" hidden="" id="select-box-boxed-user-item-4-2" name="select-box-item">

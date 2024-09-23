@@ -75,6 +75,7 @@ if (mysqli_stmt_num_rows($stmt_chk) > 0) {
         $_SESSION['email_id'] = $email_id;
         $_SESSION['password'] = $password;
         $_SESSION['member_name'] = $member_name;
+        $_SESSION['mobile_number'] = $mobile_number;
 
         echo json_encode(array('status' => 'success'));
 

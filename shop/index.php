@@ -6,6 +6,7 @@ session_start();
 $is_logged_in = isset($_SESSION['member_user_id']) && isset($_SESSION['email_id']);
 $member_user_id = $is_logged_in ? $_SESSION['member_user_id'] : '';
 $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
+$mobile_number = $is_logged_in ? $_SESSION['mobile_number'] : '';
 
 ?>
 
@@ -961,6 +962,7 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
                                 <input type="hidden" id="loginStatus" value="<?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>">
                                 <input type="hidden" id="member_user_id" value="<?php echo $member_user_id; ?>">
                                 <input type="hidden" id="email_id" value="<?php echo $email_id; ?>">
+                                <input type="hidden" id="mobile_number" value="<?php echo $mobile_number; ?>">
 
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
                                     onclick="openPaymentModal(500)">
@@ -2493,58 +2495,94 @@ $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
         }
 
 
-        function payThroughGateway() {
-            let member_user_id = document.getElementById('member_user_id').value;
-            let email_id = document.getElementById('email_id').value;
-            let amount = document.getElementById('paymentAmount').value;
+        async function payThroughGateway() {
+    let member_user_id = document.getElementById('member_user_id').value;
+    let email_id = document.getElementById('email_id').value;
+    let amount = document.getElementById('paymentAmount').value;
+    let mobile_number = document.getElementById('mobile_number').value;
 
-            if (!member_user_id || !email_id) {
-                console.error("User ID or email ID is missing.");
-                return;
-            }
+    if (!member_user_id || !email_id) {
+        console.error("User ID or email ID is missing.");
+        return;
+    }
 
-            let formData = new FormData();
-            formData.append('member_user_id', member_user_id);
-            formData.append('email_id', email_id);
-            formData.append('amount', amount);
+    // Convert amount to paise (multiply by 100)
+    let amountInPaise = amount * 100;
 
-            fetch('process', {
-        method: 'POST',
-        body: formData
-    }).then(response => response.text())
-      .then(responseText => {
-          console.log('Raw response text:', responseText);
-
-          // Extract JSON part from the response text
-          const jsonPart = responseText.match(/\{.*\}$/);
-          if (jsonPart) {
-              try {
-                  // Parse JSON data from extracted part
-                  let data = JSON.parse(jsonPart[0]);
-
-                  if (data.status) {
-                      // Display a nice alert for successful payment
-                      alert("" + data.message);
-                      window.location.href = 'http://localhost/Himallya-MLM/payment-history';
-                  } else {
-                      // Display an alert for payment failure
-                      alert("⚠️ Payment Failed. Please try again.");
-                  }
-              } catch (error) {
-                  console.error('Error parsing JSON:', error);
-                  alert("❗ An unexpected error occurred. Please try again.");
-              }
-          } else {
-              // Handle case where JSON part is not found
-              alert("❗ Unexpected response format. Please try again.");
-          }
-      });
-
-            // Close the modal after payment is triggered
-            const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
-            paymentModal.hide();
-
+    // Sample transactionId and orderId, modify as per your logic
+    let transactionId = 'e3e1mmcccdmm9ef8vdfmd7b';
+    let merchantOrderId = 'OD139924923';
+    
+    // Prepare payload
+    let payload = {
+        merchantId: "M222WSSBPF01V",
+        transactionId: transactionId,
+        merchantUserId: member_user_id,
+        amount: amountInPaise,
+        merchantOrderId: merchantOrderId,
+        // subMerchant: "unknown8898",
+        mobileNumber: mobile_number, 
+        message: `Payment towards order No. ${merchantOrderId}.`,
+        email: email_id,
+        shortName: merchantOrderId,
+        paymentScope: "PHONEPE",
+        deviceContext: {
+            phonePeVersionCode: 303391
         }
+    };
+
+    // Base64 encode the payload
+    let base64Payload = btoa(JSON.stringify(payload));
+
+    // Generate X-VERIFY header (You need to replace with actual salt key and salt index)
+    let saltKey = "YOUR_SALT_KEY";  // Replace with your actual salt key
+    let saltIndex = "YOUR_SALT_INDEX";  // Replace with your actual salt index
+    let verifyHash = sha256(base64Payload + "/v4/debit" + saltKey);
+    let xVerify = verifyHash + "###" + saltIndex;
+
+    // API call to PhonePe
+    try {
+        let response = await fetch('https://api-preprod.phonepe.com/apis/pg-sandbox/v4/debit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-VERIFY': xVerify,
+                'X-CALLBACK-URL': 'YOUR_CALLBACK_URL',  // Replace with your callback URL
+                'X-CALL-MODE': 'POST'  // or PUT depending on your requirement
+            },
+            body: JSON.stringify(payload)
+        });
+
+        let data = await response.json();
+
+        if (data.status) {
+            // Display a nice alert for successful payment
+            alert("" + data.message);
+            window.location.href = 'http://localhost/Himallya-MLM/payment-history';
+        } else {
+            // Display an alert for payment failure
+            alert("⚠️ Payment Failed. Please try again.");
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert("❗ An unexpected error occurred. Please try again.");
+    }
+
+    // Close the modal after payment is triggered
+    const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
+    paymentModal.hide();
+}
+
+// Utility function to calculate SHA256 hash (using SubtleCrypto API)
+async function sha256(message) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(message);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
+
 
         function openQRCodeModal() {
             const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
