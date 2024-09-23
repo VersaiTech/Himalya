@@ -195,7 +195,7 @@
                 <div class="dropdown-containerr" style="margin-bottom: 3vh;">
                   <select class="styled-dropdownn" id="referralId">
                     <!-- <option value="status1" disabled selected>Account Number</option> -->
-                    <option value="status2" >Your Referral ID: <?php echo $member_user_id; ?></option>
+                    <option value="status2">Your Referral ID: <?php echo $member_user_id; ?></option>
                   </select>
 
                 </div>
@@ -275,26 +275,26 @@
               </div>
 
               <?php
-// Query for counting paid referrals (topUp_status = 1)
-$paid_query = "
+              // Query for counting paid referrals (topUp_status = 1)
+              $paid_query = "
     SELECT COUNT(*) as total 
     FROM tbl_referrals r 
     LEFT JOIN tbl_memberreg m ON r.referred_user_id = m.member_user_id 
     WHERE r.sponsor_user_id='$member_user_id' AND r.level=1 AND m.topUp_status = 1
 ";
-$paid_res = mysqli_query($connection, $paid_query);
-$paid_row = mysqli_fetch_array($paid_res);
+              $paid_res = mysqli_query($connection, $paid_query);
+              $paid_row = mysqli_fetch_array($paid_res);
 
-// Query for counting unpaid referrals (topUp_status = 0)
-$unpaid_query = "
+              // Query for counting unpaid referrals (topUp_status = 0)
+              $unpaid_query = "
     SELECT COUNT(*) as total 
     FROM tbl_referrals r 
     LEFT JOIN tbl_memberreg m ON r.referred_user_id = m.member_user_id 
     WHERE r.sponsor_user_id='$member_user_id' AND r.level=1 AND m.topUp_status = 0
 ";
-$unpaid_res = mysqli_query($connection, $unpaid_query);
-$unpaid_row = mysqli_fetch_array($unpaid_res);
-?>
+              $unpaid_res = mysqli_query($connection, $unpaid_query);
+              $unpaid_row = mysqli_fetch_array($unpaid_res);
+              ?>
 
 
               <div class="col-12 col-sm-6 col-xl-4">
@@ -535,7 +535,7 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
                             </span>
                           </div>
                           <div class="col-12">
-                            <span class="h4 d-block" id="referralLink"><?php echo $member_user_id; ?></span>
+                            <span class="h4 d-block" id="referralLinkId"><?php echo $member_user_id; ?></span>
                           </div>
                           <div class="col-12">
                             <span class="hp-p1-body text-black-80 hp-text-color-dark-30 d-block">
@@ -657,9 +657,16 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
 
 
                 <div class="toast-container">
-                  <div id="copyToast" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                  <div id="copyToastid" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
                     <div class="toast-body">
                       Your Referral Id : <?php echo $member_user_id; ?> copied to clipboard
+                    </div>
+                  </div>
+                </div>
+                <div class="toast-container">
+                  <div id="copylinktoast" class="toast toast-custom" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                    <div class="toast-body">
+                      Your Referral Link  copied successfully to clipboard
                     </div>
                   </div>
                 </div>
@@ -706,7 +713,7 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
 
   <script>
     document.getElementById('copyButton').addEventListener('click', function() {
-      var referralLink = document.getElementById('referralLink').innerText;
+      var referralLink = document.getElementById('referralLinkId').innerText;
       var tempInput = document.createElement('input');
       tempInput.value = referralLink;
       document.body.appendChild(tempInput);
@@ -714,7 +721,7 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
       document.execCommand('copy');
       document.body.removeChild(tempInput);
 
-      $('#copyToast').toast('show');
+      $('#copyToastid').toast('show');
     });
   </script>
   <script>
@@ -727,7 +734,7 @@ $unpaid_row = mysqli_fetch_array($unpaid_res);
       document.execCommand('copy');
       document.body.removeChild(tempInput);
 
-      $('#copyToast').toast('show');
+      $('#copylinktoast').toast('show');
     });
   </script>
 </body>
