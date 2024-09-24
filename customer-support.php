@@ -54,12 +54,12 @@
                                 <a href="overview" class="position-relative">
 
 
-                                <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                    <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                    <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                    <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                    <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                    <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                    <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -100,13 +100,13 @@
                     <div class="w-auto px-0">
                         <div class="hp-header-logo d-flex align-items-center">
                             <a href="overview" class="position-relative">
-                               
+
                                 <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                             </a>
 
                         </div>
@@ -135,14 +135,14 @@
                                 <div class="w-auto px-0">
                                     <div class="hp-header-logo d-flex align-items-center">
                                         <a href="overview" class="position-relative">
-                                           
+
 
                                             <img class="hp-logo hp-sidebar-visible hp-dark-none" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
-                  <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
+                                            <img class="hp-logo hp-sidebar-visible hp-dark-block" src="app-assets/img/logo/HIMLOGOSMALL.png" alt="logo">
+                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-none" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                            <img class="hp-logo hp-sidebar-hidden hp-dir-none hp-dark-block" src="app-assets/img/logo/HIMLOGO1.png" alt="logo">
+                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-none" src="app-assets/img/logo/logo-rtl.svg" alt="logo">
+                                            <img class="hp-logo hp-sidebar-hidden hp-dir-block hp-dark-block" src="app-assets/img/logo/logo-rtl-dark.svg" alt="logo">
                                         </a>
 
                                     </div>
@@ -235,11 +235,11 @@
                                                 <img src="app-assets/img/customer-service.png" style="max-width: 200px;" alt="Buy Pro Account to explore Premium Features" class="hp-dark-none">
                                                 <img src="app-assets/img/customer-service.png" style="max-width: 200px;" alt="Buy Pro Account to explore Premium Features" class="hp-dark-block mx-auto">
 
-                                                <h4 class="my-24 me-4 fw-bold">Send a Whatsapp Message  or Call to our team</h4>
-                                                <h6 class="my-24 me-4 fw-bold">+917610750147</h6>
+                                                <h4 class="my-24 me-4 fw-bold">Send a Whatsapp Message or Call to our team</h4>
+                                                <h6 class="my-24 me-4 fw-bold">+919898989888</h6>
 
 
-                                                <a href="https://wa.me/917610750146" target="_blank" class="btn btn-primary">
+                                                <a href="https://wa.me/919898989888" target="_blank" class="btn btn-primary">
                                                     <span>Message NOW</span>
                                                 </a>
                                             </div>
@@ -256,9 +256,11 @@
                                                 <img src="app-assets/img/whatsapp.png" style="max-width: 200px;" alt="Buy Pro Account to explore Premium Features" class="hp-dark-block mx-auto">
 
                                                 <h4 class="my-24 me-4 fw-bold">Send a Whatsapp Message to Your Sponsorer</h4>
-                                                <h6 class="my-24 me-4 fw-bold">+917610750147</h6>
+                                                <!-- Display mobile number fetched from DB -->
+                                                <h6 class="my-24 me-4 fw-bold">+91<?php echo $mobile_number; ?></h6>
 
-                                                <a href="https://wa.me/917610750146" target="_blank" class="btn btn-primary">
+                                                <!-- Link to send WhatsApp message -->
+                                                <a href="https://wa.me/91<?php echo $mobile_number; ?>" target="_blank" class="btn btn-primary">
                                                     <span>Message NOW</span>
                                                 </a>
                                             </div>
@@ -267,7 +269,7 @@
                                 </div>
                             </div>
 
-                          
+
 
 
 
@@ -286,7 +288,7 @@
                                                             <span class="text-danger me-8">*</span>Email: support@himallaya.com
                                                         </label>
                                                     </div>
-                                                    <button type="submit" class="btn btn-primary"  >Send Email</button>
+                                                    <button type="submit" class="btn btn-primary">Send Email</button>
                                                 </form>
                                             </div>
                                         </div>
