@@ -187,7 +187,7 @@ $transactionId = uniqid('txn_', true);
                                         <span class="text">Affiliate Login</span>
                                         <div class="category-sub-menu card-number-show d-flex align-items-center">
                                             <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
-                                            <a href="https://himallyaro.com/login" class="rts-btn btn-primary border-only">Login</a>
+                                            <a href="https://himallyaro.com/Login" class="rts-btn btn-primary border-only">Login</a>
                                         </div>
                                     </div>
                                     <div class="btn-border-only cart category-hover-header">
@@ -507,7 +507,7 @@ $transactionId = uniqid('txn_', true);
                 // User is not logged in, show the "Login" and "Join" buttons
             ?>
                 <div class="button-area-bottom">
-                    <a href="https://himallyaro.com/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+                    <a href="https://himallyaro.com/Login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
                     <a href="https://himallyaro.com/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
                 </div>
             <?php
@@ -770,8 +770,8 @@ $transactionId = uniqid('txn_', true);
                             <p style="margin: 10px 0; font-size: 14px; color: #666;">
                                 Already part of our affiliate program? Access your dashboard and track your earnings now.
                             </p>
-                            <!-- Button for affiliate login -->
-                            <a href="https://himallyaro.com/login" class="affiliate-login-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #007bff; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
+                            <!-- Button for affiliate Login -->
+                            <a href="https://himallyaro.com/Login" class="affiliate-Login-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #007bff; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
                                 Login
                             </a>
                         </div>
@@ -836,7 +836,7 @@ $transactionId = uniqid('txn_', true);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="https://files.oaiusercontent.com/file-CqUIHvOz1qCzGcvuhwiD3IKq?se=2024-09-13T07%3A43%3A13Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Ddb4032ef-a1b1-4706-bc30-293e2ccfd63d.webp&sig=spiwDp7XQJefY8TwcqWDblK3M3SGvAOnV2ZNsTvzKWo%3D" alt="QR Code" class="img-fluid mb-4 rounded"> <!-- Rounded image with margin-bottom -->
+                    <img src="assets/scanner.png" alt="QR Code" class="img-fluid mb-4 rounded"> <!-- Rounded image with margin-bottom -->
                     <input type="text" id="utrNumber" class="form-control custom-input" placeholder="Enter UTR Number"> <!-- Custom input style -->
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
@@ -989,9 +989,9 @@ $transactionId = uniqid('txn_', true);
                                 <div class="previous">Rs20000</div>
                             </div>
                             <div class="cart-counter-action">
-                                <!-- Hidden input to store login status -->
-                                <!-- Hidden input that tracks login status -->
-                                <input type="hidden" id="loginStatus" value="<?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>">
+                                <!-- Hidden input to store Login status -->
+                                <!-- Hidden input that tracks Login status -->
+                                <input type="hidden" id="LoginStatus" value="<?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>">
                                 <input type="hidden" id="member_user_id" value="<?php echo $member_user_id; ?>">
                                 <input type="hidden" id="email_id" value="<?php echo $email_id; ?>">
                                 <input type="hidden" id="stored_mobile_number" value="<?php echo $stored_mobile_number; ?>">
@@ -2030,7 +2030,7 @@ $transactionId = uniqid('txn_', true);
                             <div class="social-style-dash">
                                 <ul>
                                     <li><a href="https://www.facebook.com/profile.php?id=61555304507834&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="https://x.com/i/flow/login?redirect_after_login=%2FHimallyaRO"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="https://x.com/i/flow/Login?redirect_after_Login=%2FHimallyaRO"><i class="fa-brands fa-twitter"></i></a></li>
                                     <!--<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>-->
                                     <li><a href="https://www.youtube.com/@HimallyaROServices"><i class="fa-brands fa-youtube"></i></a></li>
                                     <li><a href="https://www.instagram.com/himallyaroservices/?next=%2Fhimallyaroservices%2F"><i class="fa-brands fa-instagram"></i></a></li>
@@ -2496,31 +2496,31 @@ $transactionId = uniqid('txn_', true);
     <script>
         console.log("Script loaded and DOM fully parsed!");
         // function openPaymentModal(amount) {
-        // let is_login = document.getElementById('loginStatus').value === 'true';
-        // console.log("login status ", is_login);
+        // let is_Login = document.getElementById('LoginStatus').value === 'true';
+        // console.log("Login status ", is_Login);
 
-        // if (!is_login) {
-        //     alert('Please login first.');
+        // if (!is_Login) {
+        //     alert('Please Login first.');
         // } else {
         //     const paymentModal = new bootstrap.Modal(document.getElementById('paymentOptionsModal'));
         //     paymentModal.show();
         // }
 
         function openPaymentModal(amount) {
-            // Check if the loginStatus element exists
-            let loginStatusElement = document.getElementById('loginStatus');
+            // Check if the LoginStatus element exists
+            let LoginStatusElement = document.getElementById('LoginStatus');
 
-            if (!loginStatusElement) {
+            if (!LoginStatusElement) {
                 console.error("Login status element is missing.");
                 return;
             }
 
-            // Check login status value
-            let is_login = loginStatusElement.value === 'true';
-            console.log("Login status:", is_login);
+            // Check Login status value
+            let is_Login = LoginStatusElement.value === 'true';
+            console.log("Login status:", is_Login);
 
-            if (!is_login) {
-                alert('Please login first.');
+            if (!is_Login) {
+                alert('Please Login first.');
             } else {
                 document.getElementById('paymentAmount').value = amount;
                 const paymentModal = new bootstrap.Modal(document.getElementById('paymentOptionsModal'));
@@ -2673,7 +2673,7 @@ $transactionId = uniqid('txn_', true);
             const qrCodeModal = bootstrap.Modal.getInstance(document.getElementById('qrCodeModal'));
             qrCodeModal.hide();
             // } else {
-            //     alert('Please login first.');
+            //     alert('Please Login first.');
             // }
         }
     </script>
