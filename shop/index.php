@@ -1000,7 +1000,7 @@ $transactionId = uniqid('txn_', true);
                                 <input type="hidden" id="transactionId" value="<?php echo $transactionId; ?>">
 
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                    onclick="openPaymentModal(500)">
+                                    onclick="openPaymentModal(12000)">
                                     <div class=" btn-text">
                                         Buy Noww
                                     </div>

@@ -97,6 +97,5 @@ if (!is_null($sponcer_id)) {
     $mobile_number = "Sponsor ID not found.";
 }
 
-$connection->close();
 
 ?>
