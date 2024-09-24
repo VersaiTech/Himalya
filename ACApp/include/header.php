@@ -18,7 +18,7 @@ $this_server=$_SERVER['HTTP_HOST'];
 if($_SESSION['login_status']!='YES' || $_SESSION['private_key']!=$private_key || $_SESSION['private_key']=='' || $_SESSION['admin_name']=='')
 {
     echo "Blank";
-	header("Location:AppLogin");
+	header("Location:https://himallyaro.com/ACApp/AppLogin");
 	exit();
 }
 
