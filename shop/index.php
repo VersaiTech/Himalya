@@ -814,7 +814,7 @@ $transactionId = uniqid('txn_', true);
                 </div>
                 <div class="modal-body text-center">
                     <p class="mb-4">Please select one payment method:</p>
-                    <button type="button" class="btn custom-btn-primary w-100 mb-3" onclick="payThroughGateway()">Pay through Payment Gateway</button>
+                    <button type="button" class="btn custom-btn-primary w-100 mb-3" disabled onclick="payThroughGateway()">Pay through Payment Gateway</button>
                     <button type="button" class="btn custom-btn-secondary w-100" onclick="openQRCodeModal()">Pay through QR Code</button>
                     <input type="hidden" id="paymentAmount" value="1000">
                 </div>
