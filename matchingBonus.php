@@ -5,18 +5,18 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 date_default_timezone_set("Asia/Kolkata");
 $servers = [
-    [
-        "servername" => "localhost",
-        "username" => "root",
-        "password" => "",
-        "dbname" => "u358688394_aura3"
-    ],
     // [
-    //     "servername" => "82.180.167.190",
-    //     "username" => "u358688394_aura3",
-    //     "password" => "umDvTH@4",
+    //     "servername" => "localhost",
+    //     "username" => "root",
+    //     "password" => "",
     //     "dbname" => "u358688394_aura3"
-    // ]
+    // ],
+    [
+        "servername" => "89.117.27.118",
+        "username" => "u600364601_newhimallya",
+        "password" => "[n5Et8xJ",
+        "dbname" => "u600364601_newhimallya"
+    ]
 ];
 
 $connection = null;
