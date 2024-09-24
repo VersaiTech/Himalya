@@ -2,6 +2,16 @@
 include "./config/config.php";
 include "components/phpComponents/phpcomponents.php";
 
+
+
+// Check if session variables exist
+if (!isset($_SESSION['member_user_id']) || !isset($_SESSION['email_id'])) {
+    exit();
+}
+if ($connection === null || !$connection->ping()) {
+    die("Database connection is not properly initialized or not connected.");
+}
+
 // Check if the user is logged in and has a session
 if (isset($_SESSION['member_user_id'])) {
     $member_user_id = $_SESSION['member_user_id'];
@@ -9,10 +19,6 @@ if (isset($_SESSION['member_user_id'])) {
     // Query to fetch the user's withdrawal requests from the database
     $query = "SELECT id, member_user_id,created_at, payment_amount,payment_status FROM tbl_payment_history WHERE member_user_id = ?";
 
-
-    if ($connection === null || !$connection->ping()) {
-        die("Database connection is not properly initialized or not connected.");
-    }
 
     // Prepare and execute the query
     if ($stmt = $connection->prepare($query)) {

@@ -1,6 +1,6 @@
 <?php
 include "./config/config.php";
-include "components/phpComponents/phpcomponents.php";
+include "./components/phpComponents/phpcomponents.php";
 
 // Check if the user is logged in and has a session
 if (isset($_SESSION['member_user_id'])) {
@@ -9,11 +9,11 @@ if (isset($_SESSION['member_user_id'])) {
     // Query to fetch the user's withdrawal requests from the database
     $query = "SELECT id, member_user_id, utr_number, amount, status, date, time FROM tbl_pendingpayment WHERE member_user_id = ? AND status = 'pending'";
 
-
-    if ($connection === null || !$connection->ping()) {
-        die("Database connection is not properly initialized or not connected.");
+    if (!$connection) {
+        die("Connection object is not initialized.");
+    } elseif ($connection->connect_errno) {
+        die("Failed to connect to MySQL: " . $connection->connect_error);
     }
-
     // Prepare and execute the query
     if ($stmt = $connection->prepare($query)) {
         $stmt->bind_param("i", $member_user_id); // Bind the member_user_id parameter
@@ -25,7 +25,6 @@ if (isset($_SESSION['member_user_id'])) {
 } else {
     echo "User not logged in.";
 }
-
 
 ?>
 <!DOCTYPE html>
