@@ -6,18 +6,18 @@ error_reporting(E_ALL);
 
 
 $servers = [
-    [
-        "servername" => "localhost",
-        "username" => "root", // Replace with your database username
-        "password" => "", // Replace with your database password
-        "dbname" => "u358688394_aura3"
-    ],
     // [
-    //     "servername" => "82.180.167.190",
-    //     "username" => "u358688394_aura3",
-    //     "password" => "umDvTH@4",
+    //     "servername" => "localhost",
+    //     "username" => "root", // Replace with your database username
+    //     "password" => "", // Replace with your database password
     //     "dbname" => "u358688394_aura3"
-    // ]
+    // ],
+    [
+        "servername" => "89.117.27.118",
+        "username" => "u600364601_newhimallya",
+        "password" => "[n5Et8xJ",
+        "dbname" => "u600364601_newhimallya"
+    ]
 ];
 
 // Enable mysqli error reporting
