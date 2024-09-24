@@ -2,11 +2,44 @@
 // Start the session
 ob_end_flush();
 session_start();
+include '../config/config.php';
 
 $is_logged_in = isset($_SESSION['member_user_id']) && isset($_SESSION['email_id']);
 $member_user_id = $is_logged_in ? $_SESSION['member_user_id'] : '';
 $email_id = $is_logged_in ? $_SESSION['email_id'] : '';
-$mobile_number = $is_logged_in ? $_SESSION['mobile_number'] : '';
+
+if ($connection === null || !$connection->ping()) {
+    die("Database connection is not properly initialized or not connected.");
+}
+if ($is_logged_in && !empty($member_user_id)) {
+    // Check if mobile_number is already in the session
+    if (!isset($_SESSION['mobile_number'])) {
+        // Prepare the SQL query to fetch mobile_number from tbl_memberreg
+        $stmt = $connection->prepare("SELECT mobile_number FROM tbl_memberreg WHERE member_user_id = ?");
+        $stmt->bind_param("s", $member_user_id); // Use "i" if member_user_id is an integer
+        $stmt->execute();
+        $stmt->bind_result($mobile_number);
+        $stmt->fetch();
+
+        // Store mobile_number in session if found
+        if (!empty($mobile_number)) {
+            $_SESSION['mobile_number'] = $mobile_number;
+        } else {
+            echo "No mobile number found for the given member_user_id.";
+        }
+
+        // Close the statement
+        $stmt->close();
+    }
+
+    // Finally, get the mobile_number into a variable from the session
+    $stored_mobile_number = $_SESSION['mobile_number'] ?? null;
+} else {
+    echo "User is not logged in.";
+}
+
+$merchantOrderId = substr('order_' . uniqid(), 0, 48); // Ensures length < 48
+$transactionId = uniqid('txn_', true);
 
 ?>
 
@@ -809,8 +842,8 @@ $mobile_number = $is_logged_in ? $_SESSION['mobile_number'] : '';
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
                     <!-- Hidden input field to store amount -->
-                <input type="hidden" id="utrAmount" value="1000">
-                <button type="button" class="btn custom-btn-primary w-100" onclick="submitUTR()">Submit UTR</button>
+                    <input type="hidden" id="utrAmount" value="1000">
+                    <button type="button" class="btn custom-btn-primary w-100" onclick="submitUTR()">Submit UTR</button>
                 </div>
             </div>
         </div>
@@ -962,7 +995,9 @@ $mobile_number = $is_logged_in ? $_SESSION['mobile_number'] : '';
                                 <input type="hidden" id="loginStatus" value="<?php echo isset($_SESSION['member_user_id']) ? 'true' : 'false'; ?>">
                                 <input type="hidden" id="member_user_id" value="<?php echo $member_user_id; ?>">
                                 <input type="hidden" id="email_id" value="<?php echo $email_id; ?>">
-                                <input type="hidden" id="mobile_number" value="<?php echo $mobile_number; ?>">
+                                <input type="hidden" id="stored_mobile_number" value="<?php echo $stored_mobile_number; ?>">
+                                <input type="hidden" id="merchantOrderId " value="<?php echo $merchantOrderId ; ?>">
+                                <input type="hidden" id="transactionId" value="<?php echo $transactionId; ?>">
 
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
                                     onclick="openPaymentModal(500)">
@@ -2496,92 +2531,95 @@ $mobile_number = $is_logged_in ? $_SESSION['mobile_number'] : '';
 
 
         async function payThroughGateway() {
-    let member_user_id = document.getElementById('member_user_id').value;
-    let email_id = document.getElementById('email_id').value;
-    let amount = document.getElementById('paymentAmount').value;
-    let mobile_number = document.getElementById('mobile_number').value;
+            let member_user_id = document.getElementById('member_user_id').value;
+            let email_id = document.getElementById('email_id').value;
+            let amount = document.getElementById('paymentAmount').value;
+            let mobile_number = document.getElementById('stored_mobile_number').value;
+            let merchantOrderId  = document.getElementById('merchantOrderId ').value;
+            let transactionId = document.getElementById('transactionId').value;
 
-    if (!member_user_id || !email_id) {
-        console.error("User ID or email ID is missing.");
-        return;
-    }
+            if (!member_user_id || !email_id) {
+                console.error("User ID or email ID is missing.");
+                return;
+            }
 
-    // Convert amount to paise (multiply by 100)
-    let amountInPaise = amount * 100;
+            // Convert amount to paise (multiply by 100)
+            let amountInPaise = amount * 100;
 
-    // Sample transactionId and orderId, modify as per your logic
-    let transactionId = 'e3e1mmcccdmm9ef8vdfmd7b';
-    let merchantOrderId = 'OD139924923';
-    
-    // Prepare payload
-    let payload = {
-        merchantId: "M222WSSBPF01V",
-        transactionId: transactionId,
-        merchantUserId: member_user_id,
-        amount: amountInPaise,
-        merchantOrderId: merchantOrderId,
-        // subMerchant: "unknown8898",
-        mobileNumber: mobile_number, 
-        message: `Payment towards order No. ${merchantOrderId}.`,
-        email: email_id,
-        shortName: merchantOrderId,
-        paymentScope: "PHONEPE",
-        deviceContext: {
-            phonePeVersionCode: 303391
+            // Sample transactionId and orderId, modify as per your logic
+            // let transactionId = 'e3e1mmcccdmm9ef8vdfmd7b';
+
+
+
+            // Prepare payload
+            let payload = {
+                merchantId: "M222WSSBPF01V",
+                transactionId: transactionId,
+                merchantUserId: member_user_id,
+                amount: amountInPaise,
+                merchantOrderId: merchantOrderId,
+                // subMerchant: "unknown8898",
+                mobileNumber: mobile_number,
+                message: `Payment towards order No. ${merchantOrderId}.`,
+                email: email_id,
+                shortName: merchantOrderId,
+                paymentScope: "PHONEPE",
+                deviceContext: {
+                    phonePeVersionCode: 303391
+                }
+            };
+
+            // Base64 encode the payload
+            let base64Payload = btoa(JSON.stringify(payload));
+
+            // Generate X-VERIFY header (You need to replace with actual salt key and salt index)
+            let saltKey = "YOUR_SALT_KEY"; // Replace with your actual salt key
+            let saltIndex = "YOUR_SALT_INDEX"; // Replace with your actual salt index
+            let verifyHash = sha256(base64Payload + "/v4/debit" + saltKey);
+            let xVerify = verifyHash + "###" + saltIndex;
+
+            // API call to PhonePe
+            try {
+                let response = await fetch('https://api-preprod.phonepe.com/apis/pg-sandbox/v4/debit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-VERIFY': xVerify,
+                        'X-CALLBACK-URL': 'YOUR_CALLBACK_URL', // Replace with your callback URL
+                        'X-CALL-MODE': 'POST' // or PUT depending on your requirement
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                let data = await response.json();
+
+                if (data.status) {
+                    // Display a nice alert for successful payment
+                    alert("" + data.message);
+                    window.location.href = 'http://localhost/Himallya-MLM/payment-history';
+                } else {
+                    // Display an alert for payment failure
+                    alert("⚠️ Payment Failed. Please try again.");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert("❗ An unexpected error occurred. Please try again.");
+            }
+
+            // Close the modal after payment is triggered
+            const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
+            paymentModal.hide();
         }
-    };
 
-    // Base64 encode the payload
-    let base64Payload = btoa(JSON.stringify(payload));
-
-    // Generate X-VERIFY header (You need to replace with actual salt key and salt index)
-    let saltKey = "YOUR_SALT_KEY";  // Replace with your actual salt key
-    let saltIndex = "YOUR_SALT_INDEX";  // Replace with your actual salt index
-    let verifyHash = sha256(base64Payload + "/v4/debit" + saltKey);
-    let xVerify = verifyHash + "###" + saltIndex;
-
-    // API call to PhonePe
-    try {
-        let response = await fetch('https://api-preprod.phonepe.com/apis/pg-sandbox/v4/debit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-VERIFY': xVerify,
-                'X-CALLBACK-URL': 'YOUR_CALLBACK_URL',  // Replace with your callback URL
-                'X-CALL-MODE': 'POST'  // or PUT depending on your requirement
-            },
-            body: JSON.stringify(payload)
-        });
-
-        let data = await response.json();
-
-        if (data.status) {
-            // Display a nice alert for successful payment
-            alert("" + data.message);
-            window.location.href = 'http://localhost/Himallya-MLM/payment-history';
-        } else {
-            // Display an alert for payment failure
-            alert("⚠️ Payment Failed. Please try again.");
+        // Utility function to calculate SHA256 hash (using SubtleCrypto API)
+        async function sha256(message) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
         }
-    } catch (error) {
-        console.error('Error:', error);
-        alert("❗ An unexpected error occurred. Please try again.");
-    }
-
-    // Close the modal after payment is triggered
-    const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentOptionsModal'));
-    paymentModal.hide();
-}
-
-// Utility function to calculate SHA256 hash (using SubtleCrypto API)
-async function sha256(message) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(message);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    return hashHex;
-}
 
 
         function openQRCodeModal() {
@@ -2589,7 +2627,7 @@ async function sha256(message) {
             paymentModal.hide(); // Close the first modal
             let amount = document.getElementById('paymentAmount').value;
             document.getElementById('utrAmount').value = amount;
-            
+
 
 
             const qrCodeModal = new bootstrap.Modal(document.getElementById('qrCodeModal'));
