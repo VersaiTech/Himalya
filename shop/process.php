@@ -232,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        ?>
        <script>
        console.log('Payment done');
-       window.location.href = 'http://localhost/Himallya-MLM/payment-history';
+       window.location.href = 'https://himallyaro.com/payment-history';
    </script>
    <?php
     // Update topUp_status in tbl_memberreg

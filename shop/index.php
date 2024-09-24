@@ -35,7 +35,6 @@ if ($is_logged_in && !empty($member_user_id)) {
     // Finally, get the mobile_number into a variable from the session
     $stored_mobile_number = $_SESSION['mobile_number'] ?? null;
 } else {
-    echo "User is not logged in.";
 }
 
 $merchantOrderId = substr('order_' . uniqid(), 0, 48); // Ensures length < 48
@@ -170,7 +169,7 @@ $transactionId = uniqid('txn_', true);
                                 </form>
                             </div>
                             <div class="accont-wishlist-cart-area-header">
-                                <a href="http://localhost/Himallya-MLM/overview" class="btn-border-only account">
+                                <a href="https://himallyaro.com/overview" class="btn-border-only account">
                                     <i class="fa-light fa-user"></i>
                                     Account
                                 </a>
@@ -188,7 +187,7 @@ $transactionId = uniqid('txn_', true);
                                         <span class="text">Affiliate Login</span>
                                         <div class="category-sub-menu card-number-show d-flex align-items-center">
                                             <h5 class="shopping-cart-number">Join Now Affiliate Program</h5>
-                                            <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary border-only">Login</a>
+                                            <a href="https://himallyaro.com/login" class="rts-btn btn-primary border-only">Login</a>
                                         </div>
                                     </div>
                                     <div class="btn-border-only cart category-hover-header">
@@ -200,7 +199,7 @@ $transactionId = uniqid('txn_', true);
                                                     <p>Earn Unlimited by Referring our Product. Share your Experience</p>
                                                 </div>
                                                 <div class="button-wrapper d-flex align-items-center justify-content-center">
-                                                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>
+                                                    <a href="https://himallyaro.com/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only">Join Now</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -329,7 +328,7 @@ $transactionId = uniqid('txn_', true);
                             </div>
                             <div class="main-wrapper-action-2 d-flex">
                                 <div class="accont-wishlist-cart-area-header">
-                                    <a href="http://localhost/Himallya-MLM/overview" class="btn-border-only account">
+                                    <a href="https://himallyaro.com/overview" class="btn-border-only account">
                                         <i class="fa-light fa-user"></i>
                                         Account
                                     </a>
@@ -503,13 +502,13 @@ $transactionId = uniqid('txn_', true);
                 echo '</div>';
 
                 // Show "My Account" button
-                echo '<a href="http://localhost/Himallya-MLM/overview" class="rts-btn btn-primary mobile-btn mt-10">My Account</a>';
+                echo '<a href="https://himallyaro.com/overview" class="rts-btn btn-primary mobile-btn mt-10">My Account</a>';
             } else {
                 // User is not logged in, show the "Login" and "Join" buttons
             ?>
                 <div class="button-area-bottom">
-                    <a href="http://localhost/Himallya-MLM/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
-                    <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
+                    <a href="https://himallyaro.com/login" class="rts-btn btn-primary mobile-btn mb-10">Affiliate Login</a>
+                    <a href="https://himallyaro.com/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="rts-btn btn-primary border-only mt-10">Join</a>
                 </div>
             <?php
             }
@@ -772,7 +771,7 @@ $transactionId = uniqid('txn_', true);
                                 Already part of our affiliate program? Access your dashboard and track your earnings now.
                             </p>
                             <!-- Button for affiliate login -->
-                            <a href="http://localhost/Himallya-MLM/login" class="affiliate-login-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #007bff; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
+                            <a href="https://himallyaro.com/login" class="affiliate-login-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #007bff; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
                                 Login
                             </a>
                         </div>
@@ -791,7 +790,7 @@ $transactionId = uniqid('txn_', true);
                                 Want to start earning with us? Sign up for free and begin promoting our products today.
                             </p>
                             <!-- Button for joining affiliate program -->
-                            <a href="http://localhost/Himallya-MLM/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="join-affiliate-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
+                            <a href="https://himallyaro.com/auth-register-metamask-1.php?UplineId=3764219&RandomId=0xd203a917" class="join-affiliate-btn" style="display: inline-block; margin-top: 15px; text-align: center; background-color: #28a745; color: #fff; padding: 8px 20px; border-radius: 5px; font-size: 14px;">
                                 Join Now
                             </a>
                         </div>
@@ -2596,7 +2595,7 @@ $transactionId = uniqid('txn_', true);
                 if (data.status) {
                     // Display a nice alert for successful payment
                     alert("" + data.message);
-                    window.location.href = 'http://localhost/Himallya-MLM/payment-history';
+                    window.location.href = 'https://himallyaro.com/payment-history';
                 } else {
                     // Display an alert for payment failure
                     alert("⚠️ Payment Failed. Please try again.");
@@ -2664,7 +2663,7 @@ $transactionId = uniqid('txn_', true);
                 .then(data => {
                     if (data.success) {
                         alert("UTR Submitted Successfully! Awaiting Admin Approval.");
-                        window.location.href = 'http://localhost/Himallya-MLM/pending-payment-history';
+                        window.location.href = 'https://himallyaro.com/pending-payment-history';
                     } else {
                         alert("Failed to submit UTR. Try again.");
                     }

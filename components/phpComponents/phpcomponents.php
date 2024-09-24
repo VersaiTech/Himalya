@@ -21,8 +21,8 @@ if (!$connection) {
 }
 
 // Determine the base URL based on the server name
-if ($_SERVER['SERVER_NAME'] == '82.180.167.190') {
-    $baseURL = 'https://app.oriontradeai.com';
+if ($_SERVER['SERVER_NAME'] == '89.117.27.118') {
+    $baseURL = 'https://himallyaro.com';
 } else {
     $baseURL = url() . '/Himallya-MLM';
 }
