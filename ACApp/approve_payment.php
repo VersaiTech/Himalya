@@ -60,7 +60,7 @@ function payThroughGateway(member_user_id, email_id, amount) {
         email_id,
         amount
     });
-
+// .
     let formData = new FormData();
     formData.append('member_user_id', member_user_id);
     formData.append('email_id', email_id);
