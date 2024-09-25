@@ -87,7 +87,7 @@ if (!is_null($sponcer_id)) {
 
     // Check if the query was prepared successfully
     if ($stmt) {
-        $stmt->bind_param("s", $sponcer_id);
+        $stmt->bind_param("s", $member_user_id);
         $stmt->execute();
         $stmt->bind_result($mobile_number);
         $stmt->fetch();

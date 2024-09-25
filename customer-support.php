@@ -247,6 +247,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php
+// Step 1: Fetch the sponsor_user_id based on the current user's referred_user_id (which is the current member_user_id)
+$str = "SELECT sponsor_user_id 
+        FROM tbl_referrals 
+        WHERE referred_user_id = '$member_user_id' 
+        AND level = 1";
+
+$res = mysqli_query($connection, $str);
+$row = mysqli_fetch_array($res);
+
+// Check if sponsor_user_id is found
+$sponsor_user_id = $row['sponsor_user_id'] ?? null;
+
+if ($sponsor_user_id) {
+    // Step 2: Fetch the mobile number of the sponsor from tbl_memberreg
+    $query = "SELECT mobile_number 
+              FROM tbl_memberreg 
+              WHERE member_user_id = '$sponsor_user_id'";
+
+    $result = mysqli_query($connection, $query);
+    $sponsor_row = mysqli_fetch_array($result);
+    $sponsor_mobile_number = $sponsor_row['mobile_number'] ?? '8630803797';
+} else {
+    $sponsor_mobile_number = '8630803797'; // If no sponsor is found
+}
+?>
                             <div class="col-12 col-xl-4">
                                 <div class="card hp-card-6">
                                     <div class="card-body">
@@ -257,10 +283,10 @@
 
                                                 <h4 class="my-24 me-4 fw-bold">Send a Whatsapp Message to Your Sponsorer</h4>
                                                 <!-- Display mobile number fetched from DB -->
-                                                <h6 class="my-24 me-4 fw-bold">+91<?php echo $mobile_number; ?></h6>
+                                                <h6 class="my-24 me-4 fw-bold">+91<?php echo $sponsor_mobile_number; ?></h6>
 
                                                 <!-- Link to send WhatsApp message -->
-                                                <a href="https://wa.me/91<?php echo $mobile_number; ?>" target="_blank" class="btn btn-primary">
+                                                <a href="https://wa.me/91<?php echo $sponsor_mobile_number; ?>" target="_blank" class="btn btn-primary">
                                                     <span>Message NOW</span>
                                                 </a>
                                             </div>
