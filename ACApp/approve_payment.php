@@ -105,7 +105,7 @@ function payThroughGateway(member_user_id, email_id, amount) {
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('/shop/process?simulate_payment=true', {
+    fetch('/shop/Process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })
