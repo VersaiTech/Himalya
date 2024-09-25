@@ -17,8 +17,10 @@ class TreeGenerator
     public function __construct()
     {
         // First, try to connect to the local database
-        $this->connection = mysqli_connect("89.117.27.118", "u600364601_newhimallya", "[n5Et8xJ", "u600364601_newhimallya");
+        // $this->connection = mysqli_connect("localhost", "root", "", "u358688394_aura3");
 
+        $this->connection = mysqli_connect("89.117.27.118", "u600364601_newhimallya", "[n5Et8xJ", "u600364601_newhimallya");
+        
         // If the local connection fails, try the remote server connection
         if (!$this->connection) {
             // Log the error for debugging

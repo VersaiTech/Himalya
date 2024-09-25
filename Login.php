@@ -157,7 +157,7 @@
 
                     <div class="col-12 hp-form-info text-center">
                         <span class="text-black-80 hp-text-color-dark-40 hp-caption me-4">Don’t you have an account?</span>
-                        <a class="text-primary-1 hp-text-color-dark-primary-2 hp-caption" href="auth-register-metamask-1.php?UplineId=6589714&RandomId=0xd203a917">Create an account</a>
+                        <a class="text-primary-1 hp-text-color-dark-primary-2 hp-caption" href="auth-register-metamask-1.php?UplineId=5291846&RandomId=0xd203a917">Create an account</a>
                     </div>
 
                     <div class="mt-48 mt-sm-96 col-12">
