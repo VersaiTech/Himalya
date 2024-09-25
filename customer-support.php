@@ -236,10 +236,10 @@
                                                 <img src="app-assets/img/customer-service.png" style="max-width: 200px;" alt="Buy Pro Account to explore Premium Features" class="hp-dark-block mx-auto">
 
                                                 <h4 class="my-24 me-4 fw-bold">Send a Whatsapp Message or Call to our team</h4>
-                                                <h6 class="my-24 me-4 fw-bold">+919898989888</h6>
+                                                <h6 class="my-24 me-4 fw-bold">+91-8630803797</h6>
 
 
-                                                <a href="https://wa.me/919898989888" target="_blank" class="btn btn-primary">
+                                                <a href="https://wa.me/918630803797" target="_blank" class="btn btn-primary">
                                                     <span>Message NOW</span>
                                                 </a>
                                             </div>

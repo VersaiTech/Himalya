@@ -19,7 +19,7 @@ class TreeGenerator
         // Establish the database connection
         $this->connection = mysqli_connect("localhost", "root", "", "u358688394_aura3");
         if (!$this->connection) {
-            $this->connection = mysqli_connect("82.180.167.190", "u358688394_aura3", "umDvTH@4", "u358688394_aura3");
+            $this->connection = mysqli_connect("89.117.27.118", "u600364601_newhimallya", "[n5Et8xJ", "u600364601_newhimallya");
         }
     }
 
