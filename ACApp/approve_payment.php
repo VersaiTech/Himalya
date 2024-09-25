@@ -1,4 +1,4 @@
- <?php
+<?php
 include '../config/config.php'; // Your DB connection
 
 // Check if the required parameters are set
@@ -52,6 +52,45 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     }
 }
 ?>
+<!-- Ensure the script tag is placed after the rest of the DOM -->
+<!-- <script>
+function payThroughGateway(member_user_id, email_id, amount) {
+    console.log("Attempting payment with data:", {
+        member_user_id,
+        email_id,
+        amount
+    });
+
+    let formData = new FormData();
+    formData.append('member_user_id', member_user_id);
+    formData.append('email_id', email_id);
+    formData.append('amount', amount);
+
+    fetch('/Himallya-MLM/shop/process?simulate_payment=true', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Payment response data:", data);
+        if (data.status) {
+            alert("Payment processed successfully!");
+                // Redirect after payment is successfully processed
+                window.location.href = 'InvestmentSummaryPending?success=approve';
+        } else {
+            alert("Payment failed. Please try again.");
+            // Redirect back to show the failure in the UI
+            window.location.href = 'InvestmentSummaryPending?error=payment_failed';
+        }
+    })
+    .catch(error => {
+        console.error('Error during payment processing:', error);
+        alert("Error occurred during payment processing.");
+        // Redirect back to show the error in the UI
+        window.location.href = 'InvestmentSummaryPending?error=fetch_error';
+    });
+}
+</script> -->
 
 <script>
 function payThroughGateway(member_user_id, email_id, amount) {
@@ -60,13 +99,13 @@ function payThroughGateway(member_user_id, email_id, amount) {
         email_id,
         amount
     });
-// .
+
     let formData = new FormData();
     formData.append('member_user_id', member_user_id);
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('shop/process?simulate_payment=true', {
+    fetch('/shop/process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })
@@ -116,6 +155,5 @@ function payThroughGateway(member_user_id, email_id, amount) {
     });
 }
 </script>
-
 
 
