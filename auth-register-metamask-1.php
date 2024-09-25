@@ -342,7 +342,7 @@ if ($result->num_rows > 0) {
 
                                         $.ajax({
                                             type: "POST",
-                                            url: "ProcessRegistration1",
+                                            url: "processRegistration1",
                                             data: dataStringNew,
                                             cache: false,
                                             success: function(response) {
