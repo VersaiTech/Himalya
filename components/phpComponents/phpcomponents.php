@@ -24,7 +24,7 @@ if (!$connection) {
 error_log('Server Name: ' . $_SERVER['SERVER_NAME']);
 
 
-if (trim($_SERVER['servername']) === '89.117.27.118') {
+if (trim($_SERVER['SERVER_NAME']) === '89.117.27.118') {
     $baseURL = 'https://himallyaro.com';
 } else {
     // Assuming url() is a custom function that gives the current URL
