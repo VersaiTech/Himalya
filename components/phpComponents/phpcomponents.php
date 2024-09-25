@@ -22,6 +22,7 @@ if (!$connection) {
 
 // Check the actual server name value
 error_log('Server Name: ' . $_SERVER['SERVER_NAME']);
+echo $_SERVER['SERVER_NAME'];
 
 
 if (trim($_SERVER['SERVER_NAME']) === '89.117.27.118') {
