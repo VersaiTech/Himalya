@@ -20,13 +20,19 @@ if (!$connection) {
     die('Database connection failed: ' . mysqli_connect_error());
 }
 
-// Determine the base URL based on the server name
-if ($_SERVER['SERVER_NAME'] == '89.117.27.118') {
+// Check the actual server name value
+error_log('Server Name: ' . $_SERVER['SERVER_NAME']);
+
+
+if (trim($_SERVER['servername']) === '89.117.27.118') {
     $baseURL = 'https://himallyaro.com';
 } else {
+    // Assuming url() is a custom function that gives the current URL
     $baseURL = url() . '/Himallya-MLM';
 }
 
+// Debugging the baseURL to check if it's set correctly
+error_log('Base URL: ' . $baseURL);
 // Construct the final URL
 if (empty($_SESSION['member_name'])) {
     $referralURL = 'Login?err=Please Invest First';
@@ -34,6 +40,8 @@ if (empty($_SESSION['member_name'])) {
     $referralURL = $baseURL . '/auth-register-metamask-1.php?UplineId=' . $_SESSION['member_user_id'] . '&RandomId=' . substr($_SESSION['member_name'], 0, 10);
 }
 
+// Debugging the final referral URL
+error_log('Referral URL: ' . $referralURL);
 // Check if the user is blocked
 $str = "SELECT * FROM tbl_memberreg WHERE member_user_id='$member_user_id' AND isblock=0";
 $ddr = "SELECT * FROM tbl_binary WHERE user_id = '$member_user_id'";
@@ -96,6 +104,3 @@ if (!is_null($sponcer_id)) {
 } else {
     $mobile_number = "Sponsor ID not found.";
 }
-
-
-?>

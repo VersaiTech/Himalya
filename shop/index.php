@@ -962,12 +962,7 @@ $transactionId = uniqid('txn_', true);
                             </a>
                             <div class="action-share-option">
 
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -1032,12 +1027,7 @@ $transactionId = uniqid('txn_', true);
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
+                                
                             </div>-->
                         </div>
 
@@ -1087,12 +1077,7 @@ $transactionId = uniqid('txn_', true);
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
+                                
                             </div>-->
                         </div>
 
@@ -1142,12 +1127,7 @@ $transactionId = uniqid('txn_', true);
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
+                                
                             </div>-->
                         </div>
 
@@ -1197,12 +1177,7 @@ $transactionId = uniqid('txn_', true);
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
                                     <i class="fa-light fa-heart"></i>
                                 </div>
-                                <div class="single-action openuptip" data-flow="up" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-arrows-retweet"></i>
-                                </div>
-                                <div class="single-action openuptip cta-quickview product-details-popup-btn" data-flow="up" title="Quick View">
-                                    <i class="fa-regular fa-eye"></i>
-                                </div>
+                                
                             </div>-->
                         </div>
 
