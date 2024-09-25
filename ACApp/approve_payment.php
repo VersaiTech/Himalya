@@ -52,6 +52,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
     }
 }
 ?>
+
 <script>
 function payThroughGateway(member_user_id, email_id, amount) {
     console.log("Attempting payment with data:", {
@@ -65,7 +66,7 @@ function payThroughGateway(member_user_id, email_id, amount) {
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('/shop/process?simulate_payment=true', {
+    fetch('/Himallya-MLM/shop/process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })
@@ -116,8 +117,8 @@ function payThroughGateway(member_user_id, email_id, amount) {
 }
 </script>
 
-
  -->
+
 
 
 
@@ -182,54 +183,33 @@ function payThroughGateway(member_user_id, email_id, amount, paymentId) {
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('/shop/Process?simulate_payment=true', {
+    fetch('/shop/process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })
     .then(response => {
         console.log("Response status:", response.status);
-        console.log("Response headers:", [...response.headers.entries()]);
-
-        if (response.status === 200) {
-            return response.text(); // Get raw response text
-        } else {
-            throw new Error('Unexpected response status');
+        if (!response.ok) {
+            throw new Error('Payment processing failed with status: ' + response.status);
         }
+        return response.json(); // Expecting JSON response
     })
-    .then(text => {
-        console.log("Raw response text:", text);
-        
-        // Extract JSON from the response text
-        const jsonStart = text.indexOf('{');
-        const jsonEnd = text.lastIndexOf('}') + 1;
+    .then(data => {
+        console.log("Payment processing response:", data);
 
-        if (jsonStart !== -1 && jsonEnd !== -1) {
-            const jsonString = text.substring(jsonStart, jsonEnd);
-            try {
-                const data = JSON.parse(jsonString); // Parse the extracted JSON
-                console.log("Parsed JSON data:", data);
-
-                if (data.status) {
-                    // Update payment status to approved in the database
-                    updatePaymentStatus(paymentId, 'approved');
-                } else {
-                    // Handle payment failure
-                    updatePaymentStatus(paymentId, 'failed');
-                }
-            } catch (e) {
-                console.error('Error parsing JSON:', e);
-                alert("Error occurred during payment processing.");
-                window.location.href = 'InvestmentSummaryPending?error=json_parse_error';
-            }
+        // Check if payment was successful
+        if (data.status) {
+            updatePaymentStatus(paymentId, 'approved'); // Update status to approved
         } else {
-            console.error('No JSON data found in response');
-            alert("Error occurred during payment processing.");
-            window.location.href = 'InvestmentSummaryPending?error=no_json_data';
+            updatePaymentStatus(paymentId, 'failed'); // Update status to failed
+            alert("Payment failed: " + data.message); // Notify user of payment failure
+            window.location.href = 'InvestmentSummaryPending?error=payment_failed';
         }
     })
     .catch(error => {
         console.error('Error during payment processing:', error);
-        alert("Error occurred during payment processing.");
+        alert("Error occurred during payment processing: " + error.message);
+        updatePaymentStatus(paymentId, 'failed'); // Update status to failed
         window.location.href = 'InvestmentSummaryPending?error=fetch_error';
     });
 }
@@ -245,16 +225,16 @@ function updatePaymentStatus(paymentId, status) {
     })
     .then(response => {
         if (response.ok) {
+            console.log("Payment status updated to:", status);
             window.location.href = 'InvestmentSummaryPending?success=' + status;
         } else {
-            alert("Error updating payment status.");
-            window.location.href = 'InvestmentSummaryPending?error=update_failed';
+            console.error("Error updating payment status:", response.status);
+            alert("Error updating payment status. Please check your logs.");
         }
     })
     .catch(error => {
         console.error('Error updating payment status:', error);
         alert("Error occurred during status update.");
-        window.location.href = 'InvestmentSummaryPending?error=status_update_failed';
     });
 }
 </script>
