@@ -66,7 +66,7 @@ function payThroughGateway(member_user_id, email_id, amount) {
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('/Himallya-MLM/shop/process?simulate_payment=true', {
+    fetch('/Himallya-MLM-1/shop/process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })
@@ -105,7 +105,7 @@ function payThroughGateway(member_user_id, email_id, amount) {
     formData.append('email_id', email_id);
     formData.append('amount', amount);
 
-    fetch('/Himallya-MLM/shop/process?simulate_payment=true', {
+    fetch('/Himallya-MLM-1/shop/process?simulate_payment=true', {
         method: 'POST',
         body: formData
     })

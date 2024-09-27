@@ -255,7 +255,7 @@ if (isset($_SESSION['member_user_id'])) {
                                             <th scope="col" style="min-width: 120px;">STATUS</th>
                                         </thead>
                                         <tbody id="tableBody">
-                                        <button class="btn btn-secondary me-2 mb-2 mb-md-0 btn-sm" onclick="window.location.href='/Himallya-MLM/payment-history'">>
+                                        <button class="btn btn-secondary me-2 mb-2 mb-md-0 btn-sm" onclick="window.location.href='/Himallya-MLM-1/payment-history'">>
                                         <span class="bi bi-payment"></span>&nbsp;&nbsp;Show Successful Payments</button>
                                             <?php if ($result && $result->num_rows > 0): ?>
                                                 <?php while ($row = $result->fetch_assoc()): ?>
