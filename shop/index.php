@@ -816,7 +816,7 @@ $transactionId = uniqid('txn_', true);
                     <p class="mb-4">Please select one payment method:</p>
                     <button type="button" class="btn custom-btn-primary w-100 mb-3" onclick="payThroughGateway()">Pay through Payment Gateway</button>
                     <button type="button" class="btn custom-btn-secondary w-100" onclick="openQRCodeModal()">Pay through QR Code</button>
-                    <input type="hidden" id="paymentAmount" value="1000">
+                    <input type="hidden" id="paymentAmount" value="100">
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
                     <button type="button" class="btn custom-btn-close" data-bs-dismiss="modal">Close</button>
@@ -996,11 +996,11 @@ $transactionId = uniqid('txn_', true);
                                 <input type="hidden" id="member_user_id" value="<?php echo $member_user_id; ?>">
                                 <input type="hidden" id="email_id" value="<?php echo $email_id; ?>">
                                 <input type="hidden" id="stored_mobile_number" value="<?php echo $stored_mobile_number; ?>">
-                                <input type="hidden" id="merchantOrderId " value="<?php echo $merchantOrderId ; ?>">
+                                <input type="hidden" id="merchantOrderId " value="<?php echo $merchantOrderId; ?>">
                                 <input type="hidden" id="transactionId" value="<?php echo $transactionId; ?>">
 
                                 <a href="javascript:void(0)" class="rts-btn btn-primary radious-sm with-icon"
-                                    onclick="openPaymentModal(500)">
+                                    onclick="openPaymentModal(100)">
                                     <div class=" btn-text">
                                         Buy Noww
                                     </div>
@@ -2535,7 +2535,7 @@ $transactionId = uniqid('txn_', true);
             let email_id = document.getElementById('email_id').value;
             let amount = document.getElementById('paymentAmount').value;
             let mobile_number = document.getElementById('stored_mobile_number').value;
-            let merchantOrderId  = document.getElementById('merchantOrderId ').value;
+            let merchantOrderId = document.getElementById('merchantOrderId ').value;
             let transactionId = document.getElementById('transactionId').value;
 
             if (!member_user_id || !email_id) {
@@ -2544,59 +2544,65 @@ $transactionId = uniqid('txn_', true);
             }
 
             // Convert amount to paise (multiply by 100)
-            let amountInPaise = amount * 100;
+            // let amountInPaise = amount * 100;
 
-            // Sample transactionId and orderId, modify as per your logic
-            // let transactionId = 'e3e1mmcccdmm9ef8vdfmd7b';
 
 
 
             // Prepare payload
             let payload = {
-                merchantId: "M222WSSBPF01V",
-                transactionId: transactionId,
-                merchantUserId: member_user_id,
-                amount: amountInPaise,
-                merchantOrderId: merchantOrderId,
-                // subMerchant: "unknown8898",
-                mobileNumber: mobile_number,
-                message: `Payment towards order No. ${merchantOrderId}.`,
+                name: member_user_id, // Add the 'name' field, matching the example
                 email: email_id,
-                shortName: merchantOrderId,
-                paymentScope: "PHONEPE",
-                deviceContext: {
-                    phonePeVersionCode: 303391
-                }
+                number: mobile_number,
+                partner_id: transactionId, // Make sure this matches the format shown in API doc
+                amount: amount
+
+
+                // merchantId: "M222WSSBPF01V",
+                // partner_id: transactionId,
+                // merchantUserId: member_user_id,
+                // amount: amountInPaise,
+                // merchantOrderId: merchantOrderId,
+                // subMerchant: "unknown8898",
+                // number: mobile_number,
+                // message: `Payment towards order No. ${merchantOrderId}.`,
+                // email: email_id,
+                // shortName: merchantOrderId,
+                // paymentScope: "PHONEPE",
+                // deviceContext: {
+                //     phonePeVersionCode: 303391
+                // }
             };
 
-            // Base64 encode the payload
-            let base64Payload = btoa(JSON.stringify(payload));
-
-            // Generate X-VERIFY header (You need to replace with actual salt key and salt index)
-            let saltKey = "YOUR_SALT_KEY"; // Replace with your actual salt key
-            let saltIndex = "YOUR_SALT_INDEX"; // Replace with your actual salt index
-            let verifyHash = sha256(base64Payload + "/v4/debit" + saltKey);
-            let xVerify = verifyHash + "###" + saltIndex;
 
             // API call to PhonePe
             try {
-                let response = await fetch('https://api-preprod.phonepe.com/apis/pg-sandbox/v4/debit', {
+                let response = await fetch('https://secure.sharkpe.in/api/v1/generate', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'X-VERIFY': xVerify,
-                        'X-CALLBACK-URL': 'YOUR_CALLBACK_URL', // Replace with your callback URL
-                        'X-CALL-MODE': 'POST' // or PUT depending on your requirement
+                        'x-token': 'm1lppxlw1eerbf787879wows', // Ensure this matches the API format
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(payload)
                 });
 
+                console.log("Raw response:", response);
+
+                // Check if the response is successful (status 200-299)
+                if (!response.ok) {
+                    console.error(`HTTP error! status: ${response.status}`);
+                    alert("❗ Error occurred with the request. Please try again.");
+                    return;
+                }
+
                 let data = await response.json();
+
+                console.log("Parsed response data:", data);
 
                 if (data.status) {
                     // Display a nice alert for successful payment
-                    alert("" + data.message);
-                    window.location.href = 'http://localhost/Himallya-MLM-1/payment-history';
+                    window.location.href = data.payment_link; 
+                   
                 } else {
                     // Display an alert for payment failure
                     alert("⚠️ Payment Failed. Please try again.");
