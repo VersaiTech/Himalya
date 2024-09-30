@@ -365,7 +365,7 @@ if ($result->num_rows > 0) {
                                                         timerProgressBar: true,
                                                         showConfirmButton: false
                                                     }).then(() => {
-                                                        window.location.href = 'shop/index';
+                                                        window.location.href = 'index';
                                                     });
                                                 } else {
                                                     Swal.fire({

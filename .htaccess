@@ -3,7 +3,6 @@ RewriteRule ^$ index [L]
 
 # If the request is for the root or a directory
 DirectoryIndex index
-RewriteRule ^$ - [L]
 
 # Allow access without .php extension
 RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]

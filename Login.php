@@ -149,7 +149,7 @@
                         <button class="btn btn-primary w-100" style="margin-bottom: 1vh;" onclick="Login(); return false;">
                             <a class="d-block w-100" style="color: inherit;">Sign in</a>
                         </button>
-                        <button class="btn btn-primary w-100 mt-20" onclick="window.location.href='shop/index'; return false;">
+                        <button class="btn btn-primary w-100 mt-20" onclick="window.location.href='index'; return false;">
     <span class="d-block w-100" style="color: inherit;">Visit Shop</span>
 </button>
 
@@ -272,7 +272,7 @@
                                 timerProgressBar: true,
                                 showConfirmButton: false
                             }).then(() => {
-                                window.location.href = 'shop/index';
+                                window.location.href = 'index';
                             });
                         } else {
                             Swal.fire({
