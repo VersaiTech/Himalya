@@ -2,6 +2,7 @@ RewriteEngine On
 RewriteRule ^$ index [L]
 
 # If the request is for the root or a directory
+DirectoryIndex index
 RewriteRule ^$ - [L]
 
 # Allow access without .php extension
