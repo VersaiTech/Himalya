@@ -2,7 +2,8 @@
 // Start the session
 ob_end_flush();
 session_start();
-include '../config/config.php';
+include './config/config.php';
+
 
 $is_logged_in = isset($_SESSION['member_user_id']) && isset($_SESSION['email_id']);
 $member_user_id = $is_logged_in ? $_SESSION['member_user_id'] : '';
@@ -54,8 +55,9 @@ $transactionId = uniqid('txn_', true);
     <title>Himallya RO Service</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
     <!-- plugins css -->
-    <link rel="stylesheet preload" href="assets/css/plugins.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <link rel="stylesheet preload" href="./shop/assets/css/plugins.css" as="style">
+    <link rel="stylesheet preload" href="./shop/assets/css/style.css" as="style">
+    <!-- <link rel="stylesheet preload" href="assets/css/style.css" as="style"> -->
 
 
 
@@ -150,7 +152,7 @@ $transactionId = uniqid('txn_', true);
                     <div class="col-lg-12">
                         <div class="logo-search-category-wrapper">
                             <a href="index" class="logo-area">
-                                <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
+                                <img src="./shop/assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
                                 <form action="#" class="search-header">
@@ -238,74 +240,74 @@ $transactionId = uniqid('txn_', true);
                         </div>
                         <div class="logo-search-category-wrapper">
                             <a href="index" class="logo-area">
-                                <img class="logo_ig" src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
+                                <img class="logo_ig" src="./shop/assets/images/logo/HIMALLYALOGO2.png" alt="logo-main" class="logo">
                             </a>
                             <div class="category-search-wrapper">
                                 <div class="category-btn category-hover-header">
-                                    <img class="parent" src="assets/images/icons/bar-1.svg" alt="icons">
+                                    <img class="parent" src="./shop/assets/images/icons/bar-1.svg" alt="icons">
                                     <span>Categories</span>
                                     <ul class="category-sub-menu">
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/01.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/01.svg" alt="icons">
                                                 <span>Breakfast &amp; Dairy</span>
                                                 <i class="fa-regular fa-plus"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/02.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/02.svg" alt="icons">
                                                 <span>Meats &amp; Seafood</span>
                                                 <i class="fa-regular fa-plus"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/03.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/03.svg" alt="icons">
                                                 <span>Breads &amp; Bakery</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/04.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/04.svg" alt="icons">
                                                 <span>Chips &amp; Snacks</span>
                                                 <i class="fa-regular fa-plus"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/05.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/05.svg" alt="icons">
                                                 <span>Medical Healthcare</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/06.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/06.svg" alt="icons">
                                                 <span>Breads &amp; Bakery</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/07.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/07.svg" alt="icons">
                                                 <span>Biscuits &amp; Snacks</span>
                                                 <i class="fa-regular fa-plus"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/08.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/08.svg" alt="icons">
                                                 <span>Frozen Foods</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/09.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/09.svg" alt="icons">
                                                 <span>Grocery &amp; Staples</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="menu-item">
-                                                <img src="assets/images/icons/10.svg" alt="icons">
+                                                <img src="./shop/assets/images/icons/10.svg" alt="icons">
                                                 <span>Other Items</span>
                                             </a>
                                         </li>
@@ -402,7 +404,7 @@ $transactionId = uniqid('txn_', true);
                         <ul class="category-sub-menu" id="category-active-menu">
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/01.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/01.svg" alt="icons">
                                     <span>Breakfast &amp; Dairy</span>
                                     <i class="fa-regular fa-plus"></i>
                                 </a>
@@ -414,7 +416,7 @@ $transactionId = uniqid('txn_', true);
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/02.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/02.svg" alt="icons">
                                     <span>Meats &amp; Seafood</span>
                                     <i class="fa-regular fa-plus"></i>
                                 </a>
@@ -426,13 +428,13 @@ $transactionId = uniqid('txn_', true);
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/03.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/03.svg" alt="icons">
                                     <span>Breads &amp; Bakery</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/04.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/04.svg" alt="icons">
                                     <span>Chips &amp; Snacks</span>
                                     <i class="fa-regular fa-plus"></i>
                                 </a>
@@ -444,19 +446,19 @@ $transactionId = uniqid('txn_', true);
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/05.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/05.svg" alt="icons">
                                     <span>Medical Healthcare</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/06.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/06.svg" alt="icons">
                                     <span>Breads &amp; Bakery</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/07.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/07.svg" alt="icons">
                                     <span>Biscuits &amp; Snacks</span>
                                     <i class="fa-regular fa-plus"></i>
                                 </a>
@@ -468,19 +470,19 @@ $transactionId = uniqid('txn_', true);
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/08.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/08.svg" alt="icons">
                                     <span>Frozen Foods</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/09.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/09.svg" alt="icons">
                                     <span>Grocery &amp; Staples</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="menu-item">
-                                    <img src="assets/images/icons/10.svg" alt="icons">
+                                    <img src="./shop/assets/images/icons/10.svg" alt="icons">
                                     <span>Other Items</span>
                                 </a>
                             </li>
@@ -626,7 +628,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/01.png" alt="category">
+                                                                <img src="./shop/assets/images/category/01.png" alt="category">
                                                                 <p>Mixer – Grinder</p>
                                                             </a>
                                                             <div class="price-section">
@@ -642,7 +644,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/02.png" alt="category">
+                                                                <img src="./shop/assets/images/category/02.png" alt="category">
                                                                 <p>Cooler Fan</p>
                                                             </a>
                                                             <div class="price-section">
@@ -658,7 +660,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/03.png" alt="category">
+                                                                <img src="./shop/assets/images/category/03.png" alt="category">
                                                                 <p>Water Purifier </p>
                                                             </a>
                                                             <div class="price-section">
@@ -674,7 +676,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/04.png" alt="category">
+                                                                <img src="./shop/assets/images/category/04.png" alt="category">
                                                                 <p>Special Purifier</p>
                                                             </a>
                                                             <div class="price-section">
@@ -690,7 +692,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/05.png" alt="category">
+                                                                <img src="./shop/assets/images/category/05.png" alt="category">
                                                                 <p>Pure Water RO</p>
                                                             </a>
                                                             <div class="price-section">
@@ -706,7 +708,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/06.png" alt="category">
+                                                                <img src="./shop/assets/images/category/06.png" alt="category">
                                                                 <p>Water Cooler</p>
                                                             </a>
                                                             <div class="price-section">
@@ -722,7 +724,7 @@ $transactionId = uniqid('txn_', true);
                                                     <div class="swiper-slide">
                                                         <div class="single-category-one">
                                                             <a href="index">
-                                                                <img src="assets/images/category/07.png" alt="category">
+                                                                <img src="./shop/assets/images/category/07.png" alt="category">
                                                                 <p>Geyser</p>
                                                             </a>
                                                             <div class="price-section">
@@ -836,7 +838,7 @@ $transactionId = uniqid('txn_', true);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <img src="assets/scanner.png" alt="QR Code" class="img-fluid mb-4 rounded"> <!-- Rounded image with margin-bottom -->
+                    <img src="./shop/assets/scanner.png" alt="QR Code" class="img-fluid mb-4 rounded"> <!-- Rounded image with margin-bottom -->
                     <input type="text" id="utrNumber" class="form-control custom-input" placeholder="Enter UTR Number"> <!-- Custom input style -->
                 </div>
                 <div class="modal-footer border-top-0 d-flex justify-content-center">
@@ -958,7 +960,7 @@ $transactionId = uniqid('txn_', true);
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/15.png" alt="grocery">
+                                <img src="./shop/assets/images/grocery/15.png" alt="grocery">
                             </a>
                             <div class="action-share-option">
 
@@ -1020,7 +1022,7 @@ $transactionId = uniqid('txn_', true);
                         </div>
                         <div class="image-and-action-area-wrapper">
 
-                            <img src="assets/images/grocery/16.png" alt="grocery">
+                            <img src="./shop/assets/images/grocery/16.png" alt="grocery">
                             </a>
 
                             <!--<div class="action-share-option">
@@ -1071,7 +1073,7 @@ $transactionId = uniqid('txn_', true);
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/17.png" alt="grocery">
+                                <img src="./shop/assets/images/grocery/17.png" alt="grocery">
                             </a>
                             <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1121,7 +1123,7 @@ $transactionId = uniqid('txn_', true);
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/18.png" alt="grocery">
+                                <img src="./shop/assets/images/grocery/18.png" alt="grocery">
                             </a>
                             <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1171,7 +1173,7 @@ $transactionId = uniqid('txn_', true);
                         </div>
                         <div class="image-and-action-area-wrapper">
                             <a href="index" class="thumbnail-preview">
-                                <img src="assets/images/grocery/19.png" alt="grocery">
+                                <img src="./shop/assets/images/grocery/19.png" alt="grocery">
                             </a>
                             <!--<div class="action-share-option">
                                 <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1271,7 +1273,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/29.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/29.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1324,7 +1326,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/18.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/18.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1393,7 +1395,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/19.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/19.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1447,7 +1449,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/32.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/32.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1517,7 +1519,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/31.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/31.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1571,7 +1573,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/33.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/33.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1641,7 +1643,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/36.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/36.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1695,7 +1697,7 @@ $transactionId = uniqid('txn_', true);
                                     </div>
                                     <div class="image-and-action-area-wrapper">
                                         <a href="index" class="thumbnail-preview">
-                                            <img src="assets/images/grocery/35.png" alt="grocery">
+                                            <img src="./shop/assets/images/grocery/35.png" alt="grocery">
                                         </a>
                                         <!--<div class="action-share-option">
                                             <div class="single-action openuptip message-show-action" data-flow="up" title="Add To Wishlist">
@@ -1766,7 +1768,7 @@ $transactionId = uniqid('txn_', true);
                 <div class="col-xl-2 col-md-3 col-md-4 col-sm-6 col-4">
                     <!-- single weekly best seller itrem -->
                     <div class="weekly-best-seller-item-single">
-                        <img src="assets/images/whychooseus/free-shipping.png" alt="">
+                        <img src="./shop/assets/images/whychooseus/free-shipping.png" alt="">
                         <div class="inner">
                             <a href="index">
                                 <h2 class="title">Free Shipping</h2>
@@ -1778,7 +1780,7 @@ $transactionId = uniqid('txn_', true);
                 <div class="col-xl-2 col-md-3 col-md-4 col-sm-6 col-4">
                     <!-- single weekly best seller itrem -->
                     <div class="weekly-best-seller-item-single">
-                        <img src="assets/images/whychooseus/discount-label.png" alt="">
+                        <img src="./shop/assets/images/whychooseus/discount-label.png" alt="">
                         <div class="inner">
                             <a href="index">
                                 <h2 class="title">Big Discount</h2>
@@ -1790,7 +1792,7 @@ $transactionId = uniqid('txn_', true);
                 <div class="col-xl-2 col-md-3 col-md-4 col-sm-6 col-4">
                     <!-- single weekly best seller itrem -->
                     <div class="weekly-best-seller-item-single">
-                        <img src="assets/images/whychooseus/secure-payment.png" alt="">
+                        <img src="./shop/assets/images/whychooseus/secure-payment.png" alt="">
                         <div class="inner">
                             <a href="index">
                                 <h2 class="title">Secure Payment</h2>
@@ -1815,7 +1817,7 @@ $transactionId = uniqid('txn_', true);
                     <!-- single feature product area -->
                     <div class="feature-product-area-single bg_image">
                         <div class="inner-image">
-                            <img src="assets/images/feature/01.png" alt="feature">
+                            <img src="./shop/assets/images/feature/01.png" alt="feature">
                         </div>
                         <div class="inner-content">
                             <h2 class="title">Installation of RO <br>
@@ -1834,7 +1836,7 @@ $transactionId = uniqid('txn_', true);
                     <!-- single feature product area -->
                     <div class="feature-product-area-single two bg_image">
                         <div class="inner-image">
-                            <img src="assets/images/feature/02.png" alt="feature">
+                            <img src="./shop/assets/images/feature/02.png" alt="feature">
                         </div>
                         <div class="inner-content">
                             <h2 class="title">Pure Water RO <br>
@@ -1874,7 +1876,7 @@ $transactionId = uniqid('txn_', true);
                                 <!-- single blog area start -->
                                 <div class="single-blog-area-start">
                                     <a href="index" class="thumbnail">
-                                        <img src="assets/images/blog/blog-11.png" alt="blog-area">
+                                        <img src="./shop/assets/images/blog/blog-11.png" alt="blog-area">
                                     </a>
                                     <div class="blog-body">
                                         <div class="top-area">
@@ -1909,7 +1911,7 @@ $transactionId = uniqid('txn_', true);
                                 <!-- single blog area start -->
                                 <div class="single-blog-area-start">
                                     <a href="index" class="thumbnail">
-                                        <img src="assets/images/blog/blog-22.png" alt="blog-area">
+                                        <img src="./shop/assets/images/blog/blog-22.png" alt="blog-area">
                                     </a>
                                     <div class="blog-body">
                                         <div class="top-area">
@@ -1944,7 +1946,7 @@ $transactionId = uniqid('txn_', true);
                                 <!-- single blog area start -->
                                 <div class="single-blog-area-start">
                                     <a href="index" class="thumbnail">
-                                        <img src="assets/images/blog/blog-33.png" alt="blog-area">
+                                        <img src="./shop/assets/images/blog/blog-33.png" alt="blog-area">
                                     </a>
                                     <div class="blog-body">
                                         <div class="top-area">
@@ -1992,7 +1994,7 @@ $transactionId = uniqid('txn_', true);
                     <div class="footer-two-main-wrapper">
                         <div class="footer-single-wixed-two start">
                             <a href="#" class="logo-area">
-                                <img src="assets/images/logo/HIMALLYALOGO2.png" alt="logo-area" class="logo">
+                                <img src="./shop/assets/images/logo/HIMALLYALOGO2.png" alt="logo-area" class="logo">
                             </a>
                             <p class="disc">
                                 What’s inside: New Arrivals, Exclusive Sales,
@@ -2042,7 +2044,7 @@ $transactionId = uniqid('txn_', true);
                                 <!-- single contact information -->
                                 <div class="single-contact-information-area">
                                     <div class="icon-area">
-                                        <img src="assets/images/icons/11.svg" alt="icons">
+                                        <img src="./shop/assets/images/icons/11.svg" alt="icons">
                                     </div>
                                     <div class="information-area">
                                         <p class="disc">
@@ -2054,7 +2056,7 @@ $transactionId = uniqid('txn_', true);
                                 <!-- single contact information -->
                                 <div class="single-contact-information-area">
                                     <div class="icon-area">
-                                        <img src="assets/images/icons/12.svg" alt="icons">
+                                        <img src="./shop/assets/images/icons/12.svg" alt="icons">
                                     </div>
                                     <div class="information-area">
                                         <p class="disc">
@@ -2067,7 +2069,7 @@ $transactionId = uniqid('txn_', true);
                                 <!-- single contact information -->
                                 <div class="single-contact-information-area">
                                     <div class="icon-area">
-                                        <img src="assets/images/icons/13.svg" alt="icons">
+                                        <img src="./shop/assets/images/icons/13.svg" alt="icons">
                                     </div>
                                     <div class="information-area">
                                         <p class="disc">
@@ -2098,7 +2100,7 @@ $transactionId = uniqid('txn_', true);
                         </p>
                         <!--<div class="payment-processw-area">
                             <span>Payment Accepts:</span>
-                            <img src="assets/images/payment/04.png" alt="payment">
+                            <img src="./shop/assets/images/payment/04.png" alt="payment">
                         </div>-->
                     </div>
                 </div>
@@ -2160,28 +2162,28 @@ $transactionId = uniqid('txn_', true);
                         <div class="thumb-wrapper one filterd-items figure">
                             <div class="product-thumb zoom" onmousemove="zoom(event)"
                                 style="background-image: url(assets/images/products/product-details.jpg)"><img
-                                    src="assets/images/products/product-details.jpg" alt="product-thumb">
+                                    src="./shop/assets/images/products/product-details.jpg" alt="product-thumb">
                             </div>
                         </div>
                         <div class="thumb-wrapper two filterd-items hide">
                             <div class="product-thumb zoom" onmousemove="zoom(event)"
                                 style="background-image: url(assets/images/products/product-filt2.jpg)"><img
-                                    src="assets/images/products/product-filt2.jpg" alt="product-thumb">
+                                    src="./shop/assets/images/products/product-filt2.jpg" alt="product-thumb">
                             </div>
                         </div>
                         <div class="thumb-wrapper three filterd-items hide">
                             <div class="product-thumb zoom" onmousemove="zoom(event)"
                                 style="background-image: url(assets/images/products/product-filt3.jpg)"><img
-                                    src="assets/images/products/product-filt3.jpg" alt="product-thumb">
+                                    src="./shop/assets/images/products/product-filt3.jpg" alt="product-thumb">
                             </div>
                         </div>
                         <div class="product-thumb-filter-group">
                             <div class="thumb-filter filter-btn active" data-show=".one"><img
-                                    src="assets/images/products/product-filt1.jpg" alt="product-thumb-filter"></div>
+                                    src="./shop/assets/images/products/product-filt1.jpg" alt="product-thumb-filter"></div>
                             <div class="thumb-filter filter-btn" data-show=".two"><img
-                                    src="assets/images/products/product-filt2.jpg" alt="product-thumb-filter"></div>
+                                    src="./shop/assets/images/products/product-filt2.jpg" alt="product-thumb-filter"></div>
                             <div class="thumb-filter filter-btn" data-show=".three"><img
-                                    src="assets/images/products/product-filt3.jpg" alt="product-thumb-filter"></div>
+                                    src="./shop/assets/images/products/product-filt3.jpg" alt="product-thumb-filter"></div>
                         </div>
                     </div>
                     <div class="contents">
@@ -2270,17 +2272,17 @@ $transactionId = uniqid('txn_', true);
                         <div class="single-compare-elements name">Preview</div>
                         <div class="single-compare-elements">
                             <div class="thumbnail-preview">
-                                <img src="assets/images/grocery/01.jpg" alt="grocery">
+                                <img src="./shop/assets/images/grocery/01.jpg" alt="grocery">
                             </div>
                         </div>
                         <div class="single-compare-elements">
                             <div class="thumbnail-preview">
-                                <img src="assets/images/grocery/02.jpg" alt="grocery">
+                                <img src="./shop/assets/images/grocery/02.jpg" alt="grocery">
                             </div>
                         </div>
                         <div class="single-compare-elements">
                             <div class="thumbnail-preview">
-                                <img src="assets/images/grocery/03.jpg" alt="grocery">
+                                <img src="./shop/assets/images/grocery/03.jpg" alt="grocery">
                             </div>
                         </div>
                     </div>
@@ -2460,10 +2462,10 @@ $transactionId = uniqid('txn_', true);
 
 
     <!-- plugins js -->
-    <script defer src="assets/js/plugins.js"></script>
+    <script defer src="./shop/assets/js/plugins.js"></script>
 
     <!-- custom js -->
-    <script defer src="assets/js/main.js"></script>
+    <script defer src="./shop/assets/js/main.js"></script>
 
 
     <!-- header style two End -->

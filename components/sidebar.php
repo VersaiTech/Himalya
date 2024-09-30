@@ -24,7 +24,7 @@
         </ul>
         <ul>
             <li>
-                <a href="shop/index">
+                <a href="index">
                     <div class="tooltip-item in-active" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="Analytics" aria-label="Analytics"></div>
 
                     <span>
