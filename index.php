@@ -138,7 +138,7 @@ $transactionId = uniqid('txn_', true);
                             <p>Welcome to <span style="color: rgb(0, 145, 255);">Himallya RO Service </span></p>
                             <ul class="nav-header-top">
                                 <li><a href="trackorder.html">+91-8630803797</a></li>
-                                <li><a href="about.html">himallyaroservices@gmail.com</a></li>
+                                <li><a href="/shop/about.html">himallyaroservices@gmail.com</a></li>
 
                             </ul>
                         </div>
@@ -227,7 +227,7 @@ $transactionId = uniqid('txn_', true);
                                         <li class="parent has-dropdown">
                                             <a class="nav-link" href="#">Home</a>
                                         </li>
-                                        <li class="parent"><a href="about.html">About</a></li>
+                                        <li class="parent"><a href="/shop/about.html">About</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -387,7 +387,7 @@ $transactionId = uniqid('txn_', true);
 
 
                                 <li>
-                                    <a href="about.html" class="main">About</a>
+                                    <a href="/shop/about.html" class="main">About</a>
                                 </li>
 
                                 <!-- <li>
